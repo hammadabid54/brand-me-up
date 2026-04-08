@@ -1,0 +1,95 @@
+{
+  "service_name": "Analytics",
+  "slug": "analytics",
+  "category": "Other",
+  "category_url": "/services/other/",
+  "meta_title": "Analytics Services | Marketing Data & Insights | Omni Path Marketing",
+  "meta_description": "Marketing analytics and data insights services. Understand your data and make informed decisions to grow your business.",
+  "meta_keywords": "analytics, data analysis, marketing insights, Google Analytics, reporting",
+  "hero_title": "Analytics Services",
+  "hero_subtitle": "Data-driven insights that help you make better business decisions.",
+  "description": "Professional analytics services that turn your data into actionable insights. We set up tracking, create reports, and provide strategic recommendations.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Marketing Analytics and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Marketing analytics is the practice of measuring, managing, and analyzing marketing performance to maximize effectiveness and optimize return on investment. In an era of abundant data, analytics provides the insights needed to make informed decisions and improve marketing results.\n\nWithout analytics, you're essentially guessing. You might spend budget on marketing activities without knowing what's actually working. Analytics removes the guesswork, showing you exactly how your marketing performs and where improvements can be made.\n\nModern marketing generates vast amounts of data—website visits, social engagement, email opens, ad clicks, and much more. But raw data is meaningless without analysis and interpretation. Analytics services transform this data into clear, actionable insights.\n\nAnalytics also enables continuous improvement. Rather than setting marketing activities and forgetting them, analytics allows ongoing optimization. Test different approaches, measure results, and continuously improve performance.\n\nOur analytics services help you understand your data, make informed decisions, and continuously improve your marketing results."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Why Analytics are Essential for Business",
+      "subtitle": "",
+      "content": "Analytics provide crucial business benefits:\n\nInformed Decisions: Make decisions based on data, not guesses. Know exactly what's working and what isn't.\n\nROI Measurement: Understand the return on your marketing investment. Know which activities deliver value.\n\nPerformance Optimization: Identify opportunities to improve. Continuously refine approaches for better results.\n\nCompetitive Intelligence: Understand market trends and competitor performance.\n\nCustomer Understanding: Learn how customers behave, what they want, and how to serve them better.\n\nBudget Allocation: Direct budget toward activities that deliver results. Eliminate wasteful spending.\n\nGoal Tracking: Monitor progress toward business goals. Ensure marketing supports overall objectives."
+    },
+    {
+      "section_type": "services",
+      "title": "Our Analytics Services",
+      "subtitle": "",
+      "content": "We offer comprehensive analytics services:\n\nGoogle Analytics Setup: Proper installation and configuration of Google Analytics 4. Ensure accurate data collection.\n\nGoal Tracking: Setting up conversions, events, and goals that matter to your business.\n\nCustom Dashboards: Visual dashboards that show key metrics at a glance.\n\nRegular Reporting: Detailed reports delivered on your preferred schedule—weekly, monthly, or quarterly.\n\nData Analysis: Deep analysis to uncover insights and opportunities.\n\nStrategy Recommendations: Actionable recommendations based on data findings.\n\nA/B Testing: Designing and analyzing tests to optimize performance.\n\nCompetitor Analysis: Understanding competitive landscape and opportunities."
+    },
+    {
+      "section_type": "tracking",
+      "title": "What We Track and Analyze",
+      "subtitle": "",
+      "content": "We track and analyze key marketing metrics:\n\nWebsite Traffic: Sessions, users, pageviews, bounce rate, and session duration.\n\nUser Behavior: How users navigate your site, which pages they visit, where they leave.\n\nConversions: Leads generated, purchases made, form submissions—whatever goals matter to you.\n\nTraffic Sources: Where visitors come from—organic search, paid ads, social media, email, direct.\n\nCampaign Performance: How specific marketing campaigns perform—email blasts, ad campaigns, content.\n\nSocial Media: Engagement metrics across all social platforms.\n\nEmail Marketing: Open rates, click rates, and conversion tracking.\n\nAdvertising: Ad performance, cost per acquisition, return on ad spend."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Analytics clients typically see:\n\nClear Understanding: Know exactly how your marketing performs.\n\nImproved ROI: Better allocation of marketing budget based on results.\n\nOptimization Opportunities: Identify specific areas for improvement.\n\nInformed Decisions: Make decisions based on data, not guesses.\n\nGoal Achievement: Better progress toward business objectives.\n\nCompetitive Advantage: Understand market dynamics better than competitors."
+    }
+  ],
+  "pricing": {
+    "intro": "Analytics Pricing",
+    "description": "Flexible plans for businesses at any stage.",
+    "plans": [
+      {
+        "name": "Setup",
+        "price": "$147",
+        "description": "For businesses starting out",
+        "features": [
+          "Google Analytics setup",
+          "Goal tracking configuration",
+          "Basic dashboard creation",
+          "Conversion tracking",
+          "Initial training"
+        ]
+      },
+      {
+        "name": "Monthly",
+        "price": "$97/month",
+        "description": "For ongoing insights",
+        "features": [
+          "Monthly performance reports",
+          "Key metrics tracking",
+          "Basic insights analysis",
+          "Trend identification",
+          "Optimization recommendations"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Advanced",
+        "price": "$197/month",
+        "description": "For data-driven businesses",
+        "features": [
+          "Weekly performance reports",
+          "Custom dashboards",
+          "Deep data analysis",
+          "Strategy recommendations",
+          "A/B testing analysis",
+          "Competitor analysis"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "What platforms do you analyze?", "answer": "We analyze all relevant platforms—Google Analytics, Google Ads, Facebook Insights, social media, email platforms, and more."},
+    {"question": "How often will I receive reports?", "answer": "Frequency depends on your plan—monthly for basic, weekly for advanced. Custom schedules are also available."},
+    {"question": "Do I need Google Analytics?", "answer": "Google Analytics is recommended for website tracking. We'll help set it up if you don't already have it."},
+    {"question": "What metrics should I track?", "answer": "It depends on your business goals. We'll help identify the most relevant metrics for your specific situation."},
+    {"question": "Can you help interpret data?", "answer": "Absolutely! Analysis and interpretation are core to our service. We explain what the data means and recommend actions."}
+  ]
+}

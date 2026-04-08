@@ -1,0 +1,26 @@
+{
+  "page_name": "other",
+  "meta_title": "Additional Marketing Services | Backlinking, Email, Web Design",
+  "meta_description": "Additional marketing services: Backlinking, Press Release, Email Marketing, Web Design, and Analytics. Complete digital marketing solutions.",
+  "meta_keywords": "backlinking, press release, email marketing, web design, analytics",
+  "hero_title": "Additional Services",
+  "hero_subtitle": "Specialized marketing services to complement your digital strategy.",
+  "sections": [
+    {
+      "section_type": "services",
+      "services": [
+        {"name": "Backlinking", "slug": "backlinking", "description": "Quality backlinks to improve authority", "icon": "fa-link"},
+        {"name": "Press Release", "slug": "press-release", "description": "News-worthy press releases", "icon": "fa-newspaper"},
+        {"name": "Email Marketing", "slug": "email-marketing", "description": "Email campaigns that convert", "icon": "fa-envelope"},
+        {"name": "Web Design", "slug": "web-design", "description": "SEO-friendly website design", "icon": "fa-palette"},
+        {"name": "Analytics", "slug": "analytics", "description": "Data-driven insights", "icon": "fa-chart-bar"}
+      ]
+    }
+  ],
+  "pricing": {
+    "description": "Custom quotes available for all services."
+  },
+  "faqs": [
+    {"question": "Do you offer custom marketing services?", "answer": "Yes, if you need something not listed, contact us. We can likely help or refer you to trusted partners."}
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "page_name": "social-media",
+  "meta_title": "Social Media Marketing Services | Omni Path Marketing",
+  "meta_description": "Expert social media marketing services. Management, ads, and community management. Build your brand and engage with your audience across all major platforms.",
+  "meta_keywords": "social media marketing, social media management, social media ads, community management, Facebook marketing, Instagram marketing",
+  "hero_title": "Social Media Marketing Services",
+  "hero_subtitle": "Build your brand on social platforms. Engage with your audience and grow your following with expert social media marketing.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Social Media Marketing and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Social media marketing is using platforms like Facebook, Instagram, LinkedIn, Twitter, TikTok, and Pinterest to build your brand, engage with customers, and drive traffic to your website. With billions of active users across these platforms, social media offers unprecedented reach for businesses of all sizes.\n\n<h3>The Social Media Opportunity</h3>\nEvery day, billions of people use social media to connect with friends, discover new products, and research purchasing decisions. Your potential customers are already on social platforms—they're just not yet aware of your business. Social media marketing makes them aware.\n\nOur social media experts create strategies that align with your specific business goals. Whether you want to build brand awareness, generate leads, drive website traffic, or engage with existing customers, we develop customized approaches that deliver measurable results."
+    },
+    {
+      "section_type": "why_matters",
+      "title": "Why Social Media Marketing is Essential for Modern Business",
+      "subtitle": "",
+      "content": "Social media has transformed how businesses connect with customers:\n\n<h3>Brand Awareness</h3>\nSocial platforms let you reach potential customers where they spend significant time. Consistent presence builds familiarity and trust over time.\n\n<h3>Direct Engagement</h3>\nUnlike traditional advertising, social media enables two-way conversations. You can respond to questions, address concerns, and build genuine relationships with customers.\n\n<h3>Cost-Effective Reach</h3>\nOrganic social reach provides opportunities to connect with audiences without advertising spend. While paid ads amplify reach, organic presence builds lasting value.\n\n<h3>Customer Insights</h3>\nSocial listening reveals what customers think about your brand, products, and competitors. These insights inform marketing decisions across channels.\n\n<h3>Traffic Generation</h3>\nSocial posts drive qualified traffic to your website. Each post is an opportunity to direct engaged users to conversion pages.\n\n<h3>Social Proof</h3>\nPositive engagement on social media signals credibility to potential customers. Active profiles with engaged followers build trust."
+    },
+    {
+      "section_type": "services",
+      "title": "Our Social Media Services",
+      "subtitle": "",
+      "content": "We offer comprehensive social media services:\n\n<h3>Social Media Management</h3>\nWe handle your complete social presence. We create and schedule posts, design graphics, write captions, and maintain consistent posting schedules. Our team ensures your brand maintains consistent voice and visual identity across all platforms.\n\n<h3>Social Media Advertising</h3>\nWe extend your reach with targeted campaigns. We create and optimize ads on Facebook, Instagram, LinkedIn, and other platforms to reach your ideal customers. Our targeting expertise ensures your ads reach people most likely to convert.\n\n<h3>Community Management</h3>\nWe build and nurture your online community. We engage with followers, respond to comments and messages, and foster meaningful connections. Strong communities become brand advocates who amplify your message organically."
+    },
+    {
+      "section_type": "platforms",
+      "title": "Platforms We Serve",
+      "subtitle": "",
+      "content": "Different platforms serve different purposes. We help you choose the right mix:\n\n<h3>Facebook</h3>\nThe largest platform with diverse demographics. Ideal for brand building, community engagement, and advertising.\n\n<h3>Instagram</h3>\nExcels for visual brands—fashion, food, travel, fitness. Its younger demographic makes it essential for reaching millennial and Gen Z audiences.\n\n<h3>LinkedIn</h3>\nThe platform for B2B businesses. Offers unique opportunities for professional content, thought leadership, and B2B lead generation.\n\n<h3>TikTok</h3>\nHas exploded in popularity, especially among younger audiences. For businesses targeting Gen Z, TikTok provides unmatched reach.\n\n<h3>Twitter/X</h3>\nServes real-time engagement and customer service. Valuable for brands that can maintain active, timely presence.\n\n<h3>Pinterest</h3>\nDrives discovery for e-commerce. Users actively research purchases on Pinterest, making it valuable for retail businesses."
+    },
+    {
+      "section_type": "strategy",
+      "title": "Our Social Media Strategy Approach",
+      "subtitle": "",
+      "content": "Effective social media requires strategic planning:\n\n<h3>Audience Research</h3>\nWe identify your target audiences, understand their behaviors, and determine which platforms they use. This research forms the foundation of your strategy.\n\n<h3>Content Strategy</h3>\nWe develop content themes, posting schedules, and content calendars tailored to your audience. Content aligns with your brand voice and business objectives.\n\n<h3>Visual Design</h3>\nConsistent, professional visuals distinguish your brand. We create on-brand graphics that capture attention and communicate effectively.\n\n<h3>Engagement Planning</h3>\nWe develop response strategies for comments, messages, and mentions. Consistent engagement builds community and encourages continued interaction.\n\n<h3>Analytics and Optimization</h3>\nWe track performance metrics and continuously optimize your approach. Data-driven decisions improve results over time."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Our social media clients typically see improvements in key metrics:\n\n<h3>Increased Followers</h3>\nGrowth in engaged followers who are genuinely interested in your brand.\n\n<h3>Higher Engagement</h3>\nLikes, comments, shares, and saves indicate content resonates with your audience.\n\n<h3>More Website Traffic</h3>\nEach post drives qualified traffic to your website.\n\n<h3>Brand Awareness</h3>\nIncreased visibility and recognition among your target audience.\n\n<h3>Lead Generation</h3>\nDirect leads through social channels when properly optimized.\n\n<h3>Community Growth</h3>\nA loyal following that becomes brand advocates."
+    }
+  ],
+  "pricing": {
+    "intro": "Social Media Pricing",
+    "description": "Flexible plans for businesses of all sizes.",
+    "plans": [
+      {"name": "Starter", "price": "$197/month", "description": "For small businesses", "features": ["2 platforms", "8 posts/month", "Basic analytics", "Community response", "Monthly content calendar"]},
+      {"name": "Professional", "price": "$397/month", "description": "For growing businesses", "features": ["4 platforms", "16 posts/month", "Full analytics", "Ad management up to $500", "Content creation", "Engagement monitoring"], "popular": true},
+      {"name": "Premium", "price": "$797/month", "description": "For established brands", "features": ["All platforms", "Unlimited posts", "Advanced analytics", "Unlimited ad spend", "Dedicated manager", "Crisis management"]}
+    ]
+  },
+  "faqs": [
+    {"question": "Which platforms should my business be on?", "answer": "It depends on your audience. We analyze your target market and recommend platforms where your customers spend time. Not every business needs to be on every platform."},
+    {"question": "How often should I post?", "answer": "Optimal posting frequency varies by platform and audience. We develop a customized posting schedule based on your audience's behavior and your capacity to engage with responses."},
+    {"question": "How long until I see results?", "answer": "Social media growth is gradual. Most clients see increased engagement within 2-3 months. Significant follower growth and traffic impact typically appear within 4-6 months."},
+    {"question": "Can you manage paid social advertising?", "answer": "Yes! Our Professional and Premium plans include ad management. We create targeted campaigns that maximize your advertising budget."},
+    {"question": "Do I need to provide content ideas?", "answer": "We can generate content ideas or work with ideas you provide. Our team handles creation, scheduling, and posting—you simply approve the content calendar."}
+  ]
+}

@@ -1,0 +1,218 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SEO Score Checker | Free SEO Tool | Omni Path Marketing{% endblock %}
+{% block meta_description %}Free SEO score checker tool. Check your website's SEO score and get improvement recommendations.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">Free Tool</span>
+                <h1 class="fw-bold mb-4" style="font-size: 2.5rem; color: white;">SEO Score Checker</h1>
+                <p class="lead mb-4" style="font-size: 1.125rem; color: rgba(255,255,255,0.9);">Check your website's SEO score and get actionable recommendations to improve your rankings.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#tool-form" class="btn btn-light btn-lg px-4">Check Score</a>
+                    <a href="/tools/" class="btn btn-outline-light btn-lg px-4">All Tools</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="text-center">
+                    <div class="display-1 text-white mb-3"><i class="fas fa-clipboard-check"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tool Section -->
+<section id="tool-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Check Your SEO Score</h2>
+                            <p class="text-muted">Enter your page details to analyze SEO performance</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Page URL</label>
+                            <input type="url" id="seoUrl" class="form-control" placeholder="https://example.com/page">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Target Keyword</label>
+                            <input type="text" id="seoKeyword" class="form-control" placeholder="Your main keyword">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Page Title</label>
+                            <input type="text" id="seoTitle" class="form-control" placeholder="Your page title">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Meta Description</label>
+                            <textarea id="seoMeta" class="form-control" rows="3" placeholder="Your meta description"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100" onclick="checkSeoScore()">
+                            <i class="fas fa-search me-2"></i>Check Score
+                        </button>
+
+                        <!-- Results -->
+                        <div id="seoResult" class="mt-4" style="display: none;">
+                            <hr>
+                            <div class="text-center mb-4">
+                                <div class="display-1 fw-bold" id="seoScoreValue">0</div>
+                                <div class="text-muted">SEO Score</div>
+                            </div>
+                            <div class="mb-3">
+                                <h5>Recommendations:</h5>
+                                <ul id="seoRecommendations" class="list-group"></ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">What We Check</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-heading fs-2 text-primary mb-3"></i>
+                        <h5>Title Tags</h5>
+                        <p class="text-muted small mb-0">Optimal length and keyword placement</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-align-left fs-2 text-primary mb-3"></i>
+                        <h5>Meta Description</h5>
+                        <p class="text-muted small mb-0">Engaging descriptions that convert</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-keyboard fs-2 text-primary mb-3"></i>
+                        <h5>Keyword Usage</h5>
+                        <p class="text-muted small mb-0">Strategic keyword placement</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt fs-2 text-primary mb-3"></i>
+                        <h5>Content Quality</h5>
+                        <p class="text-muted small mb-0">Valuable and relevant content</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Need Expert Help?</h2>
+        <p class="mb-4">Our SEO team can help improve your score</p>
+        <a href="/contact/" class="btn btn-light btn-lg px-5">Get Started</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function checkSeoScore() {
+    const url = document.getElementById('seoUrl').value;
+    const keyword = document.getElementById('seoKeyword').value.toLowerCase();
+    const title = document.getElementById('seoTitle').value;
+    const meta = document.getElementById('seoMeta').value;
+
+    let score = 0;
+    let recommendations = [];
+
+    // Title check
+    if (title) {
+        score += 25;
+        if (title.toLowerCase().includes(keyword)) {
+            score += 15;
+        } else {
+            recommendations.push('Include your target keyword in the title');
+        }
+    } else {
+        recommendations.push('Add a page title');
+    }
+
+    // Meta description check
+    if (meta) {
+        score += 20;
+        if (meta.length >= 120 && meta.length <= 160) {
+            score += 10;
+        } else {
+            recommendations.push('Meta description should be 120-160 characters');
+        }
+        if (meta.toLowerCase().includes(keyword)) {
+            score += 10;
+        } else {
+            recommendations.push('Include target keyword in meta description');
+        }
+    } else {
+        recommendations.push('Add a meta description');
+    }
+
+    // URL check
+    if (url) {
+        score += 15;
+        if (url.toLowerCase().includes(keyword.replace(/\s+/g, '-'))) {
+            score += 10;
+        }
+    }
+
+    // Keyword check
+    if (keyword) {
+        score += 20;
+    }
+
+    score = Math.min(score, 100);
+
+    document.getElementById('seoScoreValue').textContent = score;
+
+    const scoreEl = document.getElementById('seoScoreValue');
+    if (score >= 70) {
+        scoreEl.className = 'display-1 fw-bold text-success';
+    } else if (score >= 40) {
+        scoreEl.className = 'display-1 fw-bold text-warning';
+    } else {
+        scoreEl.className = 'display-1 fw-bold text-danger';
+    }
+
+    const recList = document.getElementById('seoRecommendations');
+    recList.innerHTML = '';
+    if (recommendations.length === 0) {
+        recList.innerHTML = '<li class="list-group-item text-success">Great job! No major issues found.</li>';
+    } else {
+        recommendations.forEach(rec => {
+            recList.innerHTML += `<li class="list-group-item">${rec}</li>`;
+        });
+    }
+
+    document.getElementById('seoResult').style.display = 'block';
+}
+</script>
+{% endblock %}

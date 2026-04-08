@@ -1,0 +1,66 @@
+{
+  "service_name": "Enterprise Package",
+  "slug": "enterprise-package",
+  "category": "Packages",
+  "category_url": "/services/packages/",
+  "meta_title": "Enterprise Marketing Package | Full-Service Marketing | Omni Path Marketing",
+  "meta_description": "Enterprise marketing package for established businesses. Full-service digital marketing with SEO, social media, content, and advertising management.",
+  "meta_keywords": "enterprise marketing package, full service marketing, established business marketing",
+  "hero_title": "Enterprise Marketing Package",
+  "hero_subtitle": "Full-service marketing for established businesses ready for dominant market presence.",
+  "description": "The Enterprise Package provides full-service marketing for established businesses. Everything you need for comprehensive market dominance.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "Who is the Enterprise Package For?",
+      "subtitle": "",
+      "content": "The Enterprise Package is designed for established businesses seeking dominant market presence. If your business is successful and you want to solidify your position, expand significantly, and outpace competitors, this comprehensive package provides everything you need.\n\nEstablished businesses face unique challenges—maintaining market share, continuing growth, and defending against competitors. The Enterprise Package provides comprehensive marketing that addresses these challenges. Full SEO coverage ensures visibility at every level, all social platforms maximize reach, expanded content builds authority, and advertising management accelerates growth.\n\nThis package represents significant marketing investment, but the returns are substantial. Enterprise Package clients typically see dominant market positions, significant revenue growth, and sustainable competitive advantages. It's designed for businesses that understand marketing's role in continued success.\n\nIf your business is established, successful, and ambitious, the Enterprise Package provides the comprehensive marketing infrastructure for continued growth and market leadership."
+    },
+    {
+      "section_type": "includes",
+      "title": "What's Included in the Enterprise Package",
+      "subtitle": "",
+      "content": "The Enterprise Package includes comprehensive marketing services:\n\n<h3>Full SEO Coverage</h3>: Complete SEO strategy including technical SEO, content SEO, link building, and ongoing optimization. We cover every aspect of search visibility.\n\n<h3>All Social Platforms</h3>: We manage your presence across all major social media platforms. Maximum reach across every channel where your audience spends time.\n\n<h3>ContentFlow (Premium)</h3>: Automated content posting at the highest level. 12 pieces of content monthly keep your presence consistently strong across all platforms.\n\n<h3>Content Creation (8 Blogs/Month)</h3>: Extensive content creation builds significant authority. 8 SEO-optimized blog posts monthly attract substantial traffic and establish expertise.\n\n<h3>GBP Management</h3>: Complete Google Business Profile management ensures strong local presence. Regular posts, reviews, photos, and Q&A management.\n\n<h3>Ads Management</h3>: Professional advertising management amplifies your reach. We manage campaigns on Google, Facebook, or other platforms to drive additional traffic and leads.\n\n<h3>Weekly Reports</h3>: Detailed weekly reports keep you informed with comprehensive metrics, trends, and strategic recommendations.\n\n<h3>Priority Support</h3>: Fast response times and priority access for all your questions and needs."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Benefits of the Enterprise Package",
+      "subtitle": "",
+      "content": "The Enterprise Package delivers significant value:\n\n<h3>Market Dominance</h3>: Comprehensive marketing establishes dominant market presence.\n\n<h3>Maximum Visibility</h3>: Appear prominently across all search and social channels.\n\n<h3>Authority Building</h3>: Extensive content establishes unparalleled industry authority.\n\n<h3>Lead Generation</h3>: Substantially more leads from multiple channels.\n\n<h3>Competitive Advantage</h3>: Outrank and outperform competitors consistently.\n\n<h3>Revenue Growth</h3>: Marketing that directly contributes to significant revenue growth.\n\n<h3>Comprehensive Insights</h3>: Weekly reporting provides detailed insights for strategic decisions."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Enterprise Package clients typically see:\n\n<h3>Dominant Market Position</h3>: Establish leadership position in your market.\n\n<h3>Substantial Traffic</h3>: Significantly increased website traffic from all channels.\n\n<h3>Lead Growth</h3>: Major increase in qualified leads and conversions.\n\n<h3>Revenue Impact</h3>: Direct contribution to significant revenue growth.\n\n<h3>Competitive Leadership</h3>: Outperform competitors in search and social.\n\n<h3>Brand Authority</h3>: Recognized as the dominant authority in your industry.\n\n<h3>Sustainable Growth</h3>: Foundation for continued long-term success."
+    }
+  ],
+  "pricing": {
+    "intro": "Enterprise Package Pricing",
+    "description": "Full-service marketing for established businesses.",
+    "plans": [
+      {
+        "name": "Enterprise",
+        "price": "$1,497/month",
+        "description": "For established businesses",
+        "features": [
+          "Full SEO coverage",
+          "All social platforms management",
+          "ContentFlow (Premium - 12 posts/month)",
+          "Content creation (8 blogs/month)",
+          "GBP management",
+          "Ads management (one platform)",
+          "Weekly performance reports",
+          "Priority support"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How does this differ from Professional Package?", "answer": "Enterprise includes all social platforms (not 4), ContentFlow Premium (12 posts), 8 blogs (not 4), plus ads management, and weekly reports (not bi-weekly)."},
+    {"question": "What advertising is included?", "answer": "One platform is included—Google Ads, Facebook/Instagram, or LinkedIn. Additional platforms available at extra cost."},
+    {"question": "How long until I see results?", "answer": "Most clients see significant results within 3-6 months. Full impact typically within 6-12 months."},
+    {"question": "Can I add more services?", "answer": "Absolutely! We can customize packages to include additional services as needed."},
+    {"question": "What's the commitment?", "answer": "All packages are month-to-month. No long-term contracts required."}
+  ]
+}

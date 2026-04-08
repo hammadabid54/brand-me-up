@@ -1,0 +1,97 @@
+{
+  "service_name": "LinkedIn Ads",
+  "slug": "linkedin-ads",
+  "category": "Ads",
+  "category_url": "/services/ads/",
+  "meta_title": "LinkedIn Ads | B2B Advertising | Omni Path Marketing",
+  "meta_description": "Expert LinkedIn advertising services for B2B. Reach professionals and decision-makers with targeted campaigns that drive leads and grow your business.",
+  "meta_keywords": "LinkedIn ads, B2B advertising, LinkedIn marketing, professional targeting, B2B leads",
+  "hero_title": "LinkedIn Advertising Services",
+  "hero_subtitle": "Reach B2B decision-makers and grow your business on LinkedIn.",
+  "description": "Professional LinkedIn advertising that connects with professionals and decision-makers. We create B2B campaigns that deliver results.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is LinkedIn Advertising and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "LinkedIn Ads is the advertising platform for the world's largest professional network—with over 900 million members. Unlike general social media platforms, LinkedIn is specifically designed for professionals and businesses. This makes it the ideal platform for B2B marketing—reaching decision-makers, influencers, and professionals in specific industries.\n\nLinkedIn offers unique targeting capabilities unavailable elsewhere. You can target users based on job title, company size, industry, seniority level, professional skills, and more. This precision makes LinkedIn advertising exceptionally valuable for businesses selling to other businesses.\n\nThe cost per lead on LinkedIn is typically higher than other platforms, but the quality of leads is often superior. When you reach a CEO, CFO, or department director directly, you're reaching someone with the authority to make purchasing decisions. For B2B businesses, this targeting precision justifies the investment.\n\nLinkedIn offers various ad formats including sponsored content, text ads, dynamic ads, and InMail messages. Each format serves different purposes—from building brand awareness to generating high-quality leads.\n\nOur LinkedIn advertising services create campaigns that connect with your target professionals and deliver measurable business results."
+    },
+    {
+      "section_type": "targeting",
+      "title": "LinkedIn's Unique B2B Targeting",
+      "subtitle": "",
+      "content": "LinkedIn offers targeting options specifically designed for B2B:\n\n<h3>Job Title Targeting</h3>Reach users by specific job titles—CEO, CFO, Marketing Director, IT Manager, and thousands more.\n\n<h3>Company Targeting</h3>Target employees at specific companies or companies of certain sizes.\n\n<h3>Industry Targeting</h3>Reach professionals in specific industries—technology, healthcare, finance, manufacturing, and more.\n\n<h3>Seniority Level</h3>Target decision-makers, managers, directors, or entry-level professionals.\n\n<h3>Skills Targeting</h3>Reach professionals with specific skills relevant to your offering.\n\n<h3>Group Membership</h3>Target members of LinkedIn groups related to your industry.\n\n<h3>Geographic Targeting</h3>Focus on specific locations—countries, regions, or cities.\n\n<h3>Lookalike Audiences</h3>Find professionals similar to your best customers or leads."
+    },
+    {
+      "section_type": "campaigns",
+      "title": "Types of LinkedIn Campaigns We Create",
+      "subtitle": "",
+      "content": "We create various campaign types for B2B objectives:\n\n<h3>Sponsored Content</h3>Promoted posts that appear in LinkedIn feeds. Great for brand awareness and engagement.\n\n<h3>Text Ads</h3>Simple text-based ads that appear in strategic locations. Cost-effective for lead generation.\n\n<h3>Dynamic Ads</h3>Personalized ads that automatically customize content for each viewer.\n\n<h3>Lead Gen Forms</h3>Pre-filled forms that make lead capture easy. Users can submit information with one click.\n\n<h3>InMail Campaigns</h3>Direct messages sent to targeted professionals. High response rates for personalized outreach.\n\n<h3>Video Ads</h3>Promoted video content for brand building and engagement.\n\n<h3>Event Ads</h3>Promote webinars, conferences, or virtual events to relevant professionals.\n\n<h3>Carousel Ads</h3>Multiple-image ads that tell a story or showcase multiple products."
+    },
+    {
+      "section_type": "strategy",
+      "title": "B2B LinkedIn Advertising Strategy",
+      "subtitle": "",
+      "content": "Effective LinkedIn advertising requires B2B-specific strategies:\n\n<h3>Decision-Maker Focus</h3>We target the specific roles most likely to make purchasing decisions.\n\n<h3>Industry Specialization</h3>We focus on industries where your products or services provide value.\n\n<h3>Account-Based Marketing</h3>We can target specific companies for account-based campaigns.\n\n<h3>Lead Quality Priority</h3>We optimize for lead quality, not just quantity.\n\n<h3>Content Alignment</h3>We align ad content with the professional context of LinkedIn.\n\n<h3>Nurture Integration</h3>We integrate LinkedIn leads with your broader sales process.\n\n<h3>Attribution Tracking</h3>We track how LinkedIn leads move through your sales funnel."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from LinkedIn Ads?",
+      "subtitle": "",
+      "content": "Our LinkedIn advertising clients typically see:\n\n<h3>Access to Decision-Makers</h3>Reach professionals with purchasing authority.\n\n<h3>High-Quality Leads</h3>Generate leads with higher average deal values.\n\n<h3>Brand Authority</h3>Build recognition among industry professionals.\n\n<h3>Thought Leadership</h3>Position your brand as an industry leader.\n\n<h3>Event Promotion</h3>Successfully promote webinars, conferences, and events.\n\n<h3>Recruitment Support</h3>If needed, reach potential job candidates.\n\n<h3>B2B Focus</h3>Connect with businesses rather than consumers."
+    }
+  ],
+  "pricing": {
+    "intro": "LinkedIn Ads Pricing",
+    "description": "Flexible management plans for B2B advertising.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$197/month",
+        "description": "For small B2B budgets",
+        "features": [
+          "Campaign setup",
+          "Professional targeting",
+          "Ad creative design",
+          "$500 monthly ad spend",
+          "Monthly optimization",
+          "Basic reporting"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$397/month",
+        "description": "For growing B2B businesses",
+        "features": [
+          "Lead generation forms",
+          "InMail campaigns",
+          "A/B testing",
+          "$2,000 monthly ad spend",
+          "Bi-weekly optimization",
+          "Advanced reporting"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$697/month",
+        "description": "For established B2B companies",
+        "features": [
+          "Full LinkedIn ad suite",
+          "Event promotions",
+          "Account-based marketing",
+          "Unlimited ad spend",
+          "Weekly optimization",
+          "Dedicated account manager"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "Is LinkedIn advertising only for B2B?", "answer": "While ideal for B2B, LinkedIn can work for B2C in specific cases—especially for high-ticket or professional services."},
+    {"question": "How much should I spend on LinkedIn ads?", "answer": "LinkedIn typically has higher costs than other platforms. Budget depends on your goals, but we recommend at least $1,000/month for meaningful results."},
+    {"question": "What makes LinkedIn ads different?", "answer": "LinkedIn's professional targeting—job title, company, industry—allows you to reach decision-makers directly."},
+    {"question": "How long until I see results?", "answer": "Most campaigns see initial results within 1-2 weeks. Building significant data typically takes 4-6 weeks."},
+    {"question": "Can you help with LinkedIn company pages?", "answer": "Yes, we can help optimize your LinkedIn presence to support your advertising efforts."}
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "service_name": "GBP Management",
+  "slug": "gbp-management",
+  "category": "GBP",
+  "category_url": "/services/gbp/",
+  "meta_title": "Google Business Profile Management | Ongoing Management | Omni Path Marketing",
+  "meta_description": "Ongoing Google Business Profile management services. Regular posts, photo updates, and review management to keep your profile active.",
+  "meta_keywords": "GBP management, Google My Business management, local listing management, review management",
+  "hero_title": "Google Business Profile Management",
+  "hero_subtitle": "Keep your profile active and optimized with ongoing management.",
+  "description": "Ongoing Google Business Profile management that keeps your listing fresh and engaging. We handle posts, photos, and reviews.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Google Business Profile Management and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Google Business Profile management is the ongoing process of maintaining and updating your listing to ensure it remains effective at attracting customers. A one-time setup is just the beginning—regular activity and attention are essential for continued success in local search.\n\nGoogle's algorithms favor active profiles. Businesses that post regularly, respond to reviews, and update information consistently rank higher in local search results. Without ongoing management, even well-set-up profiles lose visibility over time.\n\nConsider what an inactive profile signals to potential customers. When they see outdated information, no recent posts, and unanswered reviews, they may question whether the business is still operating. In contrast, an active profile with regular posts and engagement signals a thriving business worth patronizing.\n\nManagement also includes review management—one of the most important aspects of local SEO. Studies show that reviews significantly impact purchasing decisions, and how you respond to reviews affects both potential customers and your search rankings. Professional review management protects and enhances your online reputation.\n\nOur Google Business Profile management services handle all of this and more, ensuring your profile remains a powerful customer acquisition tool."
+    },
+    {
+      "section_type": "importance",
+      "title": "Why Ongoing Management is Essential",
+      "subtitle": "",
+      "content": "Regular management provides crucial benefits:\n\n<h3>Algorithm Favor</h3>Google prioritizes active profiles in local search results. Regular posting and engagement improve your rankings.\n\n<h3>Customer Expectations</h3>Modern consumers expect current information. Outdated hours or posts signal neglect.\n\n<h3>Review Impact</h3>Active review management—both responding to reviews and encouraging new ones—significantly impacts purchasing decisions.\n\n<h3>Competitive Advantage</h3>Many competitors neglect their profiles. Consistent management gives you an edge.\n\n<h3>Fresh Content</h3>Regular posts keep your brand visible in search results and provide opportunities to showcase offers.\n\n<h3>Reputation Protection</h3>Professional responses to negative reviews protect your brand reputation.\n\n<h3>Insights Utilization</h3>Ongoing management allows you to track and respond to customer behavior insights."
+    },
+    {
+      "section_type": "services",
+      "title": "What's Included in Our Management Service",
+      "subtitle": "",
+      "content": "Our management packages include everything needed for an active profile:\n\n<h3>Regular Posts</h3>We create and publish posts about offers, events, news, and updates. Each post is an opportunity to engage potential customers.\n\n<h3>Photo Updates</h3>Regular photo uploads keep your profile fresh. We add new images showing your business, team, products, and services.\n\n<h3>Review Monitoring</h3>We monitor your reviews daily, alerting you to new feedback immediately.\n\n<h3>Review Responses</h3>Professional responses to all reviews—positive and negative. We thank happy customers and address concerns professionally.\n\n<h3>Q&A Management</h3>We monitor and respond to questions asked through your profile.\n\n<h3>Information Updates</h3>When your hours, services, or other information change, we update your profile promptly.\n\n<h3>Insights Reporting</h3>Monthly reports showing how customers find and interact with your profile.\n\n<h3>Crisis Management</h3>If negative reviews or issues arise, we provide immediate response support."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Management Process",
+      "subtitle": "",
+      "content": "We follow a systematic approach to ongoing management:\n\n<h3>Daily Monitoring</h3>We check your profile daily for new reviews, questions, and updates.\n\n<h3>Weekly Posting</h3>Regular posts keep your profile active and provide fresh content for searchers.\n\n<h3>Bi-Weekly Photos</h3>New photos are added regularly to showcase your business.\n\n<h3>Review Response</h3>All reviews receive professional responses within 24-48 hours.\n\n<h3>Monthly Reporting</h3>Detailed reports show performance trends and opportunities.\n\n<h3>Strategy Calls</h3>Regular calls to discuss strategy and address any concerns.\n\n<h3>Continuous Optimization</h3>We identify and implement improvements to enhance performance."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Ongoing Management?",
+      "subtitle": "",
+      "content": "Our management clients typically see significant improvements:\n\n<h3>Improved Rankings</h3>Active profiles rank higher in local search results.\n\n<h3>More Reviews</h3>Proactive management encourages satisfied customers to leave reviews.\n\n<h3>Better Reputation</h3>Professional review responses protect and enhance your online reputation.\n\n<h3>Increased Engagement</h3>Regular posts and updates keep customers engaged with your business.\n\n<h3>More Leads</h3>Better visibility and reputation translate to more phone calls, direction requests, and website visits.\n\n<h3>Customer Trust</h3>An active, well-managed profile builds trust with potential customers."
+    }
+  ],
+  "pricing": {
+    "intro": "GBP Management Pricing",
+    "description": "Monthly management for ongoing success.",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "$67/month",
+        "description": "For businesses wanting activity",
+        "features": [
+          "2 posts per month",
+          "Photo updates",
+          "Basic review responses",
+          "Monthly insights report"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$97/month",
+        "description": "For growing businesses",
+        "features": [
+          "4 posts per month",
+          "Weekly photo updates",
+          "Full review management",
+          "Q&A management",
+          "Bi-weekly insights",
+          "Priority support"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$147/month",
+        "description": "For established businesses",
+        "features": [
+          "8 posts per month",
+          "Daily monitoring",
+          "Crisis management support",
+          "Monthly strategy calls",
+          "Competitor analysis",
+          "Advanced reporting"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How often do you post?", "answer": "Posting frequency depends on your plan—Basic includes 2 posts monthly, Professional includes 4, and Premium includes 8."},
+    {"question": "How quickly do you respond to reviews?", "answer": "We aim to respond to all reviews within 24-48 hours."},
+    {"question": "Can I approve content before posting?", "answer": "Yes, we can set up a review workflow where you approve posts before they go live."},
+    {"question": "What happens if I get a negative review?", "answer": "We respond professionally to address the concern, demonstrating your commitment to customer satisfaction."},
+    {"question": "Do I need to provide content ideas?", "answer": "We can create content from scratch or work with ideas you provide. Either way, we make it easy."}
+  ]
+}

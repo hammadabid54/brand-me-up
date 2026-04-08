@@ -1,0 +1,96 @@
+{
+  "service_name": "Video Production",
+  "slug": "video-production",
+  "category": "Content",
+  "category_url": "/services/content/",
+  "meta_title": "Video Production Services | Professional Video Content | Omni Path Marketing",
+  "meta_description": "Professional video production for marketing. Explainer videos, product demos, and promotional videos that engage your audience and drive results.",
+  "meta_keywords": "video production, video marketing, explainer video, promotional video, product demo",
+  "hero_title": "Video Production Services",
+  "hero_subtitle": "Professional video content for your marketing. Engage your audience with compelling visual storytelling.",
+  "description": "Professional video production services that capture your brand story. From explainer videos to product demos, we create videos that convert.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Video Production and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Video production is the process of creating video content for marketing purposes. This includes everything from planning and scripting to filming and editing. In today's digital landscape, video has become one of the most powerful tools for engaging audiences and driving conversions. Studies show that consumers are more likely to watch a video about a product than read about it, making video production essential for modern businesses.\n\nThe statistics around video marketing are remarkable. Including video on landing pages can increase conversion rates by up to 80%. Video emails increase click-through rates by 200-300%. And social media posts with video receive 48% more views than those without. These numbers demonstrate why businesses that invest in video production see significant returns.\n\nVideo content takes many forms: explainer videos that introduce your business, product demonstrations that show features in action, customer testimonials that build trust, brand videos that tell your story, and social media content that engages followers. Each type serves different purposes and reaches audiences at different stages of the buyer's journey.\n\nOur video production services handle every aspect of creating professional marketing videos. We bring your vision to life with high-quality production that reflects the professionalism of your brand."
+    },
+    {
+      "section_type": "types",
+      "title": "Types of Videos We Produce",
+      "subtitle": "",
+      "content": "We create various video types to meet your marketing needs:\n\n<h3>Explainer Videos</h3>\nShort, engaging videos that explain what your business does and why customers should choose you. These videos simplify complex concepts and capture attention quickly.\n\n<h3>Product Demonstrations</h3>\nDetailed videos showing your product or service in action. These demonstrations help prospects understand features and benefits, accelerating the decision process.\n\n<h3>Customer Testimonials</h3>\nAuthentic testimonials from satisfied customers that build trust and credibility. Real stories from real customers are powerful social proof.\n\n<h3>Brand Stories</h3>\nCinematic videos that tell your company's story—your history, values, and mission. These videos build emotional connections with your audience.\n\n<h3>Training Videos</h3>\nEducational content for customers or employees. These videos provide value while demonstrating expertise.\n\n<h3>Social Media Videos</h3>\nShort-form content optimized for social platforms. These videos grab attention in scrolling feeds and encourage engagement.\n\n<h3>Event Coverage</h3>\nProfessional recording of events, conferences, or webinars. Extend the reach of your events beyond attendees."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Video Production Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive process for every video project:\n\n<h3>Discovery</h3>\nWe begin by understanding your goals, target audience, and brand identity. This research informs creative direction and ensures the final video meets objectives.\n\n<h3>Script Development</h3>\nOur team writes a detailed script that conveys your message effectively. We balance information with engagement, ensuring viewers stay interested.\n\n<h3>Storyboarding</h3>\nWe create visual blueprints that plan each scene. This planning ensures efficient production and clear visual communication.\n\n<h3>Production</h3>\nOur professional crew handles filming with high-quality equipment. We ensure excellent lighting, audio, and visuals that reflect your brand quality.\n\n<h3>Post-Production</h3>\nOur editors transform raw footage into polished videos. This includes editing, color grading, motion graphics, and sound design.\n\n<h3>Review and Revisions</h3>\nYou review the draft and request changes. We refine until the video meets your expectations.\n\n<h3>Final Delivery</h3>\nApproved videos are delivered in formats optimized for your intended platforms."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Why Video Production Matters for Your Business",
+      "subtitle": "",
+      "content": "Professional video production delivers significant business benefits:\n\n<h3>Increased Engagement</h3>\nVideo captures attention more effectively than text or images. Viewers stay engaged longer and remember more from videos.\n\n<h3>Better Conversions</h3>\nVideo on landing pages significantly increases conversion rates. Prospects who watch videos are more likely to become customers.\n\n<h3>Improved SEO</h3>\nSearch engines favor video content. Websites with video rank better and appear more frequently in search results.\n\n<h3>Enhanced Credibility</h3>\nProfessional video signals quality and professionalism. It builds trust with prospects before they even contact you.\n\n<h3>Broader Reach</h3>\nVideo performs exceptionally well on social media, extending your content's organic reach significantly.\n\n<h3>Versatile Content</h3>\nVideo can be used across many channels—website, social media, email, presentations—providing excellent return on investment.\n\n<h3>Memorable Messaging</h3>\nViewers remember 95% of a message when they watch it, compared to only 10% when reading it."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Video Production?",
+      "subtitle": "",
+      "content": "Our video production clients typically see significant improvements:\n\n<h3>Increased Engagement</h3>\nVideo content receives more likes, comments, and shares than other content types.\n\n<h3>Higher Conversion Rates</h3>\nLanding pages with video convert visitors at significantly higher rates.\n\n<h3>Better Brand Recall</h3>\nVideo creates lasting impressions that keep your brand top-of-mind.\n\n<h3>Improved Social Reach</h3>\nVideo content is shared more frequently, expanding your audience.\n\n<h3>Enhanced Trust</h3>\nProfessional video builds credibility and trust with prospects.\n\n<h3>Longer Website Visits</h3>\nVideo keeps visitors on your site longer, improving engagement metrics."
+    }
+  ],
+  "pricing": {
+    "intro": "Video Production Pricing",
+    "description": "Flexible pricing based on video complexity and length.",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "$297/video",
+        "description": "For simple video needs",
+        "features": [
+          "Up to 30 seconds",
+          "Professional script included",
+          "Basic editing",
+          "Standard graphics",
+          "1 revision round"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$597/video",
+        "description": "For comprehensive videos",
+        "features": [
+          "1-2 minutes",
+          "Full script and storyboard",
+          "Premium editing",
+          "Motion graphics",
+          "Music and sound design",
+          "2 revision rounds"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$997/video",
+        "description": "For full production",
+        "features": [
+          "2-5 minutes",
+          "Full production team",
+          "Advanced animation",
+          "Custom graphics",
+          "Multiple locations",
+          "Unlimited revisions"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How long does video production take?", "answer": "Timeline depends on complexity. Basic videos take 1-2 weeks, while premium productions may take 3-4 weeks."},
+    {"question": "What do I need to provide?", "answer": "You'll provide information about your business, goals, and messaging. Our team handles everything else."},
+    {"question": "Where do you film?", "answer": "We can film at our studio, your location, or arrange for location filming based on your needs."},
+    {"question": "Can you use our existing footage?", "answer": "Yes, we can incorporate existing footage into new videos. We'll assess what works during the discovery phase."},
+    {"question": "What formats will I receive?", "answer": "Videos are delivered in multiple formats optimized for different platforms—web, social media, presentations, etc."}
+  ]
+}

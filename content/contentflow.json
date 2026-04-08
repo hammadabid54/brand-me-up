@@ -1,0 +1,96 @@
+{
+  "service_name": "ContentFlow",
+  "slug": "contentflow",
+  "category": "Content",
+  "category_url": "/services/content/",
+  "meta_title": "ContentFlow | Automated Content Posting Service | Omni Path Marketing",
+  "meta_description": "ContentFlow automated content posting service. Keep your social media, website, and Google Business Profile active with consistent content. Starting at just $50/month.",
+  "meta_keywords": "ContentFlow, content posting, automated posting, social media automation, content service",
+  "hero_title": "ContentFlow - Automated Content Posting",
+  "hero_subtitle": "Keep your online presence active with automated content delivery. Consistent, quality content without the time investment.",
+  "description": "ContentFlow is our automated content posting service. We create and post quality content to your social media, website blog, and Google Business Profile on a regular schedule.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is ContentFlow and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "ContentFlow is our hassle-free content posting service designed for businesses that want to maintain an active online presence without the time investment of content creation. We create and post quality content to your social media profiles, website blog, and Google Business Profile on a regular schedule, ensuring your business stays visible to potential customers.\n\n<h3>Why Consistency Matters</h3>\nIn the digital age, consistency matters more than perfection. Businesses that post regularly maintain better visibility in social media algorithms and search results. However, creating fresh content consistently requires significant time and effort—resources that many business owners simply don't have. ContentFlow solves this problem by handling content creation and posting for you.\n\nThe concept is simple: you choose your preferred platforms and posting frequency, and we handle the rest. We create original content tailored to your industry and brand, schedule it according to your preferences, and post it automatically. You get the benefits of an active online presence without the daily burden of content creation.\n\nContentFlow is particularly valuable for small businesses, franchise owners, and busy professionals who want to maintain their digital presence but can't justify spending hours each week on content creation. It's also excellent for businesses that have tried creating content internally but found it difficult to maintain consistency."
+    },
+    {
+      "section_type": "how_it_works",
+      "title": "How ContentFlow Works",
+      "subtitle": "",
+      "content": "Our content posting process is designed for simplicity and effectiveness:\n\n<h3>1. Onboarding</h3>\nWe start by learning about your business—your industry, target audience, brand voice, and goals. This information guides our content creation to ensure relevance.\n\n<h3>2. Content Creation</h3>\nOur team creates original posts tailored to your brand. We research industry topics, craft compelling messages, and design visuals that capture attention.\n\n<h3>3. Scheduling</h3>\nWe post according to your chosen schedule—weekly, bi-weekly, or monthly depending on your plan. Posts are scheduled at optimal times for your audience.\n\n<h3>4. Multi-Platform Distribution</h3>\nDepending on your plan, content posts to your chosen platforms simultaneously, ensuring consistent messaging across channels.\n\n<h3>5. Review Option</h3>\nIf you prefer to review content before posting, we can set up an approval workflow. You'll receive content for review and can approve or request changes.\n\n<h3>6. Ongoing Optimization</h3>\nWhile ContentFlow doesn't include detailed strategy, we monitor performance and adjust content based on what resonates with your audience."
+    },
+    {
+      "section_type": "features",
+      "title": "What's Included in ContentFlow",
+      "subtitle": "",
+      "content": "ContentFlow packages include everything you need for consistent content delivery:\n\n<h3>Custom Content Creation</h3>\nEvery post is original, written specifically for your business. We don't use templates or recycled content—each piece is crafted to address your audience.\n\n<h3>Multi-Platform Posting</h3>\nDepending on your plan, we post to social media profiles, your website blog, and Google Business Profile. This multi-channel presence maximizes visibility.\n\n<h3>Visual Design</h3>\nEach post includes professionally designed visuals. Whether it's images, graphics, or branded templates, your content looks professional.\n\n<h3>Consistent Scheduling</h3>\nYou receive content on a predictable schedule. No more worrying about when you last posted—your presence remains constant.\n\n<h3>Industry-Relevant Topics</h3>\nWe research trending topics in your industry and create content that addresses what your audience cares about.\n\n<h3>Engagement-Optimized</h3>\nContent is designed to encourage interaction—likes, comments, shares—that boost algorithmic visibility.\n\n<h3>Brand Voice Alignment</h3>\nAll content reflects your brand personality and tone, maintaining consistency even as we handle creation."
+    },
+    {
+      "section_type": "platforms",
+      "title": "Platforms We Cover",
+      "subtitle": "",
+      "content": "ContentFlow can post to your most important digital platforms:\n\n<h3>Social Media</h3>\nWe post to Facebook, Instagram, LinkedIn, Twitter, and other platforms based on your audience. Each platform receives content optimized for its format and audience.\n\n<h3>Website Blog</h3>\nRegular blog posts keep your website fresh, which is important for search engine rankings. We create SEO-friendly content that helps your site rank better.\n\n<h3>Google Business Profile</h3>\nRegular posts on your Google Business Profile improve your local visibility. These posts appear in Google Search and Maps, helping local customers find you.\n\nEach platform has unique requirements and best practices. Our team understands these nuances and adapts content accordingly. A LinkedIn post looks different from an Instagram caption, and we handle those differences professionally."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from ContentFlow?",
+      "subtitle": "",
+      "content": "ContentFlow delivers consistent, reliable results:\n\n<h3>Maintained Visibility</h3>\nRegular posting ensures your business stays visible in social feeds and search results. No more dormant profiles that signal neglect.\n\n<h3>Time Savings</h3>\nYou save hours each month on content creation. That time can be redirected to serving customers or growing your business.\n\n<h3>Professional Appearance</h3>\nConsistent, quality content makes your business appear established and professional.\n\n<h3>Local SEO Benefits</h3>\nRegular Google Business Profile posts improve your local search visibility, helping customers find you.\n\n<h3>Website Freshness</h3>\nRegular blog posts signal to search engines that your site is active, potentially improving rankings.\n\nNote: ContentFlow is a content delivery service, not a results-based service. We guarantee consistent posting and quality content, but we don't guarantee specific engagement metrics, ranking improvements, or lead generation. It's designed for businesses that want to maintain presence without premium marketing costs."
+    }
+  ],
+  "pricing": {
+    "intro": "ContentFlow Pricing",
+    "description": "Simple, affordable content posting packages for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "$50/month",
+        "description": "For businesses wanting to start",
+        "features": [
+          "1 platform (choose: Social OR Website OR GBP)",
+          "4 posts per month",
+          "Basic custom content",
+          "Monthly posting schedule",
+          "Standard visuals"
+        ]
+      },
+      {
+        "name": "Standard",
+        "price": "$100/month",
+        "description": "For growing businesses",
+        "features": [
+          "2 platforms (Social + Website OR GBP)",
+          "8 posts per month",
+          "Custom branded content",
+          "Bi-weekly posting schedule",
+          "Professional visuals",
+          "Content approval option"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$150/month",
+        "description": "For maximum visibility",
+        "features": [
+          "All 3 platforms (Social + Website + GBP)",
+          "12 posts per month",
+          "Premium custom content",
+          "Weekly posting schedule",
+          "Priority content creation",
+          "Performance insights"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "What's the difference between ContentFlow and your other content services?", "answer": "ContentFlow focuses purely on consistent content delivery. It doesn't include SEO optimization, detailed analytics, or strategic planning. It's for businesses that want to maintain presence without premium marketing costs."},
+    {"question": "Can I approve content before posting?", "answer": "Yes! We can set up a review workflow where you'll receive content for approval before it goes live. Standard and Premium plans include this option."},
+    {"question": "Do you guarantee any results?", "answer": "No, ContentFlow is a content delivery service. We guarantee consistent posting and quality content creation, but we don't guarantee specific engagement, rankings, or lead generation."},
+    {"question": "Can I change platforms later?", "answer": "Absolutely. You can upgrade your plan or change platform focus at any time. Just contact your account manager."},
+    {"question": "What industries do you create content for?", "answer": "We create content for virtually any industry. During onboarding, we'll learn about your business to ensure relevant, accurate content."}
+  ]
+}

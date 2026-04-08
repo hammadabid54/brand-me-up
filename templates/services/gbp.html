@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}Google Business Profile - AI Marketing Agency{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-light py-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/services/">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Google Business Profile</li>
+            </ol>
+        </nav>
+        <h1 class="section-title">Google Business Profile Services</h1>
+        <p class="lead text-muted">Optimize and manage your Google presence for local search success</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>GBP Setup</h5>
+                        <p class="text-muted">Complete GBP profile setup</p>
+                        <a href="/services/gbp/setup/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>GBP Management</h5>
+                        <p class="text-muted">Ongoing GBP management</p>
+                        <a href="/services/gbp/management/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>GBP Optimization</h5>
+                        <p class="text-muted">Optimize for more visibility</p>
+                        <a href="/services/gbp/optimization/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

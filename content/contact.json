@@ -1,0 +1,56 @@
+{
+  "page_name": "contact",
+  "meta_title": "Contact Us | Get Free Marketing Consultation | Omni Path Marketing",
+  "meta_description": "Contact Omni Path Marketing for a free consultation. Get quotes for SEO, social media, content marketing, and PPC services. Reach out today and start growing your business!",
+  "meta_keywords": "contact digital marketing agency, get quote SEO, marketing consultation, contact SEO expert",
+  "hero_title": "Contact Us",
+  "hero_subtitle": "Ready to grow your business? Let's discuss your marketing strategy.",
+  "contact_info": {
+    "email": "info@brandmeup.com",
+    "phone": "Available on request",
+    "location": "Lahore, Punjab, Pakistan",
+    "hours": "Mon-Sat: 9AM - 6PM PKT"
+  },
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "Let's Grow Your Business Together",
+      "subtitle": "",
+      "content": "Every great business relationship starts with a conversation. Whether you're just starting to explore SEO options or you're ready to take your marketing to the next level, I'm here to help.\n\nWith over 6 years of experience helping 500+ businesses grow their online presence, I understand the challenges you face. I've helped businesses like yours increase traffic, generate leads, and grow revenue through effective digital marketing. Now I'd like to help you achieve the same results.\n\nWhen you reach out, you'll work directly with me—the founder—not an account manager or junior staff. This means you get personalized attention and expertise on every interaction. I don'toutsource your account to people who don't understand your business.\n\nFill out the form on this page and I'll get back to you within 24 hours. We can discuss your goals, analyze your current situation, and outline a strategy that makes sense for your specific needs and budget."
+    },
+    {
+      "section_type": "what_to_expect",
+      "title": "What to Expect When You Contact Us",
+      "subtitle": "",
+      "content": "When you reach out to Omni Path Marketing, here's what happens:\n\nWithin 24 Hours: You'll receive a personal response from me, not an automated message. I'll acknowledge your inquiry and schedule a time to discuss your needs.\n\nFree Consultation: We offer complimentary 30-minute consultations to discuss your marketing goals. This gives us a chance to understand your business and for you to ask questions about our services.\n\nHonest Assessment: I don't promise results I can't deliver. After learning about your situation, I'll give you an honest assessment of what SEO and digital marketing can accomplish for your specific business.\n\nCustom Proposal: If we decide we're a good fit, I'll create a customized proposal outlining recommended services, timeline, and pricing. You're under no obligation.\n\nNo Pressure: There's no hard sell here. I believe in letting our work speak for itself. If you're not ready to move forward, that's perfectly fine. We'll keep the door open for future conversations."
+    },
+    {
+      "section_type": "what_to_share",
+      "title": "Information That Helps Us Prepare",
+      "subtitle": "",
+      "content": "To make the most of our consultation, having the following information ready helps:\n\nYour Website: If you have an existing website, share the URL. I'll review it before our call and come prepared with specific observations.\n\nCurrent Situation: Where is your business currently in terms of online presence? Have you done any SEO or marketing before? What has and hasn't worked?\n\nGoals: What do you want to achieve? More traffic? More leads? More sales? Defining clear goals helps us create effective strategies.\n\nBudget: What's your marketing budget? This helps us recommend services that fit your resources.\n\nTimeline: When do you want to see results? Some businesses need quick wins while others play the long game.\n\nCompetition: Who are your main competitors? Understanding the competitive landscape helps us identify opportunities.\n\nDon't worry if you don't have all this information ready. We'll work through it together during our consultation."
+    },
+    {
+      "section_type": "why_contact",
+      "title": "Reasons to Reach Out",
+      "subtitle": "",
+      "content": "People contact us for many reasons:\n\nNew Business: You're starting a new business and need to establish your online presence from scratch.\n\nGrowth: Your business is established but you want to accelerate growth through digital marketing.\n\nStuck: You've been trying SEO or marketing but aren't seeing results. You need expert help.\n\nCompetitive Pressure: Competitors are outranking you and you need to fight back.\n\nDiversification: You're spending too much on advertising and want to build organic traffic that doesn't require ongoing ad spend.\n\nWhatever your reason, we're here to help. There's no problem too big or too small—every business deserves the opportunity to grow through effective digital marketing."
+    },
+    {
+      "section_type": "promise",
+      "title": "Our Commitment to You",
+      "subtitle": "",
+      "content": "When you work with Omni Path Marketing, you're working with me directly. I promise:\n\nPersonal Attention: You'll never be passed off to account managers who don't understand your business. I'm involved in every client relationship.\n\nHonest Communication: I'll tell you the truth about what SEO can and can't do for your business. No exaggerated promises or misleading claims.\n\nTransparent Reporting: You'll always know where you stand. Regular reports show exactly what's happening with your campaign.\n\nFlexible Commitment: We offer month-to-month pricing with no long-term contracts. Stay because you're seeing results, not because you're locked in.\n\nQuality Work: Every strategy, every piece of content, every optimization receives my personal oversight. Quality never gets compromised.\n\nResponsive Communication: I respond to inquiries within 24 hours. You won't be left waiting for answers."
+    }
+  ],
+  "form_fields": ["name", "email", "phone", "company", "service_interest", "message"],
+  "services_list": ["Local SEO", "E-commerce SEO", "SaaS SEO", "Technical SEO", "Social Media", "Content Marketing", "PPC/Ads", "GBP Management", "Packages", "Other"],
+  "faqs": [
+    {"question": "How soon will I hear back?", "answer": "I personally respond to all inquiries within 24 hours during business days."},
+    {"question": "Do you offer free consultations?", "answer": "Yes! We offer free 30-minute consultations to discuss your marketing needs and goals. No obligation."},
+    {"question": "What information should I prepare?", "answer": "Having your current website, target audience, and specific goals ready helps us make the most of our consultation."},
+    {"question": "Will I work directly with you?", "answer": "Yes. As the founder, I personally handle all client relationships. You won't be passed to account managers."},
+    {"question": "What happens after I submit the form?", "answer": "I'll review your inquiry and reach out within 24 hours to schedule a consultation at your convenience."},
+    {"question": "Is there any obligation?", "answer": "No. Our consultation is free and there's no obligation to move forward. You'll receive honest advice about what we can do for your business."}
+  ]
+}

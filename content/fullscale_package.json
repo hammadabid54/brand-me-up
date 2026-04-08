@@ -1,0 +1,66 @@
+{
+  "service_name": "Full-Scale Package",
+  "slug": "fullscale-package",
+  "category": "Packages",
+  "category_url": "/services/packages/",
+  "meta_title": "Full-Scale Marketing Package | Maximum Growth | Omni Path Marketing",
+  "meta_description": "Full-scale marketing package for aggressive growth. Everything you need to dominate your market including unlimited content, full PPC, and video production.",
+  "meta_keywords": "full scale marketing package, maximum growth, comprehensive marketing, aggressive marketing",
+  "hero_title": "Full-Scale Marketing Package",
+  "hero_subtitle": "Maximum growth marketing solution for businesses ready to dominate their market.",
+  "description": "The Full-Scale Package provides maximum growth marketing. Everything in Enterprise plus unlimited content, full PPC, video production, and dedicated management.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "Who is the Full-Scale Package For?",
+      "subtitle": "",
+      "content": "The Full-Scale Package is designed for businesses seeking maximum growth and market domination. If your business is established and ambitious, ready to invest significantly in marketing for exponential growth, this comprehensive package provides everything you need to dominate your market.\n\nBusinesses ready for Full-Scale marketing understand that marketing investment directly drives revenue growth. They want the most comprehensive available solution—unlimited content to build maximum authority, full PPC to accelerate growth, video production to engage audiences, and dedicated management for strategic execution.\n\nThis package represents the ultimate marketing investment. Full-Scale clients typically see transformational results—market leadership, substantial revenue growth, and sustainable competitive advantages. It's designed for businesses that want to be the dominant player in their market.\n\nIf your business is successful, ambitious, and ready for aggressive growth, the Full-Scale Package provides the comprehensive infrastructure for market domination."
+    },
+    {
+      "section_type": "includes",
+      "title": "What's Included in the Full-Scale Package",
+      "subtitle": "",
+      "content": "The Full-Scale Package includes everything in Enterprise plus maximum-growth services:\n\n<h3>Everything in Enterprise</h3>: All services from the Enterprise Package are included—full SEO, all social platforms, ContentFlow Premium, 8 blogs monthly, GBP management, and ads management.\n\n<h3>Unlimited Content</h3>: No limits on content creation. All the blog posts, articles, and content your marketing needs.\n\n<h3>Full PPC Management</h3>: Complete management of advertising across all platforms—Google Ads, Facebook/Instagram, LinkedIn, and more. Maximize ROI from your ad spend.\n\n<h3>Video Production</h3>: Professional video content to engage audiences and build brand. Regular videos for marketing campaigns.\n\n<h3>Dedicated Account Manager</h3>: Your personal point of contact for strategic guidance. Direct access for all questions and planning.\n\n<h3>Custom Strategy</h3>: Fully customized marketing strategy designed for your specific goals and market position.\n\n<h3>Daily Monitoring</h3>: Continuous optimization with daily attention to all campaigns. Real-time adjustments for maximum performance.\n\n<h3>Executive Reports</h3>: Comprehensive reporting with strategic insights for leadership decision-making."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Benefits of the Full-Scale Package",
+      "subtitle": "",
+      "content": "The Full-Scale Package delivers transformational value:\n\n<h3>Market Domination</h3>: Comprehensive marketing establishes unrivaled market presence.\n\n<h3>Unlimited Content</h3>: Build maximum authority with unlimited content creation.\n\n<h3>Growth Acceleration</h3>: Full PPC management accelerates growth beyond organic-only marketing.\n\n<h3>Video Engagement</h3>: Professional video content engages audiences like no other medium.\n\n<h3>Strategic Partnership</h3>: Dedicated account manager becomes a strategic partner in your growth.\n\n<h3>Real-Time Optimization</h3>: Daily monitoring ensures maximum performance at all times.\n\n<h3>Transformational Results</h3>: Marketing that drives exponential business growth."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Full-Scale Package clients typically see:\n\n<h3>Market Leadership</h3>: Establish dominant leadership position in your market.\n\n<h3>Exponential Growth</h3>: Transformational increases in traffic, leads, and revenue.\n\n<h3>Maximum Authority</h3>: Unparalleled industry authority through unlimited content.\n\n<h3>Video Dominance</h3>: Engaging video content that captures and converts audiences.\n\n<h3>Competitive Supremacy</h3>: Outperform all competitors across all channels.\n\n<h3>Revenue Transformation</h3>: Direct, substantial contribution to dramatic revenue growth.\n\n<h3>Strategic Advantage</h3>: Marketing partner invested in your long-term success."
+    }
+  ],
+  "pricing": {
+    "intro": "Full-Scale Package Pricing",
+    "description": "Maximum growth marketing for dominant market position.",
+    "plans": [
+      {
+        "name": "Full-Scale",
+        "price": "$2,497/month",
+        "description": "For aggressive growth",
+        "features": [
+          "Everything in Enterprise package",
+          "Unlimited content creation",
+          "Full PPC management (all platforms)",
+          "Video production",
+          "Dedicated account manager",
+          "Custom strategy development",
+          "Daily monitoring and optimization",
+          "Executive-level reporting"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "What makes Full-Scale different from Enterprise?", "answer": "Full-Scale adds unlimited content, full PPC management (all platforms), video production, dedicated account manager, custom strategy, and daily monitoring."},
+    {"question": "How much video production is included?", "answer": "Video production is included monthly—specific quantity depends on your strategy and goals."},
+    {"question": "What does dedicated account management include?", "answer": "Your dedicated manager provides strategic guidance, serves as your main contact, and works closely with you on growth planning."},
+    {"question": "How long until I see results?", "answer": "Most clients see significant results within 2-4 months. Full transformational impact typically within 6-12 months."},
+    {"question": "Can I customize this package?", "answer": "Absolutely! Full-Scale is designed to be customized based on your specific goals and requirements."}
+  ]
+}

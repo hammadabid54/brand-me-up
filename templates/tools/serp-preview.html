@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}SERP Preview Tool | Free SEO Tool | Omni Path Marketing{% endblock %}
+{% block meta_description %}Free SERP preview tool. Preview how your page will appear in Google search results.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">Free Tool</span>
+                <h1 class="fw-bold mb-4" style="font-size: 2.5rem; color: white;">SERP Preview</h1>
+                <p class="lead mb-4" style="font-size: 1.125rem; color: rgba(255,255,255,0.9);">Preview how your page will appear in Google search results before you publish.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#tool-form" class="btn btn-light btn-lg px-4">Preview</a>
+                    <a href="/tools/" class="btn btn-outline-light btn-lg px-4">All Tools</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="text-center">
+                    <div class="display-1 text-white mb-3"><i class="fas fa-google"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tool Section -->
+<section id="tool-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Google SERP Preview</h2>
+                            <p class="text-muted">See how your page will look in search results</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Page Title</label>
+                            <input type="text" id="serpTitle" class="form-control" placeholder="Your page title" oninput="updateSERP()">
+                            <small class="text-muted">Recommended: 50-60 characters</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Page URL</label>
+                            <input type="text" id="serpUrl" class="form-control" placeholder="https://example.com/your-page" oninput="updateSERP()">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Meta Description</label>
+                            <textarea id="serpDesc" class="form-control" rows="3" placeholder="Your meta description" oninput="updateSERP()"></textarea>
+                            <small class="text-muted">Recommended: 150-160 characters</small>
+                        </div>
+
+                        <!-- SERP Preview -->
+                        <div class="mt-4">
+                            <h5 class="mb-3">Preview:</h5>
+                            <div class="serp-preview p-3 border rounded">
+                                <div class="mb-2">
+                                    <small class="text-muted" id="serpPreviewUrl">https://example.com › your-page</small>
+                                </div>
+                                <div class="mb-1">
+                                    <a href="#" class="serp-title" id="serpPreviewTitle">Your Page Title Goes Here</a>
+                                </div>
+                                <div class="serp-description">
+                                    <small id="serpPreviewDesc">Your meta description will appear here. Make it compelling to improve click-through rates...</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Character Count -->
+                        <div class="row mt-3 text-center">
+                            <div class="col-4">
+                                <span id="titleCount" class="badge bg-secondary">0/60</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="descCount" class="badge bg-secondary">0/160</span>
+                            </div>
+                            <div class="col-4">
+                                <span id="urlCount" class="badge bg-secondary">0</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Need Help with SEO?</h2>
+        <p class="mb-4">Let our experts optimize your presence</p>
+        <a href="/contact/" class="btn btn-light btn-lg px-5">Get Started</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function updateSERP() {
+    const title = document.getElementById('serpTitle').value || 'Your Page Title Goes Here';
+    const url = document.getElementById('serpUrl').value || 'https://example.com/your-page';
+    const desc = document.getElementById('serpDesc').value || 'Your meta description will appear here. Make it compelling to improve click-through rates...';
+
+    // Update preview
+    document.getElementById('serpPreviewTitle').textContent = title.length > 60 ? title.substring(0, 60) + '...' : title;
+    document.getElementById('serpPreviewUrl').textContent = url;
+    document.getElementById('serpPreviewDesc').textContent = desc.length > 160 ? desc.substring(0, 160) + '...' : desc;
+
+    // Update counts
+    const titleCount = document.getElementById('titleCount');
+    titleCount.textContent = title.length + '/60';
+    titleCount.className = title.length > 60 ? 'badge bg-danger' : title.length > 50 ? 'badge bg-warning' : 'badge bg-success';
+
+    const descCount = document.getElementById('descCount');
+    descCount.textContent = desc.length + '/160';
+    descCount.className = desc.length > 160 ? 'badge bg-danger' : desc.length > 150 ? 'badge bg-warning' : 'badge bg-success';
+
+    document.getElementById('urlCount').textContent = url.length;
+}
+</script>
+{% endblock %}

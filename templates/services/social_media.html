@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block title %}AI Social Media Services - AI Marketing Agency{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-light py-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/services/">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Social Media</li>
+            </ol>
+        </nav>
+        <h1 class="section-title">AI Social Media Services</h1>
+        <p class="lead text-muted">Smart social media management powered by AI with human expertise</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Management</h5>
+                        <p class="text-muted">Full social media management</p>
+                        <a href="/services/social-media/management/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Ads</h5>
+                        <p class="text-muted">Social media advertising</p>
+                        <a href="/services/social-media/ads/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Community</h5>
+                        <p class="text-muted">Build and engage your community</p>
+                        <a href="/services/social-media/community/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

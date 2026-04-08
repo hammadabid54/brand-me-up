@@ -1,0 +1,901 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Client Dashboard | Omni Path Marketing{% endblock %}
+
+{% block extra_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-page: #f8f9fc;
+        --bg-card: #ffffff;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --accent: #f97316;
+        --accent-light: #fb923c;
+        --success: #10b981;
+        --success-light: #d1fae5;
+        --info: #0ea5e9;
+        --warning: #f59e0b;
+        --border: #e2e8f0;
+        --border-light: #f1f5f9;
+        --shadow: rgba(15, 23, 42, 0.06);
+        --shadow-md: rgba(15, 23, 42, 0.1);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--bg-page);
+        color: var(--text-primary);
+        min-height: 100vh;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+    }
+
+    /* Header - Full Width */
+    .dashboard-header {
+        padding: 32px 0 24px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg-card);
+        margin: -24px -24px 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @media (min-width: 1400px) {
+        .dashboard-header {
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            padding-left: calc(50vw - 50% + 24px);
+            padding-right: calc(50vw - 50% + 24px);
+        }
+    }
+
+    .welcome-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 6px;
+    }
+
+    .welcome-subtitle {
+        color: var(--text-secondary);
+        font-size: 0.9375rem;
+    }
+
+    .demo-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: #fef3c7;
+        color: #b45309;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        margin-top: 12px;
+    }
+
+    .demo-tag::before {
+        content: '';
+        width: 5px;
+        height: 5px;
+        background: #f59e0b;
+        border-radius: 50%;
+    }
+
+    /* Connection Cards */
+    .connections-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 14px;
+        margin-bottom: 28px;
+    }
+
+    @media (max-width: 1200px) {
+        .connections-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 767px) {
+        .connections-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 480px) {
+        .connections-grid { grid-template-columns: 1fr; }
+    }
+
+    .connection-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        transition: all 0.2s ease;
+    }
+
+    .connection-card:hover {
+        border-color: var(--accent);
+        box-shadow: 0 2px 12px var(--shadow-md);
+    }
+
+    .connection-card.connected {
+        border-color: var(--success);
+        background: linear-gradient(135deg, var(--bg-card) 0%, #f0fdf9 100%);
+    }
+
+    .service-icon-box {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+
+    .service-icon-box.analytics {
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        color: white;
+    }
+
+    .service-icon-box.search-console {
+        background: linear-gradient(135deg, #0ea5e9, #38bdf8);
+        color: white;
+    }
+
+    .service-icon-box.gbp {
+        background: linear-gradient(135deg, #10b981, #34d399);
+        color: white;
+    }
+
+    .service-icon-box.meta {
+        background: linear-gradient(135deg, #0052cc, #0081ff);
+        color: white;
+    }
+
+    .service-icon-box.google-ads {
+        background: linear-gradient(135deg, #4285f4, #34a853);
+        color: white;
+    }
+
+    .connection-info {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .connection-info h6 {
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        margin-bottom: 2px;
+    }
+
+    .connection-info p {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin: 0;
+    }
+
+    .status-tag {
+        padding: 4px 10px;
+        border-radius: 4px;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+
+    .status-tag.connected {
+        background: var(--success-light);
+        color: #047857;
+    }
+
+    .status-tag.disconnected {
+        background: #f1f5f9;
+        color: var(--text-muted);
+    }
+
+    .btn-connect {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 8px 14px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.75rem;
+        transition: all 0.2s;
+    }
+
+    .btn-connect:hover {
+        background: var(--accent-light);
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 14px 20px;
+        margin-bottom: 24px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .filter-group {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .filter-group label {
+        font-size: 0.8125rem;
+        color: var(--text-secondary);
+        font-weight: 500;
+    }
+
+    .filter-group select,
+    .filter-group input {
+        background: var(--bg-page);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        color: var(--text-primary);
+        padding: 8px 12px;
+        font-size: 0.8125rem;
+        min-width: 140px;
+    }
+
+    .filter-group select:focus,
+    .filter-group input:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+
+    .custom-dates {
+        display: none;
+    }
+
+    .custom-dates.show {
+        display: flex;
+    }
+
+    .btn-apply {
+        background: var(--text-primary);
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.8125rem;
+        margin-left: auto;
+        transition: all 0.2s;
+    }
+
+    .btn-apply:hover {
+        background: #334155;
+    }
+
+    /* Section */
+    .section-header {
+        font-size: 0.8125rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-bottom: 14px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Metrics */
+    .metrics-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+        margin-bottom: 28px;
+    }
+
+    @media (max-width: 1200px) {
+        .metrics-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 767px) {
+        .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .metric-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px;
+        transition: all 0.2s ease;
+    }
+
+    .metric-card:hover {
+        box-shadow: 0 2px 12px var(--shadow);
+        border-color: var(--border);
+    }
+
+    .metric-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8125rem;
+        margin-bottom: 12px;
+    }
+
+    .metric-icon.orange { background: #fff7ed; color: #ea580c; }
+    .metric-icon.cyan { background: #ecfeff; color: #0891b2; }
+    .metric-icon.green { background: #ecfdf5; color: #059669; }
+    .metric-icon.purple { background: #f5f3ff; color: #7c3aed; }
+    .metric-icon.pink { background: #fdf2f8; color: #db2777; }
+    .metric-icon.blue { background: #eff6ff; color: #2563eb; }
+
+    .metric-value {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.375rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .metric-label {
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        margin-bottom: 8px;
+    }
+
+    .metric-change {
+        font-size: 0.6875rem;
+        font-weight: 600;
+    }
+
+    .metric-change.positive { color: var(--success); }
+    .metric-change.negative { color: #dc2626; }
+
+    /* Tables */
+    .tables-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+    }
+
+    @media (max-width: 991px) {
+        .tables-grid { grid-template-columns: 1fr; }
+    }
+
+    .table-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .table-card .card-head {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .table-card .card-head h6 {
+        font-size: 0.875rem;
+        margin: 0;
+    }
+
+    .data-table {
+        margin: 0;
+        font-size: 0.8125rem;
+    }
+
+    .data-table thead th {
+        background: var(--bg-page);
+        color: var(--text-secondary);
+        font-weight: 600;
+        padding: 12px 16px;
+        border: none;
+        font-size: 0.6875rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3px;
+    }
+
+    .data-table tbody td {
+        padding: 12px 16px;
+        color: var(--text-primary);
+        border-bottom: 1px solid var(--border-light);
+        font-size: 0.8125rem;
+    }
+
+    .data-table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .data-table tbody tr:hover {
+        background: var(--bg-page);
+    }
+
+    .pos-badge {
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-size: 0.6875rem;
+        font-weight: 600;
+    }
+
+    .pos-badge.good {
+        background: var(--success-light);
+        color: #047857;
+    }
+
+    .pos-badge.mid {
+        background: #fef3c7;
+        color: #b45309;
+    }
+
+    .review-stars {
+        color: #f59e0b;
+        font-size: 0.6875rem;
+    }
+
+    @media (max-width: 767px) {
+        .welcome-title { font-size: 1.5rem; }
+        .filter-bar { padding: 12px 16px; }
+        .filter-group { width: 100%; }
+        .filter-group select, .filter-group input { width: 100%; }
+        .btn-apply { width: 100%; margin-left: 0; }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-3" style="max-width: 1400px;">
+    <!-- Header -->
+    <div class="dashboard-header">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <h1 class="welcome-title">Welcome{% if client %}, {{ client.name }}{% endif %}</h1>
+                <p class="welcome-subtitle">Your marketing performance overview</p>
+                {% if demo_mode %}
+                <div class="demo-tag">
+                    <span>Demo Mode — viewing sample data</span>
+                </div>
+                {% endif %}
+            </div>
+            <div class="col-lg-4 text-lg-end">
+                {% if not demo_mode %}
+                <a href="/auth/logout/" class="btn" style="background: var(--bg-page); color: var(--text-primary); padding: 10px 18px; border-radius: 6px; border: 1px solid var(--border); font-size: 0.875rem;">Sign Out</a>
+                {% else %}
+                <a href="/auth/login/" class="btn-connect">Sign In</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Service Connections -->
+    <div class="connections-grid">
+        <div class="connection-card {% if demo_mode or analytics_connected %}connected{% endif %}">
+            <div class="service-icon-box analytics">
+                <i class="fas fa-chart-line"></i>
+            </div>
+            <div class="connection-info">
+                <h6>Analytics</h6>
+                <p>Traffic & Users</p>
+            </div>
+            {% if demo_mode or analytics_connected %}
+            <span class="status-tag connected">Connected</span>
+            {% else %}
+            <span class="status-tag disconnected">Not connected</span>
+            {% endif %}
+        </div>
+
+        <div class="connection-card {% if demo_mode or search_console_connected %}connected{% endif %}">
+            <div class="service-icon-box search-console">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="connection-info">
+                <h6>Search Console</h6>
+                <p>SEO Performance</p>
+            </div>
+            {% if demo_mode or search_console_connected %}
+            <span class="status-tag connected">Connected</span>
+            {% else %}
+            <span class="status-tag disconnected">Not connected</span>
+            {% endif %}
+        </div>
+
+        <div class="connection-card {% if demo_mode or gbp_connected %}connected{% endif %}">
+            <div class="service-icon-box gbp">
+                <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="connection-info">
+                <h6>Google Business</h6>
+                <p>Local Insights</p>
+            </div>
+            {% if demo_mode or gbp_connected %}
+            <span class="status-tag connected">Connected</span>
+            {% else %}
+            <span class="status-tag disconnected">Not connected</span>
+            {% endif %}
+        </div>
+
+        <div class="connection-card {% if demo_mode %}connected{% endif %}">
+            <div class="service-icon-box meta">
+                <i class="fab fa-meta"></i>
+            </div>
+            <div class="connection-info">
+                <h6>Meta Ads</h6>
+                <p>Facebook & Instagram</p>
+            </div>
+            {% if demo_mode %}
+            <span class="status-tag connected">Connected</span>
+            {% else %}
+            <span class="status-tag disconnected">Not connected</span>
+            {% endif %}
+        </div>
+
+        <div class="connection-card {% if demo_mode %}connected{% endif %}">
+            <div class="service-icon-box google-ads">
+                <i class="fas fa-ad"></i>
+            </div>
+            <div class="connection-info">
+                <h6>Google Ads</h6>
+                <p>Paid Advertising</p>
+            </div>
+            {% if demo_mode %}
+            <span class="status-tag connected">Connected</span>
+            {% else %}
+            <span class="status-tag disconnected">Not connected</span>
+            {% endif %}
+        </div>
+    </div>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar">
+        <div class="filter-group">
+            <label>Date Range</label>
+            <select class="form-select" id="dateRange">
+                <option value="7d">Last 7 days</option>
+                <option value="28d" selected>Last 28 days</option>
+                <option value="90d">Last 90 days</option>
+                <option value="this-month">This month</option>
+                <option value="last-month">Last month</option>
+                <option value="custom">Custom range</option>
+            </select>
+        </div>
+        <div class="filter-group custom-dates" id="customDates">
+            <input type="date" class="form-control" id="startDate">
+            <span style="color: var(--text-muted);">to</span>
+            <input type="date" class="form-control" id="endDate">
+        </div>
+        <div class="filter-group">
+            <label>Compare</label>
+            <select class="form-select" id="compareRange">
+                <option value="none">None</option>
+                <option value="previous">Previous period</option>
+                <option value="year-ago">Same period last year</option>
+            </select>
+        </div>
+        <button class="btn-apply" onclick="applyFilters()">Apply</button>
+    </div>
+
+    <!-- Analytics -->
+    <h5 class="section-header">
+        <i class="fas fa-chart-line" style="color: var(--accent);"></i>
+        Analytics
+    </h5>
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon orange"><i class="fas fa-users"></i></div>
+            <div class="metric-value">12,453</div>
+            <div class="metric-label">Sessions</div>
+            <div class="metric-change positive">+15.3%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon cyan"><i class="fas fa-user"></i></div>
+            <div class="metric-value">8,921</div>
+            <div class="metric-label">Users</div>
+            <div class="metric-change positive">+12.8%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon purple"><i class="fas fa-eye"></i></div>
+            <div class="metric-value">34,567</div>
+            <div class="metric-label">Pageviews</div>
+            <div class="metric-change positive">+8.2%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon pink"><i class="fas fa-sign-out-alt"></i></div>
+            <div class="metric-value">3.2%</div>
+            <div class="metric-label">Bounce Rate</div>
+            <div class="metric-change positive">−2.1%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon blue"><i class="fas fa-clock"></i></div>
+            <div class="metric-value">2:45</div>
+            <div class="metric-label">Avg. Duration</div>
+            <div class="metric-change positive">+18s</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon green"><i class="fas fa-check-circle"></i></div>
+            <div class="metric-value">1,234</div>
+            <div class="metric-label">Conversions</div>
+            <div class="metric-change positive">+5.4%</div>
+        </div>
+    </div>
+
+    <!-- Search Console -->
+    <h5 class="section-header">
+        <i class="fas fa-search" style="color: var(--info);"></i>
+        Search Console
+    </h5>
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon cyan"><i class="fas fa-mouse-pointer"></i></div>
+            <div class="metric-value">5,234</div>
+            <div class="metric-label">Clicks</div>
+            <div class="metric-change positive">+22.1%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon purple"><i class="fas fa-bullhorn"></i></div>
+            <div class="metric-value">89,432</div>
+            <div class="metric-label">Impressions</div>
+            <div class="metric-change positive">+18.5%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon green"><i class="fas fa-percentage"></i></div>
+            <div class="metric-value">5.85%</div>
+            <div class="metric-label">CTR</div>
+            <div class="metric-change positive">+0.8%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon orange"><i class="fas fa-trophy"></i></div>
+            <div class="metric-value">42.3</div>
+            <div class="metric-label">Avg. Position</div>
+            <div class="metric-change positive">−3.2</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon blue"><i class="fas fa-key"></i></div>
+            <div class="metric-value">543</div>
+            <div class="metric-label">Keywords</div>
+            <div class="metric-change positive">+45</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon pink"><i class="fas fa-medal"></i></div>
+            <div class="metric-value">98</div>
+            <div class="metric-label">Position 1-3</div>
+            <div class="metric-change positive">+12</div>
+        </div>
+    </div>
+
+    <!-- Meta Ads -->
+    <h5 class="section-header">
+        <i class="fab fa-meta" style="color: #0081ff;"></i>
+        Meta Ads
+    </h5>
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon blue" style="background: #e6f0ff; color: #0052cc;"><i class="fas fa-bullseye"></i></div>
+            <div class="metric-value">$4,523</div>
+            <div class="metric-label">Spend</div>
+            <div class="metric-change positive">+12.1%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon purple"><i class="fas fa-eye"></i></div>
+            <div class="metric-value">156,432</div>
+            <div class="metric-label">Impressions</div>
+            <div class="metric-change positive">+22.5%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon green"><i class="fas fa-users"></i></div>
+            <div class="metric-value">8,234</div>
+            <div class="metric-label">Reach</div>
+            <div class="metric-change positive">+15.3%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon orange"><i class="fas fa-hand-pointer"></i></div>
+            <div class="metric-value">2.34%</div>
+            <div class="metric-label">CTR</div>
+            <div class="metric-change positive">+0.4%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon cyan"><i class="fas fa-dollar-sign"></i></div>
+            <div class="metric-value">$1.23</div>
+            <div class="metric-label">CPC</div>
+            <div class="metric-change negative">+$0.12</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon pink"><i class="fas fa-cart"></i></div>
+            <div class="metric-value">342</div>
+            <div class="metric-label">Conversions</div>
+            <div class="metric-change positive">+28.2%</div>
+        </div>
+    </div>
+
+    <!-- Google Ads -->
+    <h5 class="section-header">
+        <i class="fas fa-ad" style="color: #4285f4;"></i>
+        Google Ads
+    </h5>
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon blue"><i class="fas fa-money-bill"></i></div>
+            <div class="metric-value">$8,234</div>
+            <div class="metric-label">Spend</div>
+            <div class="metric-change positive">+8.5%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon cyan"><i class="fas fa-eye"></i></div>
+            <div class="metric-value">234,567</div>
+            <div class="metric-label">Impressions</div>
+            <div class="metric-change positive">+18.2%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon green"><i class="fas fa-users"></i></div>
+            <div class="metric-value">12,453</div>
+            <div class="metric-label">Clicks</div>
+            <div class="metric-change positive">+12.8%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon purple"><i class="fas fa-percentage"></i></div>
+            <div class="metric-value">5.31%</div>
+            <div class="metric-label">CTR</div>
+            <div class="metric-change positive">+0.8%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon orange"><i class="fas fa-dollar-sign"></i></div>
+            <div class="metric-value">$0.66</div>
+            <div class="metric-label">CPC</div>
+            <div class="metric-change negative">+$0.05</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon pink"><i class="fas fa-check-circle"></i></div>
+            <div class="metric-value">567</div>
+            <div class="metric-label">Conversions</div>
+            <div class="metric-change positive">+22.1%</div>
+        </div>
+    </div>
+
+    <!-- GBP -->
+    <h5 class="section-header">
+        <i class="fas fa-map-marker-alt" style="color: var(--success);"></i>
+        Google Business Profile
+    </h5>
+    <div class="metrics-grid">
+        <div class="metric-card">
+            <div class="metric-icon green"><i class="fas fa-eye"></i></div>
+            <div class="metric-value">2,345</div>
+            <div class="metric-label">Views</div>
+            <div class="metric-change positive">+8.2%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon purple"><i class="fas fa-hand-point-up"></i></div>
+            <div class="metric-value">189</div>
+            <div class="metric-label">Actions</div>
+            <div class="metric-change positive">+12.3%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon blue"><i class="fas fa-phone"></i></div>
+            <div class="metric-value">78</div>
+            <div class="metric-label">Calls</div>
+            <div class="metric-change positive">+5.4%</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon orange"><i class="fas fa-star"></i></div>
+            <div class="metric-value">4.8</div>
+            <div class="metric-label">Rating</div>
+            <div class="metric-change positive">+0.2</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon pink"><i class="fas fa-comments"></i></div>
+            <div class="metric-value">156</div>
+            <div class="metric-label">Reviews</div>
+            <div class="metric-change positive">+23</div>
+        </div>
+        <div class="metric-card">
+            <div class="metric-icon cyan"><i class="fas fa-reply"></i></div>
+            <div class="metric-value">98%</div>
+            <div class="metric-label">Response Rate</div>
+            <div class="metric-change positive">+5%</div>
+        </div>
+    </div>
+
+    <!-- Tables -->
+    <div class="tables-grid">
+        <div class="table-card">
+            <div class="card-head">
+                <i class="fas fa-list" style="color: var(--info);"></i>
+                <h6>Top Search Queries</h6>
+            </div>
+            <table class="table data-table">
+                <thead>
+                    <tr>
+                        <th>Query</th>
+                        <th>Clicks</th>
+                        <th>CTR</th>
+                        <th>Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>dental seo services</td><td>1,234</td><td>9.9%</td><td><span class="pos-badge good">3.2</span></td></tr>
+                    <tr><td>best dentist near me</td><td>987</td><td>10.0%</td><td><span class="pos-badge good">2.1</span></td></tr>
+                    <tr><td>dental marketing</td><td>654</td><td>8.5%</td><td><span class="pos-badge mid">4.5</span></td></tr>
+                    <tr><td>local dental seo</td><td>543</td><td>10.0%</td><td><span class="pos-badge good">2.8</span></td></tr>
+                    <tr><td>emergency dentist</td><td>432</td><td>12.1%</td><td><span class="pos-badge good">1.8</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="table-card">
+            <div class="card-head">
+                <i class="fas fa-star" style="color: var(--warning);"></i>
+                <h6>Recent Reviews</h6>
+            </div>
+            <table class="table data-table">
+                <thead>
+                    <tr>
+                        <th>Rating</th>
+                        <th>Review</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td><span class="review-stars">★★★★★</span></td><td>Amazing practice!</td><td>Apr 5</td></tr>
+                    <tr><td><span class="review-stars">★★★★★</span></td><td>Great experience.</td><td>Apr 3</td></tr>
+                    <tr><td><span class="review-stars">★★★★☆</span></td><td>Clean & friendly.</td><td>Mar 28</td></tr>
+                    <tr><td><span class="review-stars">★★★★★</span></td><td>Best dentist!</td><td>Mar 25</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+document.getElementById('dateRange').addEventListener('change', function() {
+    const customDates = document.getElementById('customDates');
+    customDates.classList.toggle('show', this.value === 'custom');
+});
+
+function applyFilters() {
+    document.querySelectorAll('.metric-card').forEach(card => {
+        card.style.opacity = '0.5';
+        card.style.transition = 'opacity 0.3s';
+    });
+    setTimeout(() => {
+        document.querySelectorAll('.metric-card').forEach(card => { card.style.opacity = '1'; });
+    }, 400);
+}
+
+function connectService(service) {
+    window.location.href = '/dashboard/connect/' + service + '/';
+}
+
+function disconnectService(service) {
+    if (confirm('Disconnect ' + service + '?')) {
+        fetch('/api/dashboard/disconnect/' + service + '/', {
+            method: 'POST',
+            headers: { 'X-CSRFToken': '{{ csrf_token }}' }
+        }).then(r => r.json()).then(d => { if (d.success) location.reload(); });
+    }
+}
+
+const urlParams = new URLSearchParams(window.location.search);
+if (urlParams.get('connected')) alert(urlParams.get('connected') + ' connected!');
+</script>
+{% endblock %}

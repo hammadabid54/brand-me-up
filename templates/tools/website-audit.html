@@ -1,0 +1,644 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Free Website Audit Tool | Omni Path Marketing{% endblock %}
+{% block meta_description %}Get a free comprehensive SEO audit of your website. Analyze on-page SEO, content quality, technical SEO, and get actionable recommendations.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">Free Tool</span>
+                <h1 class="fw-bold mb-4" style="font-size: 2.5rem; color: white;">Free Website Audit Tool</h1>
+                <p class="lead mb-4" style="font-size: 1.125rem; color: rgba(255,255,255,0.9);">Get a comprehensive SEO analysis worth $197 - Absolutely Free! Verify your email to start.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#audit-form" class="btn btn-light btn-lg px-4">Start Free Audit</a>
+                    <a href="/tools/" class="btn btn-outline-light btn-lg px-4">All Tools</a>
+                </div>
+                <div class="d-flex gap-4 mt-4 pt-2">
+                    <div>
+                        <h3 class="fw-bold mb-0 text-white">500+</h3>
+                        <small style="opacity: 0.8;">Audits Completed</small>
+                    </div>
+                    <div>
+                        <h3 class="fw-bold mb-0 text-white">100%</h3>
+                        <small style="opacity: 0.8;">Free</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="text-center">
+                    <div class="display-1 text-white mb-3"><i class="fas fa-magic"></i></div>
+                    <div class="h4 text-white-50">AI-Powered Analysis</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Website Audit Tool -->
+<section id="audit-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Get Your Free Website Audit</h2>
+                            <p class="text-muted">Enter your website details to get a comprehensive SEO report</p>
+                        </div>
+
+                        <!-- Step 1: Email & URL -->
+                        <div id="auditStep1">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Your Email Address</label>
+                                <input type="email" id="auditEmail" class="form-control form-control-lg" placeholder="Enter your email">
+                                <div class="form-text">We'll send a verification code to this email</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Website URL</label>
+                                <input type="url" id="auditUrl" class="form-control form-control-lg" placeholder="https://www.yourwebsite.com">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Target Keyword (Optional)</label>
+                                <input type="text" id="auditKeyword" class="form-control form-control-lg" placeholder="e.g., dental implants">
+                                <div class="form-text">What keyword do you want to rank for?</div>
+                            </div>
+                            <div id="auditError" class="alert alert-danger" style="display: none;"></div>
+                            <button class="btn btn-primary btn-lg w-100" onclick="sendVerification()">
+                                <i class="fas fa-paper-plane me-2"></i>Send Verification Code
+                            </button>
+                        </div>
+
+                        <!-- Step 2: Enter Verification Code -->
+                        <div id="auditStep2" style="display: none;">
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Verification Code</label>
+                                <input type="text" id="verificationCode" class="form-control form-control-lg text-center" style="letter-spacing: 10px; font-size: 2rem;" maxlength="6" placeholder="000000">
+                                <div class="form-text">Enter the 6-digit code sent to your email</div>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label fw-bold">Website URL</label>
+                                <input type="url" id="auditUrl2" class="form-control form-control-lg" placeholder="https://www.yourwebsite.com">
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label fw-bold">Target Keyword (Optional)</label>
+                                <input type="text" id="auditKeyword2" class="form-control form-control-lg" placeholder="e.g., dental implants">
+                            </div>
+                            <div id="verifyError" class="alert alert-danger" style="display: none;"></div>
+                            <button class="btn btn-success btn-lg w-100 mb-3" onclick="verifyCode()">
+                                <i class="fas fa-check-circle me-2"></i>Verify & Start Audit
+                            </button>
+                            <button class="btn btn-link w-100" onclick="resendCode()">
+                                <i class="fas fa-redo me-1"></i>Resend Code
+                            </button>
+                        </div>
+
+                        <!-- Step 3: Processing -->
+                        <div id="auditStep3" style="display: none;">
+                            <div class="text-center py-5">
+                                <div class="spinner-border text-success mb-4" role="status" style="width: 4rem; height: 4rem;">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                                <h4>Analyzing Your Website...</h4>
+                                <p class="text-muted">Our AI is crawling and analyzing your site</p>
+                                <div class="progress mt-4" style="height: 10px;">
+                                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" style="width: 100%"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 4: Results -->
+                        <div id="auditStep4" style="display: none;">
+                            <div class="text-center mb-4">
+                                <div class="display-1">
+                                    <span id="auditScore" class="fw-bold text-primary">0</span>
+                                </div>
+                                <div class="text-muted">Your SEO Score</div>
+                            </div>
+                            <div id="auditReport"></div>
+                            <div class="text-center mt-4">
+                                <a href="/contact/" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-envelope me-2"></i>Get Expert Help
+                                </a>
+                                <a href="/tools/" class="btn btn-outline-secondary btn-lg ms-2">
+                                    View All Tools
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">What Our Audit Analyzes</h2>
+            <p class="text-muted">Comprehensive analysis across all SEO aspects</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-primary bg-opacity-10 text-primary rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-file-alt fs-4"></i>
+                        </div>
+                        <h5>On-Page SEO</h5>
+                        <p class="text-muted small mb-0">Title tags, meta descriptions, headings, content optimization</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-success bg-opacity-10 text-success rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-align-left fs-4"></i>
+                        </div>
+                        <h5>Content Quality</h5>
+                        <p class="text-muted small mb-0">Word count, readability, E-E-A-T signals, depth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-warning bg-opacity-10 text-warning rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-code fs-4"></i>
+                        </div>
+                        <h5>Technical SEO</h5>
+                        <p class="text-muted small mb-0">Site speed, mobile-friendliness, schema markup</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-3">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-info bg-opacity-10 text-info rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-link fs-4"></i>
+                        </div>
+                        <h5>Linking</h5>
+                        <p class="text-muted small mb-0">Internal links, external links, anchor text</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Ready to Improve Your Rankings?</h2>
+        <p class="mb-4">Get our expert SEO services and dominate your competition</p>
+        <a href="/contact/" class="btn btn-light btn-lg px-5">Get Started</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+let currentEmail = '';
+let currentAuditId = null;
+
+async function sendVerification() {
+    console.log('sendVerification called');
+    const email = document.getElementById('auditEmail').value.trim();
+    const url = document.getElementById('auditUrl').value.trim();
+    const keyword = document.getElementById('auditKeyword').value.trim();
+    const errorDiv = document.getElementById('auditError');
+
+    errorDiv.style.display = 'none';
+
+    // Validation
+    if (!email) {
+        errorDiv.textContent = 'Please enter your email address';
+        errorDiv.style.display = 'block';
+        return;
+    }
+    if (!url) {
+        errorDiv.textContent = 'Please enter your website URL';
+        errorDiv.style.display = 'block';
+        return;
+    }
+
+    console.log('Validation passed, sending request...');
+    if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        url = 'https://' + url;
+    }
+
+    currentEmail = email;
+
+    // Show loading
+    const btn = document.querySelector('#auditStep1 button');
+    btn.disabled = true;
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Sending...';
+
+    try {
+        const response = await fetch('/api/send-verification/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: email,
+                website_url: url,
+                target_keyword: keyword
+            })
+        });
+        const result = await response.json();
+
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Verification Code';
+
+        if (result.success) {
+            currentAuditId = result.audit_id;
+            document.getElementById('auditStep1').style.display = 'none';
+            document.getElementById('auditStep2').style.display = 'block';
+            document.getElementById('auditUrl2').value = url;
+            document.getElementById('auditKeyword2').value = keyword;
+
+            // If email failed to send, show the code for testing
+            if (result.verification_code) {
+                alert('Note: Email sending failed. Your test verification code is: ' + result.verification_code);
+            }
+        } else {
+            errorDiv.textContent = result.message;
+            errorDiv.style.display = 'block';
+        }
+
+    } catch (e) {
+        btn.disabled = false;
+        btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Verification Code';
+        errorDiv.textContent = 'Error: ' + e.message;
+        errorDiv.style.display = 'block';
+    }
+}
+
+async function verifyCode() {
+    const email = currentEmail;
+    const code = document.getElementById('verificationCode').value.trim();
+    const url = document.getElementById('auditUrl2').value.trim();
+    const keyword = document.getElementById('auditKeyword2').value.trim();
+    const errorDiv = document.getElementById('verifyError');
+
+    errorDiv.style.display = 'none';
+
+    if (!code || code.length !== 6) {
+        errorDiv.textContent = 'Please enter a valid 6-digit code';
+        errorDiv.style.display = 'block';
+        return;
+    }
+
+    // Show processing
+    document.getElementById('auditStep2').style.display = 'none';
+    document.getElementById('auditStep3').style.display = 'block';
+
+    try {
+        const response = await fetch('/api/verify-code/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                email: email,
+                code: code,
+                website_url: url,
+                target_keyword: keyword
+            })
+        });
+        const result = await response.json();
+
+        if (result.success) {
+            currentAuditId = result.audit_id;
+            // Run the audit
+            runAudit(currentAuditId);
+        } else {
+            document.getElementById('auditStep2').style.display = 'block';
+            errorDiv.textContent = result.message;
+            errorDiv.style.display = 'block';
+        }
+
+    } catch (e) {
+        document.getElementById('auditStep2').style.display = 'block';
+        errorDiv.textContent = 'Error: ' + e.message;
+        errorDiv.style.display = 'block';
+    }
+}
+
+async function resendCode() {
+    const email = document.getElementById('auditEmail').value.trim();
+    const url = document.getElementById('auditUrl').value.trim() || document.getElementById('auditUrl2').value.trim();
+    const keyword = document.getElementById('auditKeyword').value.trim() || document.getElementById('auditKeyword2').value.trim();
+
+    await sendVerification();
+}
+
+async function runAudit(auditId) {
+    try {
+        const response = await fetch('/api/run-audit/', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({
+                audit_id: auditId
+            })
+        });
+        const result = await response.json();
+
+        if (result.success) {
+            showResults(result);
+        } else {
+            showError(result.message || 'Audit failed. Please try again.');
+        }
+
+    } catch (e) {
+        showError('Error: ' + e.message);
+    }
+}
+
+function showResults(result) {
+    document.getElementById('auditStep3').style.display = 'none';
+    document.getElementById('auditStep4').style.display = 'block';
+
+    const overallScore = result.score || 0;
+    document.getElementById('auditScore').textContent = overallScore;
+
+    // Color the score
+    const scoreEl = document.getElementById('auditScore');
+    if (overallScore >= 70) {
+        scoreEl.classList.add('text-success');
+    } else if (overallScore >= 40) {
+        scoreEl.classList.add('text-warning');
+    } else {
+        scoreEl.classList.add('text-danger');
+    }
+
+    // Parse the JSON report
+    let reportData;
+    try {
+        reportData = typeof result.report === 'string' ? JSON.parse(result.report) : result.report;
+    } catch (e) {
+        reportData = null;
+    }
+
+    let reportHtml = '';
+
+    if (reportData && reportData.overall_score !== undefined) {
+        // Overall Score Banner
+        reportHtml += `
+            <div class="text-center mb-4">
+                <div class="display-1 fw-bold ${overallScore >= 70 ? 'text-success' : overallScore >= 40 ? 'text-warning' : 'text-danger'}">${overallScore}</div>
+                <div class="text-muted">Overall SEO Score</div>
+            </div>
+        `;
+
+        // Category Scores with Progress Bars
+        const categories = [
+            { key: 'on_page_seo', label: 'On-Page SEO', icon: 'fa-file-alt' },
+            { key: 'content_quality', label: 'Content Quality', icon: 'fa-align-left' },
+            { key: 'technical_seo', label: 'Technical SEO', icon: 'fa-code' },
+            { key: 'linking', label: 'Linking', icon: 'fa-link' }
+        ];
+
+        categories.forEach(cat => {
+            if (reportData[cat.key]) {
+                const catData = reportData[cat.key];
+                const catScore = catData.score || 0;
+                const barColor = catScore >= 70 ? 'bg-success' : catScore >= 40 ? 'bg-warning' : 'bg-danger';
+
+                reportHtml += `
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h6 class="card-title mb-0"><i class="fas ${cat.icon} me-2"></i>${cat.label}</h6>
+                                <span class="badge ${barColor}">${catScore}/100</span>
+                            </div>
+                            <div class="progress" style="height: 10px;">
+                                <div class="progress-bar ${barColor}" role="progressbar" style="width: ${catScore}%"></div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+        });
+
+        // Issues Section
+        reportHtml += '<h5 class="mt-4 mb-3"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Issues Found</h5>';
+
+        const allIssues = [];
+        categories.forEach(cat => {
+            if (reportData[cat.key] && reportData[cat.key].issues) {
+                reportData[cat.key].issues.forEach(issue => {
+                    allIssues.push({ category: cat.label, issue: issue });
+                });
+            }
+        });
+
+        if (allIssues.length > 0) {
+            reportHtml += '<ul class="list-group mb-4">';
+            allIssues.slice(0, 10).forEach(item => {
+                reportHtml += `<li class="list-group-item"><span class="badge bg-secondary me-2">${item.category}</span>${item.issue}</li>`;
+            });
+            reportHtml += '</ul>';
+        }
+
+        // Recommendations Section
+        reportHtml += '<h5 class="mt-4 mb-3"><i class="fas fa-lightbulb text-info me-2"></i>Recommendations</h5>';
+
+        const allRecommendations = [];
+        categories.forEach(cat => {
+            if (reportData[cat.key] && reportData[cat.key].recommendations) {
+                reportData[cat.key].recommendations.forEach(rec => {
+                    allRecommendations.push({ category: cat.label, rec: rec });
+                });
+            }
+        });
+
+        if (allRecommendations.length > 0) {
+            reportHtml += '<ul class="list-group mb-4">';
+            allRecommendations.slice(0, 10).forEach(item => {
+                reportHtml += `<li class="list-group-item"><span class="badge bg-info me-2">${item.category}</span>${item.rec}</li>`;
+            });
+            reportHtml += '</ul>';
+        }
+
+    } else {
+        reportHtml = '<div class="alert alert-info">' + (result.report || 'Audit completed! Check your email for the full report.') + '</div>';
+    }
+
+    // Add download button
+    reportHtml += `
+        <div class="text-center mt-4 mb-4">
+            <button class="btn btn-primary btn-lg" onclick="downloadPDF()">
+                <i class="fas fa-download me-2"></i>Download PDF Report
+            </button>
+        </div>
+    `;
+
+    // Store report data for PDF generation
+    window.auditReportData = reportData;
+    window.auditScore = overallScore;
+    window.auditUrl = document.getElementById('auditUrl2')?.value || document.getElementById('auditUrl')?.value || '';
+
+    document.getElementById('auditReport').innerHTML = reportHtml;
+}
+
+function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+    const reportData = window.auditReportData;
+    const score = window.auditScore || 0;
+    const url = window.auditUrl || '';
+
+    let y = 20;
+
+    // Header
+    doc.setFillColor(30, 58, 138); // Dark blue
+    doc.rect(0, 0, 210, 40, 'F');
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(24);
+    doc.text('Website SEO Audit Report', 105, 20, { align: 'center' });
+    doc.setFontSize(12);
+    doc.text('Omni Path Marketing', 105, 30, { align: 'center' });
+
+    y = 50;
+
+    // Website URL
+    doc.setTextColor(0, 0, 0);
+    doc.setFontSize(12);
+    doc.text('Website: ' + url, 20, y);
+    y += 10;
+
+    // Overall Score
+    doc.setFontSize(16);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Overall SEO Score: ' + score + '/100', 20, y);
+
+    // Score color indicator
+    if (score >= 70) {
+        doc.setTextColor(22, 163, 74); // Green
+    } else if (score >= 40) {
+        doc.setTextColor(202, 138, 4); // Yellow
+    } else {
+        doc.setTextColor(220, 38, 38); // Red
+    }
+    doc.text(score >= 70 ? '(Good)' : score >= 40 ? '(Needs Improvement)' : '(Poor)', 80, y);
+
+    y += 15;
+    doc.setTextColor(0, 0, 0);
+
+    // Category Scores
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Category Scores', 20, y);
+    y += 10;
+
+    doc.setFontSize(11);
+    doc.setFont('helvetica', 'normal');
+
+    const categories = [
+        { key: 'on_page_seo', label: 'On-Page SEO' },
+        { key: 'content_quality', label: 'Content Quality' },
+        { key: 'technical_seo', label: 'Technical SEO' },
+        { key: 'linking', label: 'Linking' }
+    ];
+
+    categories.forEach(cat => {
+        if (reportData && reportData[cat.key]) {
+            const catScore = reportData[cat.key].score || 0;
+            doc.text(cat.label + ': ' + catScore + '/100', 25, y);
+            y += 7;
+        }
+    });
+
+    y += 10;
+
+    // Issues
+    if (reportData) {
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Issues Found', 20, y);
+        y += 10;
+
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+
+        let issuesCount = 0;
+        categories.forEach(cat => {
+            if (reportData[cat.key] && reportData[cat.key].issues && issuesCount < 8) {
+                reportData[cat.key].issues.forEach(issue => {
+                    if (issuesCount < 8 && y < 270) {
+                        doc.text('• ' + issue, 25, y);
+                        y += 6;
+                        issuesCount++;
+                    }
+                });
+            }
+        });
+
+        y += 5;
+
+        // Recommendations
+        doc.setFontSize(14);
+        doc.setFont('helvetica', 'bold');
+        doc.text('Recommendations', 20, y);
+        y += 10;
+
+        doc.setFontSize(10);
+        doc.setFont('helvetica', 'normal');
+
+        let recCount = 0;
+        categories.forEach(cat => {
+            if (reportData[cat.key] && reportData[cat.key].recommendations && recCount < 8) {
+                reportData[cat.key].recommendations.forEach(rec => {
+                    if (recCount < 8 && y < 270) {
+                        doc.text('• ' + rec, 25, y);
+                        y += 6;
+                        recCount++;
+                    }
+                });
+            }
+        });
+    }
+
+    // Check if we need a new page for CTAs
+    if (y > 230) {
+        doc.addPage();
+        y = 20;
+    } else {
+        y += 15;
+    }
+
+    // CTAs Section
+    doc.setFillColor(249, 115, 22); // Orange
+    doc.rect(15, y, 180, 45, 'F');
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(14);
+    doc.setFont('helvetica', 'bold');
+    doc.text('Ready to Improve Your SEO?', 105, y + 15, { align: 'center' });
+
+    doc.setFontSize(10);
+    doc.setFont('helvetica', 'normal');
+    doc.text('Contact Omni Path Marketing for expert SEO services:', 105, y + 25, { align: 'center' });
+    doc.text('Email: info@omnipathmarketing.com | Website: www.omnipathmarketing.com', 105, y + 32, { align: 'center' });
+
+    // Footer
+    doc.setTextColor(128, 128, 128);
+    doc.setFontSize(8);
+    doc.text('Generated by Omni Path Marketing - ' + new Date().toLocaleDateString(), 105, 290, { align: 'center' });
+
+    // Save
+    doc.save('seo-audit-report.pdf');
+}
+
+function showError(message) {
+    document.getElementById('auditStep3').style.display = 'none';
+    document.getElementById('auditStep1').style.display = 'block';
+    const errorDiv = document.getElementById('auditError');
+    errorDiv.textContent = message;
+    errorDiv.style.display = 'block';
+}
+</script>
+{% endblock %}

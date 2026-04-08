@@ -1,0 +1,1477 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_title %}{{ meta_title }}{% endblock %}
+{% block meta_description %}{{ meta_description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .tools-page {
+        background: #f8fafc;
+        min-height: 100vh;
+    }
+
+    .tools-hero {
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+        padding: 80px 0 60px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tools-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .tools-hero h1 {
+        color: white;
+        font-size: 2.75rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+    }
+
+    .tools-hero p {
+        color: rgba(255,255,255,0.85);
+        font-size: 1.15rem;
+    }
+
+    .tool-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 2rem;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+
+    .tool-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+        border-color: #f97316;
+    }
+
+    .tool-card .tool-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+    }
+
+    .tool-card .tool-icon i {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .tool-card h4 {
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+    }
+
+    .tool-card p {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+    }
+
+    .tool-card .btn-launch {
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        color: white;
+        padding: 0.6rem 1.25rem;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .tool-card .btn-launch:hover {
+        background: linear-gradient(135deg, #ea580c, #f97316);
+        transform: translateY(-2px);
+    }
+
+    /* Tool Modal Styles */
+    .tool-modal .modal-content {
+        border: none;
+        border-radius: 24px;
+        overflow: hidden;
+    }
+
+    .tool-modal .modal-header {
+        background: linear-gradient(135deg, #0f172a, #1e3a8a);
+        color: white;
+        padding: 1.5rem 2rem;
+        border: none;
+    }
+
+    .tool-modal .modal-header .btn-close {
+        filter: invert(1);
+    }
+
+    .tool-modal .modal-body {
+        padding: 2rem;
+    }
+
+    .tool-modal .form-label {
+        font-weight: 600;
+        color: #1e293b;
+        margin-bottom: 0.5rem;
+    }
+
+    .tool-modal .form-control, .tool-modal .form-select {
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 0.75rem 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .tool-modal .form-control:focus, .tool-modal .form-select:focus {
+        border-color: #f97316;
+        box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+    }
+
+    .tool-result {
+        background: #f8fafc;
+        border-radius: 16px;
+        padding: 1.5rem;
+        margin-top: 1.5rem;
+        display: none;
+    }
+
+    .tool-result.show {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .tool-result h5 {
+        color: #1e293b;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    }
+
+    .tool-result .result-content {
+        background: #fff;
+        border-radius: 12px;
+        padding: 1rem;
+        border: 1px solid #e2e8f0;
+    }
+
+    .score-circle {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin: 0 auto;
+    }
+
+    .score-good { background: linear-gradient(135deg, #10b981, #34d399); color: white; }
+    .score-medium { background: linear-gradient(135deg, #f59e0b, #fbbf24); color: white; }
+    .score-poor { background: linear-gradient(135deg, #ef4444, #f87171); color: white; }
+
+    .serp-preview {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1.5rem;
+        font-family: arial, sans-serif;
+    }
+
+    .serp-preview .serp-url {
+        color: #202124;
+        font-size: 1.1rem;
+        margin-bottom: 0.25rem;
+    }
+
+    .serp-preview .serp-title {
+        color: #1a0dab;
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem;
+        cursor: pointer;
+    }
+
+    .serp-preview .serp-title:hover {
+        text-decoration: underline;
+    }
+
+    .serp-preview .serp-desc {
+        color: #4d5156;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .hashtag-pill {
+        display: inline-block;
+        background: linear-gradient(135deg, #f97316, #fb923c);
+        color: white;
+        padding: 0.4rem 0.8rem;
+        border-radius: 20px;
+        margin: 0.25rem;
+        font-size: 0.85rem;
+        font-weight: 500;
+    }
+
+    .copy-btn {
+        background: #f97316;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 0.85rem;
+        transition: all 0.3s ease;
+    }
+
+    .copy-btn:hover {
+        background: #ea580c;
+    }
+
+    .tool-tabs {
+        display: flex;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    .tool-tab {
+        padding: 0.75rem 1.5rem;
+        background: #fff;
+        border: 2px solid #e2e8f0;
+        border-radius: 50px;
+        font-weight: 600;
+        color: #64748b;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .tool-tab:hover, .tool-tab.active {
+        background: #f97316;
+        border-color: #f97316;
+        color: white;
+    }
+
+    .tools-section {
+        padding: 4rem 0;
+    }
+
+    .tools-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .category-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 1.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .category-title i {
+        color: #f97316;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="tools-hero">
+    <div class="container text-center">
+        <h1>Free Marketing Tools</h1>
+        <p>Powerful tools to help you grow your business. No signup required.</p>
+    </div>
+</section>
+
+<!-- AI Website Audit Tool -->
+<section id="website-audit" class="py-5" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-4">
+                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mb-3">AI-POWERED</span>
+                    <h2 class="text-white mb-3">Free Website SEO Audit</h2>
+                    <p class="text-white-50">Get a comprehensive AI-powered SEO audit of your website. One free audit per email.</p>
+                </div>
+
+                <div class="bg-white rounded-4 p-4" style="box-shadow: 0 20px 60px rgba(0,0,0,0.3);">
+                    <!-- Step 1: Email & URL (No captcha) -->
+                    <div id="auditStep2">
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Your Email *</label>
+                            <input type="email" class="form-control" id="auditEmail" placeholder="Enter your email">
+                            <small class="text-muted">One free audit per email address</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Website URL *</label>
+                            <input type="text" class="form-control" id="auditUrl" placeholder="https://example.com">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Target Keyword (Optional)</label>
+                            <input type="text" class="form-control" id="auditKeyword" placeholder="e.g., digital marketing services">
+                            <small class="text-muted">What keyword do you want to rank for?</small>
+                        </div>
+                        <button class="btn btn-primary w-100 py-3 fw-bold" onclick="startAudit()">
+                            <i class="fas fa-rocket me-2"></i>Start Free Audit
+                        </button>
+                    </div>
+
+                    <!-- Step 2: Processing -->
+                    <div id="auditStep3" style="display: none;" class="text-center py-4">
+                        <div class="spinner-border text-primary mb-3" role="status"></div>
+                        <h4>Analyzing your website...</h4>
+                        <p class="text-muted">This may take up to 2 minutes. Please don't close this page.</p>
+                        <div class="progress mt-3" style="height: 10px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Results -->
+                    <div id="auditStep4" style="display: none;">
+                        <div class="text-center mb-4">
+                            <div class="display-1 fw-bold" id="auditScore">0</div>
+                            <p class="text-muted">Overall SEO Score</p>
+                        </div>
+                        <div id="auditReport" class="mb-4" style="max-height: 300px; overflow-y: auto;"></div>
+                        <div class="d-grid gap-2">
+                            <button class="btn btn-outline-primary py-2" onclick="location.reload()">
+                                <i class="fas fa-redo me-2"></i>Start New Audit
+                            </button>
+                            <a href="/contact/" class="btn btn-primary py-2">
+                                <i class="fas fa-envelope me-2"></i>Get Full Report via Email
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Error Message -->
+                    <div id="auditError" style="display: none;" class="alert alert-danger"></div>
+                </div>
+
+                <p class="text-center text-white-50 mt-3 small">
+                    <i class="fas fa-lock me-1"></i> Your data is secure. We only use your email for one free audit.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tools Section -->
+<section class="tools-section">
+    <div class="container">
+        <!-- SEO Tools -->
+        <h3 class="category-title"><i class="fas fa-search"></i> SEO Tools</h3>
+        <div class="tools-grid mb-5">
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-calculator"></i></div>
+                <h4>Keyword Density Checker</h4>
+                <p>Analyze keyword density in your content to optimize for search engines.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#keywordDensityModal">Launch Tool</button>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-clipboard-check"></i></div>
+                <h4>SEO Score Checker</h4>
+                <p>Check your website's SEO score and get improvement recommendations.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#seoScoreModal">Launch Tool</button>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-google"></i></div>
+                <h4>SERP Preview</h4>
+                <p>Preview how your page will appear in Google search results.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#serpPreviewModal">Launch Tool</button>
+            </div>
+        </div>
+
+        <!-- Marketing Tools -->
+        <h3 class="category-title"><i class="fas fa-chart-line"></i> Marketing Tools</h3>
+        <div class="tools-grid mb-5">
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-wallet"></i></div>
+                <h4>Budget Planner</h4>
+                <p>Plan your marketing budget across different channels and campaigns.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#budgetPlannerModal">Launch Tool</button>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-bullhorn"></i></div>
+                <h4>Ad Copy Generator</h4>
+                <p>Generate compelling ad copy variations for your marketing campaigns.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#adCopyModal">Launch Tool</button>
+            </div>
+        </div>
+
+        <!-- Content Tools -->
+        <h3 class="category-title"><i class="fas fa-pen-fancy"></i> Content Tools</h3>
+        <div class="tools-grid mb-5">
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-hashtag"></i></div>
+                <h4>Hashtag Generator</h4>
+                <p>Generate relevant hashtags for your social media posts.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#hashtagModal">Launch Tool</button>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-book-reader"></i></div>
+                <h4>Readability Checker</h4>
+                <p>Check if your content is easy to read for your target audience.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#readabilityModal">Launch Tool</button>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-align-left"></i></div>
+                <h4>Word Counter</h4>
+                <p>Count words, characters, sentences, and paragraphs in your content.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#wordCounterModal">Launch Tool</button>
+            </div>
+            <div class="tool-card">
+                <div class="tool-icon"><i class="fas fa-mouse-pointer"></i></div>
+                <h4>CTA Generator</h4>
+                <p>Create compelling calls-to-action for your marketing content.</p>
+                <button class="btn-launch" data-bs-toggle="modal" data-bs-target="#ctaGeneratorModal">Launch Tool</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background: linear-gradient(135deg, #0f172a, #1e3a8a);">
+    <div class="container text-center">
+        <h2 class="text-white mb-3">Need Help With Your Marketing?</h2>
+        <p class="text-white-50 mb-4">Our experts can help you implement these strategies for maximum results.</p>
+        <a href="/contact/" class="btn btn-lg" style="background: #f97316; color: white; font-weight: 600;">Get Free Consultation</a>
+    </div>
+</section>
+
+<!-- ========== MODALS ========== -->
+
+<!-- Keyword Density Modal -->
+<div class="modal fade tool-modal" id="keywordDensityModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-calculator me-2"></i>Keyword Density Checker</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Target Keyword</label>
+                    <input type="text" class="form-control" id="kdKeyword" placeholder="Enter your target keyword">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Your Content</label>
+                    <textarea class="form-control" id="kdContent" rows="6" placeholder="Paste your content here"></textarea>
+                </div>
+                <button class="btn btn-launch" onclick="calculateKeywordDensity()">Analyze</button>
+                <div class="tool-result" id="kdResult">
+                    <h5>Results</h5>
+                    <div class="result-content">
+                        <p><strong>Keyword:</strong> <span id="kdKeywordResult"></span></p>
+                        <p><strong>Total Words:</strong> <span id="kdTotalWords"></span></p>
+                        <p><strong>Keyword Count:</strong> <span id="kdCount"></span></p>
+                        <p><strong>Density:</strong> <span id="kdDensity"></span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SEO Score Modal -->
+<div class="modal fade tool-modal" id="seoScoreModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-clipboard-check me-2"></i>SEO Score Checker</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Page URL</label>
+                    <input type="url" class="form-control" id="seoUrl" placeholder="https://example.com/page">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Target Keyword</label>
+                    <input type="text" class="form-control" id="seoKeyword" placeholder="Enter target keyword">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Page Title</label>
+                    <input type="text" class="form-control" id="seoTitle" placeholder="Your page title">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Meta Description</label>
+                    <textarea class="form-control" id="seoMeta" rows="3" placeholder="Your meta description"></textarea>
+                </div>
+                <button class="btn btn-launch" onclick="checkSeoScore()">Check Score</button>
+                <div class="tool-result" id="seoResult">
+                    <div class="text-center">
+                        <div class="score-circle" id="scoreCircle">0</div>
+                        <p class="mt-3" id="scoreMessage"></p>
+                    </div>
+                    <div class="mt-4">
+                        <h6>Recommendations:</h6>
+                        <ul id="seoRecommendations" class="list-unstyled"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SERP Preview Modal -->
+<div class="modal fade tool-modal" id="serpPreviewModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-google me-2"></i>SERP Preview</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="mb-3">
+                            <label class="form-label">Page Title</label>
+                            <input type="text" class="form-control" id="serpTitle" placeholder="Your page title" maxlength="60">
+                            <small class="text-muted"><span id="serpTitleCount">0</span>/60 characters</small>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">URL</label>
+                            <input type="text" class="form-control" id="serpUrl" placeholder="https://example.com/page">
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Meta Description</label>
+                            <textarea class="form-control" id="serpDesc" rows="3" placeholder="Your meta description" maxlength="160"></textarea>
+                            <small class="text-muted"><span id="serpDescCount">0</span>/160 characters</small>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Preview</label>
+                        <div class="serp-preview">
+                            <div class="serp-url" id="previewUrl">www.example.com</div>
+                            <div class="serp-title" id="previewTitle">Your Page Title Here</div>
+                            <div class="serp-desc" id="previewDesc">Your meta description will appear here. Make it compelling to increase click-through rates.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Budget Planner Modal -->
+<div class="modal fade tool-modal" id="budgetPlannerModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-wallet me-2"></i>Marketing Budget Planner</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Total Monthly Budget ($)</label>
+                    <input type="number" class="form-control" id="totalBudget" placeholder="Enter total budget">
+                </div>
+                <button class="btn btn-launch" onclick="planBudget()">Generate Plan</button>
+                <div class="tool-result" id="budgetResult">
+                    <h5>Recommended Budget Allocation</h5>
+                    <div class="result-content">
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>SEO</span>
+                                <span id="seoBudget" class="fw-bold">$0</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" id="seoProgress" style="width: 30%; background: #f97316;"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>PPC/Ads</span>
+                                <span id="ppcBudget" class="fw-bold">$0</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" id="ppcProgress" style="width: 35%; background: #3b82f6;"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Content</span>
+                                <span id="contentBudget" class="fw-bold">$0</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" id="contentProgress" style="width: 20%; background: #10b981;"></div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Social Media</span>
+                                <span id="socialBudget" class="fw-bold">$0</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" id="socialProgress" style="width: 15%; background: #8b5cf6;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Ad Copy Generator Modal -->
+<div class="modal fade tool-modal" id="adCopyModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-bullhorn me-2"></i>Ad Copy Generator</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Product/Service Name</label>
+                    <input type="text" class="form-control" id="adProduct" placeholder="Your product or service">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Key Benefit</label>
+                    <input type="text" class="form-control" id="adBenefit" placeholder="Main benefit for customers">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Call to Action</label>
+                    <select class="form-select" id="adCta">
+                        <option value="Shop Now">Shop Now</option>
+                        <option value="Get Started">Get Started</option>
+                        <option value="Learn More">Learn More</option>
+                        <option value="Sign Up Free">Sign Up Free</option>
+                        <option value="Book Now">Book Now</option>
+                    </select>
+                </div>
+                <button class="btn btn-launch" onclick="generateAdCopy()">Generate</button>
+                <div class="tool-result" id="adCopyResult">
+                    <h5>Generated Ad Copy</h5>
+                    <div class="result-content" id="adCopyContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Hashtag Generator Modal -->
+<div class="modal fade tool-modal" id="hashtagModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-hashtag me-2"></i>Hashtag Generator</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Topic or Keyword</label>
+                    <input type="text" class="form-control" id="hashtagTopic" placeholder="Enter your topic or keyword">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Platform</label>
+                    <select class="form-select" id="hashtagPlatform">
+                        <option value="instagram">Instagram</option>
+                        <option value="twitter">Twitter/X</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="tiktok">TikTok</option>
+                    </select>
+                </div>
+                <button class="btn btn-launch" onclick="generateHashtags()">Generate</button>
+                <div class="tool-result" id="hashtagResult">
+                    <h5>Recommended Hashtags</h5>
+                    <div class="result-content" id="hashtagContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Readability Checker Modal -->
+<div class="modal fade tool-modal" id="readabilityModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-book-reader me-2"></i>Readability Checker</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Your Content</label>
+                    <textarea class="form-control" id="readabilityContent" rows="8" placeholder="Paste your content here"></textarea>
+                </div>
+                <button class="btn btn-launch" onclick="checkReadability()">Analyze</button>
+                <div class="tool-result" id="readabilityResult">
+                    <h5>Readability Score</h5>
+                    <div class="result-content text-center">
+                        <div class="score-circle" id="readabilityScore">0</div>
+                        <p class="mt-3" id="readabilityLevel"></p>
+                        <div class="row mt-3">
+                            <div class="col-4"><div id="readabilityWords">0</div><small class="text-muted">Words</small></div>
+                            <div class="col-4"><div id="readabilitySentences">0</div><small class="text-muted">Sentences</small></div>
+                            <div class="col-4"><div id="readabilityReadingTime">0 min</div><small class="text-muted">Reading Time</small></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Word Counter Modal -->
+<div class="modal fade tool-modal" id="wordCounterModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-align-left me-2"></i>Word Counter</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Your Content</label>
+                    <textarea class="form-control" id="wordCounterContent" rows="10" placeholder="Paste your content here" oninput="countWords()"></textarea>
+                </div>
+                <div class="row text-center">
+                    <div class="col-3">
+                        <div class="h3 fw-bold text-primary" id="wordCount">0</div>
+                        <small class="text-muted">Words</small>
+                    </div>
+                    <div class="col-3">
+                        <div class="h3 fw-bold text-primary" id="charCount">0</div>
+                        <small class="text-muted">Characters</small>
+                    </div>
+                    <div class="col-3">
+                        <div class="h3 fw-bold text-primary" id="sentenceCount">0</div>
+                        <small class="text-muted">Sentences</small>
+                    </div>
+                    <div class="col-3">
+                        <div class="h3 fw-bold text-primary" id="paraCount">0</div>
+                        <small class="text-muted">Paragraphs</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Generator Modal -->
+<div class="modal fade tool-modal" id="ctaGeneratorModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title"><i class="fas fa-mouse-pointer me-2"></i>CTA Generator</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label class="form-label">Action Type</label>
+                    <select class="form-select" id="ctaAction">
+                        <option value="buy">Buy/Purchase</option>
+                        <option value="sign">Sign Up</option>
+                        <option value="download">Download</option>
+                        <option value="contact">Contact</option>
+                        <option value="learn">Learn More</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Urgency</label>
+                    <select class="form-select" id="ctaUrgency">
+                        <option value="none">None</option>
+                        <option value="today">Today Only</option>
+                        <option value="limited">Limited Time</option>
+                    </select>
+                </div>
+                <button class="btn btn-launch" onclick="generateCTA()">Generate</button>
+                <div class="tool-result" id="ctaResult">
+                    <h5>Generated CTAs</h5>
+                    <div class="result-content" id="ctaContent"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // ==================== WEBSITE AUDIT TOOL ====================
+    let captchaNum1, captchaNum2;
+
+    // Generate math captcha
+    function generateCaptcha() {
+        captchaNum1 = Math.floor(Math.random() * 10) + 1;
+        captchaNum2 = Math.floor(Math.random() * 10) + 1;
+        document.getElementById('captchaQuestion').textContent = `${captchaNum1} + ${captchaNum2} = ?`;
+    }
+
+    // Verify captcha
+    function verifyCaptcha() {
+        const answer = parseInt(document.getElementById('captchaAnswer').value);
+        if (answer === captchaNum1 + captchaNum2) {
+            document.getElementById('auditStep1').style.display = 'none';
+            document.getElementById('auditStep2').style.display = 'block';
+        } else {
+            alert('Incorrect answer. Please try again.');
+            generateCaptcha();
+            document.getElementById('captchaAnswer').value = '';
+        }
+    }
+
+    // Check email limit and start audit
+    async function startAudit() {
+        const email = document.getElementById('auditEmail').value.trim();
+        const url = document.getElementById('auditUrl').value.trim();
+        const keyword = document.getElementById('auditKeyword').value.trim();
+
+        if (!email || !url) {
+            showError('Please enter both email and website URL');
+            return;
+        }
+
+        // Basic email validation
+        if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
+            showError('Please enter a valid email address');
+            return;
+        }
+
+        // Check audit limit
+        try {
+            const checkResponse = await fetch('/api/check-audit-limit/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({email: email})
+            });
+            const checkData = await checkResponse.json();
+
+            if (!checkData.allowed) {
+                showError(checkData.message);
+                return;
+            }
+        } catch (e) {
+            showError('Error checking audit eligibility');
+            return;
+        }
+
+        // Show processing
+        document.getElementById('auditStep2').style.display = 'none';
+        document.getElementById('auditStep3').style.display = 'block';
+
+        // Start audit
+        try {
+            const startResponse = await fetch('/api/start-audit/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    email: email,
+                    website_url: url,
+                    target_keyword: keyword
+                })
+            });
+            const startData = await startResponse.json();
+
+            if (!startData.success) {
+                showError(startData.message);
+                return;
+            }
+
+            // Run audit - server will scrape the website
+            const auditResponse = await fetch('/api/run-audit/', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    audit_id: startData.audit_id
+                })
+            });
+            const auditResult = await auditResponse.json();
+
+            if (auditResult.success) {
+                showResults(auditResult);
+            } else {
+                showError(auditResult.message || 'Audit failed. Please try again.');
+            }
+
+        } catch (e) {
+            showError('Error running audit: ' + e.message);
+        }
+    }
+
+    function showResults(result) {
+        document.getElementById('auditStep3').style.display = 'none';
+        document.getElementById('auditStep4').style.display = 'block';
+
+        const overallScore = result.score || 0;
+        document.getElementById('auditScore').textContent = overallScore;
+
+        // Color the score
+        const scoreEl = document.getElementById('auditScore');
+        if (overallScore >= 70) {
+            scoreEl.parentElement.classList.add('bg-success');
+        } else if (overallScore >= 40) {
+            scoreEl.parentElement.classList.add('bg-warning');
+        } else {
+            scoreEl.parentElement.classList.add('bg-danger');
+        }
+
+        // Parse the JSON report
+        let reportData;
+        try {
+            reportData = typeof result.report === 'string' ? JSON.parse(result.report) : result.report;
+        } catch (e) {
+            reportData = null;
+        }
+
+        let reportHtml = '';
+
+        if (reportData && reportData.overall_score !== undefined) {
+            // Overall Score Banner
+            reportHtml += `
+                <div class="text-center mb-4">
+                    <div class="display-1 fw-bold ${overallScore >= 70 ? 'text-success' : overallScore >= 40 ? 'text-warning' : 'text-danger'}">${overallScore}</div>
+                    <div class="text-muted">Overall SEO Score</div>
+                </div>
+            `;
+
+            // Category Scores with Progress Bars
+            const categories = [
+                { key: 'on_page_seo', label: 'On-Page SEO', icon: 'fa-file-alt' },
+                { key: 'content_quality', label: 'Content Quality', icon: 'fa-align-left' },
+                { key: 'technical_seo', label: 'Technical SEO', icon: 'fa-code' },
+                { key: 'linking', label: 'Linking', icon: 'fa-link' }
+            ];
+
+            categories.forEach(cat => {
+                if (reportData[cat.key]) {
+                    const catData = reportData[cat.key];
+                    const catScore = catData.score || 0;
+                    const barColor = catScore >= 70 ? 'bg-success' : catScore >= 40 ? 'bg-warning' : 'bg-danger';
+
+                    reportHtml += `
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-center mb-2">
+                                    <h6 class="card-title mb-0"><i class="fas ${cat.icon} me-2"></i>${cat.label}</h6>
+                                    <span class="badge ${barColor}">${catScore}/100</span>
+                                </div>
+                                <div class="progress" style="height: 10px;">
+                                    <div class="progress-bar ${barColor}" role="progressbar" style="width: ${catScore}%"></div>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+
+            // Issues Section
+            reportHtml += '<h5 class="mt-4 mb-3"><i class="fas fa-exclamation-triangle text-warning me-2"></i>Issues Found</h5>';
+
+            const allIssues = [];
+            categories.forEach(cat => {
+                if (reportData[cat.key] && reportData[cat.key].issues) {
+                    reportData[cat.key].issues.forEach(issue => {
+                        allIssues.push({ category: cat.label, issue: issue });
+                    });
+                }
+            });
+
+            if (allIssues.length > 0) {
+                reportHtml += '<ul class="list-group mb-4">';
+                allIssues.slice(0, 10).forEach(item => {
+                    reportHtml += `<li class="list-group-item"><span class="badge bg-secondary me-2">${item.category}</span>${item.issue}</li>`;
+                });
+                reportHtml += '</ul>';
+            } else {
+                reportHtml += '<p class="text-success">No major issues found!</p>';
+            }
+
+            // Recommendations Section
+            reportHtml += '<h5 class="mt-4 mb-3"><i class="fas fa-lightbulb text-info me-2"></i>Recommendations</h5>';
+
+            const allRecommendations = [];
+            categories.forEach(cat => {
+                if (reportData[cat.key] && reportData[cat.key].recommendations) {
+                    reportData[cat.key].recommendations.forEach(rec => {
+                        allRecommendations.push({ category: cat.label, rec: rec });
+                    });
+                }
+            });
+
+            if (allRecommendations.length > 0) {
+                reportHtml += '<ul class="list-group mb-4">';
+                allRecommendations.slice(0, 10).forEach(item => {
+                    reportHtml += `<li class="list-group-item"><span class="badge bg-info me-2">${item.category}</span>${item.rec}</li>`;
+                });
+                reportHtml += '</ul>';
+            }
+
+            // Action Plan
+            if (reportData.action_plan) {
+                reportHtml += '<h5 class="mt-4 mb-3"><i class="fas fa-tasks text-primary me-2"></i>Action Plan</h5>';
+
+                if (reportData.action_plan.quick_wins && reportData.action_plan.quick_wins.length > 0) {
+                    reportHtml += '<h6 class="text-success">Quick Wins</h6><ul class="list-group mb-2">';
+                    reportData.action_plan.quick_wins.forEach(item => {
+                        reportHtml += `<li class="list-group-item border-success">${item}</li>`;
+                    });
+                    reportHtml += '</ul>';
+                }
+
+                if (reportData.action_plan.critical_fixes && reportData.action_plan.critical_fixes.length > 0) {
+                    reportHtml += '<h6 class="text-danger">Critical Fixes</h6><ul class="list-group mb-2">';
+                    reportData.action_plan.critical_fixes.forEach(item => {
+                        reportHtml += `<li class="list-group-item border-danger">${item}</li>`;
+                    });
+                    reportHtml += '</ul>';
+                }
+
+                if (reportData.action_plan.content_gaps && reportData.action_plan.content_gaps.length > 0) {
+                    reportHtml += '<h6 class="text-warning">Content Gaps</h6><ul class="list-group mb-2">';
+                    reportData.action_plan.content_gaps.forEach(item => {
+                        reportHtml += `<li class="list-group-item border-warning">${item}</li>`;
+                    });
+                    reportHtml += '</ul>';
+                }
+            }
+
+            // Add PDF download button
+            reportHtml += `
+                <div class="text-center mt-4">
+                    <button class="btn btn-primary" onclick="downloadPDF()">
+                        <i class="fas fa-download me-2"></i>Download PDF Report
+                    </button>
+                </div>
+            `;
+
+        } else {
+            // Fallback if JSON parsing fails
+            reportHtml = '<div class="p-3 bg-light rounded">' + (result.report || 'Audit completed!').replace(/\n/g, '<br>') + '</div>';
+        }
+
+        // Store report data for PDF download
+        window.auditReportData = result;
+
+        document.getElementById('auditReport').innerHTML = reportHtml;
+    }
+
+    // PDF Download Function
+    function downloadPDF() {
+        const data = window.auditReportData;
+        if (!data) return;
+
+        // Simple text-based PDF creation
+        let content = `SEO AUDIT REPORT\n`;
+        content += `================\n\n`;
+        content += `Overall Score: ${data.score || 'N/A'}\n\n`;
+
+        try {
+            const reportData = typeof data.report === 'string' ? JSON.parse(data.report) : data.report;
+
+            if (reportData) {
+                content += `CATEGORY SCORES\n`;
+                content += `---------------\n`;
+
+                const categories = ['on_page_seo', 'content_quality', 'technical_seo', 'linking'];
+                const labels = {'on_page_seo': 'On-Page SEO', 'content_quality': 'Content Quality', 'technical_seo': 'Technical SEO', 'linking': 'Linking'};
+
+                categories.forEach(cat => {
+                    if (reportData[cat]) {
+                        content += `${labels[cat]}: ${reportData[cat].score}/100\n`;
+                    }
+                });
+
+                content += `\nISSUES FOUND\n`;
+                content += `------------\n`;
+                categories.forEach(cat => {
+                    if (reportData[cat] && reportData[cat].issues) {
+                        reportData[cat].issues.forEach(issue => {
+                            content += `- [${labels[cat]}] ${issue}\n`;
+                        });
+                    }
+                });
+
+                content += `\nRECOMMENDATIONS\n`;
+                content += `--------------\n`;
+                categories.forEach(cat => {
+                    if (reportData[cat] && reportData[cat].recommendations) {
+                        reportData[cat].recommendations.forEach(rec => {
+                            content += `- [${labels[cat]}] ${rec}\n`;
+                        });
+                    }
+                });
+
+                if (reportData.action_plan) {
+                    content += `\nACTION PLAN\n`;
+                    content += `----------\n`;
+
+                    if (reportData.action_plan.quick_wins) {
+                        content += `Quick Wins:\n`;
+                        reportData.action_plan.quick_wins.forEach(item => {
+                            content += `  - ${item}\n`;
+                        });
+                    }
+
+                    if (reportData.action_plan.critical_fixes) {
+                        content += `\nCritical Fixes:\n`;
+                        reportData.action_plan.critical_fixes.forEach(item => {
+                            content += `  - ${item}\n`;
+                        });
+                    }
+                }
+            }
+        } catch (e) {
+            content += `\n${data.report || 'No detailed report available'}`;
+        }
+
+        content += `\n\n---\nGenerated by Omni Path Marketing`;
+
+        // Create and download text file (works as report)
+        const blob = new Blob([content], { type: 'text/plain' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'seo-audit-report.txt';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    }
+
+    function showError(message) {
+        document.getElementById('auditStep2').style.display = 'block';
+        document.getElementById('auditStep3').style.display = 'none';
+        const errorDiv = document.getElementById('auditError');
+        errorDiv.textContent = message;
+        errorDiv.style.display = 'block';
+    }
+
+    // Initialize captcha on page load
+    generateCaptcha();
+
+    // ==================== OTHER TOOLS ====================
+
+    // Keyword Density Calculator
+    function calculateKeywordDensity() {
+        const keyword = document.getElementById('kdKeyword').value.toLowerCase();
+        const content = document.getElementById('kdContent').value;
+
+        if (!keyword || !content) {
+            alert('Please enter both keyword and content');
+            return;
+        }
+
+        const words = content.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+        const keywordCount = (content.toLowerCase().match(new RegExp(keyword, 'g')) || []).length;
+        const density = ((keywordCount / words.length) * 100).toFixed(2);
+
+        document.getElementById('kdKeywordResult').textContent = keyword;
+        document.getElementById('kdTotalWords').textContent = words.length;
+        document.getElementById('kdCount').textContent = keywordCount;
+        document.getElementById('kdDensity').textContent = density + '%';
+        document.getElementById('kdResult').classList.add('show');
+    }
+
+    // SEO Score Checker
+    function checkSeoScore() {
+        const url = document.getElementById('seoUrl').value;
+        const keyword = document.getElementById('seoKeyword').value;
+        const title = document.getElementById('seoTitle').value;
+        const meta = document.getElementById('seoMeta').value;
+
+        let score = 0;
+        let recommendations = [];
+
+        // Title check
+        if (title) {
+            score += 25;
+            if (title.toLowerCase().includes(keyword.toLowerCase())) {
+                score += 15;
+            } else {
+                recommendations.push('Include your target keyword in the title');
+            }
+        } else {
+            recommendations.push('Add a page title');
+        }
+
+        // Meta description check
+        if (meta) {
+            score += 20;
+            if (meta.length >= 120 && meta.length <= 160) {
+                score += 10;
+            } else {
+                recommendations.push('Meta description should be 120-160 characters');
+            }
+            if (meta.toLowerCase().includes(keyword.toLowerCase())) {
+                score += 10;
+            }
+        } else {
+            recommendations.push('Add a meta description');
+        }
+
+        // URL check
+        if (url && url.includes(keyword.toLowerCase().replace(/\s+/g, '-'))) {
+            score += 20;
+        }
+
+        // Score display
+        score = Math.min(score, 100);
+        const circle = document.getElementById('scoreCircle');
+        circle.textContent = score;
+
+        if (score >= 80) {
+            circle.className = 'score-circle score-good';
+            document.getElementById('scoreMessage').textContent = 'Great! Your page is well optimized.';
+        } else if (score >= 50) {
+            circle.className = 'score-circle score-medium';
+            document.getElementById('scoreMessage').textContent = 'Good, but there\'s room for improvement.';
+        } else {
+            circle.className = 'score-circle score-poor';
+            document.getElementById('scoreMessage').textContent = 'Needs improvement. Follow the recommendations below.';
+        }
+
+        // Recommendations
+        const recList = document.getElementById('seoRecommendations');
+        recList.innerHTML = recommendations.length > 0
+            ? recommendations.map(r => `<li class="mb-2"><i class="fas fa-times text-danger me-2"></i>${r}</li>`).join('')
+            : '<li class="text-success"><i class="fas fa-check me-2"></i>No major issues found!</li>';
+
+        document.getElementById('seoResult').classList.add('show');
+    }
+
+    // SERP Preview
+    document.getElementById('serpTitle').addEventListener('input', function() {
+        const title = this.value || 'Your Page Title Here';
+        document.getElementById('previewTitle').textContent = title;
+        document.getElementById('serpTitleCount').textContent = this.value.length;
+    });
+
+    document.getElementById('serpUrl').addEventListener('input', function() {
+        document.getElementById('previewUrl').textContent = this.value || 'www.example.com';
+    });
+
+    document.getElementById('serpDesc').addEventListener('input', function() {
+        const desc = this.value || 'Your meta description will appear here.';
+        document.getElementById('previewDesc').textContent = desc;
+        document.getElementById('serpDescCount').textContent = this.value.length;
+    });
+
+    // Budget Planner
+    function planBudget() {
+        const total = parseFloat(document.getElementById('totalBudget').value) || 0;
+
+        if (total === 0) {
+            alert('Please enter your total budget');
+            return;
+        }
+
+        document.getElementById('seoBudget').textContent = '$' + Math.round(total * 0.30).toLocaleString();
+        document.getElementById('ppcBudget').textContent = '$' + Math.round(total * 0.35).toLocaleString();
+        document.getElementById('contentBudget').textContent = '$' + Math.round(total * 0.20).toLocaleString();
+        document.getElementById('socialBudget').textContent = '$' + Math.round(total * 0.15).toLocaleString();
+
+        document.getElementById('budgetResult').classList.add('show');
+    }
+
+    // Ad Copy Generator
+    function generateAdCopy() {
+        const product = document.getElementById('adProduct').value || 'Our Product';
+        const benefit = document.getElementById('adBenefit').value || 'amazing results';
+        const cta = document.getElementById('adCta').value;
+
+        const headlines = [
+            `Get ${benefit} with ${product}`,
+            `Transform Your Business with ${product}`,
+            `${product}: The Solution You've Been Waiting For`,
+            `Discover How ${product} Delivers ${benefit}`
+        ];
+
+        const descriptions = [
+            `Experience ${benefit} today. ${product} helps thousands achieve their goals. ${cta} now!`,
+            `Stop wasting time. ${product} provides ${benefit} that actually works. ${cta}!`,
+            `Join the revolution in ${benefit}. ${product} is here to help you succeed. ${cta} today!`
+        ];
+
+        let html = '<h6 class="mb-3">Headlines:</h6>';
+        headlines.forEach((h, i) => {
+            html += `<div class="mb-2 p-2 bg-light rounded"><strong>${i+1}.</strong> ${h}</div>`;
+        });
+
+        html += '<h6 class="mb-3 mt-4">Descriptions:</h6>';
+        descriptions.forEach((d, i) => {
+            html += `<div class="mb-2 p-2 bg-light rounded"><strong>${i+1}.</strong> ${d}</div>`;
+        });
+
+        document.getElementById('adCopyContent').innerHTML = html;
+        document.getElementById('adCopyResult').classList.add('show');
+    }
+
+    // Hashtag Generator
+    function generateHashtags() {
+        const topic = document.getElementById('hashtagTopic').value.toLowerCase();
+        const platform = document.getElementById('hashtagPlatform').value;
+
+        if (!topic) {
+            alert('Please enter a topic');
+            return;
+        }
+
+        const baseHashtags = [
+            topic,
+            topic + 'tips',
+            topic + 'help',
+            'getstarted' + topic,
+            topic + 'expert',
+            topic + 'marketing',
+            'digital' + topic,
+            topic + 'strategy'
+        ];
+
+        const platformHashtags = {
+            instagram: ['instagood', 'photooftheday', 'love', 'business', 'success', 'motivation'],
+            twitter: ['news', 'update', 'trending', 'viral'],
+            linkedin: ['professional', 'business', 'networking', 'career'],
+            tiktok: ['fyp', 'viral', 'trending', 'dance']
+        };
+
+        const hashtags = [...baseHashtags, ...platformHashtags[platform]].slice(0, 15);
+
+        let html = '';
+        hashtags.forEach(tag => {
+            html += `<span class="hashtag-pill">#${tag.replace(/\s+/g, '')}</span>`;
+        });
+
+        document.getElementById('hashtagContent').innerHTML = html;
+        document.getElementById('hashtagResult').classList.add('show');
+    }
+
+    // Readability Checker
+    function checkReadability() {
+        const content = document.getElementById('readabilityContent').value;
+
+        if (!content) {
+            alert('Please enter some content');
+            return;
+        }
+
+        const words = content.split(/\s+/).filter(w => w.length > 0);
+        const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
+        const avgWordsPerSentence = words.length / (sentences.length || 1);
+
+        // Simple readability score (Flesch-Kincaid approximation)
+        const score = Math.max(0, Math.min(100, 206.835 - (1.015 * avgWordsPerSentence) - (84.6 * (content.split(/\s+/).filter(w => w.length > 6).length / words.length))));
+
+        const circle = document.getElementById('readabilityScore');
+        circle.textContent = Math.round(score);
+
+        if (score >= 70) {
+            circle.className = 'score-circle score-good';
+            document.getElementById('readabilityLevel').textContent = 'Easy to read. Great for general audiences!';
+        } else if (score >= 50) {
+            circle.className = 'score-circle score-medium';
+            document.getElementById('readabilityLevel').textContent = 'Moderate difficulty. Suitable for most audiences.';
+        } else {
+            circle.className = 'score-circle score-poor';
+            document.getElementById('readabilityLevel').textContent = 'Difficult to read. Consider simplifying your content.';
+        }
+
+        document.getElementById('readabilityWords').textContent = words.length;
+        document.getElementById('readabilitySentences').textContent = sentences.length;
+        document.getElementById('readabilityReadingTime').textContent = Math.ceil(words.length / 200) + ' min';
+
+        document.getElementById('readabilityResult').classList.add('show');
+    }
+
+    // Word Counter
+    function countWords() {
+        const content = document.getElementById('wordCounterContent').value;
+
+        const words = content.split(/\s+/).filter(w => w.length > 0);
+        const chars = content.length;
+        const sentences = content.split(/[.!?]+/).filter(s => s.trim().length > 0);
+        const paragraphs = content.split(/\n\n+/).filter(p => p.trim().length > 0);
+
+        document.getElementById('wordCount').textContent = words.length;
+        document.getElementById('charCount').textContent = chars;
+        document.getElementById('sentenceCount').textContent = sentences.length;
+        document.getElementById('paraCount').textContent = paragraphs.length || (content ? 1 : 0);
+    }
+
+    // CTA Generator
+    function generateCTA() {
+        const action = document.getElementById('ctaAction').value;
+        const urgency = document.getElementById('ctaUrgency').value;
+
+        const ctas = {
+            buy: [
+                'Shop Now',
+                'Buy Today',
+                'Get Yours Now',
+                'Order Now'
+            ],
+            sign: [
+                'Sign Up Free',
+                'Get Started',
+                'Create Account',
+                'Join Now'
+            ],
+            download: [
+                'Download Now',
+                'Get Your Free Guide',
+                'Download Free',
+                'Get Access Now'
+            ],
+            contact: [
+                'Contact Us',
+                'Get in Touch',
+                'Talk to an Expert',
+                'Schedule a Call'
+            ],
+            learn: [
+                'Learn More',
+                'Discover More',
+                'Find Out How',
+                'See How It Works'
+            ]
+        };
+
+        let results = ctas[action];
+
+        if (urgency === 'today') {
+            results = results.map(c => c + ' - Today Only!');
+        } else if (urgency === 'limited') {
+            results = results.map(c => c + ' - Limited Time Offer!');
+        }
+
+        let html = '';
+        results.forEach((cta, i) => {
+            html += `<div class="mb-2 p-3 bg-light rounded d-flex justify-content-between align-items-center">
+                <strong>${cta}</strong>
+                <button class="copy-btn" onclick="navigator.clipboard.writeText('${cta}')">Copy</button>
+            </div>`;
+        });
+
+        document.getElementById('ctaContent').innerHTML = html;
+        document.getElementById('ctaResult').classList.add('show');
+    }
+
+    // Copy to clipboard helper
+    function copyToClipboard(elementId) {
+        const element = document.getElementById(elementId);
+        navigator.clipboard.writeText(element.value);
+        alert('Copied to clipboard!');
+    }
+</script>
+{% endblock %}

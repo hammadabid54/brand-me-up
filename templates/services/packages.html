@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}Digital Marketing Packages - AI Marketing Agency{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-light py-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/services/">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Digital Marketing Packages</li>
+            </ol>
+        </nav>
+        <h1 class="section-title">Digital Marketing Packages</h1>
+        <p class="lead text-muted">Comprehensive packages for businesses of all sizes</p>
+    </div>
+</section>
+
+<!-- Packages Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Starter Package</h5>
+                        <p class="text-muted">For small businesses</p>
+                        <a href="/services/packages/starter/" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Professional Package</h5>
+                        <p class="text-muted">For growing businesses</p>
+                        <a href="/services/packages/professional/" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Enterprise Package</h5>
+                        <p class="text-muted">For large businesses</p>
+                        <a href="/services/packages/enterprise/" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Full-Scale Package</h5>
+                        <p class="text-muted">Complete digital marketing</p>
+                        <a href="/services/packages/full-scale/" class="btn btn-primary btn-sm">View Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

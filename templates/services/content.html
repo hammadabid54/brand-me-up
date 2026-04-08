@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block title %}AI Content Services - AI Marketing Agency{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<section class="bg-light py-5">
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/services/">Services</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Content</li>
+            </ol>
+        </nav>
+        <h1 class="section-title">AI Content Services</h1>
+        <p class="lead text-muted">AI-assisted content creation with human quality assurance</p>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5">
+    <div class="container">
+        <!-- ContentFlow Highlight -->
+        <div class="card bg-primary text-white mb-5">
+            <div class="card-body p-5">
+                <div class="row align-items-center">
+                    <div class="col-lg-8">
+                        <h2>ContentFlow</h2>
+                        <p class="mb-0">Post to social media, website, and GBP from $50/mo. The most affordable way to keep your content fresh across all platforms.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+                        <a href="/services/content/contentflow/" class="btn btn-light btn-lg">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Content Creation</h5>
+                        <p class="text-muted">AI-assisted content writing</p>
+                        <a href="/services/content/creation/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Blog Writing</h5>
+                        <p class="text-muted">SEO-optimized blog posts</p>
+                        <a href="/services/content/blog-writing/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Video Production</h5>
+                        <p class="text-muted">Video content creation</p>
+                        <a href="/services/content/video-production/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card service-card h-100">
+                    <div class="card-body">
+                        <h5>Copywriting</h5>
+                        <p class="text-muted">Marketing copy that converts</p>
+                        <a href="/services/content/copywriting/" class="btn btn-primary btn-sm">View Packages</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Budget Planner | Free Marketing Tool | Omni Path Marketing{% endblock %}
+{% block meta_description %}Free marketing budget planner tool. Plan your marketing budget across different channels and campaigns.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #7c3aed 0%, #a78bfa 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">Free Tool</span>
+                <h1 class="fw-bold mb-4" style="font-size: 2.5rem; color: white;">Budget Planner</h1>
+                <p class="lead mb-4" style="font-size: 1.125rem; color: rgba(255,255,255,0.9);">Plan your marketing budget across different channels and campaigns for maximum impact.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#tool-form" class="btn btn-light btn-lg px-4">Plan Budget</a>
+                    <a href="/tools/" class="btn btn-outline-light btn-lg px-4">All Tools</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="text-center">
+                    <div class="display-1 text-white mb-3"><i class="fas fa-wallet"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tool Section -->
+<section id="tool-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Marketing Budget Planner</h2>
+                            <p class="text-muted">Enter your total budget and see recommended allocation</p>
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Total Monthly Marketing Budget ($)</label>
+                            <input type="number" id="totalBudget" class="form-control form-control-lg" placeholder="5000" oninput="calculateBudget()">
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Industry</label>
+                            <select id="industry" class="form-select" onchange="calculateBudget()">
+                                <option value="general">General Business</option>
+                                <option value="ecommerce">E-commerce</option>
+                                <option value="saas">SaaS / Tech</option>
+                                <option value="local">Local Business</option>
+                                <option value="b2b">B2B Services</option>
+                            </select>
+                        </div>
+
+                        <!-- Results -->
+                        <div id="budgetResult" class="mt-4" style="display: none;">
+                            <hr>
+                            <h5 class="mb-3">Recommended Budget Allocation:</h5>
+
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-light">
+                                        <tr>
+                                            <th>Channel</th>
+                                            <th>Allocation</th>
+                                            <th>Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="budgetTable">
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="alert alert-info mt-3">
+                                <strong>Note:</strong> These are recommended allocations based on industry best practices. Adjust based on your specific goals and target audience.
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Marketing Channels</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-search fs-2 text-primary mb-3"></i>
+                        <h5>SEO</h5>
+                        <p class="text-muted small mb-0">Search engine optimization for organic growth</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bullhorn fs-2 text-primary mb-3"></i>
+                        <h5>PPC Ads</h5>
+                        <p class="text-muted small mb-0">Pay-per-click advertising campaigns</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <i class="fas fa-share-alt fs-2 text-primary mb-3"></i>
+                        <h5>Social Media</h5>
+                        <p class="text-muted small mb-0">Social media marketing and management</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Need Help with Budget?</h2>
+        <p class="mb-4">Our marketing experts can help you plan effectively</p>
+        <a href="/contact/" class="btn btn-light btn-lg px-5">Get Started</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+const channelAllocations = {
+    general: [
+        { name: 'SEO / Content', percent: 25 },
+        { name: 'PPC Advertising', percent: 30 },
+        { name: 'Social Media', percent: 20 },
+        { name: 'Email Marketing', percent: 10 },
+        { name: 'Content Creation', percent: 15 }
+    ],
+    ecommerce: [
+        { name: 'PPC Advertising', percent: 35 },
+        { name: 'Social Media Ads', percent: 25 },
+        { name: 'SEO', percent: 15 },
+        { name: 'Email Marketing', percent: 15 },
+        { name: 'Content Creation', percent: 10 }
+    ],
+    saas: [
+        { name: 'Content Marketing', percent: 25 },
+        { name: 'PPC Advertising', percent: 30 },
+        { name: 'SEO', percent: 20 },
+        { name: 'LinkedIn Ads', percent: 15 },
+        { name: 'Email Marketing', percent: 10 }
+    ],
+    local: [
+        { name: 'Local SEO', percent: 30 },
+        { name: 'Google Ads', percent: 30 },
+        { name: 'Social Media', percent: 20 },
+        { name: 'Review Management', percent: 10 },
+        { name: 'Content', percent: 10 }
+    ],
+    b2b: [
+        { name: 'Content Marketing', percent: 25 },
+        { name: 'LinkedIn Ads', percent: 25 },
+        { name: 'PPC', percent: 20 },
+        { name: 'SEO', percent: 15 },
+        { name: 'Email/Automation', percent: 15 }
+    ]
+};
+
+function calculateBudget() {
+    const total = parseFloat(document.getElementById('totalBudget').value) || 0;
+    const industry = document.getElementById('industry').value;
+
+    if (total === 0) {
+        document.getElementById('budgetResult').style.display = 'none';
+        return;
+    }
+
+    const allocations = channelAllocations[industry];
+    const tableBody = document.getElementById('budgetTable');
+    tableBody.innerHTML = '';
+
+    allocations.forEach(channel => {
+        const amount = (total * channel.percent / 100).toFixed(0);
+        tableBody.innerHTML += `
+            <tr>
+                <td>${channel.name}</td>
+                <td>${channel.percent}%</td>
+                <td>$${parseInt(amount).toLocaleString()}</td>
+            </tr>
+        `;
+    });
+
+    document.getElementById('budgetResult').style.display = 'block';
+}
+</script>
+{% endblock %}

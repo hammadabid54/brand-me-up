@@ -1,0 +1,93 @@
+{
+  "page_name": "gbp",
+  "meta_title": "Google Business Profile Services | GBP Management | Omni Path Marketing",
+  "meta_description": "Complete Google Business Profile services. Setup, management, and optimization to dominate local search results and attract more customers.",
+  "meta_keywords": "Google Business Profile, GBP management, Google My Business, local listings, local SEO, business listing",
+  "hero_title": "Google Business Profile Services",
+  "hero_subtitle": "Optimize your Google Business Profile and dominate local search results.",
+  "description": "Comprehensive Google Business Profile services that help local businesses get found. We handle setup, management, and optimization.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Google Business Profile and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Google Business Profile (GBP), formerly known as Google My Business, is a free tool provided by Google that allows businesses to manage their online presence across Google Search and Google Maps. When someone searches for a business like yours or for services you offer in your area, your GBP profile appears prominently in local search results. This visibility is crucial for local businesses looking to attract customers in their geographic area.\n\nConsider the last time you searched for a local service—perhaps a plumber, restaurant, or hair salon. You likely saw a Google Business Profile listing at the top of the results, showing the business name, location, hours, reviews, and a direct link to call or get directions. This prime real estate can mean the difference between a prospect choosing you or your competitor.\n\nThe statistics on local search are compelling. 46% of all Google searches are looking for local information, and 76% of people who search for something nearby visit a business within 24 hours. Additionally, consumers trust online reviews as much as personal recommendations, and GBP is where these reviews appear. In essence, your Google Business Profile is often the first impression potential customers have of your business.\n\nOur Google Business Profile services ensure your listing is fully optimized to capture these local searchers. We handle everything from initial setup to ongoing management, ensuring your profile works constantly to attract customers."
+    },
+    {
+      "section_type": "why_matters",
+      "title": "Why Google Business Profile is Essential for Local Business",
+      "subtitle": "",
+      "content": "Google Business Profile provides significant benefits for local businesses:\n\n<h3>Local Visibility</h3>GBP puts your business in front of customers precisely when they're searching for what you offer. This immediate visibility drives foot traffic and phone calls.\n\n<h3>Credibility Building</h3>A complete, active profile signals professionalism. When customers see detailed information, photos, and regular posts, they trust your business more.\n\n<h3>Review Management</h3>GBP is where customers leave reviews—the modern word-of-mouth. Managing these reviews directly impacts purchasing decisions.\n\n<h3>Free Marketing</h3>GBP is completely free, making it one of the most cost-effective marketing tools available. The return on investment is exceptional.\n\n<h3>Insights and Analytics</h3>GBP provides valuable data about how customers find and interact with your listing. This insight informs marketing decisions.\n\n<h3>Direct Communication</h3>You can post updates, answer questions, and communicate directly with customers through your profile.\n\n<h3>Photo Showcase</h3>Visual content influences decisions. GBP allows you to showcase your business, products, and team to potential customers."
+    },
+    {
+      "section_type": "services",
+      "title": "Our Google Business Profile Services",
+      "subtitle": "",
+      "content": "We offer comprehensive GBP services to meet every need:\n\n<h3>GBP Setup</h3>Complete profile creation from scratch. We set up your listing with all necessary information, optimize categories, add photos, and create initial posts.\n\n<h3>GBP Management</h3>Ongoing management that keeps your profile active and engaging. Regular posts, photo updates, and review responses keep your listing fresh.\n\n<h3>GBP Optimization</h3>Comprehensive audit and improvement of existing profiles. We identify issues and implement optimizations that improve visibility.\n\n<h3>Category Optimization</h3>Selecting the right business categories helps Google understand who you are and when to show your listing.\n\n<h3>Review Management</h3>We monitor and respond to reviews, addressing concerns professionally and leveraging positive feedback.\n\n<h3>Post Creation</h3>Regular posts keep customers informed about promotions, events, and news. Each post is an opportunity to engage.\n\n<h3>Photo Management</h3>Professional photos showcase your business. We help curate and upload images that convert visitors."
+    },
+    {
+      "section_type": "process",
+      "title": "Our GBP Service Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive approach for every GBP project:\n\n<h3>Discovery</h3>We learn about your business—location, services, target audience, and goals. This information guides all optimizations.\n\n<h3>Profile Audit</h3>For existing profiles, we conduct thorough audits to identify issues and improvement opportunities.\n\n<h3>Setup or Optimization</h3>We implement changes to ensure your profile meets all of Google's guidelines and best practices.\n\n<h3>Content Creation</h3>We develop posts, select photos, and craft descriptions that represent your business effectively.\n\n<h3>Ongoing Management</h3>Regular updates, review responses, and monitoring ensure continued success.\n\n<h3>Performance Reporting</h3>Monthly reports show how customers are finding and interacting with your profile."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Google Business Profile Services?",
+      "subtitle": "",
+      "content": "Our GBP clients typically see significant improvements:\n\n<h3>Increased Visibility</h3>Your business appears more frequently in local search results for relevant queries.\n\n<h3>More Phone Calls</h3>Prominent listings with complete information encourage immediate action—calling your business.\n\n<h3>Greater Foot Traffic</h3>For brick-and-mortar businesses, improved visibility translates directly to more customers walking through the door.\n\n<h3>Better Reviews</h3>Active management encourages positive reviews and professionally addresses concerns.\n\n<h3>Enhanced Credibility</h3>A complete, active profile builds trust with potential customers.\n\n<h3>Competitive Advantage</h3>Out-optimized profiles rank higher than competitors with incomplete listings."
+    }
+  ],
+  "pricing": {
+    "intro": "Google Business Profile Pricing",
+    "description": "Flexible pricing for setup, management, and optimization.",
+    "plans": [
+      {
+        "name": "Setup",
+        "price": "$147",
+        "description": "One-time setup for new businesses",
+        "features": [
+          "Complete profile setup",
+          "Category optimization",
+          "Business description writing",
+          "Photo uploads (up to 10)",
+          "Initial posts (2)",
+          "Q&A setup"
+        ]
+      },
+      {
+        "name": "Management",
+        "price": "$97/month",
+        "description": "Ongoing management",
+        "features": [
+          "4 posts per month",
+          "Photo updates",
+          "Review monitoring",
+          "Review responses",
+          "Q&A management",
+          "Monthly insights"
+        ]
+      },
+      {
+        "name": "Optimization",
+        "price": "$297",
+        "description": "One-time optimization audit",
+        "features": [
+          "Complete profile audit",
+          "Issue identification",
+          "Optimization implementation",
+          "Competitor analysis",
+          "90-day support",
+          "Ranking tracking"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How long does setup take?", "answer": "Most profiles are set up within 3-5 business days, though verification may take additional time from Google."},
+    {"question": "Can you help if I already have a profile?", "answer": "Absolutely! We can audit and optimize existing profiles to improve their performance."},
+    {"question": "What happens if I get a negative review?", "answer": "We monitor reviews and respond professionally to address concerns. This approach often turns negative situations into positive outcomes."},
+    {"question": "Do I need to provide photos?", "answer": "You can provide your own photos, or we can source professional images that represent your business well."},
+    {"question": "How do you handle verification?", "answer": "Google sends a verification postcard to your business address. We'll guide you through this process."}
+  ]
+}

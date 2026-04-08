@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Keyword Density Checker | Free SEO Tool | Omni Path Marketing{% endblock %}
+{% block meta_description %}Free keyword density checker tool. Analyze keyword density in your content to optimize for search engines.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section py-5" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7">
+                <span class="badge bg-warning text-dark px-3 py-2 mb-3 rounded-pill">Free Tool</span>
+                <h1 class="fw-bold mb-4" style="font-size: 2.5rem; color: white;">Keyword Density Checker</h1>
+                <p class="lead mb-4" style="font-size: 1.125rem; color: rgba(255,255,255,0.9);">Analyze keyword density in your content to optimize for search engines and improve your SEO rankings.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="#tool-form" class="btn btn-light btn-lg px-4">Use Tool</a>
+                    <a href="/tools/" class="btn btn-outline-light btn-lg px-4">All Tools</a>
+                </div>
+            </div>
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="text-center">
+                    <div class="display-1 text-white mb-3"><i class="fas fa-calculator"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tool Section -->
+<section id="tool-form" class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card shadow-lg border-0">
+                    <div class="card-body p-5">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold">Keyword Density Checker</h2>
+                            <p class="text-muted">Enter your keyword and content to analyze keyword density</p>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label fw-bold">Target Keyword</label>
+                            <input type="text" id="kdKeyword" class="form-control form-control-lg" placeholder="Enter your target keyword">
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-bold">Content</label>
+                            <textarea id="kdContent" class="form-control" rows="8" placeholder="Paste your content here"></textarea>
+                        </div>
+                        <button class="btn btn-primary btn-lg w-100" onclick="calculateKeywordDensity()">
+                            <i class="fas fa-calculator me-2"></i>Analyze Density
+                        </button>
+
+                        <!-- Results -->
+                        <div id="kdResult" class="mt-4" style="display: none;">
+                            <hr>
+                            <h5 class="mb-3">Results</h5>
+                            <div class="row text-center">
+                                <div class="col-6 col-md-3 mb-3">
+                                    <div class="h2 fw-bold text-primary" id="kdDensity">0%</div>
+                                    <small class="text-muted">Keyword Density</small>
+                                </div>
+                                <div class="col-6 col-md-3 mb-3">
+                                    <div class="h2 fw-bold" id="kdCount">0</div>
+                                    <small class="text-muted">Keyword Count</small>
+                                </div>
+                                <div class="col-6 col-md-3 mb-3">
+                                    <div class="h2 fw-bold" id="kdTotalWords">0</div>
+                                    <small class="text-muted">Total Words</small>
+                                </div>
+                                <div class="col-6 col-md-3 mb-3">
+                                    <div class="h2 fw-bold" id="kdKeywordResult">-</div>
+                                    <small class="text-muted">Keyword</small>
+                                </div>
+                            </div>
+                            <div class="alert mt-3" id="kdAlert"></div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features -->
+<section class="py-5 bg-light">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold">Why Check Keyword Density?</h2>
+        </div>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-success bg-opacity-10 text-success rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-bullseye fs-4"></i>
+                        </div>
+                        <h5>SEO Optimization</h5>
+                        <p class="text-muted small mb-0">Find the right balance of keywords in your content for better search rankings.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-warning bg-opacity-10 text-warning rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-exclamation-triangle fs-4"></i>
+                        </div>
+                        <h5>Avoid Over-Optimization</h5>
+                        <p class="text-muted small mb-0">Prevent keyword stuffing which can lead to search engine penalties.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm">
+                    <div class="card-body text-center">
+                        <div class="feature-icon bg-info bg-opacity-10 text-info rounded-circle mb-3 mx-auto" style="width: 60px; height: 60px; line-height: 60px;">
+                            <i class="fas fa-chart-line fs-4"></i>
+                        </div>
+                        <h5>Improve Rankings</h5>
+                        <p class="text-muted small mb-0">Optimized content has better chances of ranking higher in search results.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 bg-primary text-white">
+    <div class="container text-center">
+        <h2 class="fw-bold mb-3">Need Expert Help?</h2>
+        <p class="mb-4">Our SEO team can help optimize your content</p>
+        <a href="/contact/" class="btn btn-light btn-lg px-5">Get Started</a>
+    </div>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script>
+function calculateKeywordDensity() {
+    const keyword = document.getElementById('kdKeyword').value.toLowerCase().trim();
+    const content = document.getElementById('kdContent').value;
+
+    if (!keyword || !content) {
+        alert('Please enter both keyword and content');
+        return;
+    }
+
+    const words = content.toLowerCase().split(/\s+/).filter(w => w.length > 0);
+    const keywordCount = (content.toLowerCase().match(new RegExp(keyword, 'g')) || []).length;
+    const density = ((keywordCount / words.length) * 100).toFixed(2);
+
+    document.getElementById('kdKeywordResult').textContent = keyword;
+    document.getElementById('kdTotalWords').textContent = words.length;
+    document.getElementById('kdCount').textContent = keywordCount;
+    document.getElementById('kdDensity').textContent = density + '%';
+
+    const alertEl = document.getElementById('kdAlert');
+    if (density < 0.5) {
+        alertEl.className = 'alert alert-warning';
+        alertEl.textContent = 'Keyword density is too low. Consider using your keyword more frequently.';
+    } else if (density > 2.5) {
+        alertEl.className = 'alert alert-danger';
+        alertEl.textContent = 'Warning: High keyword density may be seen as keyword stuffing.';
+    } else {
+        alertEl.className = 'alert alert-success';
+        alertEl.textContent = 'Good keyword density! Aim for 1-2% for optimal SEO.';
+    }
+
+    document.getElementById('kdResult').style.display = 'block';
+}
+</script>
+{% endblock %}

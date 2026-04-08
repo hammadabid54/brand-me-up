@@ -1,0 +1,86 @@
+{
+  "service_name": "GBP Setup",
+  "slug": "gbp-setup",
+  "category": "GBP",
+  "category_url": "/services/gbp/",
+  "meta_title": "Google Business Profile Setup | Complete Profile Creation | Omni Path Marketing",
+  "meta_description": "Complete Google Business Profile setup service. Get your business listed and visible in local search results. Professional setup starting at $147.",
+  "meta_keywords": "Google Business Profile setup, Google My Business setup, local business listing, GBP setup",
+  "hero_title": "Google Business Profile Setup Services",
+  "hero_subtitle": "Get your business listed on Google and visible to local customers today.",
+  "description": "Complete Google Business Profile setup for new businesses. We create and optimize your listing for maximum local visibility.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Google Business Profile Setup and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Google Business Profile setup is the process of creating and optimizing your business listing on Google. While Google allows businesses to create their own listings, the difference between a basic listing and a fully optimized one is substantial. Many businesses create profiles but fail to complete all available fields, missing opportunities for visibility and conversion.\n\nSetting up a Google Business Profile correctly from the start is crucial. Once your listing is established and verified, making changes becomes more difficult. A poorly set up profile can hurt your local rankings, while a well-optimized profile puts you in front of customers exactly when they're searching for what you offer.\n\nThe setup process involves much more than entering your business name and address. It includes selecting the right business categories, writing compelling descriptions, adding photos, setting hours, enabling messaging, and more. Each element affects how and when your listing appears in search results.\n\nOur Google Business Profile setup service ensures your listing is fully optimized from day one. We handle every detail, creating a profile that not only appears in local search but converts searchers into customers."
+    },
+    {
+      "section_type": "why_matters",
+      "title": "Why Professional Setup is Essential",
+      "subtitle": "",
+      "content": "Professional setup delivers significant advantages:\n\n<h3>Correct Category Selection</h3>Choosing the right primary and secondary categories tells Google exactly what your business does. Wrong categories mean you're not showing up for relevant searches.\n\n<h3>Optimized Descriptions</h3>Your business description should include relevant keywords while accurately representing what you offer. We craft descriptions that do both.\n\n<h3>Complete Information</h3>Every field in your profile is an opportunity. Professional setup ensures nothing is missed.\n\n<h3>Photo Selection</h3>Photos significantly impact engagement. We select or create images that showcase your business effectively.\n\n<h3>Verification Guidance</h3>Google requires verification—usually by postcard. We guide you through this process smoothly.\n\n<h3>Foundation for Management</h3>A properly set up profile makes ongoing management more effective. Everything works better from a solid foundation.\n\n<h3>Avoid Common Mistakes</h3>Many DIY setups include errors that hurt visibility. Professional setup avoids these pitfalls."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Setup Process",
+      "subtitle": "",
+      "content": "We follow a thorough process for every setup:\n\n<h3>Business Analysis</h3>We learn about your business—location, services, target customers, and unique selling points. This information guides optimization.\n\n<h3>Profile Creation</h3>We create your listing in Google Business Profile, ensuring all required information is accurate.\n\n<h3>Category Selection</h3>We research and select the most relevant categories for your business, including secondary categories that expand visibility.\n\n<h3>Description Writing</h3>We craft a compelling business description that includes relevant keywords while accurately representing your offerings.\n\n<h3>Photo Curation</h3>We add professional photos of your business—exterior, interior, products, team—that make positive impressions.\n\n<h3>Information Completion</h3>Every field is completed—hours, phone, website, attributes, and more—to maximize your profile's effectiveness.\n\n<h3>Post Creation</h3>We create initial posts to give your profile immediate activity.\n\n<h3>Verification Support</h3>We guide you through Google's verification process to ensure your listing becomes active."
+    },
+    {
+      "section_type": "included",
+      "title": "What's Included in Our Setup Service",
+      "subtitle": "",
+      "content": "Our setup service includes everything you need:\n\n<h3>Complete Profile Creation</h3>Full setup with accurate business information.\n\n<h3>Category Optimization</h3>Primary and secondary categories selected for maximum visibility.\n\n<h3>Business Description</h3>Professionally written description including relevant keywords.\n\n<h3>Photo Uploads</h3>Up to 10 professional photos showcasing your business.\n\n<h3>Initial Posts</h3>Two posts to give your profile immediate engagement.\n\n<h3>Hours Configuration</h3>Accurate hours including special hours for holidays.\n\n<h3>Messaging Setup</h3>Enable messaging for direct customer communication.\n\n<h3>Service Menu</h3>Complete listing of all services or products offered.\n\n<h3>Attributes Selection</h3>Business attributes that help customers know what to expect.\n\n<h3>Post-Setup Support</h3>30 days of support for questions and adjustments."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Professional Setup?",
+      "subtitle": "",
+      "content": "Proper setup delivers immediate benefits:\n\n<h3>Local Visibility</h3>Your business appears in local search results for relevant queries.\n\n<h3>Complete Information</h3>Customers see everything they need to make a decision—hours, location, contact info.\n\n<h3>Professional Image</h3>A complete profile with photos creates a positive first impression.\n\n<h3>Search Appearance</h3>Proper categories ensure you appear for relevant searches.\n\n<h3>Customer Trust</h3>Verified, complete profiles signal legitimacy to potential customers.\n\n<h3>Foundation for Growth</h3>A well-set-up profile provides the foundation for ongoing management success."
+    }
+  ],
+  "pricing": {
+    "intro": "GBP Setup Pricing",
+    "description": "One-time setup fee for new Google Business Profiles.",
+    "plans": [
+      {
+        "name": "Standard",
+        "price": "$147",
+        "description": "Complete profile setup",
+        "features": [
+          "Complete profile creation",
+          "Business category selection",
+          "Business description writing",
+          "Photo uploads (up to 10)",
+          "Initial posts (2)",
+          "Hours configuration",
+          "Messaging setup",
+          "30-day support"
+        ]
+      },
+      {
+        "name": "Premium",
+        "price": "$247",
+        "description": "Enhanced setup with extras",
+        "features": [
+          "Everything in Standard",
+          "Product/services menu setup",
+          "Messaging enabled and configured",
+          "Website link optimization",
+          "Additional photo categories",
+          "Q&A preparation",
+          "60-day support"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How long does setup take?", "answer": "The setup process takes 3-5 business days. Google verification (postcard) typically takes 1-2 weeks."},
+    {"question": "Do I need to provide photos?", "answer": "You can provide your own photos, or we can use stock images appropriate for your business type."},
+    {"question": "What if I already have a profile?", "answer": "We can audit your existing profile and optimize it rather than starting fresh."},
+    {"question": "Can you help with verification?", "answer": "Absolutely. We guide you through the verification process to ensure everything goes smoothly."},
+    {"question": "What happens after setup?", "answer": "Your profile is live and visible! You can manage it yourself or sign up for our ongoing management service."}
+  ]
+}

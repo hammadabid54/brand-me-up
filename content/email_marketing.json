@@ -1,0 +1,94 @@
+{
+  "service_name": "Email Marketing",
+  "slug": "email-marketing",
+  "category": "Other",
+  "category_url": "/services/other/",
+  "meta_title": "Email Marketing Services | Newsletter & Campaigns | Omni Path Marketing",
+  "meta_description": "Expert email marketing services. Newsletter design, automation, and campaigns that convert subscribers into customers and drive business growth.",
+  "meta_keywords": "email marketing, newsletter, email campaigns, marketing automation, email automation",
+  "hero_title": "Email Marketing Services",
+  "hero_subtitle": "Convert subscribers into customers with professional email marketing.",
+  "description": "Professional email marketing that drives results. We create newsletters, automated campaigns, and strategies that convert subscribers into customers.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Email Marketing and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Email marketing is the practice of sending targeted messages to a list of subscribers. It's one of the most effective marketing channels available—delivering the highest return on investment of any marketing tactic. When done well, email marketing nurtures relationships, drives conversions, and builds lasting customer loyalty.\n\nThe power of email marketing lies in ownership. Unlike social media where algorithms control who sees your content, email gives you direct access to your audience. Your email list is an asset you own—no platform changes can affect your ability to reach subscribers.\n\nEmail marketing is incredibly versatile. Newsletters keep subscribers engaged with your brand. Promotional emails drive immediate sales. Automated sequences nurture leads over time. Transactional emails improve customer experience. Every business can benefit from strategic email marketing.\n\nOur email marketing services help you leverage this powerful channel. We create compelling emails, build automated sequences, and develop strategies that convert subscribers into customers."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Why Email Marketing is Essential",
+      "subtitle": "",
+      "content": "Email marketing delivers exceptional results:\n\n<h3>Highest ROI</h3>: Email marketing has the highest return on investment of any marketing channel—often delivering $40 or more for every $1 spent.\n\n<h3>Direct Access</h3>: You own your list and can reach subscribers directly—no platform algorithms controlling visibility.\n\n<h3>Personalization</h3>: Emails can be highly personalized, addressing subscribers by name and tailoring content to their interests.\n\n<h3>Nurture Relationships</h3>: Email sequences build relationships over time, moving subscribers toward purchase.\n\n<h3>Customer Loyalty</h3>: Regular email contact keeps your brand top-of-mind and encourages repeat business.\n\n<h3>Measurable Results</h3>: Every aspect of email marketing is trackable—opens, clicks, conversions, and revenue.\n\n<h3>Scalability</h3>: As your list grows, email marketing scales efficiently without significant cost increases."
+    },
+    {
+      "section_type": "services",
+      "title": "Our Email Marketing Services",
+      "subtitle": "",
+      "content": "We offer comprehensive email marketing services:\n\n<h3>Newsletter Design</h3>: Compelling newsletters that engage subscribers and reinforce your brand.\n\n<h3>Email Campaigns</h3>: One-off promotional campaigns designed to drive specific actions.\n\n<h3>Marketing Automation</h3>: Automated email sequences that nurture leads without manual effort.\n\n<h3>Welcome Sequences</h3>: Automated emails that welcome new subscribers and introduce your brand.\n\n<h3>Abandoned Cart Emails</h3>: Automated messages that recover lost sales from shopping cart abandonments.\n\n<h3>Re-engagement Campaigns</h3>: Strategies to win back inactive subscribers.\n\n<h3>List Management</h3>: Cleaning and maintaining your list for optimal deliverability.\n\n<h3>A/B Testing</h3>: Continuous testing to optimize subject lines, content, and send times."
+    },
+    {
+      "section_type": "strategy",
+      "title": "Our Email Strategy Approach",
+      "subtitle": "",
+      "content": "We develop comprehensive email strategies:\n\n<h3>Audience Segmentation</h3>: Dividing your list into groups based on behavior, preferences, or demographics for more relevant messaging.\n\n<h3>Content Strategy</h3>: Planning email content that provides value while driving business objectives.\n\n<h3>Automation Design</h3>: Creating automated sequences that nurture leads through the customer journey.\n\n<h3>Design Standards</h3>: Ensuring all emails maintain brand consistency and look professional.\n\n<h3>Deliverability Optimization</h3>: Ensuring emails reach the inbox, not spam folders.\n\n<h3>Metric Tracking</h3>: Monitoring key metrics and using data to improve performance.\n\n<h3>Compliance</h3>: Ensuring all emails comply with CAN-SPAM and other regulations."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Email marketing clients typically see:\n\n<h3>Revenue Growth</h3>: Direct revenue from promotional campaigns and automated sequences.\n\n<h3>Customer Retention</h3>: Improved customer loyalty and repeat purchases.\n\n<h3>Lead Nurturing</h3>: More leads moving through your sales funnel.\n\n<h3>Brand Engagement</h3>: Increased engagement and brand awareness.\n\n<h3>List Growth</h3>: Strategies to grow your subscriber list.\n\n<h3>Improved ROI</h3>: Higher returns from your marketing investment."
+    }
+  ],
+  "pricing": {
+    "intro": "Email Marketing Pricing",
+    "description": "Flexible plans for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$97/month",
+        "description": "For businesses starting out",
+        "features": [
+          "Monthly newsletter design",
+          "Basic automation setup",
+          "Standard templates",
+          "Monthly performance reports"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$197/month",
+        "description": "For growing businesses",
+        "features": [
+          "Bi-weekly newsletters",
+          "Complete automation sequences",
+          "A/B testing",
+          "Advanced segmentation",
+          "Bi-weekly performance reports"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$397/month",
+        "description": "For established businesses",
+        "features": [
+          "Weekly newsletters",
+          "Advanced automation",
+          "Sophisticated segmentation",
+          "Drip campaigns",
+          "Custom development",
+          "Weekly performance reports"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How often should I email my list?", "answer": "Frequency depends on your audience and content. We help determine the optimal frequency for your specific subscribers."},
+    {"question": "Do I need an email platform?", "answer": "Yes, we'll recommend and help set up appropriate platforms like Mailchimp, Klaviyo, or others based on your needs."},
+    {"question": "How do you handle unsubscribes?", "answer": "All emails include unsubscribe links as required by law. We also manage list cleaning to maintain good sender reputation."},
+    {"question": "Can you design templates?", "answer": "Yes! We create custom email templates that match your brand and look professional on all devices."},
+    {"question": "How do you measure success?", "answer": "We track key metrics—open rates, click rates, conversions, and revenue—and provide detailed reports showing impact."}
+  ]
+}

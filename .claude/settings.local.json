@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/services/content/contentflow/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/about/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/contact/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/portfolio/)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/)",
+      "Bash(curl -s http://127.0.0.1:8000/services/seo/local-seo/)",
+      "Bash(curl -s http://127.0.0.1:8000/)",
+      "Bash(python manage.py runserver)",
+      "Bash(pkill -f \"python manage.py runserver\")",
+      "WebFetch(domain:127.0.0.1)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://127.0.0.1:8000/static/images/Personal%20Image.jpeg)",
+      "WebFetch(domain:www.linkedin.com)",
+      "Bash(python manage.py makemigrations)"
+    ]
+  },
+  "agents": {
+    "frontend-design": {
+      "description": "Create distinctive, production-grade frontend interfaces.",
+      "prompt_file": ".claude/frontend-design.md"
+    },
+    "backend-design": {
+      "description": "Build robust, scalable backend systems.",
+      "prompt_file": ".claude/backend-design.md"
+    }
+  }
+}

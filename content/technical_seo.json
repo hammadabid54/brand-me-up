@@ -1,0 +1,91 @@
+{
+  "service_name": "Technical SEO",
+  "slug": "technical-seo",
+  "category": "SEO",
+  "category_url": "/services/seo/",
+  "meta_title": "Technical SEO Services | Website Optimization Experts",
+  "meta_description": "Expert technical SEO services. Site speed optimization, core web vitals, crawlability fixes, and technical audits. Improve your website performance and rankings.",
+  "meta_keywords": "technical SEO, site speed optimization, core web vitals, crawlability, website audit, technical SEO audit",
+  "hero_title": "Technical SEO Services",
+  "hero_subtitle": "Optimize your website's technical foundation for better rankings and user experience. Expert technical SEO audits and implementation.",
+  "description": "Technical SEO services that improve your website's foundation. We fix technical issues that hold back your rankings and hurt user experience.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Technical SEO and Why Does Your Website Need It?",
+      "subtitle": "",
+      "content": "Technical SEO is the practice of optimizing your website's technical aspects to improve its crawling, indexing, and ranking in search engines. While content and links are crucial for SEO success, they cannot succeed without a solid technical foundation. Technical SEO ensures search engines can access, understand, and rank your content effectively.\n\n<h3>The Foundation of SEO</h3>\nImagine building a beautiful store but placing it in an inaccessible location with confusing signage. Even the best products wouldn't sell. Technical SEO is like ensuring your store is accessible, well-signposted, and easy to navigate. Without this foundation, all your content and marketing efforts may not yield results.\n\nOur technical SEO experts perform comprehensive audits and implement fixes that improve your site's performance, speed, and search visibility. We identify and resolve issues that may be holding your rankings back—often issues you didn't know existed."
+    },
+    {
+      "section_type": "why_matters",
+      "title": "Why Technical SEO is Essential",
+      "subtitle": "",
+      "content": "Technical SEO impacts every aspect of your search visibility:\n\n<h3>Search Engine Accessibility</h3>\nSearch engines use bots to crawl websites. Technical issues can prevent these bots from accessing your pages. If search engines can't crawl your site, they can't index your content—no indexing means no rankings.\n\n<h3>Indexation Efficiency</h3>\nEven if bots can access your site, technical issues can prevent proper indexing. Canonical issues, redirect problems, and parameter handling can all impact which pages appear in search results.\n\n<h3>User Experience</h3>\nTechnical factors like page speed and mobile-friendliness directly impact user experience. Google uses these factors in ranking decisions. A slow, confusing website loses visitors and damages rankings.\n\n<h3>Core Web Vitals</h3>\nGoogle's Core Web Vitals—LCP, FID, and CLS—are ranking factors that directly impact your visibility. Technical optimization ensures you meet these standards.\n\n<h3>Competitive Advantage</h3>\nMany websites have technical issues holding them back. Fixing these issues can give you an immediate advantage over competitors who haven't addressed their technical foundation.\n\n<h3>Crawl Budget</h3>\nLarge websites have limited crawl budgets. Technical optimization ensures search engines spend their budget on important pages rather than wasting it on duplicate or low-value pages."
+    },
+    {
+      "section_type": "audit_components",
+      "title": "What We Analyze in a Technical SEO Audit",
+      "subtitle": "",
+      "content": "Our comprehensive technical SEO audits examine every aspect of your website's technical health:\n\n<h3>Site Speed and Performance</h3>\nWe analyze page load times, server response times, and Core Web Vitals metrics. Slow sites frustrate users and receive ranking penalties. We identify bottlenecks and recommend solutions.\n\n<h3>Crawlability</h3>\nWe ensure search engine bots can access all important pages. This includes analyzing robots.txt files, internal linking, and URL structures.\n\n<h3>Indexation</h3>\nWe verify that search engines can index your content properly. This includes analyzing indexation status, identifying non-indexed pages that should be indexed, and fixing duplicate content issues.\n\n<h3>Site Architecture</h3>\nWe evaluate your website's structure to ensure logical hierarchy and efficient internal linking. Good architecture distributes authority throughout your site.\n\n<h3>Mobile Optimization</h3>\nWith mobile-first indexing, mobile optimization is essential. We ensure your site performs well on mobile devices.\n\n<h3>Security</h3>\nHTTPS is a ranking factor and trust signal. We verify your site uses proper security protocols.\n\n<h3>Schema Markup</h3>\nStructured data helps search engines understand your content. We implement and verify schema markup for rich results.\n\n<h3>International SEO</h3>\nFor websites targeting multiple regions, we ensure proper hreflang implementation and regional targeting."
+    },
+    {
+      "section_type": "common_issues",
+      "title": "Common Technical Issues We Fix",
+      "subtitle": "",
+      "content": "Our audits typically identify several common technical issues:\n\n<h3>Duplicate Content</h3>\nMultiple versions of pages confuse search engines and dilute ranking signals. We implement canonical tags and fix URL parameters that create duplicates.\n\n<h3>Redirect Chains</h3>\nExcessive redirects slow page load times and can break the redirect chain. We simplify redirect structures for optimal performance.\n\n<h3>Missing XML Sitemaps</h3>\nSitemaps help search engines discover and index your pages. We create and optimize XML sitemaps for comprehensive indexation.\n\n<h3>Broken Links</h3>\n404 errors and broken internal links frustrate users and waste crawl budget. We identify and fix these issues.\n\n<h3>Missing Alt Text</h3>\nImages without alt text miss optimization opportunities and accessibility requirements. We audit and optimize image metadata.\n\n<h3>Slow Server Response</h3>\nServer performance impacts everything from crawl efficiency to user experience. We identify and address server-side issues.\n\n<h3>Schema Errors</h3>\nInvalid structured data can hurt more than help. We verify and fix schema implementation issues."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Technical SEO Process",
+      "subtitle": "",
+      "content": "We follow a systematic approach to technical SEO:\n\n<h3>1. Comprehensive Audit</h3>\nWe use industry-leading tools to analyze your website's technical health. This includes crawling your site, analyzing performance metrics, and reviewing configuration files.\n\n<h3>2. Priority Analysis</h3>\nWe prioritize issues based on impact. Critical issues that block crawling or indexing are addressed first, followed by performance improvements.\n\n<h3>3. Detailed Reporting</h3>\nWe provide comprehensive reports documenting all findings with screenshots and evidence. Every issue includes explanation of the problem and its impact.\n\n<h3>4. Implementation Recommendations</h3>\nFor each issue, we provide specific recommendations with technical details your development team can implement.\n\n<h3>5. Implementation Support</h3>\nFor clients on ongoing plans, we can implement fixes directly or work with your development team to ensure proper implementation.\n\n<h3>6. Ongoing Monitoring</h3>\nTechnical SEO requires continuous attention. We monitor your site for new issues and ensure fixes remain effective."
+    }
+  ],
+  "pricing": {
+    "intro": "Technical SEO Pricing",
+    "description": "One-time audits or ongoing optimization.",
+    "plans": [
+      {
+        "name": "Audit Only",
+        "price": "$497",
+        "description": "One-time comprehensive audit",
+        "features": [
+          "Full technical audit with industry-leading tools",
+          "Prioritized issue list with impact ratings",
+          "Implementation guide for your development team",
+          "30-day support for clarifying recommendations"
+        ]
+      },
+      {
+        "name": "Fix & Optimize",
+        "price": "$797/month",
+        "description": "Audit plus ongoing fixes and monitoring",
+        "features": [
+          "Monthly technical audits",
+          "Priority issue fixes",
+          "Performance monitoring",
+          "Monthly reports with progress tracking"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Full Service",
+        "price": "$1,297/month",
+        "description": "Complete technical SEO management",
+        "features": [
+          "Weekly monitoring",
+          "All fixes included in monthly fee",
+          "Development team coordination",
+          "Dedicated support for urgent issues"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "What are Core Web Vitals?", "answer": "Core Web Vitals are Google's metrics for measuring user experience: LCP (loading performance), FID (interactivity), and CLS (visual stability). They are ranking factors that directly impact your search visibility."},
+    {"question": "How often should I do a technical audit?", "answer": "We recommend a comprehensive audit quarterly, with monthly checks on critical metrics like page speed and indexation. For actively changing sites, more frequent monitoring is beneficial."},
+    {"question": "Can you implement the fixes?", "answer": "Yes, our Fix & Optimize and Full Service plans include implementation of technical fixes. For Audit Only clients, we provide detailed recommendations your team can implement."},
+    {"question": "How long does an audit take?", "answer": "Most audits complete within 3-5 business days, depending on website size and complexity. Large e-commerce sites may take longer."},
+    {"question": "Will fixing technical issues immediately improve rankings?", "answer": "Technical fixes create the foundation for better rankings, but content and links still matter. Some clients see improvements within weeks; significant results typically appear within 2-3 months."}
+  ]
+}

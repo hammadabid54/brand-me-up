@@ -1,0 +1,641 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Social Media Scheduler | Omni Path Marketing{% endblock %}
+
+{% block extra_css %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg-page: #f8f9fc;
+        --bg-card: #ffffff;
+        --text-primary: #0f172a;
+        --text-secondary: #475569;
+        --text-muted: #94a3b8;
+        --accent: #f97316;
+        --accent-light: #fb923c;
+        --success: #10b981;
+        --success-light: #d1fae5;
+        --info: #0ea5e9;
+        --warning: #f59e0b;
+        --border: #e2e8f0;
+        --border-light: #f1f5f9;
+        --shadow: rgba(15, 23, 42, 0.06);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+        font-family: 'DM Sans', sans-serif;
+        background: var(--bg-page);
+        color: var(--text-primary);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        font-family: 'Outfit', sans-serif;
+        font-weight: 600;
+    }
+
+    /* Header - Full Width */
+    .page-header {
+        padding: 28px 0 20px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg-card);
+        margin: -24px -24px 24px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    @media (min-width: 1400px) {
+        .page-header {
+            margin-left: calc(-50vw + 50%);
+            margin-right: calc(-50vw + 50%);
+            padding-left: calc(50vw - 50% + 24px);
+            padding-right: calc(50vw - 50% + 24px);
+        }
+    }
+
+    .page-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+    }
+
+    .page-subtitle {
+        color: var(--text-secondary);
+        font-size: 0.875rem;
+    }
+
+    .btn-new-post {
+        background: var(--accent);
+        color: white;
+        border: none;
+        padding: 10px 18px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.8125rem;
+    }
+
+    .btn-new-post:hover {
+        background: var(--accent-light);
+    }
+
+    /* Tab Navigation */
+    .platform-tabs {
+        display: flex;
+        gap: 8px;
+        margin-bottom: 20px;
+        border-bottom: 1px solid var(--border);
+        padding-bottom: 12px;
+    }
+
+    .platform-tab {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 16px;
+        border-radius: 6px;
+        background: transparent;
+        border: none;
+        color: var(--text-secondary);
+        font-weight: 500;
+        font-size: 0.875rem;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+
+    .platform-tab:hover {
+        background: var(--bg-page);
+    }
+
+    .platform-tab.active {
+        background: var(--bg-card);
+        color: var(--text-primary);
+        box-shadow: 0 1px 3px var(--shadow);
+    }
+
+    .platform-tab i { font-size: 1rem; }
+    .platform-tab.facebook i { color: #1877f2; }
+    .platform-tab.instagram i { color: #e4405f; }
+    .platform-tab.linkedin i { color: #0a66c2; }
+    .platform-tab.twitter i { color: #1da1f2; }
+
+    /* Calendar Grid */
+    .calendar-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 16px;
+    }
+
+    .calendar-nav {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .calendar-nav button {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 8px 12px;
+        color: var(--text-primary);
+        cursor: pointer;
+    }
+
+    .calendar-month {
+        font-size: 1.125rem;
+        font-weight: 600;
+    }
+
+    .calendar-grid {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .calendar-day-header {
+        background: var(--bg-page);
+        padding: 10px;
+        text-align: center;
+        font-size: 0.6875rem;
+        font-weight: 600;
+        color: var(--text-muted);
+        text-transform: uppercase;
+    }
+
+    .calendar-day {
+        background: var(--bg-card);
+        min-height: 100px;
+        padding: 8px;
+    }
+
+    .calendar-day.other-month {
+        background: var(--bg-page);
+    }
+
+    .calendar-day-number {
+        font-size: 0.75rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        margin-bottom: 6px;
+    }
+
+    .calendar-day.other-month .calendar-day-number {
+        color: var(--text-muted);
+    }
+
+    .calendar-day.today .calendar-day-number {
+        color: var(--accent);
+        font-weight: 700;
+    }
+
+    /* Post Preview */
+    .post-item {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 12px;
+        margin-top: 6px;
+        cursor: pointer;
+    }
+
+    .post-item:hover {
+        border-color: var(--accent);
+    }
+
+    .post-time {
+        font-size: 0.625rem;
+        font-weight: 600;
+        color: var(--text-muted);
+    }
+
+    .post-text {
+        font-size: 0.75rem;
+        color: var(--text-primary);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .post-platform {
+        display: inline-block;
+        font-size: 0.5625rem;
+        padding: 2px 6px;
+        border-radius: 3px;
+        margin-top: 4px;
+    }
+
+    .post-platform.facebook { background: #e6f2ff; color: #1877f2; }
+    .post-platform.instagram { background: #fceef2; color: #e4405f; }
+    .post-platform.linkedin { background: #e6f2ff; color: #0a66c2; }
+
+    /* Scheduled Posts Panel */
+    .posts-panel {
+        display: grid;
+        grid-template-columns: 1fr 300px;
+        gap: 20px;
+    }
+
+    @media (max-width: 991px) {
+        .posts-panel { grid-template-columns: 1fr; }
+    }
+
+    .scheduled-list {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+
+    .scheduled-list .list-header {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .scheduled-list .list-header h6 {
+        font-size: 0.9375rem;
+        margin: 0;
+    }
+
+    .scheduled-post {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border-light);
+        display: flex;
+        gap: 12px;
+    }
+
+    .scheduled-post:last-child { border-bottom: none; }
+
+    .scheduled-post:hover {
+        background: var(--bg-page);
+    }
+
+    .post-icon {
+        width: 36px;
+        height: 36px;
+        border-radius: 6px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.875rem;
+        flex-shrink: 0;
+    }
+
+    .post-icon.facebook { background: #e6f2ff; color: #1877f2; }
+    .post-icon.instagram { background: #fceef2; color: #e4405f; }
+    .post-icon.linkedin { background: #e6f2ff; color: #0a66c2; }
+
+    .post-details { flex: 1; min-width: 0; }
+
+    .post-details .post-content {
+        font-size: 0.8125rem;
+        color: var(--text-primary);
+        margin-bottom: 4px;
+    }
+
+    .post-details .post-meta {
+        font-size: 0.6875rem;
+        color: var(--text-muted);
+    }
+
+    .post-status {
+        font-size: 0.5625rem;
+        padding: 3px 8px;
+        border-radius: 4px;
+    }
+
+    .post-status.scheduled { background: #dbeafe; color: #1d4ed8; }
+    .post-status.published { background: var(--success-light); color: #047857; }
+    .post-status.draft { background: #f1f5f9; color: var(--text-muted); }
+
+    .post-actions {
+        display: flex;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .post-actions button {
+        background: transparent;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+        padding: 4px 8px;
+        font-size: 0.6875rem;
+        color: var(--text-secondary);
+        cursor: pointer;
+    }
+
+    .post-actions button:hover {
+        background: var(--bg-page);
+    }
+
+    .post-actions button.delete {
+        color: #dc2626;
+        border-color: #fecaca;
+    }
+
+    /* Quick Post Form */
+    .quick-post-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px;
+    }
+
+    .quick-post-card h6 {
+        font-size: 0.9375rem;
+        margin-bottom: 14px;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .form-group label {
+        display: block;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        margin-bottom: 6px;
+    }
+
+    .form-group textarea {
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-size: 0.8125rem;
+        min-height: 100px;
+        resize: none;
+        font-family: inherit;
+    }
+
+    .form-group textarea:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+
+    .form-row {
+        display: flex;
+        gap: 12px;
+    }
+
+    .form-row .form-group {
+        flex: 1;
+    }
+
+    .form-group select,
+    .form-group input {
+        width: 100%;
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        padding: 10px 12px;
+        font-size: 0.8125rem;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+        outline: none;
+        border-color: var(--accent);
+    }
+
+    .btn-schedule {
+        background: var(--text-primary);
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 12px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.8125rem;
+    }
+
+    .btn-schedule:hover {
+        background: #334155;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container py-3" style="max-width: 1400px;">
+    <!-- Header -->
+    <div class="page-header">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="page-title">Social Media Scheduler</h1>
+                <p class="page-subtitle">Plan and schedule your social media posts</p>
+            </div>
+            <div class="col-lg-6 text-lg-end">
+                <button class="btn-new-post" onclick="openComposer()">
+                    <i class="fas fa-plus me-2"></i>New Post
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Platform Tabs -->
+    <div class="platform-tabs">
+        <button class="platform-tab active" onclick="filterPlatform('all', this)">
+            <i class="fas fa-border-all"></i> All Platforms
+        </button>
+        <button class="platform-tab facebook" onclick="filterPlatform('facebook', this)">
+            <i class="fab fa-facebook"></i> Facebook
+        </button>
+        <button class="platform-tab instagram" onclick="filterPlatform('instagram', this)">
+            <i class="fab fa-instagram"></i> Instagram
+        </button>
+        <button class="platform-tab linkedin" onclick="filterPlatform('linkedin', this)">
+            <i class="fab fa-linkedin"></i> LinkedIn
+        </button>
+        <button class="platform-tab twitter" onclick="filterPlatform('twitter', this)">
+            <i class="fab fa-twitter"></i> Twitter
+        </button>
+    </div>
+
+    <div class="posts-panel">
+        <!-- Calendar -->
+        <div class="calendar-card">
+            <div class="calendar-header">
+                <div class="calendar-nav">
+                    <button><i class="fas fa-chevron-left"></i></button>
+                    <span class="calendar-month">April 2026</span>
+                    <button><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <button class="btn-new-post" style="padding: 8px 14px; font-size: 0.75rem;">
+                    <i class="fas fa-plus me-1"></i>Today
+                </button>
+            </div>
+            <div class="calendar-grid">
+                <div class="calendar-day-header">Sun</div>
+                <div class="calendar-day-header">Mon</div>
+                <div class="calendar-day-header">Tue</div>
+                <div class="calendar-day-header">Wed</div>
+                <div class="calendar-day-header">Thu</div>
+                <div class="calendar-day-header">Fri</div>
+                <div class="calendar-day-header">Sat</div>
+
+                <!-- Sample calendar days -->
+                <div class="calendar-day other-month"><div class="calendar-day-number">30</div></div>
+                <div class="calendar-day other-month"><div class="calendar-day-number">31</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">1</div>
+                    <div class="post-item">
+                        <div class="post-time">10:00 AM</div>
+                        <div class="post-text">New product launch announcement...</div>
+                        <span class="post-platform facebook">FB</span>
+                    </div>
+                </div>
+                <div class="calendar-day"><div class="calendar-day-number">2</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">3</div>
+                    <div class="post-item">
+                        <div class="post-time">2:00 PM</div>
+                        <div class="post-text">Customer success story featuring...</div>
+                        <span class="post-platform linkedin">LI</span>
+                    </div>
+                </div>
+                <div class="calendar-day"><div class="calendar-day-number">4</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">5</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">6</div>
+                    <div class="post-item">
+                        <div class="post-time">9:00 AM</div>
+                        <div class="post-text">Behind the scenes at our office...</div>
+                        <span class="post-platform instagram">IG</span>
+                    </div>
+                </div>
+                <div class="calendar-day"><div class="calendar-day-number">7</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">8</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">9</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">10</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">11</div>
+                    <div class="post-item">
+                        <div class="post-time">11:00 AM</div>
+                        <div class="post-text">Weekly tips for better SEO...</div>
+                        <span class="post-platform facebook">FB</span>
+                    </div>
+                </div>
+                <div class="calendar-day"><div class="calendar-day-number">12</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">13</div></div>
+                <div class="calendar-day today"><div class="calendar-day-number">14</div>
+                    <div class="post-item">
+                        <div class="post-time">3:00 PM</div>
+                        <div class="post-text">New case study release...</div>
+                        <span class="post-platform linkedin">LI</span>
+                    </div>
+                </div>
+                <div class="calendar-day"><div class="calendar-day-number">15</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">16</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">17</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">18</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">19</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">20</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">21</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">22</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">23</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">24</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">25</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">26</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">27</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">28</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">29</div></div>
+                <div class="calendar-day"><div class="calendar-day-number">30</div></div>
+                <div class="calendar-day other-month"><div class="calendar-day-number">1</div></div>
+                <div class="calendar-day other-month"><div class="calendar-day-number">2</div></div>
+                <div class="calendar-day other-month"><div class="calendar-day-number">3</div></div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Quick Post -->
+            <div class="quick-post-card" style="margin-bottom: 20px;">
+                <h6><i class="fas fa-pen me-2"></i>Quick Post</h6>
+                <div class="form-group">
+                    <label>What would you like to share?</label>
+                    <textarea placeholder="Write your post content here..."></textarea>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Platform</label>
+                        <select>
+                            <option>Facebook</option>
+                            <option>Instagram</option>
+                            <option>LinkedIn</option>
+                            <option>Twitter</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Schedule</label>
+                        <input type="datetime-local">
+                    </div>
+                </div>
+                <button class="btn-schedule" onclick="schedulePost()">Schedule Post</button>
+            </div>
+
+            <!-- Recent Posts -->
+            <div class="scheduled-list">
+                <div class="list-header">
+                    <h6>Upcoming Posts</h6>
+                    <button style="background:none; border:none; color:var(--accent); font-size:0.75rem; cursor:pointer;">View All</button>
+                </div>
+                <div class="scheduled-post">
+                    <div class="post-icon facebook"><i class="fab fa-facebook"></i></div>
+                    <div class="post-details">
+                        <div class="post-content">Excited to announce our new SEO service for dental practices! 🦷</div>
+                        <div class="post-meta">Today at 10:00 AM</div>
+                    </div>
+                    <span class="post-status scheduled">Scheduled</span>
+                </div>
+                <div class="scheduled-post">
+                    <div class="post-icon linkedin"><i class="fab fa-linkedin"></i></div>
+                    <div class="post-details">
+                        <div class="post-content">Check out our latest case study on ranking #1 on Google</div>
+                        <div class="post-meta">Apr 14 at 3:00 PM</div>
+                    </div>
+                    <span class="post-status scheduled">Scheduled</span>
+                </div>
+                <div class="scheduled-post">
+                    <div class="post-icon instagram"><i class="fab fa-instagram"></i></div>
+                    <div class="post-details">
+                        <div class="post-content">Behind the scenes at our team meeting 📸</div>
+                        <div class="post-meta">Apr 6 at 9:00 AM</div>
+                    </div>
+                    <span class="post-status published">Published</span>
+                </div>
+                <div class="scheduled-post">
+                    <div class="post-icon facebook"><i class="fab fa-facebook"></i></div>
+                    <div class="post-details">
+                        <div class="post-content">5 Tips for better dental marketing in 2026</div>
+                        <div class="post-meta">Draft</div>
+                    </div>
+                    <span class="post-status draft">Draft</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+function filterPlatform(platform, btn) {
+    document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+    btn.classList.add('active');
+}
+
+function openComposer() {
+    alert('Post composer would open here');
+}
+
+function schedulePost() {
+    alert('Post scheduled successfully!');
+}
+</script>
+{% endblock %}

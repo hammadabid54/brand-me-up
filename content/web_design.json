@@ -1,0 +1,96 @@
+{
+  "service_name": "Web Design",
+  "slug": "web-design",
+  "category": "Other",
+  "category_url": "/services/other/",
+  "meta_title": "Web Design Services | Professional SEO-Friendly Websites | Omni Path Marketing",
+  "meta_description": "Professional web design services. Modern, responsive, SEO-friendly websites designed to convert visitors into customers.",
+  "meta_keywords": "web design, website design, SEO friendly website, responsive design, professional website",
+  "hero_title": "Web Design Services",
+  "hero_subtitle": "Beautiful, SEO-friendly websites that convert visitors into customers.",
+  "description": "Professional web design that looks great and performs well. We create modern, responsive websites optimized for search engines and conversions.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Web Design and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Web design is the process of creating websites. It encompasses everything from visual design and layout to functionality and user experience. In today's digital world, your website is often the first impression potential customers have of your business—and first impressions matter significantly.\n\nA well-designed website does more than look good. It guides visitors toward desired actions—whether that's making a purchase, contacting you, or signing up for a newsletter. Every element, from color choices to button placements, is designed with conversion in mind.\n\nModern web design also requires mobile responsiveness. With more than half of web traffic coming from mobile devices, websites must work flawlessly on smartphones and tablets. Responsive design ensures your site looks great and functions well on all devices.\n\nAdditionally, websites must be optimized for search engines. Technical elements like page speed, structure, and code quality affect how well your site ranks. Our web design incorporates SEO from the beginning, ensuring your site is built to be found.\n\nOur web design services create beautiful, functional websites that convert visitors into customers while ranking well in search engines."
+    },
+    {
+      "section_type": "importance",
+      "title": "Why Professional Web Design Matters",
+      "subtitle": "",
+      "content": "Professional web design delivers significant benefits:\n\n<h3>First Impressions</h3>: Your website creates immediate impressions. Professional design builds credibility and trust.\n\n<h3>Conversion Optimization</h3>: Well-designed sites guide visitors toward desired actions, improving conversion rates.\n\n<h3>User Experience</h3>: Good design makes it easy for visitors to find information and take action.\n\n<h3>Mobile Responsiveness</h3>: Modern sites work perfectly on all devices—desktops, tablets, and phones.\n\n<h3>Search Engine Optimization</h3>: Technical design elements affect how well your site ranks in search results.\n\n<h3>Brand Consistency</h3>: Your website reinforces your brand identity across all touchpoints.\n\n<h3>Competitive Advantage</h3>: A professional website helps you stand out from competitors with poor web presence."
+    },
+    {
+      "section_type": "services",
+      "title": "Our Web Design Services",
+      "subtitle": "",
+      "content": "We offer comprehensive web design services:\n\n<h3>Landing Pages</h3>: Single-page websites designed for specific campaigns or purposes. Perfect for promotions or product launches.\n\n<h3>Business Websites</h3>: Multi-page websites for businesses. Includes about, services, contact, and other essential pages.\n\n<h3>E-commerce Websites</h3>: Online stores with product catalogs, shopping carts, and payment processing.\n\n<h3>Website Redesigns</h3>: Updating existing websites to modern standards and improved performance.\n\n<h3>CMS Implementation</h3>: Content management systems that allow you to update your own content.\n\n<h3>SEO Optimization</h3>: Technical optimization that improves search engine visibility.\n\n<h3>Maintenance Plans</h3>: Ongoing support to keep your website secure and updated."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Design Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive design process:\n\n<h3>Discovery</h3>: We learn about your business, goals, target audience, and design preferences.\n\n<h3>Planning</h3>: We create site maps and wireframes that plan the user journey and content structure.\n\n<h3>Design</h3>: We create visual designs that reflect your brand while optimizing for conversions.\n\n<h3>Development</h3>: We build your website using modern technologies and best practices.\n\n<h3>Content Integration</h3>: We add your content—text, images, and other elements.\n\n<h3>Testing</h3>: We thoroughly test your site across devices and browsers.\n\n<h3>Launch</h3>: We deploy your site and ensure everything works correctly.\n\n<h3>Training</h3>: We teach you how to manage and update your site."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Professional web design clients typically see:\n\n<h3>Improved Conversions</h3>: Better-designed sites convert more visitors into customers.\n\n<h3>Better Rankings</h3>: SEO-optimized design improves search engine visibility.\n\n<h3>Mobile Success</h3>: Responsive sites work perfectly on all devices.\n\n<h3>Professional Image</h3>: A polished website builds credibility and trust.\n\n<h3>User Satisfaction</h3>: Easy navigation and clear calls-to-action improve user experience.\n\n<h3>Competitive Advantage</h3>: Stand out from competitors with outdated websites."
+    }
+  ],
+  "pricing": {
+    "intro": "Web Design Pricing",
+    "description": "Flexible pricing for different website needs.",
+    "plans": [
+      {
+        "name": "Landing Page",
+        "price": "$297",
+        "description": "For specific campaigns",
+        "features": [
+          "Single landing page",
+          "Mobile responsive design",
+          "Contact form integration",
+          "Basic SEO",
+          "Social media links"
+        ]
+      },
+      {
+        "name": "Business Site",
+        "price": "$797",
+        "description": "For small businesses",
+        "features": [
+          "5-page website",
+          "Content management system",
+          "Basic SEO optimization",
+          "Contact forms",
+          "Mobile responsive",
+          "Social media integration"
+        ],
+        "popular": true
+      },
+      {
+        "name": "E-commerce",
+        "price": "$1,497",
+        "description": "For online stores",
+        "features": [
+          "Unlimited products",
+          "Payment integration",
+          "Shopping cart",
+          "Advanced SEO",
+          "Order management",
+          "Customer accounts"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How long does web design take?", "answer": "Timeline depends on complexity. Landing pages take 1-2 weeks, business sites take 3-4 weeks, e-commerce sites take 6-8 weeks."},
+    {"question": "Do I need to provide content?", "answer": "You can provide your own content, or we can help develop content for an additional fee."},
+    {"question": "Will my site work on mobile?", "answer": "Yes! All our websites are fully responsive and work perfectly on smartphones, tablets, and desktops."},
+    {"question": "Can I update my own site?", "answer": "Yes! We implement content management systems that allow you to easily update content."},
+    {"question": "Do you provide hosting?", "answer": "We can recommend hosting providers and help set up hosting, or you can use your own preferred provider."}
+  ]
+}

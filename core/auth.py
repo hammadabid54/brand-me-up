@@ -18,13 +18,9 @@ from googleapiclient.discovery import build
 from core.models import Client, ClientConnection
 
 
-# OAuth flow configuration
-def get_oauth_flow(redirect_uri=None):
-    """Create OAuth flow instance"""
-    if redirect_uri is None:
-        redirect_uri = request.build_absolute_uri('/auth/callback/') if hasattr(request, 'build_absolute_uri') else 'http://127.0.0.1:8000/auth/callback/'
-
-    client_config = {
+def build_google_client_config(redirect_uri):
+    """Build Google OAuth client config dict — DRY helper"""
+    return {
         'web': {
             'client_id': settings.GOOGLE_OAUTH_CLIENT_ID,
             'client_secret': settings.GOOGLE_OAUTH_CLIENT_SECRET,
@@ -33,26 +29,13 @@ def get_oauth_flow(redirect_uri=None):
             'token_uri': 'https://oauth2.googleapis.com/token',
         }
     }
-    return Flow.from_client_config(
-        client_config,
-        scopes=settings.GOOGLE_SCOPES
-    )
 
 
 def login(request):
     """Initiate Google OAuth login"""
     redirect_uri = request.build_absolute_uri('/auth/callback/')
-    client_config = {
-        'web': {
-            'client_id': settings.GOOGLE_OAUTH_CLIENT_ID,
-            'client_secret': settings.GOOGLE_OAUTH_CLIENT_SECRET,
-            'redirect_uris': [redirect_uri],
-            'auth_uri': 'https://accounts.google.com/o/oauth2/auth',
-            'token_uri': 'https://oauth2.googleapis.com/token',
-        }
-    }
+    client_config = build_google_client_config(redirect_uri)
     flow = Flow.from_client_config(client_config, scopes=settings.GOOGLE_SCOPES)
-    # Store the state for security
     authorization_url, state = flow.authorization_url(
         access_type='offline',
         prompt='consent'
@@ -67,32 +50,26 @@ def callback(request):
     if error:
         return redirect('/dashboard/?error=' + error)
 
-    # Get the authorization code
     code = request.GET.get('code')
     if not code:
         return redirect('/dashboard/?error=no_code')
 
+    # CSRF state validation
+    state = request.GET.get('state')
+    stored_state = request.session.get('oauth_state')
+    if state and stored_state and state != stored_state:
+        return redirect('/dashboard/?error=state_mismatch')
+
     try:
-        # Exchange code for tokens
         redirect_uri = request.build_absolute_uri('/auth/callback/')
-        client_config = {
-            'web': {
-                'client_id': settings.GOOGLE_OAUTH_CLIENT_ID,
-                'client_secret': settings.GOOGLE_OAUTH_CLIENT_SECRET,
-                'redirect_uris': [redirect_uri],
-                'auth_uri': 'https://accounts.google.com/o/oauth2/auth',
-                'token_uri': 'https://oauth2.googleapis.com/token',
-            }
-        }
+        client_config = build_google_client_config(redirect_uri)
         flow = Flow.from_client_config(client_config, scopes=settings.GOOGLE_SCOPES)
         flow.fetch_token(code=code)
         credentials = flow.credentials
 
-        # Get user info
         userinfo_service = build('oauth2', 'v2', credentials=credentials)
         userinfo = userinfo_service.userinfo().get().execute()
 
-        # Create or update client
         client, created = Client.objects.update_or_create(
             google_id=userinfo['id'],
             defaults={
@@ -103,11 +80,8 @@ def callback(request):
             }
         )
 
-        # Store client ID in session
         request.session['client_id'] = client.id
         request.session['client_email'] = client.email
-
-        # Store credentials for API calls
         request.session['credentials'] = {
             'token': credentials.token,
             'refresh_token': credentials.refresh_token,
@@ -117,10 +91,13 @@ def callback(request):
             'scopes': list(credentials.scopes)
         }
 
+        # Clear OAuth state after successful auth
+        request.session.pop('oauth_state', None)
+
         return redirect('/dashboard/')
 
     except Exception as e:
-        return redirect('/dashboard/?error=' + str(e))
+        return redirect('/dashboard/?error=auth_failed')
 
 
 def logout_view(request):
@@ -167,18 +144,7 @@ def dashboard(request):
 
 def scheduler(request):
     """Social media scheduler view"""
-    # Demo mode - show sample data
     return render(request, 'dashboard/scheduler.html')
-
-    # Get connections
-    connections = ClientConnection.objects.filter(client=client)
-
-    context = {
-        'client': client,
-        'connections': connections,
-        'demo_mode': False,
-    }
-    return render(request, 'dashboard/index.html', context)
 
 
 def connect_service(request, service):
@@ -468,3 +434,227 @@ def disconnect_service(request, service):
         return JsonResponse({'success': True})
     except ClientConnection.DoesNotExist:
         return JsonResponse({'error': 'Connection not found'}, status=404)
+
+
+@require_http_methods(["GET"])
+def get_connected_platforms(request):
+    """Get list of connected social platforms for the client"""
+    client_id = request.session.get('client_id')
+    if not client_id:
+        return JsonResponse({'error': 'Not authenticated'}, status=401)
+
+    try:
+        client = Client.objects.get(id=client_id)
+    except Client.DoesNotExist:
+        return JsonResponse({'error': 'Client not found'}, status=404)
+
+    social_services = ['meta_facebook', 'meta_instagram', 'linkedin', 'twitter']
+    connections = ClientConnection.objects.filter(client=client, service__in=social_services)
+    connected = {conn.service: conn.is_connected for conn in connections}
+    return JsonResponse({'success': True, 'connected': connected})
+
+
+# Social platform OAuth URLs
+SOCIAL_OAUTH_URLS = {
+    'meta_facebook': '/auth/social/facebook/',
+    'meta_instagram': '/auth/social/instagram/',
+    'linkedin': '/auth/social/linkedin/',
+    'pinterest': '/auth/social/pinterest/',
+}
+
+
+@require_http_methods(["GET"])
+def social_login(request, platform):
+    """Initiate OAuth for a social platform"""
+    if platform not in SOCIAL_OAUTH_URLS:
+        return JsonResponse({'error': 'Invalid platform'}, status=400)
+
+    # Map scheduler platform names to ClientConnection service names
+    platform_to_service = {
+        'facebook': 'meta_facebook',
+        'instagram': 'meta_instagram',
+        'linkedin': 'linkedin',
+        'pinterest': 'pinterest',
+    }
+    service = platform_to_service.get(platform)
+    if not service:
+        return JsonResponse({'error': 'Invalid platform'}, status=400)
+
+    # Store the platform being connected in session
+    request.session['connecting_platform'] = platform
+    request.session['connecting_service'] = service
+
+    return JsonResponse({
+        'success': True,
+        'redirect_url': f'/auth/social/{platform}/initiate/',
+        'platform': platform,
+    })
+
+
+@require_http_methods(["GET"])
+def social_callback(request, platform):
+    """Handle OAuth callback for social platforms"""
+    client_id = request.session.get('client_id')
+    if not client_id:
+        return redirect('/auth/login/')
+
+    try:
+        client = Client.objects.get(id=client_id)
+    except Client.DoesNotExist:
+        return redirect('/auth/login/')
+
+    service = request.session.get('connecting_service')
+    code = request.GET.get('code')
+
+    if not code:
+        return redirect('/dashboard/scheduler/?error=no_code')
+
+    # Platform-specific token exchange
+    # Each platform has different OAuth endpoints and token formats
+    try:
+        if service == 'meta_facebook':
+            return _handle_meta_callback(client, request, code, 'meta_facebook')
+        elif service == 'meta_instagram':
+            return _handle_meta_callback(client, request, code, 'meta_instagram')
+        elif service == 'linkedin':
+            return _handle_linkedin_callback(client, request, code)
+        elif service == 'pinterest':
+            return _handle_pinterest_callback(client, request, code)
+    except Exception as e:
+        return redirect(f'/dashboard/scheduler/?error={str(e)}')
+
+    return redirect('/dashboard/scheduler/?connected=' + platform)
+
+
+def _handle_meta_callback(client, request, code, service):
+    """Handle Meta (Facebook/Instagram) OAuth callback"""
+    try:
+        import requests
+        from django.conf import settings
+
+        redirect_uri = request.build_absolute_uri(f'/auth/social/callback/{service.replace("meta_", "")}/')
+
+        # Exchange code for tokens
+        token_url = 'https://graph.facebook.com/v19.0/oauth/access_token'
+        response = requests.get(token_url, params={
+            'client_id': settings.META_OAUTH_CLIENT_ID,
+            'client_secret': settings.META_OAUTH_CLIENT_SECRET,
+            'code': code,
+            'redirect_uri': redirect_uri,
+        }, timeout=30)
+
+        if not response.ok:
+            raise Exception(f'Meta token exchange failed: {response.text}')
+
+        data = response.json()
+        access_token = data.get('access_token')
+
+        if not access_token:
+            raise Exception('No access token in Meta response')
+
+        # Store connection
+        ClientConnection.objects.update_or_create(
+            client=client,
+            service=service,
+            defaults={
+                'access_token': access_token,
+                'refresh_token': data.get('refresh_token', ''),
+                'is_connected': True,
+            }
+        )
+
+        return redirect('/dashboard/scheduler/?connected=' + service.replace('meta_', ''))
+
+    except Exception as e:
+        logger.error(f'Meta OAuth error: {e}')
+        return redirect(f'/dashboard/scheduler/?error={str(e)}')
+
+
+def _handle_linkedin_callback(client, request, code):
+    """Handle LinkedIn OAuth callback"""
+    try:
+        import requests
+        from django.conf import settings
+
+        redirect_uri = request.build_absolute_uri('/auth/social/callback/linkedin/')
+
+        # Exchange code for tokens
+        token_url = 'https://www.linkedin.com/oauth/v2/accessToken'
+        response = requests.post(token_url, data={
+            'grant_type': 'authorization_code',
+            'code': code,
+            'redirect_uri': redirect_uri,
+            'client_id': settings.LINKEDIN_OAUTH_CLIENT_ID,
+            'client_secret': settings.LINKEDIN_OAUTH_CLIENT_SECRET,
+        }, timeout=30)
+
+        if not response.ok:
+            raise Exception(f'LinkedIn token exchange failed: {response.text}')
+
+        data = response.json()
+        access_token = data.get('access_token')
+
+        if not access_token:
+            raise Exception('No access token in LinkedIn response')
+
+        ClientConnection.objects.update_or_create(
+            client=client,
+            service='linkedin',
+            defaults={
+                'access_token': access_token,
+                'refresh_token': data.get('refresh_token', ''),
+                'is_connected': True,
+            }
+        )
+
+        return redirect('/dashboard/scheduler/?connected=linkedin')
+
+    except Exception as e:
+        logger.error(f'LinkedIn OAuth error: {e}')
+        return redirect(f'/dashboard/scheduler/?error={str(e)}')
+
+
+def _handle_pinterest_callback(client, request, code):
+    """Handle Pinterest OAuth callback"""
+    try:
+        import requests
+        from django.conf import settings
+
+        redirect_uri = request.build_absolute_uri('/auth/social/callback/pinterest/')
+
+        # Exchange code for tokens
+        token_url = 'https://api.pinterest.com/v5/oauth/token'
+        response = requests.post(token_url, data={
+            'grant_type': 'authorization_code',
+            'code': code,
+            'redirect_uri': redirect_uri,
+        }, params={
+            'client_id': settings.PINTEREST_OAUTH_CLIENT_ID,
+            'client_secret': settings.PINTEREST_OAUTH_CLIENT_SECRET,
+        }, timeout=30)
+
+        if not response.ok:
+            raise Exception(f'Pinterest token exchange failed: {response.text}')
+
+        data = response.json()
+        access_token = data.get('access_token')
+
+        if not access_token:
+            raise Exception('No access token in Pinterest response')
+
+        ClientConnection.objects.update_or_create(
+            client=client,
+            service='pinterest',
+            defaults={
+                'access_token': access_token,
+                'refresh_token': data.get('refresh_token', ''),
+                'is_connected': True,
+            }
+        )
+
+        return redirect('/dashboard/scheduler/?connected=pinterest')
+
+    except Exception as e:
+        logger.error(f'Pinterest OAuth error: {e}')
+        return redirect(f'/dashboard/scheduler/?error={str(e)}')
+

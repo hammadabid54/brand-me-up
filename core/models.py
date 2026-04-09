@@ -403,6 +403,10 @@ class ClientConnection(models.Model):
         ('analytics', 'Google Analytics'),
         ('search_console', 'Google Search Console'),
         ('gbp', 'Google Business Profile'),
+        ('meta_facebook', 'Meta Facebook'),
+        ('meta_instagram', 'Meta Instagram'),
+        ('linkedin', 'LinkedIn'),
+        ('pinterest', 'Pinterest'),
     ]
     service = models.CharField(max_length=30, choices=SERVICE_CHOICES)
 

@@ -421,6 +421,35 @@
     .btn-schedule:hover {
         background: #334155;
     }
+
+    /* Connect badge */
+    .connect-badge {
+        font-size: 0.5625rem;
+        padding: 2px 6px;
+        border-radius: 3px;
+        background: #fef2f2;
+        color: #dc2626;
+        border: 1px solid #fecaca;
+        margin-left: 6px;
+        white-space: nowrap;
+    }
+    .connect-badge.connected {
+        background: var(--success-light);
+        color: #047857;
+        border-color: #6ee7b7;
+    }
+    .connect-badge:hover {
+        opacity: 0.8;
+        cursor: pointer;
+    }
+
+    /* Platform tab disconnected state */
+    .platform-tab[data-connected="false"] {
+        opacity: 0.7;
+    }
+    .platform-tab[data-connected="false"]:hover {
+        opacity: 1;
+    }
 </style>
 {% endblock %}
 
@@ -446,18 +475,37 @@
         <button class="platform-tab active" onclick="filterPlatform('all', this)">
             <i class="fas fa-border-all"></i> All Platforms
         </button>
-        <button class="platform-tab facebook" onclick="filterPlatform('facebook', this)">
-            <i class="fab fa-facebook"></i> Facebook
+        <button class="platform-tab facebook" onclick="filterPlatform('facebook', this)" data-platform="facebook">
+            <i class="fab fa-facebook"></i> Facebook <span class="connect-badge" data-platform="facebook">Not connected <i class="fas fa-link" style="font-size:0.6rem; opacity:0.5"></i></span>
         </button>
-        <button class="platform-tab instagram" onclick="filterPlatform('instagram', this)">
-            <i class="fab fa-instagram"></i> Instagram
+        <button class="platform-tab instagram" onclick="filterPlatform('instagram', this)" data-platform="instagram">
+            <i class="fab fa-instagram"></i> Instagram <span class="connect-badge" data-platform="instagram">Not connected <i class="fas fa-link" style="font-size:0.6rem; opacity:0.5"></i></span>
         </button>
-        <button class="platform-tab linkedin" onclick="filterPlatform('linkedin', this)">
-            <i class="fab fa-linkedin"></i> LinkedIn
+        <button class="platform-tab linkedin" onclick="filterPlatform('linkedin', this)" data-platform="linkedin">
+            <i class="fab fa-linkedin"></i> LinkedIn <span class="connect-badge" data-platform="linkedin">Not connected <i class="fas fa-link" style="font-size:0.6rem; opacity:0.5"></i></span>
         </button>
-        <button class="platform-tab twitter" onclick="filterPlatform('twitter', this)">
-            <i class="fab fa-twitter"></i> Twitter
+        <button class="platform-tab pinterest" onclick="filterPlatform('pinterest', this)" data-platform="pinterest">
+            <i class="fab fa-pinterest"></i> Pinterest <span class="connect-badge" data-platform="pinterest">Not connected <i class="fas fa-link" style="font-size:0.6rem; opacity:0.5"></i></span>
         </button>
+    </div>
+
+    <!-- Connect Account Modal -->
+    <div class="modal fade" id="connectModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content" style="border-radius:10px; border:1px solid var(--border);">
+                <div class="modal-header" style="padding:16px 20px; border-bottom:1px solid var(--border);">
+                    <h6 style="margin:0; font-size:0.9375rem;">Connect <span id="connect-platform-name">Platform</span></h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" style="font-size:0.75rem;"></button>
+                </div>
+                <div class="modal-body" style="padding:20px; text-align:center;">
+                    <div id="connect-platform-icon" style="font-size:3rem; margin-bottom:16px;"></div>
+                    <p id="connect-description" style="color:var(--text-secondary); font-size:0.875rem; margin-bottom:16px;"></p>
+                    <button id="btn-connect-platform" class="btn-schedule" style="background:var(--accent); width:100%;">
+                        Connect with <span id="connect-platform-btn-name"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <div class="posts-panel">
@@ -469,85 +517,12 @@
                     <span class="calendar-month">April 2026</span>
                     <button><i class="fas fa-chevron-right"></i></button>
                 </div>
-                <button class="btn-new-post" style="padding: 8px 14px; font-size: 0.75rem;">
+                <button class="btn-new-post" id="btn-today" style="padding: 8px 14px; font-size: 0.75rem;">
                     <i class="fas fa-plus me-1"></i>Today
                 </button>
             </div>
-            <div class="calendar-grid">
-                <div class="calendar-day-header">Sun</div>
-                <div class="calendar-day-header">Mon</div>
-                <div class="calendar-day-header">Tue</div>
-                <div class="calendar-day-header">Wed</div>
-                <div class="calendar-day-header">Thu</div>
-                <div class="calendar-day-header">Fri</div>
-                <div class="calendar-day-header">Sat</div>
-
-                <!-- Sample calendar days -->
-                <div class="calendar-day other-month"><div class="calendar-day-number">30</div></div>
-                <div class="calendar-day other-month"><div class="calendar-day-number">31</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">1</div>
-                    <div class="post-item">
-                        <div class="post-time">10:00 AM</div>
-                        <div class="post-text">New product launch announcement...</div>
-                        <span class="post-platform facebook">FB</span>
-                    </div>
-                </div>
-                <div class="calendar-day"><div class="calendar-day-number">2</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">3</div>
-                    <div class="post-item">
-                        <div class="post-time">2:00 PM</div>
-                        <div class="post-text">Customer success story featuring...</div>
-                        <span class="post-platform linkedin">LI</span>
-                    </div>
-                </div>
-                <div class="calendar-day"><div class="calendar-day-number">4</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">5</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">6</div>
-                    <div class="post-item">
-                        <div class="post-time">9:00 AM</div>
-                        <div class="post-text">Behind the scenes at our office...</div>
-                        <span class="post-platform instagram">IG</span>
-                    </div>
-                </div>
-                <div class="calendar-day"><div class="calendar-day-number">7</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">8</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">9</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">10</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">11</div>
-                    <div class="post-item">
-                        <div class="post-time">11:00 AM</div>
-                        <div class="post-text">Weekly tips for better SEO...</div>
-                        <span class="post-platform facebook">FB</span>
-                    </div>
-                </div>
-                <div class="calendar-day"><div class="calendar-day-number">12</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">13</div></div>
-                <div class="calendar-day today"><div class="calendar-day-number">14</div>
-                    <div class="post-item">
-                        <div class="post-time">3:00 PM</div>
-                        <div class="post-text">New case study release...</div>
-                        <span class="post-platform linkedin">LI</span>
-                    </div>
-                </div>
-                <div class="calendar-day"><div class="calendar-day-number">15</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">16</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">17</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">18</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">19</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">20</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">21</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">22</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">23</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">24</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">25</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">26</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">27</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">28</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">29</div></div>
-                <div class="calendar-day"><div class="calendar-day-number">30</div></div>
-                <div class="calendar-day other-month"><div class="calendar-day-number">1</div></div>
-                <div class="calendar-day other-month"><div class="calendar-day-number">2</div></div>
-                <div class="calendar-day other-month"><div class="calendar-day-number">3</div></div>
+            <div class="calendar-grid" id="calendar-grid">
+                <!-- Calendar dynamically rendered via JS -->
             </div>
         </div>
 
@@ -575,7 +550,7 @@
                         <input type="datetime-local">
                     </div>
                 </div>
-                <button class="btn-schedule" onclick="schedulePost()">Schedule Post</button>
+                <button class="btn-schedule" id="btn-schedule">Schedule Post</button>
             </div>
 
             <!-- Recent Posts -->
@@ -584,37 +559,40 @@
                     <h6>Upcoming Posts</h6>
                     <button style="background:none; border:none; color:var(--accent); font-size:0.75rem; cursor:pointer;">View All</button>
                 </div>
-                <div class="scheduled-post">
-                    <div class="post-icon facebook"><i class="fab fa-facebook"></i></div>
-                    <div class="post-details">
-                        <div class="post-content">Excited to announce our new SEO service for dental practices! 🦷</div>
-                        <div class="post-meta">Today at 10:00 AM</div>
+                <div class="list-body">
+                    <!-- Dynamic posts rendered by JS; static samples shown as fallback when auth required -->
+                    <div class="scheduled-post static-sample">
+                        <div class="post-icon facebook"><i class="fab fa-facebook"></i></div>
+                        <div class="post-details">
+                            <div class="post-content">Excited to announce our new SEO service for dental practices! 🦷</div>
+                            <div class="post-meta">Today at 10:00 AM</div>
+                        </div>
+                        <span class="post-status scheduled">Scheduled</span>
                     </div>
-                    <span class="post-status scheduled">Scheduled</span>
-                </div>
-                <div class="scheduled-post">
-                    <div class="post-icon linkedin"><i class="fab fa-linkedin"></i></div>
-                    <div class="post-details">
-                        <div class="post-content">Check out our latest case study on ranking #1 on Google</div>
-                        <div class="post-meta">Apr 14 at 3:00 PM</div>
+                    <div class="scheduled-post static-sample">
+                        <div class="post-icon linkedin"><i class="fab fa-linkedin"></i></div>
+                        <div class="post-details">
+                            <div class="post-content">Check out our latest case study on ranking #1 on Google</div>
+                            <div class="post-meta">Apr 14 at 3:00 PM</div>
+                        </div>
+                        <span class="post-status scheduled">Scheduled</span>
                     </div>
-                    <span class="post-status scheduled">Scheduled</span>
-                </div>
-                <div class="scheduled-post">
-                    <div class="post-icon instagram"><i class="fab fa-instagram"></i></div>
-                    <div class="post-details">
-                        <div class="post-content">Behind the scenes at our team meeting 📸</div>
-                        <div class="post-meta">Apr 6 at 9:00 AM</div>
+                    <div class="scheduled-post static-sample">
+                        <div class="post-icon instagram"><i class="fab fa-instagram"></i></div>
+                        <div class="post-details">
+                            <div class="post-content">Behind the scenes at our team meeting 📸</div>
+                            <div class="post-meta">Apr 6 at 9:00 AM</div>
+                        </div>
+                        <span class="post-status published">Published</span>
                     </div>
-                    <span class="post-status published">Published</span>
-                </div>
-                <div class="scheduled-post">
-                    <div class="post-icon facebook"><i class="fab fa-facebook"></i></div>
-                    <div class="post-details">
-                        <div class="post-content">5 Tips for better dental marketing in 2026</div>
-                        <div class="post-meta">Draft</div>
+                    <div class="scheduled-post static-sample">
+                        <div class="post-icon facebook"><i class="fab fa-facebook"></i></div>
+                        <div class="post-details">
+                            <div class="post-content">5 Tips for better dental marketing in 2026</div>
+                            <div class="post-meta">Draft</div>
+                        </div>
+                        <span class="post-status draft">Draft</span>
                     </div>
-                    <span class="post-status draft">Draft</span>
                 </div>
             </div>
         </div>
@@ -623,19 +601,446 @@
 
 {% endblock %}
 
-{% block scripts %}
+{% block extra_js %}
 <script>
-function filterPlatform(platform, btn) {
-    document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
-    btn.classList.add('active');
-}
+document.addEventListener('DOMContentLoaded', function() {
+    // State
+    let currentYear = new Date().getFullYear();
+    let currentMonth = new Date().getMonth() + 1;
+    let currentPlatform = 'all';
+    let posts = [];
 
-function openComposer() {
-    alert('Post composer would open here');
-}
+    // DOM refs
+    const calendarMonthEl = document.querySelector('.calendar-month');
+    const calendarGridEl = document.querySelector('.calendar-grid');
+    const scheduledListEl = document.querySelector('.scheduled-list .list-body') || document.querySelector('.scheduled-list');
+    const quickPostForm = document.querySelector('.quick-post-card');
+    const authMessage = document.getElementById('auth-required-message');
 
-function schedulePost() {
-    alert('Post scheduled successfully!');
-}
+    // Init
+    checkConnectedPlatforms();
+    loadCalendar();
+    loadUpcomingPosts();
+
+    async function checkConnectedPlatforms() {
+        try {
+            const res = await fetch('/api/scheduler/connected-platforms/');
+            if (res.status === 401 || res.status === 200) {
+                // On 401, still show the "not connected" state (demo mode)
+                let connected = {};
+                if (res.status === 200) {
+                    const data = await res.json();
+                    connected = data.connected || {};
+                }
+                updatePlatformBadges(connected);
+            }
+        } catch (err) {
+            updatePlatformBadges({});
+        }
+    }
+
+    function updatePlatformBadges(connected) {
+        const platformMap = {
+            'facebook': 'meta_facebook',
+            'instagram': 'meta_instagram',
+            'linkedin': 'linkedin',
+            'twitter': 'twitter',
+        };
+        document.querySelectorAll('.connect-badge[data-platform]').forEach(badge => {
+            const platform = badge.dataset.platform;
+            const service = platformMap[platform];
+            const isConnected = connected[service] === true;
+            const tab = badge.closest('.platform-tab');
+
+            if (isConnected) {
+                badge.className = 'connect-badge connected';
+                badge.innerHTML = 'Connected <i class="fas fa-check" style="font-size:0.6rem;"></i>';
+                if (tab) tab.dataset.connected = 'true';
+            } else {
+                badge.className = 'connect-badge';
+                badge.innerHTML = 'Not connected <i class="fas fa-link" style="font-size:0.6rem; opacity:0.5"></i>';
+                if (tab) tab.dataset.connected = 'false';
+            }
+        });
+    }
+
+    // Platform tabs
+    window.filterPlatform = function(platform, btn) {
+        document.querySelectorAll('.platform-tab').forEach(t => t.classList.remove('active'));
+        btn.classList.add('active');
+        currentPlatform = platform;
+        loadCalendar();
+    };
+
+    // Connect badge click — open modal
+    document.querySelectorAll('.connect-badge').forEach(badge => {
+        badge.addEventListener('click', function(e) {
+            e.stopPropagation();
+            const platform = this.dataset.platform;
+            openConnectModal(platform);
+        });
+    });
+
+    // Connect modal
+    window.openConnectModal = function(platform) {
+        const modal = document.getElementById('connectModal');
+        const icon = document.getElementById('connect-platform-icon');
+        const name = document.getElementById('connect-platform-name');
+        const desc = document.getElementById('connect-description');
+        const btnName = document.getElementById('connect-platform-btn-name');
+
+        const platformInfo = {
+            facebook: { icon: '<i class="fab fa-facebook" style="color:#1877f2"></i>', name: 'Facebook', desc: 'Connect your Facebook Page to schedule and publish posts.' },
+            instagram: { icon: '<i class="fab fa-instagram" style="color:#e4405f"></i>', name: 'Instagram', desc: 'Connect your Instagram Business account to schedule and publish posts.' },
+            linkedin: { icon: '<i class="fab fa-linkedin" style="color:#0a66c2"></i>', name: 'LinkedIn', desc: 'Connect your LinkedIn profile or Page to share updates.' },
+            pinterest: { icon: '<i class="fab fa-pinterest" style="color:#e60023"></i>', name: 'Pinterest', desc: 'Connect your Pinterest account to pin content to your boards.' },
+        };
+
+        const info = platformInfo[platform] || { icon: '', name: platform, desc: '' };
+        icon.innerHTML = info.icon;
+        name.textContent = info.name;
+        desc.textContent = info.desc;
+        btnName.textContent = info.name;
+
+        const connectBtn = document.getElementById('btn-connect-platform');
+        connectBtn.onclick = function() { initiateConnect(platform); };
+
+        // Show modal using Bootstrap
+        const bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+        bsModal.show();
+    };
+
+    window.initiateConnect = async function(platform) {
+        try {
+            const res = await fetch(`/auth/social/${platform}/`);
+            const data = await res.json();
+            if (data.redirect_url) {
+                // For now, show info that OAuth needs setup
+                const modal = document.getElementById('connectModal');
+                const desc = document.getElementById('connect-description');
+                desc.innerHTML = `<strong>Setup required:</strong><br>${data.note}<br><br>To connect ${platform}, you need to:<br>1. Create a developer app for ${platform}<br>2. Configure OAuth credentials in settings<br>3. Set up the OAuth redirect URI`;
+                const bsModal = bootstrap.Modal.getOrCreateInstance(modal);
+                bsModal.show();
+            }
+        } catch (err) {
+            showToast('Failed to initiate connection', 'error');
+        }
+    };
+
+    // Calendar navigation
+    document.querySelectorAll('.calendar-nav button').forEach((btn, idx) => {
+        btn.addEventListener('click', function() {
+            if (idx === 0) { // prev
+                currentMonth--;
+                if (currentMonth < 1) { currentMonth = 12; currentYear--; }
+            } else { // next
+                currentMonth++;
+                if (currentMonth > 12) { currentMonth = 1; currentYear++; }
+            }
+            loadCalendar();
+        });
+    });
+
+    // Today button
+    document.getElementById('btn-today').addEventListener('click', function() {
+        currentYear = new Date().getFullYear();
+        currentMonth = new Date().getMonth() + 1;
+        loadCalendar();
+    });
+
+    // New Post button - scroll to quick post form
+    window.openComposer = function() {
+        quickPostForm.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    };
+
+    // Schedule Post form
+    quickPostForm.querySelector('.btn-schedule').addEventListener('click', schedulePost);
+
+    window.schedulePost = async function() {
+        const textarea = quickPostForm.querySelector('textarea');
+        const select = quickPostForm.querySelector('select');
+        const datetimeInput = quickPostForm.querySelector('input[type="datetime-local"]');
+
+        const content = textarea.value.trim();
+        if (!content) {
+            showToast('Please enter post content', 'error');
+            return;
+        }
+
+        const platformMap = { 'Facebook': 'facebook', 'Instagram': 'instagram', 'LinkedIn': 'linkedin', 'Twitter': 'twitter' };
+        const platform = platformMap[select.value] || 'facebook';
+
+        let scheduled_time = null;
+        if (datetimeInput.value) {
+            scheduled_time = new Date(datetimeInput.value).toISOString();
+        }
+
+        try {
+            const res = await fetch('/api/scheduler/posts/', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    content,
+                    media_urls: [],
+                    link_url: '',
+                    scheduled_time,
+                    platforms: [platform]
+                })
+            });
+
+            if (res.status === 401) {
+                showAuthRequired();
+                return;
+            }
+
+            if (!res.ok) throw new Error('Failed to schedule post');
+
+            const data = await res.json();
+            showToast('Post scheduled successfully!', 'success');
+            textarea.value = '';
+            datetimeInput.value = '';
+
+            await loadCalendar();
+            await loadUpcomingPosts();
+        } catch (err) {
+            showToast('Error scheduling post: ' + err.message, 'error');
+        }
+    };
+
+    async function loadCalendar() {
+        try {
+            let url = `/api/scheduler/calendar/?year=${currentYear}&month=${currentMonth}`;
+            if (currentPlatform !== 'all') url += `&platform=${currentPlatform}`;
+
+            const res = await fetch(url);
+
+            if (res.status === 401) {
+                showAuthRequired();
+                renderStaticCalendar();
+                return;
+            }
+
+            if (!res.ok) throw new Error('Failed to load calendar');
+
+            const data = await res.json();
+            posts = data.data?.posts || [];
+            renderCalendar(posts);
+        } catch (err) {
+            renderStaticCalendar();
+        }
+    }
+
+    function renderCalendar(posts) {
+        const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+        calendarMonthEl.textContent = `${monthNames[currentMonth - 1]} ${currentYear}`;
+
+        const firstDay = new Date(currentYear, currentMonth - 1, 1).getDay();
+        const daysInMonth = new Date(currentYear, currentMonth, 0).getDate();
+        const daysInPrevMonth = new Date(currentYear, currentMonth - 1, 0).getDate();
+
+        const today = new Date();
+        const isCurrentMonth = today.getFullYear() === currentYear && today.getMonth() + 1 === currentMonth;
+
+        // Build grid: 7 cols, header + 6 rows max
+        const headerDays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        let html = headerDays.map(d => `<div class="calendar-day-header">${d}</div>`).join('');
+
+        // Prev month days
+        for (let i = firstDay - 1; i >= 0; i--) {
+            html += `<div class="calendar-day other-month"><div class="calendar-day-number">${daysInPrevMonth - i}</div></div>`;
+        }
+
+        // Current month days
+        for (let d = 1; d <= daysInMonth; d++) {
+            const isToday = isCurrentMonth && d === today.getDate();
+            const dayPosts = posts.filter(p => {
+                const dt = new Date(p.scheduled_time);
+                return dt.getFullYear() === currentYear && dt.getMonth() + 1 === currentMonth && dt.getDate() === d;
+            });
+
+            let postHtml = '';
+            dayPosts.forEach(p => {
+                const time = new Date(p.scheduled_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+                const truncated = p.content.length > 40 ? p.content.substring(0, 40) + '...' : p.content;
+                const platformClass = p.platforms?.[0] || 'facebook';
+                postHtml += `
+                    <div class="post-item" onclick="showPostActions(${p.id}, event)">
+                        <div class="post-time">${time}</div>
+                        <div class="post-text">${truncated}</div>
+                        ${p.platforms.map(pl => `<span class="post-platform ${pl}">${pl.charAt(0).toUpperCase() + pl.slice(1, 3).toUpperCase()}</span>`).join('')}
+                    </div>`;
+            });
+
+            html += `<div class="calendar-day${isToday ? ' today' : ''}"><div class="calendar-day-number">${d}</div>${postHtml}</div>`;
+        }
+
+        // Next month days
+        const totalCells = firstDay + daysInMonth;
+        const remaining = totalCells % 7 === 0 ? 0 : 7 - (totalCells % 7);
+        for (let i = 1; i <= remaining; i++) {
+            html += `<div class="calendar-day other-month"><div class="calendar-day-number">${i}</div></div>`;
+        }
+
+        // Replace grid starting after header row
+        const dayHeaders = calendarGridEl.querySelectorAll('.calendar-day-header');
+        calendarGridEl.innerHTML = html;
+    }
+
+    function renderStaticCalendar() {
+        // Fallback: re-render current view without API data
+        renderCalendar([]);
+    }
+
+    async function loadUpcomingPosts() {
+        try {
+            const res = await fetch('/api/scheduler/posts/?page_size=10');
+
+            if (res.status === 401) {
+                renderStaticUpcomingPosts();
+                return;
+            }
+
+            if (!res.ok) throw new Error('Failed to load posts');
+
+            const data = await res.json();
+            renderUpcomingPosts(data.data?.posts || []);
+        } catch (err) {
+            renderStaticUpcomingPosts();
+        }
+    }
+
+    function renderUpcomingPosts(postList) {
+        const container = document.querySelector('.scheduled-list');
+        const listBody = container.querySelector('.list-body') || container;
+
+        // Remove existing dynamic posts, keep static samples as fallback
+        listBody.querySelectorAll('.scheduled-post:not(.static-sample)').forEach(el => el.remove());
+
+        if (postList.length === 0) {
+            return;
+        }
+
+        postList.forEach(p => {
+            const statusClass = p.status || (p.scheduled_time ? 'scheduled' : 'draft');
+            const platformClass = p.platforms?.[0] || 'facebook';
+            const platformIcon = { facebook: 'fa-facebook', instagram: 'fa-instagram', linkedin: 'fa-linkedin', twitter: 'fa-twitter' }[platformClass] || 'fa-globe';
+            const dateStr = p.scheduled_time
+                ? new Date(p.scheduled_time).toLocaleDateString('en-US', { month: 'short', day: 'numeric' }) + ' at ' + new Date(p.scheduled_time).toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' })
+                : 'Draft';
+
+            const postEl = document.createElement('div');
+            postEl.className = 'scheduled-post';
+            postEl.innerHTML = `
+                <div class="post-icon ${platformClass}"><i class="fab ${platformIcon}"></i></div>
+                <div class="post-details">
+                    <div class="post-content">${p.content.length > 60 ? p.content.substring(0, 60) + '...' : p.content}</div>
+                    <div class="post-meta">${dateStr}</div>
+                </div>
+                <span class="post-status ${statusClass}">${statusClass.charAt(0).toUpperCase() + statusClass.slice(1)}</span>
+            `;
+            listBody.appendChild(postEl);
+        });
+    }
+
+    function renderStaticUpcomingPosts() {
+        // Keep static sample posts visible as fallback
+    }
+
+    window.showPostActions = function(postId, event) {
+        event.stopPropagation();
+        const existing = document.querySelector('.post-actions-popup');
+        if (existing) existing.remove();
+
+        const popup = document.createElement('div');
+        popup.className = 'post-actions-popup';
+        popup.style.cssText = 'position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); background:white; border:1px solid var(--border); border-radius:8px; padding:16px; z-index:1000; box-shadow:0 4px 20px rgba(0,0,0,0.15); min-width:200px;';
+        popup.innerHTML = `
+            <div style="font-weight:600; margin-bottom:12px; font-size:0.875rem;">Post Actions</div>
+            <button onclick="publishPost(${postId})" style="display:block; width:100%; padding:8px 12px; background:var(--success-light); border:1px solid var(--success); border-radius:4px; color:#047857; font-size:0.8125rem; cursor:pointer; margin-bottom:8px;">Publish Now</button>
+            <button onclick="editPost(${postId})" style="display:block; width:100%; padding:8px 12px; background:var(--bg-page); border:1px solid var(--border); border-radius:4px; color:var(--text-secondary); font-size:0.8125rem; cursor:pointer; margin-bottom:8px;">Edit</button>
+            <button onclick="deletePost(${postId})" style="display:block; width:100%; padding:8px 12px; background:#fef2f2; border:1px solid #fecaca; border-radius:4px; color:#dc2626; font-size:0.8125rem; cursor:pointer;">Delete</button>
+        `;
+
+        document.addEventListener('click', function closePopup(e) {
+            if (!popup.contains(e.target) && e.target.className !== 'post-item') {
+                popup.remove();
+                document.removeEventListener('click', closePopup);
+            }
+        });
+
+        document.body.appendChild(popup);
+    };
+
+    window.publishPost = async function(postId) {
+        try {
+            const res = await fetch(`/api/scheduler/posts/${postId}/publish/`, { method: 'POST' });
+            if (res.status === 401) { showAuthRequired(); return; }
+            if (!res.ok) throw new Error('Failed to publish');
+            showToast('Post published!', 'success');
+            document.querySelector('.post-actions-popup')?.remove();
+            await loadCalendar();
+            await loadUpcomingPosts();
+        } catch (err) {
+            showToast('Error: ' + err.message, 'error');
+        }
+    };
+
+    window.editPost = async function(postId) {
+        // Find post data and populate quick form
+        const post = posts.find(p => p.id === postId);
+        if (!post) return;
+
+        const textarea = quickPostForm.querySelector('textarea');
+        const select = quickPostForm.querySelector('select');
+        const datetimeInput = quickPostForm.querySelector('input[type="datetime-local"]');
+
+        textarea.value = post.content;
+        const platformMap = { facebook: 'Facebook', instagram: 'Instagram', linkedin: 'LinkedIn', twitter: 'Twitter' };
+        select.value = platformMap[post.platforms?.[0]] || 'Facebook';
+        if (post.scheduled_time) {
+            datetimeInput.value = new Date(post.scheduled_time).toISOString().slice(0, 16);
+        }
+
+        quickPostForm.scrollIntoView({ behavior: 'smooth' });
+        document.querySelector('.post-actions-popup')?.remove();
+    };
+
+    window.deletePost = async function(postId) {
+        if (!confirm('Delete this post?')) return;
+        try {
+            const res = await fetch(`/api/scheduler/posts/${postId}/`, { method: 'DELETE' });
+            if (res.status === 401) { showAuthRequired(); return; }
+            if (!res.ok) throw new Error('Failed to delete');
+            showToast('Post deleted', 'success');
+            document.querySelector('.post-actions-popup')?.remove();
+            await loadCalendar();
+            await loadUpcomingPosts();
+        } catch (err) {
+            showToast('Error: ' + err.message, 'error');
+        }
+    };
+
+    function showAuthRequired() {
+        const msg = document.createElement('div');
+        msg.id = 'auth-required-message';
+        msg.style.cssText = 'position:fixed; top:20px; right:20px; background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:16px 20px; color:#dc2626; font-size:0.875rem; z-index:9999; box-shadow:0 4px 12px rgba(0,0,0,0.1);';
+        msg.innerHTML = '<i class="fas fa-exclamation-circle me-2"></i>Sign in to use the scheduler';
+        document.body.appendChild(msg);
+        setTimeout(() => msg.remove(), 5000);
+    }
+
+    function showToast(message, type) {
+        const toast = document.createElement('div');
+        toast.style.cssText = `position:fixed; top:20px; right:20px; background:${type === 'success' ? '#d1fae5' : '#fef2f2'}; border:1px solid ${type === 'success' ? '#10b981' : '#dc2626'}; border-radius:8px; padding:12px 20px; color:${type === 'success' ? '#047857' : '#dc2626'}; font-size:0.875rem; z-index:9999; box-shadow:0 4px 12px rgba(0,0,0,0.1); animation:slideIn 0.3s ease;`;
+        toast.textContent = message;
+        document.body.appendChild(toast);
+        setTimeout(() => { toast.style.opacity = '0'; setTimeout(() => toast.remove(), 300); }, 3000);
+    }
+
+    // Add slideIn animation
+    const style = document.createElement('style');
+    style.textContent = '@keyframes slideIn { from { opacity:0; transform:translateX(20px); } to { opacity:1; transform:translateX(0); } }';
+    document.head.appendChild(style);
+});
 </script>
 {% endblock %}

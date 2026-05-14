@@ -6,31 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Meta Tags -->
-    <title>{% block meta_title %}Omni Path Marketing - Premier Digital Marketing Services{% endblock %}</title>
+    <title>{% block meta_title %}Brand Me Up - Premier Digital Marketing Services{% endblock %}</title>
     <meta name="description" content="{% block meta_description %}We provide AI-powered marketing solutions with human expertise to help your business grow. Our services include SEO, social media marketing, content creation, and more.{% endblock %}">
     <meta name="keywords" content="{% block meta_keywords %}AI marketing agency, digital marketing, SEO services, social media marketing, content creation, PPC advertising, local SEO, e-commerce SEO{% endblock %}">
-    <meta name="author" content="Omni Path Marketing">
+    <meta name="author" content="Brand Me Up">
     <meta name="robots" content="index, follow">
 
     <!-- Open Graph Tags -->
-    <meta property="og:title" content="{% block og_title %}Omni Path Marketing{% endblock %}">
+    <meta property="og:title" content="{% block og_title %}Brand Me Up{% endblock %}">
     <meta property="og:description" content="{% block og_description %}AI-powered marketing solutions at competitive prices{% endblock %}">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="{{ request.build_absolute_uri|default:'https://www.omnipathmarketing.com' }}">
+    <meta property="og:url" content="{{ request.build_absolute_uri|default:'https://www.brandmeup.com' }}">
     <meta property="og:image" content="{% block og_image %}{% endblock %}">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{% block twitter_title %}Omni Path Marketing{% endblock %}">
+    <meta name="twitter:title" content="{% block twitter_title %}Brand Me Up{% endblock %}">
     <meta name="twitter:description" content="{% block twitter_description %}AI-powered marketing solutions at competitive prices{% endblock %}">
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ request.build_absolute_uri|default:'https://www.omnipathmarketing.com' }}">
+    <link rel="canonical" href="{{ request.build_absolute_uri|default:'https://www.brandmeup.com' }}">
 
-    <!-- Google Fonts - DM Sans -->
+    <!-- Google Fonts - DM Sans + Outfit -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -43,8 +43,8 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Omni Path Marketing",
-        "url": "https://www.omnipathmarketing.com",
+        "name": "Brand Me Up",
+        "url": "https://www.brandmeup.com",
         "description": "AI-powered marketing solutions with human expertise to help your business grow.",
         "contactPoint": {
             "@type": "ContactPoint",
@@ -54,9 +54,9 @@
             "availableLanguage": "English"
         },
         "sameAs": [
-            "https://www.facebook.com/aimarketing",
-            "https://www.twitter.com/aimarketing",
-            "https://www.linkedin.com/company/aimarketing"
+            "https://www.facebook.com/brandmeup",
+            "https://www.twitter.com/brandmeup",
+            "https://www.linkedin.com/company/brandmeup"
         ]
     }
     </script>
@@ -64,44 +64,67 @@
 
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --dark-bg: #0f172a;
-            --footer-bg: #1e293b;
+            --red: #d9252c;
+            --red-light: #e8444f;
+            --red-dark: #b01e24;
+            --dark-red: #5e0a0f;
+            --black: #000000;
+            --near-black: #1a1a1a;
+            --card-surface: #2a2a2a;
+            --light-section: #f5f5f5;
+            --white: #ffffff;
+            --text-light: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-muted: #94a3b8;
+            --border: #3a3a3a;
+            --border-light: #e2e8f0;
+            --shadow: 0 4px 20px rgba(0,0,0,0.3);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.4);
+            --radius-sm: 4px;
+            --radius: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
         }
 
         body {
             font-family: 'DM Sans', sans-serif;
-            color: #1e293b;
+            color: var(--text-light);
+            background: var(--near-black);
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', sans-serif;
         }
 
         /* Navbar Styles */
         .navbar {
+            background: var(--black);
             padding: 1rem 0;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            border-bottom: 1px solid var(--border);
         }
 
         .navbar-brand {
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--primary-color) !important;
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--white) !important;
+            text-decoration: none;
         }
 
-        .navbar-brand i {
-            color: var(--primary-color);
+        .navbar-brand span {
+            color: var(--red);
         }
 
         .nav-link {
             font-weight: 500;
-            color: #374151 !important;
+            color: var(--text-muted) !important;
             padding: 0.5rem 1rem !important;
             transition: all 0.3s ease;
             position: relative;
         }
 
         .nav-link:hover {
-            color: var(--primary-color) !important;
+            color: var(--red) !important;
         }
 
         .nav-link::after {
@@ -111,7 +134,7 @@
             left: 50%;
             width: 0;
             height: 2px;
-            background: var(--primary-color);
+            background: var(--red);
             transition: all 0.3s ease;
             transform: translateX(-50%);
         }
@@ -132,7 +155,8 @@
             padding: 2rem 0;
             border: none;
             border-radius: 0;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            background: var(--card-surface);
+            box-shadow: var(--shadow-lg);
             margin-top: 0;
         }
 
@@ -144,33 +168,33 @@
 
         .mega-menu-title {
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--red);
             font-size: 0.875rem;
             text-transform: uppercase;
             letter-spacing: 0.5px;
             margin-bottom: 1rem;
             padding-bottom: 0.5rem;
-            border-bottom: 1px solid #e5e7eb;
+            border-bottom: 1px solid var(--border);
         }
 
         .mega-menu-link {
             display: block;
             padding: 0.5rem 0;
-            color: #4b5563;
+            color: var(--text-muted);
             text-decoration: none;
             transition: all 0.2s ease;
             font-size: 0.9375rem;
         }
 
         .mega-menu-link:hover {
-            color: var(--primary-color);
+            color: var(--red);
             padding-left: 0.5rem;
         }
 
         .mega-menu-link i {
             margin-right: 0.5rem;
             width: 1.25rem;
-            color: #9ca3af;
+            color: var(--text-muted);
         }
 
         .mega-menu-badge {
@@ -182,7 +206,7 @@
         }
 
         .badge-popular {
-            background: linear-gradient(135deg, #10b981, #059669);
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
             color: white;
         }
 
@@ -209,18 +233,36 @@
 
         /* CTA Button */
         .btn-primary {
-            background-color: var(--primary-color);
-            border-color: var(--primary-color);
+            background-color: var(--red);
+            border-color: var(--red);
             padding: 0.625rem 1.5rem;
-            font-weight: 500;
-            border-radius: 0.5rem;
+            font-weight: 600;
+            border-radius: var(--radius);
+            color: var(--white);
+            transition: all 0.2s;
         }
 
         .btn-primary:hover {
-            background-color: var(--secondary-color);
-            border-color: var(--secondary-color);
+            background-color: var(--red-light);
+            border-color: var(--red-light);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+            box-shadow: 0 6px 20px rgba(217,37,44,0.35);
+            color: var(--white);
+        }
+
+        .btn-outline-primary {
+            background: transparent;
+            border: 2px solid var(--border);
+            color: var(--white);
+            padding: 0.625rem 1.5rem;
+            font-weight: 600;
+            border-radius: var(--radius);
+            transition: all 0.2s;
+        }
+
+        .btn-outline-primary:hover {
+            border-color: var(--red);
+            color: var(--red);
         }
 
         /* Section Styles */
@@ -229,29 +271,52 @@
             margin-bottom: 1rem;
         }
 
+        .section-badge {
+            display: inline-block;
+            background: rgba(217,37,44,0.1);
+            border: 1px solid rgba(217,37,44,0.2);
+            color: var(--red);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 1rem;
+        }
+
         .service-card {
-            transition: transform 0.3s, box-shadow 0.3s;
-            border: none;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            background: var(--card-surface);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            overflow: hidden;
         }
 
         .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            border-color: var(--red);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .service-card .card-body {
+            padding: 1.5rem;
         }
 
         .pricing-card {
-            border: 2px solid #e5e7eb;
+            background: var(--card-surface);
+            border: 2px solid var(--border);
+            border-radius: var(--radius-lg);
             transition: all 0.3s;
         }
 
         .pricing-card:hover {
-            border-color: var(--primary-color);
+            border-color: var(--red);
             transform: scale(1.02);
         }
 
         .pricing-card.popular {
-            border-color: var(--primary-color);
+            border-color: var(--red);
             position: relative;
         }
 
@@ -261,7 +326,7 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: var(--primary-color);
+            background: var(--red);
             color: white;
             padding: 4px 16px;
             border-radius: 20px;
@@ -271,21 +336,45 @@
 
         /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            background: linear-gradient(135deg, var(--dark-red) 0%, var(--near-black) 60%, var(--black) 100%);
             color: white;
             padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(217,37,44,0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(217,37,44,0.1) 0%, transparent 70%);
+            border-radius: 50%;
         }
 
         /* Feature Icon */
         .feature-icon {
             width: 60px;
             height: 60px;
-            background: rgba(37, 99, 235, 0.1);
-            border-radius: 50%;
+            background: linear-gradient(135deg, var(--red), var(--red-dark));
+            border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-color);
+            color: var(--white);
             font-size: 1.5rem;
             margin-bottom: 1rem;
         }
@@ -294,16 +383,19 @@
         .seo-content h2 {
             margin-top: 2rem;
             margin-bottom: 1rem;
+            color: var(--text-light);
         }
 
         .seo-content h3 {
             margin-top: 1.5rem;
             margin-bottom: 0.75rem;
+            color: var(--text-light);
         }
 
         .seo-content p {
             margin-bottom: 1rem;
             line-height: 1.8;
+            color: var(--text-muted);
         }
 
         .seo-content ul, .seo-content ol {
@@ -314,31 +406,38 @@
         .seo-content li {
             margin-bottom: 0.5rem;
             line-height: 1.6;
+            color: var(--text-muted);
         }
 
         /* Footer Styles */
         .footer {
-            background-color: var(--footer-bg);
+            background-color: var(--black);
             color: white;
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border);
         }
 
         .footer-brand {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-family: 'Outfit', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 800;
             color: white;
             margin-bottom: 1rem;
             display: block;
+            text-decoration: none;
         }
 
-        .footer-brand i {
-            color: var(--primary-color);
+        .footer-brand span {
+            color: var(--red);
         }
 
         .footer-title {
             font-weight: 600;
             color: white;
             margin-bottom: 1.25rem;
-            font-size: 1rem;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
             position: relative;
             padding-bottom: 0.75rem;
         }
@@ -350,7 +449,7 @@
             left: 0;
             width: 40px;
             height: 2px;
-            background: var(--primary-color);
+            background: var(--red);
         }
 
         .footer-links {
@@ -364,7 +463,7 @@
         }
 
         .footer-links a {
-            color: #94a3b8;
+            color: var(--text-muted);
             text-decoration: none;
             transition: all 0.3s ease;
             font-size: 0.9375rem;
@@ -372,25 +471,25 @@
         }
 
         .footer-links a:hover {
-            color: white;
+            color: var(--red);
             padding-left: 0.5rem;
         }
 
         .footer-links a i {
             margin-right: 0.5rem;
             width: 1rem;
-            color: var(--primary-color);
+            color: var(--red);
         }
 
         .footer-contact li {
-            color: #94a3b8;
+            color: var(--text-muted);
             margin-bottom: 1rem;
             display: flex;
             align-items: flex-start;
         }
 
         .footer-contact i {
-            color: var(--primary-color);
+            color: var(--red);
             margin-right: 0.75rem;
             margin-top: 0.25rem;
         }
@@ -404,64 +503,88 @@
         .footer-social a {
             width: 40px;
             height: 40px;
-            background: rgba(255,255,255,0.1);
+            background: var(--card-surface);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: var(--text-muted);
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .footer-social a:hover {
-            background: var(--primary-color);
+            background: var(--red);
+            color: white;
             transform: translateY(-3px);
         }
 
         .footer-bottom {
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid var(--border);
             padding-top: 1.5rem;
             margin-top: 3rem;
         }
 
         .footer-bottom p {
-            color: #94a3b8;
+            color: var(--text-muted);
             margin: 0;
         }
 
         .footer-bottom a {
-            color: #94a3b8;
+            color: var(--text-muted);
             text-decoration: none;
             transition: color 0.3s ease;
         }
 
         .footer-bottom a:hover {
-            color: white;
+            color: var(--red);
         }
 
         /* Newsletter Form */
         .newsletter-form .form-control {
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
+            background: var(--card-surface);
+            border: 1px solid var(--border);
             color: white;
             padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
+            border-radius: var(--radius);
         }
 
         .newsletter-form .form-control::placeholder {
-            color: #94a3b8;
+            color: var(--text-muted);
         }
 
         .newsletter-form .form-control:focus {
-            background: rgba(255,255,255,0.15);
-            border-color: var(--primary-color);
+            background: var(--card-surface);
+            border-color: var(--red);
             color: white;
             box-shadow: none;
         }
 
         .newsletter-form .btn {
             padding: 0.75rem 1.5rem;
-            border-radius: 0.5rem;
+            border-radius: var(--radius);
+        }
+
+        /* Dark sections with light text */
+        .bg-dark-section {
+            background: var(--dark-red);
+        }
+
+        .bg-near-black {
+            background: var(--near-black);
+        }
+
+        .text-muted {
+            color: var(--text-muted) !important;
+        }
+
+        .text-red {
+            color: var(--red) !important;
+        }
+
+        /* Light background sections */
+        .bg-light-section {
+            background: var(--light-section);
         }
     </style>
 
@@ -469,13 +592,11 @@
 </head>
 <body>
     <!-- Navigation with Mega Menu -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+    <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="/" style="color: #1e3a8a; font-size: 1.5rem;">
-                <span style="color: #1e3a8a;">Omni</span><span style="color: #f97316;">Path</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
+            <a class="navbar-brand" href="/"><span>BRAND</span>ME UP</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: var(--text-muted);">
+                <span class="navbar-toggler-icon" style="background: var(--text-muted);"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-lg-center">
@@ -546,34 +667,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/blog/">Blog</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="toolsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Tools
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="toolsDropdown">
-                            <li><a class="dropdown-item" href="/tools/website-audit/">
-                                <i class="fas fa-magic me-2 text-primary"></i>Website Audit
-                            </a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/tools/keyword-density/">
-                                <i class="fas fa-calculator me-2"></i>Keyword Density
-                            </a></li>
-                            <li><a class="dropdown-item" href="/tools/seo-score/">
-                                <i class="fas fa-clipboard-check me-2"></i>SEO Score Checker
-                            </a></li>
-                            <li><a class="dropdown-item" href="/tools/serp-preview/">
-                                <i class="fas fa-google me-2"></i>SERP Preview
-                            </a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/tools/budget-planner/">
-                                <i class="fas fa-wallet me-2" style="color: #7c3aed;"></i>Budget Planner
-                            </a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/tools/">
-                                <i class="fas fa-th-large me-2"></i>All Tools
-                            </a></li>
-                        </ul>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact/">Contact</a>
                     </li>
@@ -583,14 +676,10 @@
                             <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 <i class="fas fa-user-circle me-1"></i>{{ logged_in_client.name|truncatechars:15 }}
                             </button>
-                            <ul class="dropdown-menu dropdown-menu-end">
-                                <li><a class="dropdown-item" href="/dashboard/">
-                                    <i class="fas fa-tachometer-alt me-2"></i>Dashboard
-                                </a></li>
-                                <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item text-danger" href="/auth/logout/">
-                                    <i class="fas fa-sign-out-alt me-2"></i>Sign Out
-                                </a></li>
+                            <ul class="dropdown-menu dropdown-menu-end" style="background: var(--card-surface); border: 1px solid var(--border);">
+                                <li><a class="dropdown-item" href="/dashboard/" style="color: var(--text-light);"><i class="fas fa-tachometer-alt me-2"></i>Dashboard</a></li>
+                                <li><hr class="dropdown-divider" style="border-color: var(--border);"></li>
+                                <li><a class="dropdown-item text-danger" href="/auth/logout/"><i class="fas fa-sign-out-alt me-2"></i>Sign Out</a></li>
                             </ul>
                         </div>
                         {% else %}
@@ -614,10 +703,8 @@
             <div class="row g-4">
                 <!-- Brand & Newsletter Column -->
                 <div class="col-lg-4">
-                    <a href="/" class="footer-brand fw-bold" style="color: white; font-size: 1.5rem; text-decoration: none;">
-                        <span style="color: white;">Omni</span><span style="color: #f97316;">Path</span>
-                    </a>
-                    <p class="text-white-50 mb-4" style="font-size: 0.9375rem; line-height: 1.7;">
+                    <a href="/" class="footer-brand"><span>BRAND</span>ME UP</a>
+                    <p class="mb-4" style="font-size: 0.9375rem; line-height: 1.7; color: var(--text-muted);">
                         We provide AI-powered marketing solutions with human expertise to help your business grow. Get results-driven digital marketing at competitive prices.
                     </p>
                     <div class="footer-social">
@@ -665,7 +752,7 @@
                     </ul>
                 </div>
 
-                <!-- Contact Info -->
+                <!-- Company -->
                 <div class="col-lg-2 col-md-4">
                     <h6 class="footer-title">Company</h6>
                     <ul class="footer-links">
@@ -676,50 +763,14 @@
                     </ul>
                 </div>
 
-                <!-- Free Tools -->
-                <div class="col-lg-3 col-md-4">
-                    <h6 class="footer-title">Free Tools</h6>
+                <!-- Contact Info -->
+                <div class="col-lg-2 col-md-4">
+                    <h6 class="footer-title">Contact</h6>
                     <ul class="footer-links">
-                        <li><a href="/tools/website-audit/"><i class="fas fa-magic me-1"></i> Website Audit</a></li>
-                        <li><a href="/tools/keyword-density/"><i class="fas fa-calculator me-1"></i> Keyword Density</a></li>
-                        <li><a href="/tools/seo-score/"><i class="fas fa-clipboard-check me-1"></i> SEO Score</a></li>
-                        <li><a href="/tools/serp-preview/"><i class="fas fa-google me-1"></i> SERP Preview</a></li>
-                        <li><a href="/tools/budget-planner/"><i class="fas fa-wallet me-1"></i> Budget Planner</a></li>
-                        <li><a href="/tools/"><i class="fas fa-th-large me-1"></i> All Tools</a></li>
+                        <li><a href="tel:+923324456974"><i class="fas fa-phone"></i>+92 332 4456974</a></li>
+                        <li><a href="mailto:contact@brandmeup.org"><i class="fas fa-envelope"></i>contact@brandmeup.org</a></li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i>New York, NY</a></li>
                     </ul>
-                </div>
-            </div>
-
-            <!-- Contact Row -->
-            <div class="row mt-4 pt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span>123 Business St, Suite 100<br>New York, NY 10001</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4 mb-lg-0">
-                    <ul class="footer-contact">
-                        <li>
-                            <i class="fas fa-phone"></i>
-                            <span>+1 (555) 123-4567</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>info@omnipathmarketing.com</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="col-lg-4">
-                    <h6 class="text-white mb-3">Subscribe to Newsletter</h6>
-                    <form class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" class="form-control" placeholder="Enter your email" required>
-                            <button class="btn btn-primary" type="submit">Subscribe</button>
-                        </div>
-                    </form>
                 </div>
             </div>
 
@@ -727,7 +778,7 @@
             <div class="footer-bottom">
                 <div class="row align-items-center">
                     <div class="col-md-6 text-center text-md-start">
-                        <p class="mb-0">&copy; 2025 Omni Path Marketing. All rights reserved.</p>
+                        <p class="mb-0">&copy; 2025 Brand Me Up. All rights reserved.</p>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <a href="#" class="me-3">Privacy Policy</a>

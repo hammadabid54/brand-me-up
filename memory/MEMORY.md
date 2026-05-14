@@ -1,11 +1,11 @@
-# Omni Path Marketing - Agent Configuration
+# Brand Me Up - Agent Configuration
 
 ## Brand Information
-- **Brand Name:** Omni Path Marketing
-- **Domain:** omnipathmarketing.com
+- **Brand Name:** Brand Me Up
+- **Domain:** (pending - to be confirmed)
 - **Founder:** Hammad Abid
-- **Headline:** Local & Global SEO Expert | Dental SEO & Digital Marketing Strategist | 10,000+ Dental Leads Generated
-- **About:** 6+ years experience, 500+ businesses helped, SEMrush certified, specializing in Dental SEO
+- **Headline:** (pending - to be provided)
+- **About:** (pending - to be provided)
 
 ## Services Offered
 - SEO (Local, E-commerce, SaaS, Technical, Enterprise)

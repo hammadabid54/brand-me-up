@@ -7,6 +7,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from core import views
 from core import auth as auth_views
+from core import scheduler_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -18,6 +19,7 @@ urlpatterns = [
     path('portfolio/', views.portfolio, name='portfolio'),
     path('blog/', views.blog, name='blog'),
     path('contact/', views.contact, name='contact'),
+    path('contact/submit/', views.contact_submit, name='contact_submit'),
 
     # SEO Service Pages
     path('services/seo/', views.seo_overview, name='seo_overview'),
@@ -69,12 +71,12 @@ urlpatterns = [
     path('services/other/analytics/', views.analytics, name='analytics'),
 
     # Tools
-    path('tools/', views.tools, name='tools'),
-    path('tools/website-audit/', views.website_audit, name='website_audit'),
-    path('tools/keyword-density/', views.keyword_density, name='keyword_density'),
-    path('tools/seo-score/', views.seo_score, name='seo_score'),
-    path('tools/serp-preview/', views.serp_preview, name='serp_preview'),
-    path('tools/budget-planner/', views.budget_planner, name='budget_planner'),
+    # path('tools/', views.tools, name='tools'),
+    # path('tools/website-audit/', views.website_audit, name='website_audit'),
+    # path('tools/keyword-density/', views.keyword_density, name='keyword_density'),
+    # path('tools/seo-score/', views.seo_score, name='seo_score'),
+    # path('tools/serp-preview/', views.serp_preview, name='serp_preview'),
+    # path('tools/budget-planner/', views.budget_planner, name='budget_planner'),
 
     # API Endpoints
     path('api/check-audit-limit/', views.check_audit_limit, name='check_audit_limit'),
@@ -85,13 +87,23 @@ urlpatterns = [
     path('api/verify-code/', views.verify_code, name='verify_code'),
 
     # Client Dashboard - Auth
-    path('auth/login/', auth_views.login, name='auth_login'),
+    path('auth/google/', auth_views.google_login, name='auth_google_login'),
+    path('auth/login/', auth_views.login_view, name='auth_login'),
     path('auth/callback/', auth_views.callback, name='auth_callback'),
     path('auth/logout/', auth_views.logout_view, name='auth_logout'),
+    path('auth/signup/', auth_views.signup_view, name='auth_signup'),
+    path('auth/verify/<uidb64>/<token>/', auth_views.verify_email, name='auth_verify_email'),
+    path('auth/set-password/', auth_views.set_password_view, name='auth_set_password'),
+    path('auth/invite/<str:token>/', auth_views.invite_accept, name='auth_invite_accept'),
+    path('auth/password-reset/', auth_views.password_reset, name='auth_password_reset'),
+    path('auth/password-reset/done/', auth_views.password_reset_done, name='auth_password_reset_done'),
+    path('auth/password-reset/<uidb64>/<token>/', auth_views.password_reset_confirm, name='auth_password_reset_confirm'),
+    path('auth/password-reset/complete/', auth_views.password_reset_complete, name='auth_password_reset_complete'),
 
     # Client Dashboard - Main
     path('dashboard/', auth_views.dashboard, name='dashboard'),
     path('dashboard/scheduler/', auth_views.scheduler, name='scheduler'),
+    path('dashboard/clients/', auth_views.agency_clients, name='agency_clients'),
     path('dashboard/connect/<str:service>/', auth_views.connect_service, name='connect_service'),
     path('dashboard/connect/<str:service>/callback/', auth_views.connect_service_callback, name='connect_service_callback'),
 
@@ -100,6 +112,18 @@ urlpatterns = [
     path('api/dashboard/search-console/', auth_views.get_search_console_data, name='dashboard_search_console'),
     path('api/dashboard/gbp/', auth_views.get_gbp_data, name='dashboard_gbp'),
     path('api/dashboard/disconnect/<str:service>/', auth_views.disconnect_service, name='dashboard_disconnect'),
+
+    # Scheduler API
+    path('api/scheduler/posts/', scheduler_views.list_posts, name='scheduler_list_posts'),
+    path('api/scheduler/posts/<int:post_id>/', scheduler_views.post_detail, name='scheduler_post_detail'),
+    path('api/scheduler/posts/<int:post_id>/publish/', scheduler_views.publish_post, name='scheduler_publish_post'),
+    path('api/scheduler/calendar/', scheduler_views.calendar_view, name='scheduler_calendar'),
+
+    # Social platform OAuth
+    path('auth/social/<str:platform>/initiate/', auth_views.social_oauth_initiate, name='social_oauth_initiate'),
+    path('auth/social/<str:platform>/', auth_views.social_login, name='social_login'),
+    path('auth/social/callback/<str:platform>/', auth_views.social_callback, name='social_callback'),
+    path('api/scheduler/connected-platforms/', auth_views.get_connected_platforms, name='connected_platforms'),
 ]
 
 if settings.DEBUG:

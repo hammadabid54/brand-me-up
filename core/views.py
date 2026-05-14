@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from django.contrib import messages
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.utils import timezone
@@ -258,6 +259,46 @@ def contact(request):
         'meta_description': context.get('meta_description', 'Contact Omni Path Marketing for a free consultation. We\'re ready to help with SEO, social media, content, and PPC marketing.'),
     })
     return render(request, 'contact.html', context)
+
+@csrf_exempt
+def contact_submit(request):
+    if request.method == 'POST':
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        company = request.POST.get('company', '')
+        service = request.POST.get('service', '')
+        budget = request.POST.get('budget', '')
+        message = request.POST.get('message', '')
+
+        subject = f'New Contact Form Submission from {name}'
+        email_message = f'''New contact form submission:
+
+Name: {name}
+Email: {email}
+Phone: {phone}
+Company: {company}
+Interested Service: {service}
+Budget: {budget}
+
+Message:
+{message}
+'''
+        try:
+            send_mail(
+                subject=subject,
+                message=email_message,
+                from_email=settings.DEFAULT_FROM_EMAIL,
+                recipient_list=['contact@brandmeup.org'],
+                fail_silently=False,
+            )
+            messages.success(request, 'Thank you for your message! We\'ll get back to you within 24 hours.')
+        except Exception as e:
+            messages.error(request, 'There was an error sending your message. Please try again later.')
+
+        return redirect('contact')
+
+    return redirect('contact')
 
 # SEO Service Pages
 def seo_overview(request):

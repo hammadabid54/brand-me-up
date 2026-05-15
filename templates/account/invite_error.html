@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Invalid Invite Link — Brand Me Up{% endblock %}
+
+{% block extra_css %}
+<style>
+    .auth-container {
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f8f9fc 0%, #e8edf5 100%);
+    }
+    .auth-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+        padding: 40px;
+        width: 100%;
+        max-width: 440px;
+        text-align: center;
+    }
+    .auth-header h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 16px;
+    }
+    .auth-header p {
+        color: #64748b;
+        font-size: 0.9375rem;
+        margin-bottom: 12px;
+    }
+    .btn-secondary {
+        background: white;
+        color: #374151;
+        border: 1px solid #e2e8f0;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 500;
+        text-decoration: none;
+        margin-right: 12px;
+        display: inline-block;
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, var(--dark-red), var(--red-dark));
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .auth-footer { margin-top: 28px; }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="auth-header">
+            {% if error == 'link_expired' %}
+                <h1>Invite Link Expired</h1>
+                <p>{{ message }}</p>
+                <p>Please contact your agency and ask them to send you a new invite link.</p>
+            {% else %}
+                <h1>Invalid Invite Link</h1>
+                <p>{{ message }}</p>
+                <p>If you believe this is an error, please contact your agency.</p>
+            {% endif %}
+        </div>
+
+        <div class="auth-footer">
+            <a href="/" class="btn-secondary">Go to Homepage</a>
+            <a href="/auth/login/" class="btn-primary">Log In</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

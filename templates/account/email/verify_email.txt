@@ -1,0 +1,12 @@
+Hi {{ user.first_name|default:"there" }},
+
+Click the link below to verify your email and activate your Brand Me Up dashboard account:
+
+{{ verify_url }}
+
+This link expires in 3 days.
+
+If you didn't request this, you can safely ignore this email.
+
+Thanks,
+The Brand Me Up Team

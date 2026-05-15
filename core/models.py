@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.conf import settings
 
 
 class SiteSettings(models.Model):
@@ -378,13 +379,37 @@ class WebsiteAudit(models.Model):
 
 class Client(models.Model):
     """Client accounts for dashboard access"""
-    google_id = models.CharField(max_length=200, unique=True)
+    user = models.OneToOneField(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        null=True, blank=True,
+        related_name='client_profile'
+    )
+    google_id = models.CharField(max_length=200, unique=True, null=True, blank=True)
     email = models.EmailField()
     name = models.CharField(max_length=200)
     profile_picture = models.URLField(blank=True)
     is_active = models.BooleanField(default=True)
     created_at = models.DateTimeField(auto_now_add=True)
     last_login = models.DateTimeField(null=True, blank=True)
+
+    # Agency client management
+    is_agency_client = models.BooleanField(
+        default=False,
+        help_text='True if this client is managed by an agency (via invite link)'
+    )
+    agency = models.ForeignKey(
+        'self',
+        on_delete=models.SET_NULL,
+        null=True, blank=True,
+        related_name='agency_clients',
+        help_text='The agency Client who manages this client'
+    )
+
+    # Invite magic link
+    invite_token = models.CharField(max_length=64, unique=True, null=True, blank=True)
+    invite_token_expiry = models.DateTimeField(null=True, blank=True)
+    invite_sent_at = models.DateTimeField(null=True, blank=True)
 
     class Meta:
         ordering = ['-created_at']

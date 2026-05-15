@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Sign Up | Brand Me Up{% endblock %}
+
+{% block extra_css %}
+<style>
+    .auth-container {
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f8f9fc 0%, #e8edf5 100%);
+    }
+    .auth-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+        padding: 40px;
+        width: 100%;
+        max-width: 440px;
+    }
+    .auth-card h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 8px;
+    }
+    .auth-card .subtitle {
+        color: #64748b;
+        font-size: 0.9375rem;
+        margin-bottom: 28px;
+    }
+    .form-label {
+        font-weight: 600;
+        font-size: 0.8125rem;
+        color: #374151;
+        margin-bottom: 6px;
+    }
+    .form-control {
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 12px 14px;
+        font-size: 0.9375rem;
+        transition: all 0.2s;
+    }
+    .form-control:focus {
+        border-color: #2563eb;
+        box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .form-control.is-invalid {
+        border-color: #dc2626;
+    }
+    .invalid-feedback {
+        color: #dc2626;
+        font-size: 0.8125rem;
+        margin-top: 4px;
+    }
+    .btn-auth {
+        background: linear-gradient(135deg, var(--dark-red), var(--red-dark));
+        color: white;
+        border: none;
+        padding: 14px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        width: 100%;
+        transition: all 0.2s;
+    }
+    .btn-auth:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+    .btn-auth:disabled {
+        opacity: 0.7;
+        transform: none;
+    }
+    .auth-divider {
+        text-align: center;
+        margin: 24px 0;
+        position: relative;
+    }
+    .auth-divider::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: #e2e8f0;
+    }
+    .auth-divider span {
+        background: white;
+        padding: 0 16px;
+        position: relative;
+        color: #94a3b8;
+        font-size: 0.8125rem;
+    }
+    .btn-google {
+        background: white;
+        color: #374151;
+        border: 1px solid #e2e8f0;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 0.9375rem;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        transition: all 0.2s;
+        text-decoration: none;
+    }
+    .btn-google:hover {
+        border-color: #2563eb;
+        color: #2563eb;
+    }
+    .auth-footer {
+        text-align: center;
+        margin-top: 24px;
+        color: #64748b;
+        font-size: 0.875rem;
+    }
+    .auth-footer a {
+        color: #2563eb;
+        font-weight: 500;
+        text-decoration: none;
+    }
+    .auth-footer a:hover {
+        text-decoration: underline;
+    }
+    .alert-error {
+        background: #fef2f2;
+        border: 1px solid #fecaca;
+        color: #dc2626;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 0.875rem;
+        margin-bottom: 20px;
+    }
+    .terms-text {
+        font-size: 0.75rem;
+        color: #94a3b8;
+        text-align: center;
+        margin-top: 16px;
+        line-height: 1.5;
+    }
+    .terms-text a {
+        color: #2563eb;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <h1>Create your account</h1>
+        <p class="subtitle">Get free access to your marketing dashboard</p>
+
+        {% if errors.general %}
+        <div class="alert-error">{{ errors.general }}</div>
+        {% endif %}
+
+        <form method="post" action="/auth/signup/" novalidate>
+            {% csrf_token %}
+
+            <div class="mb-3">
+                <label for="id_email" class="form-label">Email address</label>
+                <input type="email" name="email" id="id_email" class="form-control {% if errors.email %}is-invalid{% endif %}"
+                       value="{{ email }}" placeholder="you@example.com" autocomplete="email" required>
+                {% if errors.email %}
+                <div class="invalid-feedback">{{ errors.email }}</div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_first_name" class="form-label">First name <span style="color:#94a3b8;font-weight:400;">(optional)</span></label>
+                <input type="text" name="first_name" id="id_first_name" class="form-control"
+                       value="{{ first_name }}" placeholder="Your first name" autocomplete="given-name">
+            </div>
+
+            <div class="mb-3">
+                <label for="id_password" class="form-label">Password</label>
+                <input type="password" name="password" id="id_password" class="form-control {% if errors.password %}is-invalid{% endif %}"
+                       placeholder="At least 8 characters" autocomplete="new-password" required>
+                {% if errors.password %}
+                <div class="invalid-feedback">{{ errors.password }}</div>
+                {% endif %}
+            </div>
+
+            <div class="mb-3">
+                <label for="id_password_confirm" class="form-label">Confirm password</label>
+                <input type="password" name="password_confirm" id="id_password_confirm" class="form-control {% if errors.password_confirm %}is-invalid{% endif %}"
+                       placeholder="Same password again" autocomplete="new-password" required>
+                {% if errors.password_confirm %}
+                <div class="invalid-feedback">{{ errors.password_confirm }}</div>
+                {% endif %}
+            </div>
+
+            <button type="submit" class="btn-auth" id="btn-submit">
+                Create account
+            </button>
+
+            <p class="terms-text">
+                By creating an account, you agree to our Terms of Service and Privacy Policy.
+            </p>
+        </form>
+
+        <div class="auth-divider"><span>or continue with</span></div>
+
+        <a href="/auth/google/" class="btn-google">
+            <svg width="18" height="18" viewBox="0 0 18 18"><path fill="#4285F4" d="M17.64 9.2c0-.637-.057-1.251-.164-1.84H9v3.481h4.844c-.209 1.125-.843 2.078-1.796 2.717v2.258h2.908c1.702-1.567 2.684-3.875 2.684-6.615z"/><path fill="#34A853" d="M9 18c2.43 0 4.467-.806 5.956-2.184l-2.909-2.258c-.806.54-1.837.86-3.047.86-2.344 0-4.328-1.584-5.036-3.711H.957v2.332A8.997 8.997 0 0 0 9 18z"/><path fill="#FBBC05" d="M3.964 10.71c-.18-.54-.282-1.117-.282-1.71s.102-1.17.282-1.71V4.958H.957A8.996 8.996 0 0 0 0 9c0 1.452.348 2.827.957 4.042l3.007-2.332z"/><path fill="#EA4335" d="M9 3.58c1.321 0 2.508.454 3.44 1.345l2.582-2.58C13.463.891 11.426 0 9 0A8.997 8.997 0 0 0 .957 4.958L3.964 7.29C4.672 5.163 6.656 3.58 9 3.58z"/></svg>
+            Continue with Google
+        </a>
+
+        <div class="auth-footer">
+            Already have an account? <a href="/auth/login/">Sign in</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

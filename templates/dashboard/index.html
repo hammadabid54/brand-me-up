@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block title %}Client Dashboard | Omni Path Marketing{% endblock %}
+{% block title %}Client Dashboard | Brand Me Up{% endblock %}
 
 {% block extra_css %}
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,7 +13,7 @@
         --bg-card: #ffffff;
         --text-primary: #0f172a;
         --text-secondary: #475569;
-        --text-muted: #94a3b8;
+        --text-muted: #64748b;
         --accent: #f97316;
         --accent-light: #fb923c;
         --success: #10b981;
@@ -71,27 +71,6 @@
         font-size: 0.9375rem;
     }
 
-    .demo-tag {
-        display: inline-flex;
-        align-items: center;
-        gap: 6px;
-        background: #fef3c7;
-        color: #b45309;
-        padding: 6px 12px;
-        border-radius: 6px;
-        font-size: 0.75rem;
-        font-weight: 600;
-        margin-top: 12px;
-    }
-
-    .demo-tag::before {
-        content: '';
-        width: 5px;
-        height: 5px;
-        background: #f59e0b;
-        border-radius: 50%;
-    }
-
     /* Connection Cards */
     .connections-grid {
         display: grid;
@@ -110,6 +89,115 @@
 
     @media (max-width: 480px) {
         .connections-grid { grid-template-columns: 1fr; }
+    }
+
+    /* Connection Strip (horizontal, replaces grid) */
+    .connections-strip {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin-bottom: 28px;
+        padding: 14px 18px;
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+    }
+
+    .connections-strip .strip-label {
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: var(--text-secondary);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-right: 8px;
+        flex-shrink: 0;
+    }
+
+    .connection-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 6px 12px;
+        border-radius: 6px;
+        font-size: 0.8125rem;
+        font-weight: 500;
+        border: 1px solid var(--border);
+        background: var(--bg-page);
+        color: var(--text-secondary);
+        text-decoration: none;
+        transition: all 0.15s;
+        cursor: pointer;
+    }
+
+    .connection-badge .badge-icon {
+        width: 18px;
+        height: 18px;
+        border-radius: 4px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.6875rem;
+    }
+
+    .connection-badge.connected {
+        border-color: var(--success);
+        background: linear-gradient(to bottom right, #fff, #f0fdf9);
+        color: var(--text-primary);
+    }
+
+    .connection-badge.connected .badge-icon {
+        color: var(--success);
+    }
+
+    .connection-badge.not-connected {
+        color: var(--text-muted);
+    }
+
+    .connection-badge.not-connected:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        background: #fff7f2;
+    }
+
+    .connection-badge.paid-only {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+
+    .connection-badge.paid-only:hover {
+        opacity: 0.75;
+    }
+
+    .connection-badge .check-icon {
+        color: var(--success);
+        font-size: 0.625rem;
+    }
+
+    .strip-divider {
+        width: 1px;
+        height: 20px;
+        background: var(--border);
+        margin: 0 4px;
+    }
+
+    .manage-connections-btn {
+        margin-left: auto;
+        font-size: 0.75rem;
+        color: var(--accent);
+        text-decoration: none;
+        padding: 6px 12px;
+        border-radius: 6px;
+        border: 1px solid transparent;
+        transition: all 0.15s;
+        cursor: pointer;
+        background: transparent;
+        font-weight: 500;
+    }
+
+    .manage-connections-btn:hover {
+        background: #fff7f2;
+        border-color: var(--accent);
     }
 
     .connection-card {
@@ -299,6 +387,131 @@
         letter-spacing: 0.5px;
     }
 
+    /* Scheduler CTA */
+    .scheduler-cta {
+        background: linear-gradient(135deg, #f97316, #ea580c);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.875rem;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        transition: all 0.2s;
+    }
+    .scheduler-cta:hover {
+        background: linear-gradient(135deg, #ea580c, #c2410c);
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
+        color: white;
+    }
+
+    /* Upgrade Banner */
+    .upgrade-banner {
+        background: linear-gradient(135deg, #fff7ed, #ffedd5);
+        border: 1px solid #fed7aa;
+        border-radius: 10px;
+        padding: 16px 20px;
+        margin-bottom: 24px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .upgrade-banner-icon {
+        width: 40px;
+        height: 40px;
+        background: #f97316;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1rem;
+        flex-shrink: 0;
+    }
+    .upgrade-banner h6 {
+        font-size: 0.9375rem;
+        margin-bottom: 2px;
+        color: #9a3412;
+    }
+    .upgrade-banner p {
+        font-size: 0.8125rem;
+        color: #c2410c;
+        margin: 0;
+    }
+    .upgrade-banner .btn-upgrade {
+        background: #f97316;
+        color: white;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 0.8125rem;
+        margin-left: auto;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
+    /* Table scroll */
+    .table-scroll {
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    .table-scroll::-webkit-scrollbar {
+        width: 6px;
+    }
+    .table-scroll::-webkit-scrollbar-track {
+        background: var(--bg-page);
+    }
+    .table-scroll::-webkit-scrollbar-thumb {
+        background: var(--border);
+        border-radius: 3px;
+    }
+    .table-scroll::-webkit-scrollbar-thumb:hover {
+        background: var(--text-muted);
+    }
+
+    /* Table update timestamp */
+    .table-update-time {
+        padding: var(--space-3) var(--space-5);
+        font-size: 0.6875rem;
+        color: var(--text-muted);
+        border-top: 1px solid var(--border-light);
+        text-align: right;
+    }
+
+    /* Connection card cursor */
+    .connection-card.clickable {
+        cursor: pointer;
+    }
+    .connection-card.clickable:hover {
+        border-color: var(--accent);
+        box-shadow: 0 2px 12px var(--shadow-md);
+    }
+    .connection-card.paid-only {
+        opacity: 0.7;
+    }
+    .connection-card.paid-only:hover {
+        opacity: 1;
+    }
+    .lock-overlay {
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        background: rgba(0,0,0,0.5);
+        color: white;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.625rem;
+    }
+
     /* Metrics */
     .metrics-grid {
         display: grid;
@@ -452,6 +665,59 @@
         font-size: 0.6875rem;
     }
 
+    /* Skeleton loading states */
+    .skeleton {
+        background: linear-gradient(90deg, var(--bg-muted) 25%, var(--border-light) 50%, var(--bg-muted) 75%);
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite;
+        border-radius: 4px;
+    }
+
+    @keyframes shimmer {
+        0% { background-position: 200% 0; }
+        100% { background-position: -200% 0; }
+    }
+
+    .skeleton-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 18px;
+    }
+
+    .skeleton-line {
+        height: 12px;
+        margin-bottom: 10px;
+    }
+
+    .skeleton-line.short { width: 40%; }
+    .skeleton-line.medium { width: 60%; }
+    .skeleton-line.long { width: 80%; }
+
+    .skeleton-value {
+        height: 28px;
+        width: 50%;
+        margin-bottom: 8px;
+    }
+
+    .skeleton-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 6px;
+        margin-bottom: 12px;
+    }
+
+    /* Focus visible styles */
+    *:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: var(--radius-sm);
+    }
+
+    *:focus:not(:focus-visible) {
+        outline: none;
+    }
+
     @media (max-width: 767px) {
         .welcome-title { font-size: 1.5rem; }
         .filter-bar { padding: 12px 16px; }
@@ -464,104 +730,117 @@
 
 {% block content %}
 <div class="container py-3" style="max-width: 1400px;">
+    <!-- Upgrade Banner (shown when non-paid user tries scheduler) -->
+    {% if request.GET.upgrade == 'scheduler' %}
+    <div class="upgrade-banner">
+        <div class="upgrade-banner-icon"><i class="fas fa-lock"></i></div>
+        <div>
+            <h6>Social Scheduler is a paid feature</h6>
+            <p>Upgrade to SocialPro to access social media scheduling, automated posting, and more.</p>
+        </div>
+        <a href="/contact/" class="btn-upgrade">Upgrade Now</a>
+    </div>
+    {% endif %}
+
     <!-- Header -->
     <div class="dashboard-header">
         <div class="row align-items-center">
             <div class="col-lg-8">
-                <h1 class="welcome-title">Welcome{% if client %}, {{ client.name }}{% endif %}</h1>
+                <h1 class="welcome-title">{% if client and client.name and 'Guest' not in client.name %}Welcome, {{ client.name }}{% else %}Welcome back{% endif %}</h1>
                 <p class="welcome-subtitle">Your marketing performance overview</p>
-                {% if demo_mode %}
-                <div class="demo-tag">
-                    <span>Demo Mode — viewing sample data</span>
-                </div>
-                {% endif %}
             </div>
-            <div class="col-lg-4 text-lg-end">
-                {% if not demo_mode %}
-                <a href="/auth/logout/" class="btn" style="background: var(--bg-page); color: var(--text-primary); padding: 10px 18px; border-radius: 6px; border: 1px solid var(--border); font-size: 0.875rem;">Sign Out</a>
+            <div class="col-lg-4 text-lg-end d-flex gap-2 align-items-center">
+                {% if is_agency_client %}
+                <a href="/dashboard/scheduler/" class="scheduler-cta">
+                    <i class="fas fa-calendar-alt"></i>
+                    Social Scheduler
+                </a>
                 {% else %}
-                <a href="/auth/login/" class="btn-connect">Sign In</a>
+                <a href="/dashboard/?upgrade=scheduler" class="scheduler-cta" style="background: transparent; border: 2px solid var(--accent); color: var(--accent);" title="Available on SocialPro" onclick="this.querySelector('.upgrade-banner') || true;">
+                    <i class="fas fa-lock"></i>
+                    Social Scheduler
+                </a>
                 {% endif %}
+                <a href="/auth/logout/" class="btn" style="background: var(--bg-page); color: var(--text-primary); padding: 10px 18px; border-radius: 6px; border: 1px solid var(--border); font-size: 0.875rem;">Sign Out</a>
             </div>
         </div>
     </div>
 
-    <!-- Service Connections -->
-    <div class="connections-grid">
-        <div class="connection-card {% if demo_mode or analytics_connected %}connected{% endif %}">
-            <div class="service-icon-box analytics">
-                <i class="fas fa-chart-line"></i>
-            </div>
-            <div class="connection-info">
-                <h6>Analytics</h6>
-                <p>Traffic & Users</p>
-            </div>
-            {% if demo_mode or analytics_connected %}
-            <span class="status-tag connected">Connected</span>
-            {% else %}
-            <span class="status-tag disconnected">Not connected</span>
-            {% endif %}
-        </div>
+    <!-- Connections Strip -->
+    <div class="connections-strip" role="list" aria-label="Platform connections">
+        <span class="strip-label">Connections</span>
 
-        <div class="connection-card {% if demo_mode or search_console_connected %}connected{% endif %}">
-            <div class="service-icon-box search-console">
-                <i class="fas fa-search"></i>
-            </div>
-            <div class="connection-info">
-                <h6>Search Console</h6>
-                <p>SEO Performance</p>
-            </div>
-            {% if demo_mode or search_console_connected %}
-            <span class="status-tag connected">Connected</span>
-            {% else %}
-            <span class="status-tag disconnected">Not connected</span>
-            {% endif %}
-        </div>
+        {% if analytics_connected %}
+        <a href="/dashboard/connect/analytics/" class="connection-badge connected" role="listitem" title="Google Analytics — Connected">
+            <span class="badge-icon"><i class="fas fa-chart-line"></i></span>
+            Analytics <i class="fas fa-check-circle check-icon"></i>
+        </a>
+        {% else %}
+        <a href="/dashboard/connect/analytics/" class="connection-badge not-connected" role="listitem" title="Connect Google Analytics">
+            <span class="badge-icon" style="color: var(--text-muted);"><i class="fas fa-chart-line"></i></span>
+            Analytics
+        </a>
+        {% endif %}
 
-        <div class="connection-card {% if demo_mode or gbp_connected %}connected{% endif %}">
-            <div class="service-icon-box gbp">
-                <i class="fas fa-map-marker-alt"></i>
-            </div>
-            <div class="connection-info">
-                <h6>Google Business</h6>
-                <p>Local Insights</p>
-            </div>
-            {% if demo_mode or gbp_connected %}
-            <span class="status-tag connected">Connected</span>
-            {% else %}
-            <span class="status-tag disconnected">Not connected</span>
-            {% endif %}
-        </div>
+        <div class="strip-divider"></div>
 
-        <div class="connection-card {% if demo_mode %}connected{% endif %}">
-            <div class="service-icon-box meta">
-                <i class="fab fa-meta"></i>
-            </div>
-            <div class="connection-info">
-                <h6>Meta Ads</h6>
-                <p>Facebook & Instagram</p>
-            </div>
-            {% if demo_mode %}
-            <span class="status-tag connected">Connected</span>
-            {% else %}
-            <span class="status-tag disconnected">Not connected</span>
-            {% endif %}
-        </div>
+        {% if search_console_connected %}
+        <a href="/dashboard/connect/search_console/" class="connection-badge connected" role="listitem" title="Search Console — Connected">
+            <span class="badge-icon"><i class="fas fa-search"></i></span>
+            Search <i class="fas fa-check-circle check-icon"></i>
+        </a>
+        {% else %}
+        <a href="/dashboard/connect/search_console/" class="connection-badge not-connected" role="listitem" title="Connect Search Console">
+            <span class="badge-icon" style="color: var(--text-muted);"><i class="fas fa-search"></i></span>
+            Search
+        </a>
+        {% endif %}
 
-        <div class="connection-card {% if demo_mode %}connected{% endif %}">
-            <div class="service-icon-box google-ads">
-                <i class="fas fa-ad"></i>
-            </div>
-            <div class="connection-info">
-                <h6>Google Ads</h6>
-                <p>Paid Advertising</p>
-            </div>
-            {% if demo_mode %}
-            <span class="status-tag connected">Connected</span>
-            {% else %}
-            <span class="status-tag disconnected">Not connected</span>
-            {% endif %}
-        </div>
+        <div class="strip-divider"></div>
+
+        {% if gbp_connected %}
+        <a href="/dashboard/connect/gbp/" class="connection-badge connected" role="listitem" title="Google Business Profile — Connected">
+            <span class="badge-icon"><i class="fas fa-map-marker-alt"></i></span>
+            GBP <i class="fas fa-check-circle check-icon"></i>
+        </a>
+        {% else %}
+        <a href="/dashboard/connect/gbp/" class="connection-badge not-connected" role="listitem" title="Connect Google Business Profile">
+            <span class="badge-icon" style="color: var(--text-muted);"><i class="fas fa-map-marker-alt"></i></span>
+            GBP
+        </a>
+        {% endif %}
+
+        <div class="strip-divider"></div>
+
+        {% if is_agency_client %}
+        <a href="/auth/social/facebook/" class="connection-badge not-connected" role="listitem" title="Connect Meta Ads">
+            <span class="badge-icon" style="color: #1877f2;"><i class="fab fa-meta"></i></span>
+            Meta Ads
+        </a>
+        {% else %}
+        <span class="connection-badge paid-only" role="listitem" title="Available on SocialPro">
+            <span class="badge-icon" style="color: var(--text-muted);"><i class="fab fa-meta"></i></span>
+            Meta Ads <i class="fas fa-lock" style="font-size: 0.625rem; margin-left: 2px;"></i>
+        </span>
+        {% endif %}
+
+        <div class="strip-divider"></div>
+
+        {% if is_agency_client %}
+        <a href="/auth/social/linkedin/" class="connection-badge not-connected" role="listitem" title="Connect LinkedIn">
+            <span class="badge-icon" style="color: #0a66c2;"><i class="fab fa-linkedin"></i></span>
+            LinkedIn
+        </a>
+        {% else %}
+        <span class="connection-badge paid-only" role="listitem" title="Available on SocialPro">
+            <span class="badge-icon" style="color: var(--text-muted);"><i class="fab fa-linkedin"></i></span>
+            LinkedIn <i class="fas fa-lock" style="font-size: 0.625rem; margin-left: 2px;"></i>
+        </span>
+        {% endif %}
+
+        <button class="manage-connections-btn" onclick="openConnectionsModal()" aria-label="Manage connections">
+            <i class="fas fa-sliders-h" style="margin-right: 4px;"></i> Manage
+        </button>
     </div>
 
     <!-- Filter Bar -->
@@ -819,46 +1098,142 @@
             <div class="card-head">
                 <i class="fas fa-list" style="color: var(--info);"></i>
                 <h6>Top Search Queries</h6>
+                <span style="margin-left:auto;font-size:0.6875rem;color:var(--text-muted);">Top 50</span>
             </div>
-            <table class="table data-table">
-                <thead>
-                    <tr>
-                        <th>Query</th>
-                        <th>Clicks</th>
-                        <th>CTR</th>
-                        <th>Position</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>dental seo services</td><td>1,234</td><td>9.9%</td><td><span class="pos-badge good">3.2</span></td></tr>
-                    <tr><td>best dentist near me</td><td>987</td><td>10.0%</td><td><span class="pos-badge good">2.1</span></td></tr>
-                    <tr><td>dental marketing</td><td>654</td><td>8.5%</td><td><span class="pos-badge mid">4.5</span></td></tr>
-                    <tr><td>local dental seo</td><td>543</td><td>10.0%</td><td><span class="pos-badge good">2.8</span></td></tr>
-                    <tr><td>emergency dentist</td><td>432</td><td>12.1%</td><td><span class="pos-badge good">1.8</span></td></tr>
-                </tbody>
-            </table>
+            <div class="table-scroll">
+                <table class="table data-table">
+                    <thead>
+                        <tr>
+                            <th>Query</th>
+                            <th>Clicks</th>
+                            <th>CTR</th>
+                            <th>Position</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>dental seo services</td><td>1,234</td><td>9.9%</td><td><span class="pos-badge good">3.2</span></td></tr>
+                        <tr><td>best dentist near me</td><td>987</td><td>10.0%</td><td><span class="pos-badge good">2.1</span></td></tr>
+                        <tr><td>dental marketing</td><td>654</td><td>8.5%</td><td><span class="pos-badge mid">4.5</span></td></tr>
+                        <tr><td>local dental seo</td><td>543</td><td>10.0%</td><td><span class="pos-badge good">2.8</span></td></tr>
+                        <tr><td>emergency dentist</td><td>432</td><td>12.1%</td><td><span class="pos-badge good">1.8</span></td></tr>
+                        <tr><td>affordable dental implants</td><td>398</td><td>8.2%</td><td><span class="pos-badge mid">5.1</span></td></tr>
+                        <tr><td>teeth whitening near me</td><td>376</td><td>11.4%</td><td><span class="pos-badge good">2.5</span></td></tr>
+                        <tr><td>cosmetic dentistry</td><td>354</td><td>7.8%</td><td><span class="pos-badge mid">6.3</span></td></tr>
+                        <tr><td>pediatric dentist</td><td>312</td><td>9.1%</td><td><span class="pos-badge good">3.9</span></td></tr>
+                        <tr><td>family dentistry</td><td>298</td><td>8.7%</td><td><span class="pos-badge good">4.1</span></td></tr>
+                        <tr><td>dental insurance accepted</td><td>276</td><td>6.5%</td><td><span class="pos-badge mid">7.2</span></td></tr>
+                        <tr><td>same day dentist</td><td>265</td><td>10.8%</td><td><span class="pos-badge good">2.9</span></td></tr>
+                        <tr><td>walk in dentist</td><td>254</td><td>9.3%</td><td><span class="pos-badge good">3.5</span></td></tr>
+                        <tr><td>dental office near me</td><td>243</td><td>7.2%</td><td><span class="pos-badge mid">5.8</span></td></tr>
+                        <tr><td>best dental clinic</td><td>231</td><td>8.9%</td><td><span class="pos-badge good">4.0</span></td></tr>
+                        <tr><td>root canal cost</td><td>219</td><td>11.2%</td><td><span class="pos-badge good">2.7</span></td></tr>
+                        <tr><td>invisalign cost</td><td>208</td><td>7.5%</td><td><span class="pos-badge mid">6.1</span></td></tr>
+                        <tr><td>orthodontist near me</td><td>197</td><td>9.0%</td><td><span class="pos-badge good">3.8</span></td></tr>
+                        <tr><td>dental crown cost</td><td>186</td><td>10.5%</td><td><span class="pos-badge good">2.3</span></td></tr>
+                        <tr><td>oral surgery near me</td><td>175</td><td>8.1%</td><td><span class="pos-badge good">4.4</span></td></tr>
+                        <tr><td>periodontist</td><td>164</td><td>7.3%</td><td><span class="pos-badge mid">5.5</span></td></tr>
+                        <tr><td>teeth cleaning near me</td><td>153</td><td>12.0%</td><td><span class="pos-badge good">1.9</span></td></tr>
+                        <tr><td>dentures cost</td><td>142</td><td>9.7%</td><td><span class="pos-badge good">3.3</span></td></tr>
+                        <tr><td>dental bridge cost</td><td>131</td><td>8.4%</td><td><span class="pos-badge mid">5.0</span></td></tr>
+                        <tr><td>laser dentistry</td><td>120</td><td>7.9%</td><td><span class="pos-badge mid">5.6</span></td></tr>
+                        <tr><td>sedation dentistry</td><td>109</td><td>10.1%</td><td><span class="pos-badge good">2.6</span></td></tr>
+                        <tr><td>dental implants review</td><td>98</td><td>6.8%</td><td><span class="pos-badge mid">7.5</span></td></tr>
+                        <tr><td>dentist rating</td><td>87</td><td>8.3%</td><td><span class="pos-badge mid">5.2</span></td></tr>
+                        <tr><td>24 hour dentist</td><td>76</td><td>11.5%</td><td><span class="pos-badge good">2.2</span></td></tr>
+                        <tr><td>children dentist</td><td>65</td><td>9.4%</td><td><span class="pos-badge good">3.7</span></td></tr>
+                        <tr><td>dentist appointment</td><td>54</td><td>7.1%</td><td><span class="pos-badge mid">6.8</span></td></tr>
+                        <tr><td>affordable dentist</td><td>43</td><td>8.8%</td><td><span class="pos-badge good">4.3</span></td></tr>
+                        <tr><td>dental exam</td><td>32</td><td>10.3%</td><td><span class="pos-badge good">2.4</span></td></tr>
+                        <tr><td>new patient dentist</td><td>21</td><td>9.6%</td><td><span class="pos-badge good">3.1</span></td></tr>
+                        <tr><td>general dentistry</td><td>19</td><td>6.9%</td><td><span class="pos-badge mid">7.8</span></td></tr>
+                        <tr><td>dental checkup</td><td>17</td><td>11.8%</td><td><span class="pos-badge good">2.0</span></td></tr>
+                        <tr><td>gum disease treatment</td><td>15</td><td>7.7%</td><td><span class="pos-badge mid">5.9</span></td></tr>
+                        <tr><td>wisdom teeth removal</td><td>13</td><td>10.7%</td><td><span class="pos-badge good">2.6</span></td></tr>
+                        <tr><td>tooth filling cost</td><td>11</td><td>8.6%</td><td><span class="pos-badge mid">4.9</span></td></tr>
+                        <tr><td>dental veneer cost</td><td>9</td><td>9.2%</td><td><span class="pos-badge good">3.6</span></td></tr>
+                        <tr><td>smile makeover</td><td>8</td><td>7.4%</td><td><span class="pos-badge mid">6.4</span></td></tr>
+                        <tr><td>dental bonding</td><td>7</td><td>10.9%</td><td><span class="pos-badge good">2.1</span></td></tr>
+                        <tr><td>zoom teeth whitening</td><td>6</td><td>8.0%</td><td><span class="pos-badge mid">5.4</span></td></tr>
+                        <tr><td>tmj treatment</td><td>5</td><td>9.5%</td><td><span class="pos-badge good">3.2</span></td></tr>
+                        <tr><td>dental emergency</td><td>4</td><td>12.3%</td><td><span class="pos-badge good">1.7</span></td></tr>
+                        <tr><td>dentist near me open saturday</td><td>3</td><td>7.6%</td><td><span class="pos-badge mid">6.2</span></td></tr>
+                        <tr><td>low income dentist</td><td>2</td><td>6.2%</td><td><span class="pos-badge mid">8.1</span></td></tr>
+                        <tr><td>dental financing</td><td>1</td><td>8.9%</td><td><span class="pos-badge good">4.2</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-update-time">Last updated: {% if last_updated %}{{ last_updated|date:"M j, Y \a\t g:i A" }}{% else %}Sample data{% endif %}</div>
         </div>
 
         <div class="table-card">
             <div class="card-head">
                 <i class="fas fa-star" style="color: var(--warning);"></i>
                 <h6>Recent Reviews</h6>
+                <span style="margin-left:auto;font-size:0.6875rem;color:var(--text-muted);">Top 50</span>
             </div>
-            <table class="table data-table">
-                <thead>
-                    <tr>
-                        <th>Rating</th>
-                        <th>Review</th>
-                        <th>Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td><span class="review-stars">★★★★★</span></td><td>Amazing practice!</td><td>Apr 5</td></tr>
-                    <tr><td><span class="review-stars">★★★★★</span></td><td>Great experience.</td><td>Apr 3</td></tr>
-                    <tr><td><span class="review-stars">★★★★☆</span></td><td>Clean & friendly.</td><td>Mar 28</td></tr>
-                    <tr><td><span class="review-stars">★★★★★</span></td><td>Best dentist!</td><td>Mar 25</td></tr>
-                </tbody>
-            </table>
+            <div class="table-scroll">
+                <table class="table data-table">
+                    <thead>
+                        <tr>
+                            <th>Rating</th>
+                            <th>Review</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Amazing practice! Dr. Smith and team are incredible.</td><td>Apr 5</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Great experience. Very thorough and caring.</td><td>Apr 3</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Clean facility and friendly staff.</td><td>Mar 28</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Best dentist I've ever been to!</td><td>Mar 25</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Highly recommend for families.</td><td>Mar 22</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Painless procedure, excellent results.</td><td>Mar 18</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Good service, slightly long wait times.</td><td>Mar 15</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Modern equipment and skilled dentists.</td><td>Mar 12</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>They made me feel comfortable throughout.</td><td>Mar 9</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Fair pricing and quality work.</td><td>Mar 5</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Very professional, would return.</td><td>Mar 1</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>My smile has never looked better!</td><td>Feb 26</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Emergency visit handled perfectly.</td><td>Feb 22</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Great whitening results.</td><td>Feb 18</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Kids love coming here!</td><td>Feb 14</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Flexible scheduling, very convenient.</td><td>Feb 10</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Dr. Lee is amazing with anxious patients.</td><td>Feb 6</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Good invisalign results so far.</td><td>Feb 2</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Root canal was completely painless!</td><td>Jan 29</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Outstanding crown work.</td><td>Jan 25</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Always clean and organized.</td><td>Jan 21</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Nice office, competent staff.</td><td>Jan 17</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Best dental experience I've had.</td><td>Jan 13</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>They accept my insurance with no hassle.</td><td>Jan 9</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Implant procedure went smoothly.</td><td>Jan 5</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Good overall, minor billing confusion.</td><td>Dec 30</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Compassionate care for my elderly mother.</td><td>Dec 25</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>State-of-the-art technology used.</td><td>Dec 20</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Thorough exam every visit.</td><td>Dec 15</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Very skilled at cosmetic work.</td><td>Dec 10</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>They remember me and my history!</td><td>Dec 5</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Dental hygienist is fantastic.</td><td>Nov 30</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Satisfied with veneer results.</td><td>Nov 25</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Fast appointment availability.</td><td>Nov 20</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Honest recommendations for treatment.</td><td>Nov 15</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Bridge work looks completely natural.</td><td>Nov 10</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Wait time could be shorter.</td><td>Nov 5</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Child-friendly environment.</td><td>Oct 30</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>They do beautiful work on crowns.</td><td>Oct 25</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Professional and gentle during cleaning.</td><td>Oct 20</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Good gum treatment outcomes.</td><td>Oct 15</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Finally found a dentist I trust!</td><td>Oct 10</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Explain everything clearly beforehand.</td><td>Oct 5</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Smooth wisdom teeth extraction.</td><td>Sep 30</td></tr>
+                        <tr><td><span class="review-stars">★★★★☆</span></td><td>Slight discomfort but good results.</td><td>Sep 25</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Helpful with dental anxiety.</td><td>Sep 20</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Clear treatment plan explained.</td><td>Sep 15</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Would not go anywhere else!</td><td>Sep 10</td></tr>
+                        <tr><td><span class="review-stars">★★★★★</span></td><td>Five stars for the whole team!</td><td>Sep 5</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="table-update-time">Last updated: {% if last_updated %}{{ last_updated|date:"M j, Y \a\t g:i A" }}{% else %}Sample data{% endif %}</div>
         </div>
     </div>
 </div>
@@ -884,6 +1259,35 @@ function applyFilters() {
 
 function connectService(service) {
     window.location.href = '/dashboard/connect/' + service + '/';
+}
+
+function connectSocial(platform) {
+    // Social platform OAuth — initiates the OAuth flow
+    fetch('/auth/social/' + platform + '/', {
+        headers: { 'X-CSRFToken': '{{ csrf_token }}' }
+    })
+    .then(r => r.json())
+    .then(d => {
+        if (d.redirect_url) {
+            window.location.href = d.redirect_url;
+        } else {
+            alert(d.error || 'Could not connect ' + platform);
+        }
+    });
+}
+
+function openConnectionsModal() {
+    // Simple alert-based modal replacement — shows connection status
+    const services = [
+        { name: 'Google Analytics', key: 'analytics', connected: {% if analytics_connected %}true{% else %}false{% endif %} },
+        { name: 'Search Console', key: 'search_console', connected: {% if search_console_connected %}true{% else %}false{% endif %} },
+        { name: 'Google Business Profile', key: 'gbp', connected: {% if gbp_connected %}true{% else %}false{% endif %} },
+        { name: 'Meta Ads (Facebook & Instagram)', key: 'facebook', connected: false, paid: true },
+        { name: 'LinkedIn', key: 'linkedin', connected: false, paid: true },
+    ];
+    const connected = services.filter(s => s.connected).map(s => s.name).join(', ') || 'None';
+    const notConnected = services.filter(s => !s.connected && !s.paid).map(s => s.name).join(', ') || 'None';
+    alert('Connected: ' + connected + '\n\nNot connected: ' + notConnected + '\n\nPaid features: Meta Ads, LinkedIn (SocialPro required)');
 }
 
 function disconnectService(service) {

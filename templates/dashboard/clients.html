@@ -1,0 +1,86 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Manage Clients — Brand Me Up{% endblock %}
+
+{% block content %}
+<div class="dashboard-container">
+    <div class="dashboard-header">
+        <h1>Manage Your Clients</h1>
+        <p>Add clients to your dashboard and invite them via email.</p>
+    </div>
+
+    {% if request.GET.added %}
+        <div class="alert alert-success">
+            Client added! An invite email has been sent.
+        </div>
+    {% endif %}
+
+    <div class="clients-section">
+        <h2>Your Managed Clients</h2>
+
+        {% if managed_clients %}
+            <table class="clients-table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Added</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for c in managed_clients %}
+                        <tr>
+                            <td>{{ c.name }}</td>
+                            <td>{{ c.email }}</td>
+                            <td>
+                                {% if c.user and c.user.is_active %}
+                                    <span class="badge badge-success">Active</span>
+                                {% elif c.invite_sent_at %}
+                                    <span class="badge badge-warning">Invite Sent</span>
+                                {% else %}
+                                    <span class="badge badge-secondary">Pending</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ c.created_at|date:"M j, Y" }}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            <p class="empty-state">You haven't added any clients yet. Use the form below to get started.</p>
+        {% endif %}
+    </div>
+
+    <div class="add-client-section">
+        <h2>Add New Client</h2>
+
+        <form method="post" class="add-client-form">
+            {% csrf_token %}
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="name">Client Name</label>
+                    <input type="text" name="name" id="name" required class="form-input {% if add_errors.name %}input-error{% endif %}" placeholder="e.g., Acme Corp" value="{{ name|default:'' }}">
+                    {% if add_errors.name %}
+                        <span class="form-error">{{ add_errors.name }}</span>
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Client Email</label>
+                    <input type="email" name="email" id="email" required class="form-input {% if add_errors.email %}input-error{% endif %}" placeholder="e.g., john@acmecorp.com" value="{{ email|default:'' }}">
+                    {% if add_errors.email %}
+                        <span class="form-error">{{ add_errors.email }}</span>
+                    {% endif %}
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Add Client &amp; Send Invite</button>
+        </form>
+
+        <p class="form-note">An invite email with a setup link will be sent to your client. The invite link expires after 72 hours.</p>
+    </div>
+</div>
+{% endblock %}

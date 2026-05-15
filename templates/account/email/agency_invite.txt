@@ -1,0 +1,15 @@
+Hello {{ client.name }},
+
+{{ agency_name }} has set up a client dashboard for you. Click the link below to set your password and access your marketing dashboard:
+
+{{ invite_url }}
+
+This link expires in 72 hours. If it has expired, please contact {{ agency_name }} to request a new invite.
+
+Your dashboard gives you access to:
+- SEO rankings and analytics
+- Social media scheduling
+- Google Business Profile insights
+- And more
+
+— The {{ agency_name }} Team

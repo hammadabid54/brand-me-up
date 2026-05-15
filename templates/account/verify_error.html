@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Invalid Link | Brand Me Up{% endblock %}
+
+{% block extra_css %}
+<style>
+    .auth-container {
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f8f9fc 0%, #e8edf5 100%);
+    }
+    .auth-card {
+        background: white;
+        border-radius: 16px;
+        box-shadow: 0 4px 24px rgba(15, 23, 42, 0.08);
+        padding: 48px;
+        width: 100%;
+        max-width: 480px;
+        text-align: center;
+    }
+    .error-icon {
+        width: 72px;
+        height: 72px;
+        background: linear-gradient(135deg, #fef2f2, #fee2e2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 24px;
+        color: #dc2626;
+        font-size: 2rem;
+    }
+    .auth-card h1 {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 12px;
+    }
+    .auth-card p {
+        color: #64748b;
+        font-size: 0.9375rem;
+        line-height: 1.6;
+        margin-bottom: 24px;
+    }
+    .btn-primary {
+        background: linear-gradient(135deg, var(--dark-red), var(--red-dark));
+        color: white;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.9375rem;
+        text-decoration: none;
+        display: inline-block;
+    }
+    .btn-primary:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="auth-container">
+    <div class="auth-card">
+        <div class="error-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+        </div>
+        <h1>{% if error == 'link_expired' %}Link Expired{% else %}Invalid Link{% endif %}</h1>
+        <p>{{ message }}</p>
+        <a href="/auth/signup/" class="btn-primary">Sign up again</a>
+    </div>
+</div>
+{% endblock %}

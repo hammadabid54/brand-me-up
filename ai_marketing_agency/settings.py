@@ -10,7 +10,12 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +25,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-nt5yq$s=gy+p9=wvycjdpjjt&r2kuxr--l6+q6khl&#$x5bg!9'
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'django-insecure-dev-only')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', 'True').lower() in ('true', '1', 'yes')
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '.localhost']
 
@@ -133,13 +138,26 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'Digitalmomentumx@gmail.com'
-EMAIL_HOST_PASSWORD = 'dzlnxappvxsgklwp'
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
 DEFAULT_FROM_EMAIL = 'Omni Path Marketing <Digitalmomentumx@gmail.com>'
 
 # ==================== Google OAuth & API Settings ====================
 # Client ID and Secret from Google Cloud Console
-GOOGLE_OAUTH_CLIENT_ID = '913803076118-8culbfp6ujo37j6pn680v4jl7gs071l6.apps.googleusercontent.com'
-GOOGLE_OAUTH_CLIENT_SECRET = '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'
+GOOGLE_OAUTH_CLIENT_ID = os.environ.get('GOOGLE_OAUTH_CLIENT_ID', '')
+GOOGLE_OAUTH_CLIENT_SECRET = os.environ.get('GOOGLE_OAUTH_CLIENT_SECRET', '')
+
+# ==================== Social Platform OAuth Settings ====================
+# Meta (Facebook/Instagram) OAuth — create app at https://developers.facebook.com
+META_OAUTH_CLIENT_ID = os.environ.get('META_OAUTH_CLIENT_ID', '')
+META_OAUTH_CLIENT_SECRET = os.environ.get('META_OAUTH_CLIENT_SECRET', '')
+
+# LinkedIn OAuth — create app at https://www.linkedin.com/developers
+LINKEDIN_OAUTH_CLIENT_ID = os.environ.get('LINKEDIN_OAUTH_CLIENT_ID', '')
+LINKEDIN_OAUTH_CLIENT_SECRET = os.environ.get('LINKEDIN_OAUTH_CLIENT_SECRET', '')
+
+# Pinterest OAuth — create app at https://developers.pinterest.com
+PINTEREST_OAUTH_CLIENT_ID = os.environ.get('PINTEREST_OAUTH_CLIENT_ID', '')
+PINTEREST_OAUTH_CLIENT_SECRET = os.environ.get('PINTEREST_OAUTH_CLIENT_SECRET', '')
 
 # Required scopes for dashboard
 GOOGLE_SCOPES = [
@@ -158,3 +176,8 @@ SESSION_COOKIE_NAME = 'client_session'
 LOGIN_REDIRECT_URL = '/dashboard/'
 LOGOUT_REDIRECT_URL = '/'
 LOGIN_URL = '/auth/login/'
+
+AUTHENTICATION_BACKENDS = [
+    'core.backends.EmailOrUsernameBackend',
+    'django.contrib.auth.backends.ModelBackend',
+]

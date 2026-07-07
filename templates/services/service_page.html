@@ -1,0 +1,1816 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_title %}{{ meta_title|default:service_name }} - Brand Me Up{% endblock %}
+{% block meta_description %}{{ meta_description|default:description }}{% endblock %}
+{% block meta_keywords %}{{ meta_keywords }}{% endblock %}
+
+{% block og_title %}{{ meta_title|default:service_name }} - Brand Me Up{% endblock %}
+{% block og_description %}{{ meta_description|default:description }}{% endblock %}
+
+{% block twitter_title %}{{ meta_title|default:service_name }} - Brand Me Up{% endblock %}
+{% block twitter_description %}{{ meta_description|default:description }}{% endblock %}
+
+{% block schema_markup %}
+{% if service_name %}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "{{ service_name }}",
+    "description": "{{ description|escapejs }}",
+    "provider": {
+        "@type": "Organization",
+        "name": "Brand Me Up",
+        "url": "https://www.brandmeup.org"
+    },
+    "areaServed": "US",
+    "priceRange": "$$"
+}
+</script>
+{% endif %}
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ========================================
+       LANDING PAGE REDESIGN - BEST PRACTICES
+       ======================================== */
+
+    :root {
+        --primary: #0f172a;
+        --secondary: #1e293b;
+        --accent: #f97316;
+        --accent-light: #fb923c;
+        --accent-dark: #ea580c;
+        --text-dark: #1e293b;
+        --text-muted: #64748b;
+        --text-light: #f8fafc;
+        --gradient-start: #0f172a;
+        --gradient-end: #1e3a8a;
+    }
+
+    /* Modern Hero Section */
+    .lp-hero {
+        background: linear-gradient(135deg, var(--primary) 0%, var(--gradient-end) 100%);
+        position: relative;
+        overflow: hidden;
+        padding: 120px 0 80px;
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+    }
+
+    .lp-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    .lp-hero .hero-shapes {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        overflow: hidden;
+    }
+
+    .lp-hero .shape {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.1;
+        animation: float 20s infinite ease-in-out;
+    }
+
+    .lp-hero .shape-1 {
+        width: 400px;
+        height: 400px;
+        background: var(--accent);
+        top: -100px;
+        right: -100px;
+        animation-delay: 0s;
+    }
+
+    .lp-hero .shape-2 {
+        width: 300px;
+        height: 300px;
+        background: var(--accent-light);
+        bottom: -50px;
+        left: -50px;
+        animation-delay: -5s;
+    }
+
+    .lp-hero .shape-3 {
+        width: 200px;
+        height: 200px;
+        background: white;
+        top: 50%;
+        left: 30%;
+        animation-delay: -10s;
+    }
+
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(20px, -20px) rotate(5deg); }
+        50% { transform: translate(0, -40px) rotate(0deg); }
+        75% { transform: translate(-20px, -20px) rotate(-5deg); }
+    }
+
+    .lp-hero .hero-content {
+        position: relative;
+        z-index: 2;
+    }
+
+    .lp-hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+        color: white;
+    }
+
+    .lp-hero .hero-subtitle {
+        font-size: 1.35rem;
+        line-height: 1.7;
+        opacity: 0.9;
+        margin-bottom: 2rem;
+        color: rgba(255,255,255,0.9);
+        max-width: 600px;
+    }
+
+    .lp-hero .btn-primary-orange {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        border: none;
+        color: white;
+        padding: 16px 36px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
+    }
+
+    .lp-hero .btn-primary-orange:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(249, 115, 22, 0.45);
+        background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+    }
+
+    .lp-hero .btn-outline-light {
+        border: 2px solid rgba(255,255,255,0.3);
+        color: white;
+        padding: 14px 34px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        background: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .lp-hero .btn-outline-light:hover {
+        background: rgba(255,255,255,0.1);
+        border-color: white;
+    }
+
+    /* Breadcrumb */
+    .lp-hero .breadcrumb-custom {
+        background: transparent;
+        margin-bottom: 1.5rem;
+    }
+
+    .lp-hero .breadcrumb-custom a {
+        color: rgba(255,255,255,0.7);
+        text-decoration: none;
+        transition: color 0.3s;
+    }
+
+    .lp-hero .breadcrumb-custom a:hover {
+        color: var(--accent-light);
+    }
+
+    .lp-hero .breadcrumb-custom .breadcrumb-item.active {
+        color: white;
+    }
+
+    .lp-hero .breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
+        color: rgba(255,255,255,0.5);
+    }
+
+    /* Trust Badges in Hero */
+    .hero-trust-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        margin-top: 2.5rem;
+    }
+
+    .hero-trust-badges .trust-badge-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: rgba(255,255,255,0.1);
+        backdrop-filter: blur(10px);
+        padding: 0.75rem 1.25rem;
+        border-radius: 50px;
+        border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-trust-badges .trust-badge-item i {
+        color: var(--accent-light);
+        font-size: 1.1rem;
+    }
+
+    .hero-trust-badges .trust-badge-item span {
+        color: white;
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    /* Hero Visual */
+    .hero-visual {
+        position: relative;
+    }
+
+    .hero-visual .visual-card {
+        background: rgba(255,255,255,0.05);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 24px;
+        padding: 2rem;
+        box-shadow: 0 25px 80px rgba(0,0,0,0.4);
+    }
+
+    .hero-visual .visual-stats {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .hero-visual .stat-box {
+        background: rgba(255,255,255,0.1);
+        border-radius: 16px;
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .hero-visual .stat-box .stat-value {
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--accent-light);
+        line-height: 1;
+    }
+
+    .hero-visual .stat-box .stat-label {
+        font-size: 0.85rem;
+        color: rgba(255,255,255,0.8);
+        margin-top: 0.5rem;
+    }
+
+    /* ========================================
+       SOCIAL PROOF BAR
+       ======================================== */
+    .social-proof-bar {
+        background: #fff;
+        padding: 3rem 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+
+    .social-proof-bar .proof-item {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .social-proof-bar .proof-item i {
+        color: var(--accent);
+        font-size: 1.25rem;
+    }
+
+    .social-proof-bar .proof-item .proof-text {
+        font-weight: 600;
+        color: var(--text-dark);
+    }
+
+    .social-proof-bar .proof-item .proof-sub {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+    }
+
+    /* ========================================
+       STATS SECTION
+       ======================================== */
+    .stats-section {
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .stats-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: radial-gradient(circle at 30% 50%, rgba(249, 115, 22, 0.15) 0%, transparent 50%);
+    }
+
+    .stats-section .stat-card {
+        text-align: center;
+        padding: 2rem;
+        position: relative;
+        z-index: 1;
+    }
+
+    .stats-section .stat-card .stat-number {
+        font-size: 3.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--accent-light), var(--accent));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+    }
+
+    .stats-section .stat-card .stat-label {
+        font-size: 1.1rem;
+        color: rgba(255,255,255,0.85);
+        margin-top: 0.75rem;
+        font-weight: 500;
+    }
+
+    /* ========================================
+       CONTENT SECTIONS
+       ======================================== */
+    .lp-section {
+        padding: 5rem 0;
+    }
+
+    .lp-section-alt {
+        background: #f8fafc;
+    }
+
+    .section-label {
+        display: inline-block;
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(251, 146, 60, 0.1));
+        color: var(--accent-dark);
+        padding: 0.5rem 1.25rem;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 1rem;
+    }
+
+    .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 1rem;
+        line-height: 1.2;
+    }
+
+    .section-subtitle {
+        font-size: 1.15rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        line-height: 1.7;
+    }
+
+    /* Feature Cards */
+    .feature-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+        margin-top: 2.5rem;
+    }
+
+    .feature-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 2rem;
+        transition: all 0.4s ease;
+        border: 1px solid #e2e8f0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .feature-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.4s ease;
+    }
+
+    .feature-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(249, 115, 22, 0.12);
+        border-color: var(--accent);
+    }
+
+    .feature-card:hover::before {
+        transform: scaleX(1);
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1.25rem;
+    }
+
+    .feature-icon i {
+        color: white;
+        font-size: 1.5rem;
+    }
+
+    .feature-card h4 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.75rem;
+    }
+
+    .feature-card p {
+        color: var(--text-muted);
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* ========================================
+       PROCESS STEPS
+       ======================================== */
+    .process-timeline {
+        position: relative;
+        padding: 2rem 0;
+    }
+
+    .process-timeline::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light), var(--accent));
+        transform: translateY(-50%);
+        z-index: 0;
+    }
+
+    .process-step {
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        padding: 0 1rem;
+    }
+
+    .process-step .step-number {
+        width: 70px;
+        height: 70px;
+        background: #fff;
+        border: 3px solid var(--accent);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.25rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--accent);
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.2);
+    }
+
+    .process-step h5 {
+        font-size: 1.15rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .process-step p {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* ========================================
+       BENEFITS SECTION
+       ======================================== */
+    .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+
+    .benefit-item {
+        display: flex;
+        gap: 1rem;
+        padding: 1.5rem;
+        background: #fff;
+        border-radius: 16px;
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+    }
+
+    .benefit-item:hover {
+        border-color: var(--accent);
+        box-shadow: 0 10px 30px rgba(249, 115, 22, 0.1);
+    }
+
+    .benefit-item .benefit-icon {
+        width: 50px;
+        height: 50px;
+        min-width: 50px;
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(251, 146, 60, 0.1));
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .benefit-item .benefit-icon i {
+        color: var(--accent);
+        font-size: 1.25rem;
+    }
+
+    .benefit-item h5 {
+        font-size: 1.05rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.35rem;
+    }
+
+    .benefit-item p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        line-height: 1.6;
+        margin: 0;
+    }
+
+    /* ========================================
+       PRICING SECTION
+       ======================================== */
+    .pricing-section {
+        background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    }
+
+    .pricing-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2.5rem;
+        border: 2px solid #e2e8f0;
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .pricing-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 5px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    }
+
+    .pricing-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(249, 115, 22, 0.15);
+        border-color: var(--accent);
+    }
+
+    .pricing-card.popular {
+        border-color: var(--accent);
+        background: linear-gradient(180deg, rgba(249, 115, 22, 0.03) 0%, #fff 100%);
+    }
+
+    .pricing-card.popular::before {
+        height: 6px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-dark), var(--accent-light));
+    }
+
+    .pricing-card .popular-tag {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 0.35rem 1rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+    }
+
+    .pricing-card .plan-name {
+        font-size: 1.35rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.35rem;
+    }
+
+    .pricing-card .plan-desc {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .pricing-card .plan-price {
+        margin-bottom: 1.5rem;
+    }
+
+    .pricing-card .plan-price .price {
+        font-size: 3rem;
+        font-weight: 800;
+        color: var(--text-dark);
+        line-height: 1;
+    }
+
+    .pricing-card .plan-price .period {
+        color: var(--text-muted);
+        font-size: 1rem;
+    }
+
+    .pricing-card .plan-features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem;
+    }
+
+    .pricing-card .plan-features li {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 0.6rem 0;
+        color: var(--text-dark);
+        font-size: 0.95rem;
+    }
+
+    .pricing-card .plan-features li i {
+        color: var(--accent);
+        min-width: 18px;
+    }
+
+    .pricing-card .btn-pricing {
+        width: 100%;
+        padding: 1rem;
+        border-radius: 12px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .pricing-card .btn-pricing-primary {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        border: none;
+    }
+
+    .pricing-card .btn-pricing-primary:hover {
+        background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+        transform: translateY(-2px);
+    }
+
+    .pricing-card .btn-pricing-secondary {
+        background: transparent;
+        color: var(--accent);
+        border: 2px solid var(--accent);
+    }
+
+    .pricing-card .btn-pricing-secondary:hover {
+        background: var(--accent);
+        color: white;
+    }
+
+    /* ========================================
+       FAQ SECTION
+       ======================================== */
+    .faq-section .accordion-item {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px !important;
+        margin-bottom: 1rem;
+        overflow: hidden;
+        transition: all 0.3s ease;
+    }
+
+    .faq-section .accordion-item:hover {
+        border-color: var(--accent);
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.08);
+    }
+
+    .faq-section .accordion-button {
+        background: #fff;
+        padding: 1.25rem 1.5rem;
+        font-weight: 600;
+        font-size: 1.05rem;
+        color: var(--text-dark);
+        box-shadow: none !important;
+    }
+
+    .faq-section .accordion-button:not(.collapsed) {
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.05), rgba(251, 146, 60, 0.05));
+        color: var(--accent-dark);
+    }
+
+    .faq-section .accordion-button::after {
+        background: var(--accent);
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 0.8rem;
+    }
+
+    .faq-section .accordion-button:not(.collapsed)::after {
+        transform: rotate(180deg);
+    }
+
+    .faq-section .accordion-body {
+        padding: 0 1.5rem 1.5rem;
+        color: var(--text-muted);
+        line-height: 1.8;
+    }
+
+    /* ========================================
+       CTA SECTIONS
+       ======================================== */
+    .cta-section {
+        background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+        padding: 5rem 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .cta-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.2) 0%, transparent 70%);
+    }
+
+    .cta-section::after {
+        content: '';
+        position: absolute;
+        bottom: -30%;
+        left: -10%;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.15) 0%, transparent 70%);
+    }
+
+    .cta-section .cta-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+
+    .cta-section h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: white;
+        margin-bottom: 1rem;
+    }
+
+    .cta-section p {
+        font-size: 1.15rem;
+        color: rgba(255,255,255,0.85);
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        line-height: 1.7;
+    }
+
+    .cta-section .btn-cta {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 1rem 2.5rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        border: none;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.35);
+    }
+
+    .cta-section .btn-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(249, 115, 22, 0.45);
+    }
+
+    /* ========================================
+       CONTENT STYLING
+       ======================================== */
+    .content-text {
+        color: var(--text-muted);
+        line-height: 1.9;
+        font-size: 1.05rem;
+    }
+
+    .content-text p {
+        margin-bottom: 1.25rem;
+    }
+
+    .content-text strong {
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+
+    /* H3 Cards Grid */
+    .h3-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.25rem;
+        margin: 1.5rem 0;
+    }
+
+    @media (max-width: 992px) {
+        .h3-cards-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 576px) {
+        .h3-cards-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .lp-hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+    }
+
+    .h3-cards-grid h3 {
+        background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+        border-radius: 16px;
+        padding: 1.5rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        border: 1px solid #e2e8f0;
+        transition: all 0.3s ease;
+        font-size: 1rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin: 0;
+    }
+
+    .h3-cards-grid h3::before {
+        content: '';
+        display: block;
+        width: 40px;
+        height: 3px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-light));
+        margin-bottom: 1rem;
+        border-radius: 2px;
+    }
+
+    .h3-cards-grid h3:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(249, 115, 22, 0.12);
+        border-color: var(--accent);
+    }
+
+    /* Side Image Section */
+    .side-image-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+
+    @media (max-width: 992px) {
+        .side-image-section {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+
+    .side-image-section .image-box {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+    }
+
+    .side-image-section .image-box img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Quick Benefits Grid */
+    .quick-benefits {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+        margin-top: 2rem;
+    }
+
+    @media (max-width: 576px) {
+        .quick-benefits {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .quick-benefit {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .quick-benefit i {
+        color: var(--accent);
+        font-size: 1.1rem;
+    }
+
+    .quick-benefit span {
+        font-weight: 500;
+        color: var(--text-dark);
+    }
+
+    /* ========================================
+       CONTACT FORM SECTION
+       ======================================== */
+    .contact-form-section {
+        background: linear-gradient(135deg, #fff 0%, #f8fafc 100%);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .contact-form-section::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(circle, rgba(249, 115, 22, 0.08) 0%, transparent 70%);
+    }
+
+    .contact-form-card {
+        background: #fff;
+        border-radius: 24px;
+        padding: 2.5rem;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.08);
+        border: 1px solid #e2e8f0;
+        position: relative;
+        z-index: 1;
+    }
+
+    .contact-form-card h3 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-form-card .form-subtitle {
+        color: var(--text-muted);
+        margin-bottom: 2rem;
+    }
+
+    .form-floating > label {
+        color: var(--text-muted);
+        padding: 1rem;
+    }
+
+    .form-floating > .form-control, .form-floating > .form-select {
+        border: 2px solid #e2e8f0;
+        border-radius: 12px;
+        padding: 1rem;
+        height: auto;
+        transition: all 0.3s ease;
+    }
+
+    .form-floating > .form-control:focus, .form-floating > .form-select:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.1);
+    }
+
+    .form-check-input:checked {
+        background-color: var(--accent);
+        border-color: var(--accent);
+    }
+
+    .btn-submit-form {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        border-radius: 12px;
+        border: none;
+        width: 100%;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 25px rgba(249, 115, 22, 0.3);
+    }
+
+    .btn-submit-form:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 35px rgba(249, 115, 22, 0.4);
+        background: linear-gradient(135deg, var(--accent-dark), var(--accent));
+    }
+
+    .form-contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .form-contact-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 1.25rem;
+        background: rgba(249, 115, 22, 0.05);
+        border-radius: 12px;
+        transition: all 0.3s ease;
+    }
+
+    .form-contact-item:hover {
+        background: rgba(249, 115, 22, 0.1);
+    }
+
+    .form-contact-item .contact-icon {
+        width: 50px;
+        height: 50px;
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.25rem;
+    }
+
+    .form-contact-item .contact-text .label {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+        font-weight: 500;
+    }
+
+    .form-contact-item .contact-text .value {
+        font-size: 1rem;
+        color: var(--text-dark);
+        font-weight: 600;
+    }
+
+    /* ========================================
+       RELATED SERVICES SECTION
+       ======================================== */
+    .related-services {
+        background: linear-gradient(180deg, #f8fafc 0%, #fff 100%);
+    }
+
+    .related-service-card {
+        background: #fff;
+        border-radius: 20px;
+        padding: 2rem;
+        border: 2px solid #e2e8f0;
+        transition: all 0.4s ease;
+        display: flex;
+        align-items: center;
+        gap: 1.25rem;
+        text-decoration: none;
+        height: 100%;
+    }
+
+    .related-service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 50px rgba(249, 115, 22, 0.12);
+        border-color: var(--accent);
+    }
+
+    .related-service-card .service-icon {
+        width: 65px;
+        height: 65px;
+        min-width: 65px;
+        background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(251, 146, 60, 0.1));
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        color: var(--accent);
+        transition: all 0.3s ease;
+    }
+
+    .related-service-card:hover .service-icon {
+        background: linear-gradient(135deg, var(--accent), var(--accent-light));
+        color: white;
+    }
+
+    .related-service-card .service-info h5 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        color: var(--text-dark);
+        margin-bottom: 0.35rem;
+        transition: color 0.3s ease;
+    }
+
+    .related-service-card:hover .service-info h5 {
+        color: var(--accent);
+    }
+
+    .related-service-card .service-info p {
+        font-size: 0.9rem;
+        color: var(--text-muted);
+        margin: 0;
+        line-height: 1.5;
+    }
+
+    .related-service-card .arrow-icon {
+        margin-left: auto;
+        color: var(--accent);
+        font-size: 1.25rem;
+        opacity: 0;
+        transform: translateX(-10px);
+        transition: all 0.3s ease;
+    }
+
+    .related-service-card:hover .arrow-icon {
+        opacity: 1;
+        transform: translateX(0);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="lp-hero">
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-7 hero-content">
+                <nav aria-label="breadcrumb" class="breadcrumb-custom mb-4">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/services/">Services</a></li>
+                        {% if category %}<li class="breadcrumb-item"><a href="{{ category_url }}">{{ category }}</a></li>{% endif %}
+                        <li class="breadcrumb-item active">{{ service_name|default:hero_title }}</li>
+                    </ol>
+                </nav>
+
+                <h1>{{ hero_title|default:service_name }}</h1>
+                <p class="hero-subtitle">{{ hero_subtitle|default:description }}</p>
+
+                <div class="d-flex gap-3 flex-wrap mb-4">
+                    <a href="/contact/?service={{ service_name|default:page_name }}" class="btn btn-primary-orange">
+                        <i class="fas fa-rocket me-2"></i>Get Started
+                    </a>
+                    <a href="#pricing" class="btn btn-outline-light">
+                        <i class="fas fa-tag me-2"></i>View Pricing
+                    </a>
+                </div>
+
+                <!-- Free Audit CTA -->
+                <div class="mt-3 p-3 bg-white bg-opacity-10 rounded-3 d-inline-block">
+                    <div class="d-flex align-items-center gap-2">
+                        <i class="fas fa-magic text-warning fs-5"></i>
+                        <a href="/tools/website-audit/" class="text-warning fw-bold">Get a Free Website Audit - Try Now</a>
+                    </div>
+                </div>
+
+                <div class="hero-trust-badges">
+                    <div class="trust-badge-item">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>No Long-term Contracts</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <i class="fas fa-clock"></i>
+                        <span>Quick Turnaround</span>
+                    </div>
+                    <div class="trust-badge-item">
+                        <i class="fas fa-headset"></i>
+                        <span>24/7 Support</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="hero-visual">
+                    <div class="visual-card">
+                        <div class="visual-stats">
+                            <div class="stat-box">
+                                <div class="stat-value">500+</div>
+                                <div class="stat-label">Clients Served</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">6+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">98%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-value">24/7</div>
+                                <div class="stat-label">Support</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Social Proof Bar -->
+<section class="social-proof-bar">
+    <div class="container">
+        <div class="row justify-content-around">
+            <div class="col-auto">
+                <div class="proof-item">
+                    <i class="fas fa-award"></i>
+                    <div>
+                        <div class="proof-text">Award Winning</div>
+                        <div class="proof-sub">Industry Recognition</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="proof-item">
+                    <i class="fas fa-users"></i>
+                    <div>
+                        <div class="proof-text">500+ Happy Clients</div>
+                        <div class="proof-sub">Across All Industries</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="proof-item">
+                    <i class="fas fa-chart-line"></i>
+                    <div>
+                        <div class="proof-text">Proven Results</div>
+                        <div class="proof-sub">Data-Driven Approach</div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="proof-item">
+                    <i class="fas fa-certificate"></i>
+                    <div>
+                        <div class="proof-text">Certified Experts</div>
+                        <div class="proof-sub">Professional Team</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Dynamic Content Sections -->
+{% if sections %}
+    {% for section in sections %}
+        {% if section.section_type == 'intro' %}
+            <!-- Intro Section -->
+            <section class="lp-section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-10 text-center mb-5">
+                            <span class="section-label">About This Service</span>
+                            <h2 class="section-title">{{ section.title }}</h2>
+                            {% if section.subtitle %}
+                            <p class="section-subtitle mx-auto">{{ section.subtitle }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="content-text" style="max-width: 850px; margin: 0 auto; text-align: center;">
+                        {{ section.content|safe }}
+                    </div>
+                </div>
+            </section>
+
+        {% elif section.section_type == 'why_seo_matters' or section.section_type == 'why_matters' or section.section_type == 'importance' %}
+            <!-- Why Matters Section with Image -->
+            <section class="lp-section lp-section-alt">
+                <div class="container">
+                    <div class="side-image-section">
+                        <div class="content-side">
+                            <span class="section-label">Why It Matters</span>
+                            <h2 class="section-title">{{ section.title }}</h2>
+                            <div class="content-text">
+                                {{ section.content|safe }}
+                            </div>
+                            <div class="quick-benefits">
+                                <div class="quick-benefit">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Long-term Results</span>
+                                </div>
+                                <div class="quick-benefit">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Builds Credibility</span>
+                                </div>
+                                <div class="quick-benefit">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Intent-Based Targeting</span>
+                                </div>
+                                <div class="quick-benefit">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Cost-Effective</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="image-side">
+                            <div class="image-box">
+                                <img src="{% static 'images/16x9/10780386_19199013.jpg' %}" alt="{{ section.title }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        {% elif section.section_type == 'our_approach' or section.section_type == 'approach' %}
+            <!-- Our Approach - Feature Cards -->
+            <section class="lp-section">
+                <div class="container">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8 text-center">
+                            <span class="section-label">Our Approach</span>
+                            <h2 class="section-title">{{ section.title }}</h2>
+                            {% if section.subtitle %}
+                            <p class="section-subtitle mx-auto">{{ section.subtitle }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="content-text" style="max-width: 800px; margin: 0 auto;">
+                        {{ section.content|safe }}
+                    </div>
+                </div>
+            </section>
+
+        {% elif section.section_type == 'services' or section.section_type == 'included' or section.section_type == 'types' %}
+            <!-- Services Grid Section -->
+            <section class="lp-section lp-section-alt">
+                <div class="container">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8 text-center">
+                            <span class="section-label">What's Included</span>
+                            <h2 class="section-title">{{ section.title }}</h2>
+                            {% if section.subtitle %}
+                            <p class="section-subtitle mx-auto">{{ section.subtitle }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="content-text" style="max-width: 800px; margin: 0 auto 2.5rem; text-align: center;">
+                        {{ section.content|safe }}
+                    </div>
+
+                    {% if section.features %}
+                    <div class="feature-grid">
+                        {% for feature in section.features %}
+                        <div class="feature-card">
+                            <div class="feature-icon">
+                                <i class="fas fa-{% cycle 'check' 'star' 'lightbulb' 'cog' 'shield-alt' 'chart-bar' 'rocket' 'handshake' %}"></i>
+                            </div>
+                            <h4>{{ feature.title|default:feature }}</h4>
+                            <p>{{ feature.description|default:'' }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+            </section>
+
+        {% elif section.section_type == 'process' or section.section_type == 'strategy' %}
+            <!-- Process Section -->
+            <section class="lp-section">
+                <div class="container">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8 text-center">
+                            <span class="section-label">Our Process</span>
+                            <h2 class="section-title">{{ section.title }}</h2>
+                            {% if section.subtitle %}
+                            <p class="section-subtitle mx-auto">{{ section.subtitle }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="content-text" style="max-width: 800px; margin: 0 auto;">
+                        {{ section.content|safe }}
+                    </div>
+
+                    <!-- Quick Process Steps -->
+                    <div class="row mt-5">
+                        <div class="col-md-3">
+                            <div class="process-step">
+                                <div class="step-number">1</div>
+                                <h5>Audit</h5>
+                                <p>We analyze your current situation</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="process-step">
+                                <div class="step-number">2</div>
+                                <h5>Research</h5>
+                                <p>Keyword & competitor analysis</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="process-step">
+                                <div class="step-number">3</div>
+                                <h5>Optimize</h5>
+                                <p>Implementation & content</p>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="process-step">
+                                <div class="step-number">4</div>
+                                <h5>Monitor</h5>
+                                <p>Track & improve results</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        {% elif section.section_type == 'benefits' or section.section_type == 'results' %}
+            <!-- Benefits Section -->
+            <section class="lp-section lp-section-alt">
+                <div class="container">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8 text-center">
+                            <span class="section-label">Benefits</span>
+                            <h2 class="section-title">{{ section.title }}</h2>
+                        </div>
+                    </div>
+                    <div class="content-text" style="max-width: 800px; margin: 0 auto 2.5rem; text-align: center;">
+                        {{ section.content|safe }}
+                    </div>
+                </div>
+            </section>
+
+        {% elif section.section_type == 'cta' %}
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h2>{{ section.title }}</h2>
+                        <p>{{ section.content|linebreaks }}</p>
+                        <a href="/contact/?service={{ service_name|default:page_name }}" class="btn-cta">
+                            <i class="fas fa-rocket me-2"></i>Get Started Today
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+        {% else %}
+            <!-- Generic Section -->
+            <section class="lp-section">
+                <div class="container">
+                    <div class="row justify-content-center mb-5">
+                        <div class="col-lg-8 text-center">
+                            <h2 class="section-title">{{ section.title }}</h2>
+                        </div>
+                    </div>
+                    <div class="content-text" style="max-width: 800px; margin: 0 auto;">
+                        {{ section.content|safe }}
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+    {% endfor %}
+{% endif %}
+
+<!-- Pricing Section -->
+{% if pricing_plans %}
+<section id="pricing" class="lp-section pricing-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="section-label">Pricing</span>
+                <h2 class="section-title">{{ pricing_intro|default:"Choose Your Plan" }}</h2>
+                {% if pricing_description %}
+                <p class="section-subtitle mx-auto">{{ pricing_description }}</p>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            {% for plan in pricing_plans %}
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card {% if plan.popular %}popular{% endif %}">
+                    {% if plan.popular %}<span class="popular-tag">Most Popular</span>{% endif %}
+                    <h4 class="plan-name">{{ plan.name }}</h4>
+                    <p class="plan-desc">{{ plan.description }}</p>
+                    <div class="plan-price">
+                        <span class="price">{{ plan.price }}</span>
+                        {% if plan.price and '/month' not in plan.price and plan.price != 'Custom' %}
+                        <span class="period">one-time</span>
+                        {% elif plan.price == 'Custom' %}
+                        <span class="period">Contact for pricing</span>
+                        {% else %}
+                        <span class="period">/month</span>
+                        {% endif %}
+                    </div>
+                    <ul class="plan-features">
+                        {% for feature in plan.features %}
+                        <li><i class="fas fa-check"></i> {{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="/contact/?service={{ service_name|default:page_name }}&plan={{ plan.name }}" class="btn btn-pricing {% if plan.popular %}btn-pricing-primary{% else %}btn-pricing-secondary{% endif %}">
+                        Get Started Now
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- FAQ Section -->
+{% if faqs %}
+<section class="lp-section faq-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="section-label">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+                <p class="section-subtitle mx-auto">Got questions? We've got answers.</p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion" id="faqAccordion">
+                    {% for faq in faqs %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq{{ forloop.counter }}">
+                                {{ faq.question }}
+                            </button>
+                        </h2>
+                        <div id="faq{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                {{ faq.answer }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Contact Form Section -->
+<section class="lp-section contact-form-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="section-label">Get In Touch</span>
+                <h2 class="section-title">Ready to Grow Your Business?</h2>
+                <p class="section-subtitle mx-auto">Fill out the form below and we'll get back to you within 24 hours.</p>
+            </div>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-8">
+                <div class="contact-form-card">
+                    <h3>Send us a Message</h3>
+                    <p class="form-subtitle">Tell us about your project and we'll create a custom strategy for you.</p>
+
+                    <form method="POST" action="/contact/" id="serviceContactForm">
+                        {% csrf_token %}
+                        <input type="hidden" name="service" value="{{ service_name|default:page_name }}">
+
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                    <label for="name">Your Name *</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                                    <label for="email">Email Address *</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="tel" class="form-control" id="phone" name="phone" placeholder="Phone Number">
+                                    <label for="phone">Phone Number</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="company" name="company" placeholder="Company Name">
+                                    <label for="company">Company Name</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <select class="form-select" id="budget" name="budget">
+                                        <option value="">Select your budget</option>
+                                        <option value="Under $500">Under $500/month</option>
+                                        <option value="$500-$1000">$500 - $1,000/month</option>
+                                        <option value="$1000-$2500">$1,000 - $2,500/month</option>
+                                        <option value="$2500+">$2,500+/month</option>
+                                        <option value="Custom">Custom/One-time project</option>
+                                    </select>
+                                    <label for="budget">Budget Range</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <textarea class="form-control" id="message" name="message" placeholder="Tell us about your project..." style="height: 150px;" required></textarea>
+                                    <label for="message">Tell us about your project *</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter">
+                                    <label class="form-check-label" for="newsletter">
+                                        Subscribe to our newsletter for marketing tips and updates
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn-submit-form">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="form-contact-info">
+                    <div class="form-contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div class="contact-text">
+                            <div class="label">Call Us</div>
+                            <div class="value">+92 332 4456974</div>
+                        </div>
+                    </div>
+                    <div class="form-contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div class="contact-text">
+                            <div class="label">Email Us</div>
+                            <div class="value">contact@brandmeup.org</div>
+                        </div>
+                    </div>
+                    <div class="form-contact-item">
+                        <div class="contact-icon"><i class="fas fa-clock"></i></div>
+                        <div class="contact-text">
+                            <div class="label">Business Hours</div>
+                            <div class="value">Mon-Sat: 9AM - 6PM PKT</div>
+                        </div>
+                    </div>
+                    <div class="form-contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div class="contact-text">
+                            <div class="label">Location</div>
+                            <div class="value">Lahore, Pakistan</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Response Badge -->
+                <div class="mt-4 p-4 bg-success bg-opacity-10 rounded-4 border border-success border-opacity-25">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="bg-success rounded-circle p-2">
+                            <i class="fas fa-check text-white"></i>
+                        </div>
+                        <div>
+                            <h6 class="mb-0 fw-bold text-success">Quick Response</h6>
+                            <small class="text-muted">We reply within 24 hours</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Services Section -->
+{% if related_services %}
+<section class="lp-section related-services">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <span class="section-label">Explore More</span>
+                <h2 class="section-title">Related Services</h2>
+                <p class="section-subtitle mx-auto">Check out other services that might complement what you're looking for.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            {% for rel_service in related_services %}
+            <div class="col-md-6 col-lg-4">
+                <a href="{{ rel_service.url }}" class="related-service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-{{ rel_service.icon|default:'star' }}"></i>
+                    </div>
+                    <div class="service-info">
+                        <h5>{{ rel_service.name }}</h5>
+                        <p>{{ rel_service.description }}</p>
+                    </div>
+                    <div class="arrow-icon">
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- Final CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Get Started?</h2>
+            <p>Join hundreds of businesses that have transformed their growth with Brand Me Up. Get your free consultation today.</p>
+            <div class="d-flex gap-3 justify-content-center flex-wrap">
+                <a href="/contact/?service={{ service_name|default:page_name }}" class="btn-cta">
+                    <i class="fas fa-rocket me-2"></i>Get Started
+                </a>
+                <a href="tel:+15551234567" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-phone me-2"></i>Call Now
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- JavaScript for H3 Cards Grid -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Process content text sections to create card grids from h3 elements
+    document.querySelectorAll('.content-text').forEach(function(container) {
+        const h3Elements = container.querySelectorAll('h3');
+        if (h3Elements.length >= 2) {
+            const gridContainer = document.createElement('div');
+            gridContainer.className = 'h3-cards-grid';
+
+            // Get parent of first h3
+            const firstH3 = h3Elements[0];
+            firstH3.parentNode.insertBefore(gridContainer, firstH3);
+
+            h3Elements.forEach(function(h3) {
+                gridContainer.appendChild(h3);
+            });
+
+            // Move content between h3s into the cards
+            let currentCard = null;
+            container.querySelectorAll('h3, p, ul').forEach(function(node) {
+                if (node.nodeName === 'H3') {
+                    currentCard = node;
+                } else if (currentCard && node.nodeName !== 'H3') {
+                    // Check if next sibling is another h3
+                    let hasNextH3 = false;
+                    let next = node.nextElementSibling;
+                    while (next) {
+                        if (next.nodeName === 'H3') {
+                            hasNextH3 = true;
+                            break;
+                        }
+                        if (next.nodeName !== 'P' && next.nodeName !== 'UL') break;
+                        next = next.nextElementSibling;
+                    }
+
+                    if (!hasNextH3 || node.nodeName !== 'H3') {
+                        currentCard.parentNode.insertBefore(node, currentCard.nextSibling);
+                    }
+                }
+            });
+        }
+    });
+});
+</script>
+{% endblock %}

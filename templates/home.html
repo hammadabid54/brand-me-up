@@ -1,0 +1,568 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_title %}Brand Me Up - AI-Powered Marketing That Gets Results{% endblock %}
+{% block meta_description %}Grow your business with Brand Me Up's AI-powered marketing combined with human expertise. SEO, social media, content, PPC, and more — at competitive prices.{% endblock %}
+{% block meta_keywords %}Brand Me Up, digital marketing agency, AI marketing, SEO services, social media marketing, content creation, PPC advertising, local SEO, e-commerce SEO{% endblock %}
+
+{% block og_title %}Brand Me Up - AI-Powered Marketing That Gets Results{% endblock %}
+{% block og_description %}Grow your business with AI-powered marketing combined with human expertise. SEO, social media, content, PPC, and more.{% endblock %}
+{% block twitter_title %}Brand Me Up - AI-Powered Marketing That Gets Results{% endblock %}
+{% block twitter_description %}Grow your business with AI-powered marketing combined with human expertise.{% endblock %}
+{% block og_image %}{% static 'images/BMU - Main Logo.png' %}{% endblock %}
+
+{% block content %}
+<!-- ============================================================
+     Hero
+     ============================================================ -->
+<section class="hero-section">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+                <span class="section-badge">AI + Human Expertise</span>
+                <h1 class="display-4 fw-bold mb-3">
+                    Grow Your Brand With <span class="text-red">Marketing That Works</span>
+                </h1>
+                <p class="lead mb-4">
+                    Brand Me Up combines AI-powered optimization with seasoned marketing experts
+                    to drive real results — more leads, more traffic, more revenue.
+                </p>
+                <div class="d-flex flex-wrap gap-3 mb-4">
+                    <a href="/contact/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket me-2"></i>Get Started
+                    </a>
+                    <a href="/services/" class="btn btn-outline-dark btn-lg">
+                        <i class="fas fa-th-large me-2"></i>View Services
+                    </a>
+                </div>
+                <div class="hero-badges">
+                    <div class="hero-badge"><i class="fas fa-check-circle"></i><span>No long-term contracts</span></div>
+                    <div class="hero-badge"><i class="fas fa-check-circle"></i><span>Human-reviewed campaigns</span></div>
+                    <div class="hero-badge"><i class="fas fa-check-circle"></i><span>Transparent pricing</span></div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="hero-card">
+                    <div class="hero-card-header">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <div class="hero-stats-grid">
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">500+</div>
+                            <div class="hero-stat-label">Clients Served</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">10K+</div>
+                            <div class="hero-stat-label">Leads Generated</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">6+</div>
+                            <div class="hero-stat-label">Years Experience</div>
+                        </div>
+                        <div class="hero-stat">
+                            <div class="hero-stat-value">98%</div>
+                            <div class="hero-stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                    <div class="hero-card-footer">
+                        <i class="fas fa-chart-line text-red"></i>
+                        <span>Average 3.4× ROI in first 90 days</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Service categories
+     ============================================================ -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <span class="section-badge">What We Do</span>
+            <h2 class="fw-bold mb-3">Full-Service Digital Marketing</h2>
+            <p class="text-muted mx-auto" style="max-width: 640px;">
+                From SEO to paid ads to content — we cover every channel that drives growth,
+                powered by AI and reviewed by humans.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/seo/" class="service-tile service-tile-blue">
+                    <div class="service-tile-icon"><i class="fas fa-search"></i></div>
+                    <h5 class="mb-2">SEO Services</h5>
+                    <p>Rank higher, get found faster. Local, e-commerce, SaaS, technical, and enterprise SEO.</p>
+                    <span class="service-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/social-media/" class="service-tile service-tile-purple">
+                    <div class="service-tile-icon"><i class="fas fa-share-nodes"></i></div>
+                    <h5 class="mb-2">Social Media</h5>
+                    <p>Management, paid social, and community — across every platform that matters.</p>
+                    <span class="service-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/contentflow/" class="service-tile service-tile-pink">
+                    <div class="service-tile-icon"><i class="fas fa-bolt"></i></div>
+                    <h5 class="mb-2">ContentFlow</h5>
+                    <p>Post to social, your website, and GBP — starting at $50/mo. Done-for-you content.</p>
+                    <span class="service-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/ads/" class="service-tile service-tile-green">
+                    <div class="service-tile-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h5 class="mb-2">PPC &amp; Ads</h5>
+                    <p>Google, Facebook, and LinkedIn Ads with tight audience targeting and creative testing.</p>
+                    <span class="service-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/creation/" class="service-tile service-tile-orange">
+                    <div class="service-tile-icon"><i class="fas fa-pen"></i></div>
+                    <h5 class="mb-2">Content Creation</h5>
+                    <p>Blog posts, video, copywriting, and ContentFlow — content that converts.</p>
+                    <span class="service-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/packages/" class="service-tile service-tile-teal">
+                    <div class="service-tile-icon"><i class="fas fa-box"></i></div>
+                    <h5 class="mb-2">Marketing Packages</h5>
+                    <p>Starter, Professional, and Full-Scale bundles for any stage of business.</p>
+                    <span class="service-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Pricing
+     ============================================================ -->
+<section class="py-5 bg-light-section">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <span class="section-badge">Pricing</span>
+            <h2 class="fw-bold mb-3">Simple, Transparent Plans</h2>
+            <p class="text-muted mx-auto" style="max-width: 640px;">
+                All plans include AI-powered optimization and human expert review.
+                Cancel anytime — no long-term contracts.
+            </p>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <div class="pricing-icon" style="background: linear-gradient(135deg, #dbeafe, #93c5fd); color: #1d4ed8;">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h4 class="mt-3">Basic</h4>
+                    <p class="text-muted">Perfect for small businesses starting their digital journey.</p>
+                    <div class="pricing-price">$50<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 1 platform</li>
+                        <li><i class="fas fa-check"></i> 8 posts per month</li>
+                        <li><i class="fas fa-check"></i> Basic analytics</li>
+                        <li><i class="fas fa-check"></i> Email support</li>
+                        <li class="disabled"><i class="fas fa-times"></i> Content creation</li>
+                    </ul>
+                    <a href="/contact/" class="btn btn-outline-dark w-100">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card pricing-popular">
+                    <span class="popular-badge">Most Popular</span>
+                    <div class="pricing-icon" style="background: linear-gradient(135deg, #ede9fe, #c4b5fd); color: #6d28d9;">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h4 class="mt-3">Standard</h4>
+                    <p class="text-muted">Best for growing businesses that need more exposure.</p>
+                    <div class="pricing-price">$100<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 2 platforms</li>
+                        <li><i class="fas fa-check"></i> 12 posts per month</li>
+                        <li><i class="fas fa-check"></i> Advanced analytics</li>
+                        <li><i class="fas fa-check"></i> Priority support</li>
+                        <li><i class="fas fa-check"></i> Content suggestions</li>
+                    </ul>
+                    <a href="/contact/" class="btn btn-primary w-100">Get Started</a>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-md-6">
+                <div class="pricing-card">
+                    <div class="pricing-icon" style="background: linear-gradient(135deg, #fce7f3, #f9a8d4); color: #be185d;">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4 class="mt-3">Premium</h4>
+                    <p class="text-muted">Complete solution for maximum online presence.</p>
+                    <div class="pricing-price">$150<span>/mo</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> 3 platforms</li>
+                        <li><i class="fas fa-check"></i> 16 posts per month</li>
+                        <li><i class="fas fa-check"></i> Full analytics</li>
+                        <li><i class="fas fa-check"></i> 24/7 support</li>
+                        <li><i class="fas fa-check"></i> Content creation</li>
+                    </ul>
+                    <a href="/contact/" class="btn btn-outline-dark w-100">Get Started</a>
+                </div>
+            </div>
+        </div>
+
+        <p class="text-center text-muted mt-4 mb-0 small">
+            <i class="fas fa-info-circle me-1"></i> All plans include human expert review.
+            No results guaranteed for posting packages.
+        </p>
+    </div>
+</section>
+
+<!-- ============================================================
+     Why choose us
+     ============================================================ -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <span class="section-badge">Why Brand Me Up</span>
+                <h2 class="fw-bold mb-4">Marketing That Combines AI With Human Expertise</h2>
+                <p class="text-muted mb-4">
+                    We don't just push buttons or run guesswork campaigns. We pair smart automation
+                    with real marketers who review every move — so you get scale without losing
+                    the human touch.
+                </p>
+
+                <div class="why-item">
+                    <div class="why-icon" style="background: linear-gradient(135deg, #2563eb, #3b82f6);">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">AI-Powered Optimization</h5>
+                        <p class="text-muted mb-0">Algorithms continuously tune your campaigns for better results.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon" style="background: linear-gradient(135deg, #7c3aed, #a855f7);">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">Human Expert Review</h5>
+                        <p class="text-muted mb-0">Every campaign is reviewed by experienced marketers before launch.</p>
+                    </div>
+                </div>
+
+                <div class="why-item">
+                    <div class="why-icon" style="background: linear-gradient(135deg, #16a34a, #22c55e);">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold mb-1">Cost-Effective Pricing</h5>
+                        <p class="text-muted mb-0">Premium services at competitive, transparent rates.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <img src="{% static 'images/Squared/12083613_Wavy_Bus-27_Single-01.jpg' %}"
+                     alt="Brand Me Up marketing team"
+                     class="feature-img"
+                     loading="lazy">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="py-5 cta-section">
+    <div class="container py-4 text-center">
+        <h2 class="fw-bold mb-3">Ready to Grow Your Business?</h2>
+        <p class="mb-4 mx-auto" style="max-width: 560px; opacity: .92;">
+            Let's talk about how Brand Me Up can help you get more leads, traffic, and revenue —
+            without the long-term contracts.
+        </p>
+        <a href="/contact/" class="btn btn-light btn-lg px-4">
+            <i class="fas fa-paper-plane me-2"></i>Get Started Today
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Hero */
+    .hero-section {
+        background:
+            radial-gradient(ellipse at top right, rgba(217, 37, 44, .08) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(124, 58, 237, .06) 0%, transparent 50%),
+            linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        padding: clamp(3rem, 8vw, 6rem) 0;
+        overflow: hidden;
+        position: relative;
+    }
+    .hero-section .display-4 {
+        line-height: 1.1;
+        letter-spacing: -.02em;
+    }
+    .hero-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.25rem;
+        color: var(--muted);
+        font-size: .9rem;
+    }
+    .hero-badge {
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+    }
+    .hero-badge i { color: var(--red); }
+
+    .hero-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+        overflow: hidden;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+    .hero-card-header {
+        background: var(--surface-2);
+        padding: .75rem 1rem;
+        display: flex;
+        gap: .4rem;
+        border-bottom: 1px solid var(--line);
+    }
+    .dot {
+        width: 10px; height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+    }
+    .dot-red    { background: #ef4444; }
+    .dot-yellow { background: #f59e0b; }
+    .dot-green  { background: #22c55e; }
+    .hero-stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        background: var(--line);
+    }
+    .hero-stat {
+        background: var(--white);
+        padding: 1.5rem 1rem;
+        text-align: center;
+    }
+    .hero-stat-value {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--red);
+        line-height: 1;
+        margin-bottom: .25rem;
+    }
+    .hero-stat-label {
+        font-size: .85rem;
+        color: var(--muted);
+    }
+    .hero-card-footer {
+        padding: 1rem 1.25rem;
+        background: var(--surface);
+        font-size: .9rem;
+        color: var(--ink-soft);
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        border-top: 1px solid var(--line);
+    }
+
+    /* Service tiles */
+    .service-tile {
+        display: block;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        color: var(--ink-soft);
+        text-decoration: none;
+        height: 100%;
+        transition: all .25s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    .service-tile::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 4px;
+        opacity: .9;
+    }
+    .service-tile-blue::before   { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+    .service-tile-purple::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+    .service-tile-pink::before   { background: linear-gradient(90deg, #db2777, #f472b6); }
+    .service-tile-green::before  { background: linear-gradient(90deg, #16a34a, #22c55e); }
+    .service-tile-orange::before { background: linear-gradient(90deg, #d97706, #f59e0b); }
+    .service-tile-teal::before   { background: linear-gradient(90deg, #0d9488, #14b8a6); }
+    .service-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+        border-color: rgba(217, 37, 44, .2);
+    }
+    .service-tile-icon {
+        width: 52px; height: 52px;
+        border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--white);
+        font-size: 1.4rem;
+        margin-bottom: 1rem;
+    }
+    .service-tile-blue .service-tile-icon   { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .service-tile-purple .service-tile-icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+    .service-tile-pink .service-tile-icon   { background: linear-gradient(135deg, #db2777, #f472b6); }
+    .service-tile-green .service-tile-icon  { background: linear-gradient(135deg, #16a34a, #22c55e); }
+    .service-tile-orange .service-tile-icon { background: linear-gradient(135deg, #d97706, #f59e0b); }
+    .service-tile-teal .service-tile-icon   { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+    .service-tile p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+        font-size: .95rem;
+    }
+    .service-tile-arrow {
+        font-weight: 600;
+        font-size: .9rem;
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        transition: gap .2s ease;
+    }
+    .service-tile:hover .service-tile-arrow { gap: .6rem; }
+
+    /* Pricing */
+    .pricing-card {
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 2rem 1.75rem;
+        text-align: center;
+        height: 100%;
+        position: relative;
+        transition: all .25s ease;
+    }
+    .pricing-card:hover {
+        transform: translateY(-4px);
+        box-shadow: var(--shadow-lg);
+    }
+    .pricing-popular {
+        border-color: var(--red);
+        box-shadow: 0 12px 32px rgba(217, 37, 44, .15);
+    }
+    .popular-badge {
+        position: absolute;
+        top: -12px; left: 50%;
+        transform: translateX(-50%);
+        background: var(--red);
+        color: var(--white);
+        padding: .35rem 1rem;
+        border-radius: 20px;
+        font-size: .75rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: .5px;
+    }
+    .pricing-icon {
+        width: 64px; height: 64px;
+        border-radius: 16px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.7rem;
+        margin: 0 auto;
+    }
+    .pricing-price {
+        font-family: 'Outfit', sans-serif;
+        font-size: 2.75rem;
+        font-weight: 800;
+        color: var(--ink);
+        line-height: 1;
+        margin: 1rem 0 .25rem;
+    }
+    .pricing-price span {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--muted);
+    }
+    .pricing-features {
+        list-style: none;
+        padding: 0;
+        margin: 1.5rem 0;
+        text-align: left;
+    }
+    .pricing-features li {
+        padding: .5rem 0;
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        color: var(--ink-soft);
+    }
+    .pricing-features li i.fa-check {
+        color: #16a34a;
+        width: 1rem;
+    }
+    .pricing-features li.disabled {
+        color: var(--muted);
+        text-decoration: line-through;
+    }
+    .pricing-features li.disabled i { color: var(--muted); }
+
+    /* Why choose us */
+    .feature-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4 / 3;
+        object-fit: cover;
+        border-radius: var(--radius-lg);
+        box-shadow: var(--shadow-lg);
+    }
+    .why-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        margin-bottom: 1.25rem;
+    }
+    .why-icon {
+        width: 52px; height: 52px;
+        border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--white);
+        font-size: 1.25rem;
+        flex-shrink: 0;
+    }
+
+    /* CTA */
+    .cta-section {
+        background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 50%, #7c0a0e 100%);
+        color: var(--white);
+    }
+    .cta-section h2 { color: var(--white); }
+
+    /* ============================================================
+       Mobile tweaks
+       ============================================================ */
+    @media (max-width: 991.98px) {
+        .hero-section { text-align: center; }
+        .hero-badges { justify-content: center; }
+        .hero-card { margin-top: 2rem; }
+    }
+    @media (max-width: 575.98px) {
+        .hero-stats-grid { grid-template-columns: repeat(2, 1fr); }
+        .hero-stat { padding: 1rem .5rem; }
+        .hero-stat-value { font-size: 1.5rem; }
+    }
+</style>
+{% endblock %}

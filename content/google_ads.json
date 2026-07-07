@@ -1,0 +1,97 @@
+{
+  "service_name": "Google Ads",
+  "slug": "google-ads",
+  "category": "Ads",
+  "category_url": "/services/ads/",
+  "meta_title": "Google Ads Management | Search & Display Advertising | Brand Me Up",
+  "meta_description": "Expert Google Ads management services. Search, display, shopping, and YouTube campaigns that drive immediate traffic and conversions.",
+  "meta_keywords": "Google Ads, Google AdWords, search advertising, display advertising, shopping ads, YouTube ads",
+  "hero_title": "Google Ads Services",
+  "hero_subtitle": "Drive immediate traffic with professional Google advertising campaigns.",
+  "description": "Expert Google Ads management that delivers results. We create and optimize campaigns across search, display, shopping, and YouTube.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Google Ads and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Google Ads is Google's advertising platform—the largest and most widely used PPC advertising system in the world. When someone searches on Google, ads appear at the top and bottom of search results. These ads reach users actively looking for what you offer, making Google Ads one of the most effective advertising platforms available.\n\nGoogle Ads offers several campaign types to reach different audiences. Search campaigns show text ads to users searching for specific keywords. Display campaigns show visual ads across millions of websites. Shopping campaigns showcase products with images and prices. YouTube ads reach users watching videos. Each type serves different purposes and audiences.\n\nThe power of Google Ads lies in intent. Unlike social media advertising where users are browsing passively, Google search ads reach users actively looking for solutions. Someone searching for \"plumber near me\" is likely looking to hire a plumber now. Google Ads puts your business in front of these high-intent searchers.\n\nOur Google Ads management services create and optimize campaigns that maximize your return on investment. We handle everything from keyword research to ad creation to ongoing optimization."
+    },
+    {
+      "section_type": "campaigns",
+      "title": "Types of Google Ads Campaigns We Create",
+      "subtitle": "",
+      "content": "We create various campaign types to meet your business goals:\n\n<h3>Search Campaigns</h3>Text ads that appear when users search for your keywords. Ideal for capturing high-intent traffic looking for your products or services.\n\n<h3>Display Campaigns</h3>Visual ads shown across millions of websites in Google's network. Great for building brand awareness and reaching users based on interests.\n\n<h3>Shopping Campaigns</h3>Product listings that show images, prices, and reviews. Essential for e-commerce businesses looking to showcase products.\n\n<h3>YouTube Ads</h3>Video ads shown before, during, or after YouTube videos. Effective for brand building and video content promotion.\n\n<h3>App Campaigns</h3>Promotions across Google's properties to drive app installations and engagement.\n\n<h3>Local Campaigns</h3>Ads designed to drive foot traffic to physical locations. Perfect for brick-and-mortar businesses.\n\n<h3>Smart Campaigns</h3>Automated campaigns ideal for small businesses. Google's AI optimizes for the best results."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Google Ads Management Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive approach to Google Ads management:\n\n<h3>Account Audit</h3>For existing accounts, we analyze current performance and identify improvement opportunities.\n\n<h3>Keyword Research</h3>We identify high-value keywords that align with your business and audience.\n\n<h3>Campaign Structure</h3>We organize campaigns and ad groups for maximum relevance and quality score.\n\n<h3>Ad Creation</h3>We write compelling ad copy that encourages clicks and conversions.\n\n<h3>Landing Page Optimization</h3>We ensure landing pages are optimized to convert traffic into leads or sales.\n\n<h3>Conversion Tracking</h3>We implement proper tracking to measure actual business results.\n\n<h3>Ongoing Optimization</h3>We continuously refine campaigns based on performance data.\n\n<h3>Regular Reporting</h3>Detailed reports show exactly how your campaigns are performing."
+    },
+    {
+      "section_type": "optimization",
+      "title": "Campaign Optimization and Management",
+      "subtitle": "",
+      "content": "Effective Google Ads management requires continuous optimization:\n\n<h3>Bid Management</h3>We adjust bids based on performance to maximize results within your budget.\n\n<h3>Keyword Refinement</h3>We add high-performing keywords and remove underperformers.\n\n<h3>Ad Testing</h3>We continuously test new ad variations to improve click-through rates.\n\n<h3>Quality Score Improvement</h3>We optimize campaigns to improve Quality Score, reducing costs per click.\n\n<h3>Search Term Analysis</h3>We review search terms to identify new keywords and negative keywords.\n\n<h3>Device Optimization</h3>We adjust bids based on device performance to focus on converting devices.\n\n<h3>Audience Refinement</h3>We refine audience targeting based on conversion data."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Google Ads?",
+      "subtitle": "",
+      "content": "Our Google Ads clients typically see significant improvements:\n\n<h3>Immediate Visibility</h3>Appear at the top of search results the moment campaigns launch.\n\n<h3>High-Intent Traffic</h3>Reach users actively searching for your products or services.\n\n<h3>Measurable Results</h3>Clear tracking shows exactly what you get for your ad spend.\n\n<h3>Improved ROI</h3>Optimization improves return on ad spend over time.\n\n<h3>Competitive Position</h3>Outrank competitors in search results.\n\n<h3>Scalable Growth</h3>Increase budget as campaigns prove successful."
+    }
+  ],
+  "pricing": {
+    "intro": "Google Ads Management Pricing",
+    "description": "Flexible management plans for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$147/month",
+        "description": "For small budgets",
+        "features": [
+          "Campaign setup",
+          "Keyword research",
+          "Ad copywriting",
+          "$500 monthly ad spend management",
+          "Monthly optimization",
+          "Basic reporting"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$297/month",
+        "description": "For growing businesses",
+        "features": [
+          "Multiple campaigns",
+          "A/B testing",
+          "Conversion tracking",
+          "$2,000 monthly ad spend",
+          "Bi-weekly optimization",
+          "Advanced reporting"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$497/month",
+        "description": "For established businesses",
+        "features": [
+          "Full account management",
+          "Shopping campaigns",
+          "Remarketing campaigns",
+          "Unlimited ad spend management",
+          "Weekly optimization",
+          "Custom dashboards"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How much should I spend on Google Ads?", "answer": "Budget depends on your industry, competition, and goals. We'll help you determine an appropriate budget during consultation."},
+    {"question": "How long does it take to see results?", "answer": "Most campaigns see initial results within the first week. Significant optimization and stable performance typically take 2-4 weeks."},
+    {"question": "Do I need to provide ad content?", "answer": "We handle all ad creation including copy and design. You simply provide business information and approval."},
+    {"question": "Can you manage existing campaigns?", "answer": "Absolutely! We can audit and optimize existing Google Ads accounts."},
+    {"question": "What happens if I stop advertising?", "answer": "Your ads stop showing immediately. Unlike SEO, PPC requires ongoing spend for visibility."}
+  ]
+}

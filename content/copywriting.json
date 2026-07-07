@@ -1,0 +1,93 @@
+{
+  "service_name": "Copywriting",
+  "slug": "copywriting",
+  "category": "Content",
+  "category_url": "/services/content/",
+  "meta_title": "Copywriting Services | Persuasive Marketing Copy | Brand Me Up",
+  "meta_description": "Expert copywriting for landing pages, ads, and emails. Persuasive copy that converts visitors into customers and drives real business results.",
+  "meta_keywords": "copywriting, marketing copy, landing page copy, ad copy, email copy",
+  "hero_title": "Copywriting Services",
+  "hero_subtitle": "Persuasive copy that drives conversions and grows your business.",
+  "description": "Professional copywriting services that convert. We craft compelling copy for landing pages, advertisements, email campaigns, and more.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Copywriting and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Copywriting is the art of writing persuasive text that encourages readers to take action. Unlike general content writing, copywriting is specifically designed to convert—turning readers into leads, leads into customers, and customers into loyal advocates. Every word is crafted with purpose, guiding readers toward a specific desired action.\n\nThe difference between good copywriting and mediocre copywriting can mean thousands of dollars in revenue. A well-written landing page converts at significantly higher rates than a poorly written one. Compelling email subject lines get opened. Persuasive ad copy gets clicked. In every case, the words matter.\n\nEffective copywriting requires understanding psychology—what motivates people to act. It requires knowing how to address objections before they're raised. It requires the ability to communicate value clearly and compellingly. And it requires the skill to match tone and style to the specific audience and channel.\n\nOur copywriting services provide all of this expertise. Our writers have backgrounds in psychology, marketing, and direct response copywriting. They understand what makes people take action and craft messages that drive results."
+    },
+    {
+      "section_type": "types",
+      "title": "Types of Copywriting We Provide",
+      "subtitle": "",
+      "content": "We create persuasive copy for various marketing needs:\n\n<h3>Landing Page Copy</h3>\nEvery element of your landing page—from headlines to bullet points to CTAs—is crafted to convert. We focus on benefits, address objections, and create urgency.\n\n<h3>Advertising Copy</h3>\nWhether for Google Ads, Facebook, or print, ad copy must be compelling within strict constraints. We write headlines and descriptions that grab attention and drive clicks.\n\n<h3>Email Marketing</h3>\nFrom subject lines to body copy to CTAs, email copy is crafted to get opened and clicked. We write welcome sequences, newsletters, and promotional emails.\n\n<h3>Website Copy</h3>\nEvery page on your website should support conversion. We write homepage copy, about page content, service descriptions, and more.\n\n<h3>Product Descriptions</h3>\nCompelling descriptions that highlight benefits and features while optimizing for search. Essential for e-commerce success.\n\n<h3>Video Scripts</h3>\nScripts for explainer videos, commercials, and promotional content. Every word is designed to engage and convert.\n\n<h3>Social Media Copy</h3>\nPlatform-specific copy optimized for engagement. Each post encourages interaction while reflecting your brand voice."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Copywriting Process",
+      "subtitle": "",
+      "content": "We follow a strategic process for every copywriting project:\n\n<h3>Discovery</h3>\nWe learn about your business, target audience, unique selling propositions, and specific goals. Understanding your offer deeply is essential for effective copy.\n\n<h3>Research</h3>\nWe research your market, competitors, and audience. This research informs positioning and messaging strategies.\n\n<h3>Strategy Development</h3>\nWe develop a copywriting strategy that addresses your audience's needs and motivations. This strategy guides all copy creation.\n\n<h3>Drafting</h3>\nOur writers craft initial copy, focusing on compelling headlines, clear benefits, and persuasive calls to action.\n\n<h3>Refinement</h3>\nCopy goes through multiple rounds of editing to ensure clarity, flow, and impact. Every word is evaluated for effectiveness.\n\n<h3>Client Review</h3>\nYou review the copy and provide feedback. We revise until the copy meets your expectations.\n\n<h3>Final Delivery</h3>\nApproved copy is delivered in your preferred format, ready for implementation."
+    },
+    {
+      "section_type": "principles",
+      "title": "Copywriting Principles We Follow",
+      "subtitle": "",
+      "content": "Our copywriting is grounded in proven principles:\n\n<h3>Benefit-Focused</h3>\nWe focus on benefits, not just features. Readers care about what's in it for them—our copy reflects that.\n\n<h3>Audience-Centered</h3>\nEvery piece of copy speaks directly to the target audience. We use language they use and address their specific concerns.\n\n<h3>Action-Oriented</h3>\nOur copy always drives toward a specific action. Clear CTAs guide readers to the next step.\n\n<h3>Urgency-Creating</h3>\nWhen appropriate, we create urgency that motivates immediate action without being manipulative.\n\n<h3>Objection-Addressing</h3>\nWe anticipate and address potential objections before readers raise them.\n\n<h3>Proof-Providing</h3>\nClaims are supported with evidence—testimonials, statistics, guarantees—that build credibility.\n\n<h3>Clarity-First</h3>\nComplex ideas are communicated simply. The easier the copy is to understand, the more effective it becomes."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Professional Copywriting?",
+      "subtitle": "",
+      "content": "Our copywriting clients typically see significant improvements:\n\n<h3>Higher Conversion Rates</h3>\nWell-crafted copy converts visitors at significantly higher rates than generic copy.\n\n<h3>Increased Click-Through Rates</h3>\nCompelling ad and email copy gets more clicks, driving more traffic to your offers.\n\n<h3>Better Email Performance</h3>\nStrong subject lines and body copy improve open rates and engagement.\n\n<h3>Improved ROI</h3>\nBetter conversion rates mean more return on every marketing dollar spent.\n\n<h3>Clearer Messaging</h3>\nProfessional copy communicates your value proposition more effectively.\n\n<h3>Stronger Brand Voice</h3>\nConsistent, quality copy reinforces your brand identity."
+    }
+  ],
+  "pricing": {
+    "intro": "Copywriting Pricing",
+    "description": "Flexible pricing based on project type and scope.",
+    "plans": [
+      {
+        "name": "Landing Page",
+        "price": "$297/page",
+        "description": "For single landing pages",
+        "features": [
+          "Complete landing page copy",
+          "Headlines and subheadlines",
+          "Benefit-focused bullet points",
+          "Persuasive CTA",
+          "Conversion optimized"
+        ]
+      },
+      {
+        "name": "Email Sequence",
+        "price": "$197/sequence",
+        "description": "For email marketing campaigns",
+        "features": [
+          "5-email sequence",
+          "Welcome email",
+          "Nurture series",
+          "Subject line options",
+          "CTA optimization"
+        ]
+      },
+      {
+        "name": "Full Package",
+        "price": "$797",
+        "description": "For comprehensive needs",
+        "features": [
+          "Landing page",
+          "Email sequence (5 emails)",
+          "Ad copy (multiple platforms)",
+          "CTA optimization",
+          "Style guide"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "What's the difference between copywriting and content writing?", "answer": "Copywriting is specifically designed to convert—its primary goal is to drive action. Content writing provides value and builds authority. Copy is sales-focused; content is information-focused."},
+    {"question": "How do you determine what to write?", "answer": "We research your audience, understand their motivations, and craft messages that address their specific needs and concerns."},
+    {"question": "Can you write for specific industries?", "answer": "Yes, our team includes writers with expertise across various industries. We research thoroughly to ensure accurate, relevant copy."},
+    {"question": "How many revisions are included?", "answer": "Each project includes at least 2 revision rounds. Additional revisions are available if needed."},
+    {"question": "Do you provide implementation support?", "answer": "We deliver copy in ready-to-use formats. For an additional fee, we can also assist with implementation."}
+  ]
+}

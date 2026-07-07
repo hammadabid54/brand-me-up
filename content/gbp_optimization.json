@@ -1,0 +1,84 @@
+{
+  "service_name": "GBP Optimization",
+  "slug": "gbp-optimization",
+  "category": "GBP",
+  "category_url": "/services/gbp/",
+  "meta_title": "Google Business Profile Optimization | Maximize Local Visibility | Brand Me Up",
+  "meta_description": "Optimize your Google Business Profile for maximum local visibility. Complete audit and improvement plan to dominate local search.",
+  "meta_keywords": "GBP optimization, Google My Business optimization, local SEO, local search optimization",
+  "hero_title": "Google Business Profile Optimization",
+  "hero_subtitle": "Maximize your local search visibility with comprehensive optimization.",
+  "description": "Complete Google Business Profile optimization services. We audit, optimize, and improve your listing for better local rankings.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Google Business Profile Optimization and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Google Business Profile optimization is the process of improving your existing listing to maximize its effectiveness in local search. While initial setup is important, optimization takes an existing profile and transforms it into a powerful local marketing asset. Most businesses have profiles that are only partially optimized—missing opportunities that competitors may be capturing.\n\nOptimization addresses every element that affects how your profile performs in search results and how effectively it converts viewers into customers. From category selection to description keywords, from photo quality to review management, each element impacts your local search success.\n\nThe local SEO landscape is competitive. Businesses that invest in optimization consistently outrank those with basic profiles. With 46% of all Google searches seeking local information, ranking well in these searches can mean the difference between filling your pipeline and losing customers to competitors.\n\nOur Google Business Profile optimization service thoroughly analyzes your current profile, identifies improvement opportunities, and implements changes that enhance visibility and conversions."
+    },
+    {
+      "section_type": "audit",
+      "title": "What We Analyze in Our Optimization Audit",
+      "subtitle": "",
+      "content": "Our comprehensive audit examines every aspect of your profile:\n\n<h3>Business Information</h3>Accuracy and completeness of all business details—name, address, phone, hours, website.\n\n<h3>Category Analysis</h3>Evaluation of primary and secondary categories to ensure maximum relevance for your services.\n\n<h3>Description Review</h3>Assessment of your business description for keyword optimization and effectiveness.\n\n<h3>Photo Evaluation</h3>Analysis of photo quality, variety, and optimization.\n\n<h3>Post Assessment</h3>Review of past posts for frequency, quality, and engagement.\n\n<h3>Review Analysis</h3>Evaluation of your review profile—quantity, quality, and response rate.\n\n<h3>Q&A Review</h3>Assessment of questions and answers for completeness and optimization.\n\n<h3>Attribute Check</h3>Verification of all attributes—amenities, services, and other business characteristics.\n\n<h3>Competitor Comparison</h3>Analysis of how your profile compares to direct competitors.\n\n<h3>Performance Insights</h3>Review of Google insights to understand current performance."
+    },
+    {
+      "section_type": "improvements",
+      "title": "Key Improvements We Implement",
+      "subtitle": "",
+      "content": "Based on our audit, we implement crucial improvements:\n\n<h3>Category Optimization</h3>Adjusting categories to maximize relevance for high-value searches.\n\n<h3>Description Enhancement</h3>Rewriting descriptions to include relevant keywords naturally.\n\n<h3>Photo Improvements</h3>Adding or replacing photos to showcase your business effectively.\n\n<h3>Attribute Completion</h3>Ensuring all available attributes are properly set.\n\n<h3>Service Menu Optimization</h3>Enhancing your services list with complete descriptions.\n\n<h3>Post Strategy</h3>Developing an ongoing posting strategy for better engagement.\n\n<h3>Review Strategy</h3>Creating a plan to encourage more positive reviews.\n\n<h3>Q&A Population</h3>Adding and optimizing questions and answers that address common customer queries.\n\n<h3>NAP Consistency</h3>Ensuring your Name, Address, and Phone are consistent across all listings.\n\n<h3>Website Integration</h3>Optimizing the connection between your profile and website."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Optimization Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive optimization process:\n\n<h3>Initial Audit</h3>We conduct a thorough analysis of your current profile, identifying strengths and weaknesses.\n\n<h3>Competitor Research</h3>We analyze your top competitors to identify opportunities and gaps.\n\n<h3>Strategy Development</h3>We create a customized optimization plan based on findings.\n\n<h3>Implementation</h3>We implement all optimizations, from description rewrites to category adjustments.\n\n<h3>Verification</h3>We ensure all changes are properly implemented and showing correctly.\n\n<h3>Reporting</h3>We provide detailed reports documenting all changes and recommendations.\n\n<h3>Support Period</h3>We provide ongoing support to address questions and make adjustments."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Optimization?",
+      "subtitle": "",
+      "content": "Our optimization clients typically see significant improvements:\n\n<h3>Better Rankings</h3>Improved positions in local search results for relevant queries.\n\n<h3>More Visibility</h3>Greater prominence in the local pack and Google Maps.\n\n<h3>Higher Engagement</h3>More clicks, calls, direction requests, and website visits.\n\n<h3>Increased Reviews</h3>Strategies to encourage more positive reviews.\n\n<h3>Better Reputation</h3>Improved review profile through professional management.\n\n<h3>Competitive Advantage</h3>Outperforming competitors who haven't optimized their profiles.\n\n<h3>Conversion Improvement</h3>Better-optimized profiles convert more searchers into customers."
+    }
+  ],
+  "pricing": {
+    "intro": "GBP Optimization Pricing",
+    "description": "One-time optimization with ongoing support.",
+    "plans": [
+      {
+        "name": "Audit",
+        "price": "$147",
+        "description": "Comprehensive analysis",
+        "features": [
+          "Complete profile audit",
+          "Issue identification",
+          "Prioritized recommendations",
+          "Competitor analysis",
+          "Written report"
+        ]
+      },
+      {
+        "name": "Full Optimization",
+        "price": "$297",
+        "description": "Complete optimization implementation",
+        "features": [
+          "Complete profile audit",
+          "Full implementation of all recommendations",
+          "Category optimization",
+          "Description rewriting",
+          "Photo guidance",
+          "90-day support",
+          "Ranking tracking",
+          "Monthly check-ins"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How long does optimization take?", "answer": "The full optimization process typically takes 1-2 weeks, including audit, implementation, and verification."},
+    {"question": "What's the difference between setup and optimization?", "answer": "Setup creates a new profile from scratch, while optimization improves an existing profile."},
+    {"question": "Do I need to provide anything?", "answer": "We'll need access to your Google Business Profile and any information about changes to your business."},
+    {"question": "How soon will I see results?", "answer": "Some improvements appear within days, while ranking improvements typically show within 2-4 weeks."},
+    {"question": "Can you also manage my profile after optimization?", "answer": "Absolutely! Our management services can keep your optimized profile performing at its best."}
+  ]
+}

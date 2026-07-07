@@ -1,0 +1,268 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Contact Us - Brand Me Up{% endblock %}
+
+{% block content %}
+<!-- Page Hero -->
+<section class="hero-section" style="background: linear-gradient(135deg, var(--dark-red) 0%, var(--near-black) 40%, var(--black) 100%); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 20% 50%, rgba(217,37,44,0.15) 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, rgba(217,37,44,0.1) 0%, transparent 40%); pointer-events: none;"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6">
+                <span class="section-badge">Get In Touch</span>
+                <h1 class="fw-bold mb-4" style="font-size: 3rem; color: white; line-height: 1.1;">Let's Start a <span style="color: var(--red);">Conversation</span></h1>
+                <p class="lead mb-4 pe-lg-5" style="font-size: 1.125rem; color: var(--text-muted);">Ready to take your marketing to the next level? With 6+ years of SEO expertise and 500+ businesses helped, I'm ready to help you achieve results.</p>
+            </div>
+            <div class="col-lg-6 mt-4 mt-lg-0">
+                <div class="position-relative" style="height: 350px;">
+                    <!-- Decorative gradient orbs -->
+                    <div class="position-absolute rounded-circle" style="width: 200px; height: 200px; background: linear-gradient(135deg, rgba(217,37,44,0.4), rgba(94,10,15,0.6)); top: 20px; left: 20px; filter: blur(40px);"></div>
+                    <div class="position-absolute rounded-circle" style="width: 150px; height: 150px; background: linear-gradient(135deg, rgba(217,37,44,0.3), rgba(30,30,30,0.8)); top: 80px; right: 40px; filter: blur(30px);"></div>
+                    <div class="position-absolute rounded-circle" style="width: 100px; height: 100px; background: linear-gradient(135deg, rgba(217,37,44,0.5), rgba(0,0,0,0.5)); bottom: 30px; left: 80px; filter: blur(25px);"></div>
+                    <!-- Icon in center -->
+                    <div class="position-absolute top-50 start-50 translate-middle text-center">
+                        <div class="display-1 text-white opacity-25"><i class="fas fa-handshake"></i></div>
+                        <div class="h4 text-white mt-2 opacity-50">Let's Connect</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section class="py-5" style="background: var(--near-black);">
+    <div class="container">
+        <div class="row g-5">
+            <!-- Left Column - Contact Info -->
+            <div class="col-lg-5">
+                <div class="mb-5">
+                    <h2 class="mb-4" style="color: white; font-weight: 700;">Let's Grow Your <span style="color: var(--red);">Business</span></h2>
+                    <p class="mb-4" style="color: var(--text-muted); line-height: 1.8;">Fill out the form and I'll get back to you within 24 hours. Let's discuss how we can help your business achieve remarkable growth.</p>
+                </div>
+
+                <div class="contact-info-cards">
+                    <div class="contact-info-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1rem; transition: all 0.3s ease;">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-3 flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-2" style="color: white; font-weight: 600;">Location</h6>
+                                <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Lahore, Pakistan<br>Serving clients worldwide</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1rem; transition: all 0.3s ease;">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-3 flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-2" style="color: white; font-weight: 600;">Email</h6>
+                                <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">contact@brandmeup.org</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; margin-bottom: 1rem; transition: all 0.3s ease;">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-3 flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-2" style="color: white; font-weight: 600;">Phone</h6>
+                                <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">+92 332 4456974</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; transition: all 0.3s ease;">
+                        <div class="d-flex align-items-start">
+                            <div class="feature-icon me-3 flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h6 class="mb-2" style="color: white; font-weight: 600;">Business Hours</h6>
+                                <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Mon-Sat: 9AM - 6PM PKT<br>Sunday: Closed</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column - Contact Form -->
+            <div class="col-lg-7">
+                <div class="contact-form-card" style="background: linear-gradient(145deg, var(--card-surface), #252525); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2.5rem; position: relative; overflow: hidden;">
+                    <!-- Decorative element -->
+                    <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(217,37,44,0.15), transparent); border-radius: 50%; pointer-events: none;"></div>
+
+                    <h3 class="mb-4" style="color: white; font-weight: 700;">Send Us a <span style="color: var(--red);">Message</span></h3>
+
+                    {% csrf_token %}
+                    <form method="post" action="/contact/submit/">
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label for="name" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Full Name</label>
+                                <input type="text" class="form-control" id="name" required style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem;">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Email Address</label>
+                                <input type="email" class="form-control" id="email" required style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem;">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Phone Number</label>
+                                <input type="tel" class="form-control" id="phone" style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem;">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="company" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Company Name</label>
+                                <input type="text" class="form-control" id="company" style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem;">
+                            </div>
+                            <div class="col-12">
+                                <label for="service" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Interested Service</label>
+                                <select class="form-select" id="service" style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem;">
+                                    <option value="">Select a service...</option>
+                                    <option value="seo">AI SEO Services</option>
+                                    <option value="social-media">AI Social Media</option>
+                                    <option value="contentflow">ContentFlow</option>
+                                    <option value="content">AI Content Creation</option>
+                                    <option value="ppc">PPC & Advertising</option>
+                                    <option value="packages">Digital Marketing Packages</option>
+                                    <option value="other">Other Services</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="budget" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Monthly Budget</label>
+                                <select class="form-select" id="budget" style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem;">
+                                    <option value="">Select your budget range...</option>
+                                    <option value="under-500">Under $500/month</option>
+                                    <option value="500-1000">$500 - $1,000/month</option>
+                                    <option value="1000-2500">$1,000 - $2,500/month</option>
+                                    <option value="2500-5000">$2,500 - $5,000/month</option>
+                                    <option value="over-5000">Over $5,000/month</option>
+                                </select>
+                            </div>
+                            <div class="col-12">
+                                <label for="message" class="form-label" style="color: var(--text-muted); font-size: 0.875rem; font-weight: 500;">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us about your project..." style="background: var(--near-black); border: 1px solid var(--border); color: white; padding: 0.875rem 1rem; border-radius: var(--radius); font-size: 0.9375rem; resize: none;"></textarea>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="newsletter" style="background: var(--near-black); border-color: var(--border);">
+                                    <label class="form-check-label" for="newsletter" style="color: var(--text-muted); font-size: 0.875rem;">
+                                        Subscribe to our newsletter for marketing tips and updates
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100" style="padding: 1rem 2rem; font-size: 1rem; font-weight: 600; border-radius: var(--radius);">
+                                    <i class="fas fa-paper-plane me-2"></i>Send Message
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-5" style="background: linear-gradient(180deg, var(--black) 0%, var(--near-black) 100%);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">FAQ</span>
+            <h2 class="mt-3" style="color: white; font-weight: 700;">Frequently Asked <span style="color: var(--red);">Questions</span></h2>
+        </div>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="faq-container">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 1rem; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="faq-header" style="padding: 1.25rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                            <h5 class="mb-0" style="color: white; font-weight: 600; font-size: 1rem;">How quickly will I see results?</h5>
+                            <i class="fas fa-plus" style="color: var(--red); transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-content" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                            <p class="mb-4" style="color: var(--text-muted); line-height: 1.7;">Results vary by service. SEO typically takes 3-6 months for significant results, while PPC and social media ads can show results within days. We'll provide realistic timelines during our consultation.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 1rem; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="faq-header" style="padding: 1.25rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                            <h5 class="mb-0" style="color: white; font-weight: 600; font-size: 1rem;">What makes your services different?</h5>
+                            <i class="fas fa-plus" style="color: var(--red); transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-content" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                            <p class="mb-4" style="color: var(--text-muted); line-height: 1.7;">We combine AI technology with human expertise. Our AI tools optimize campaigns in real-time, while our expert team ensures quality and strategic direction. This hybrid approach delivers better results at lower costs.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); margin-bottom: 1rem; overflow: hidden; transition: all 0.3s ease;">
+                        <div class="faq-header" style="padding: 1.25rem 1.5rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center;" onclick="toggleFaq(this)">
+                            <h5 class="mb-0" style="color: white; font-weight: 600; font-size: 1rem;">Do you offer contracts?</h5>
+                            <i class="fas fa-plus" style="color: var(--red); transition: transform 0.3s ease;"></i>
+                        </div>
+                        <div class="faq-content" style="padding: 0 1.5rem; max-height: 0; overflow: hidden; transition: all 0.3s ease;">
+                            <p class="mb-4" style="color: var(--text-muted); line-height: 1.7;">We offer both monthly and annual plans. Most services are month-to-month with no long-term commitment required. Annual plans come with a discount.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    .contact-info-item:hover {
+        border-color: var(--red);
+        transform: translateX(5px);
+    }
+    .contact-form-card {
+        box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
+    .form-control:focus, .form-select:focus {
+        border-color: var(--red) !important;
+        box-shadow: 0 0 0 3px rgba(217,37,44,0.15) !important;
+    }
+    .faq-item:hover {
+        border-color: rgba(217,37,44,0.5);
+    }
+    .faq-item.active .faq-header i {
+        transform: rotate(45deg);
+    }
+    .faq-item.active .faq-content {
+        max-height: 200px !important;
+        padding-top: 0 !important;
+    }
+</style>
+
+<script>
+function toggleFaq(element) {
+    const item = element.closest('.faq-item');
+    const content = item.querySelector('.faq-content');
+    const allItems = document.querySelectorAll('.faq-item');
+
+    allItems.forEach(i => {
+        if (i !== item) {
+            i.classList.remove('active');
+            i.querySelector('.faq-content').style.maxHeight = '0';
+        }
+    });
+
+    item.classList.toggle('active');
+    if (item.classList.contains('active')) {
+        content.style.maxHeight = '200px';
+        content.style.paddingTop = '1rem';
+    } else {
+        content.style.maxHeight = '0';
+        content.style.paddingTop = '0';
+    }
+}
+</script>
+{% endblock %}

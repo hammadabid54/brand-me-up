@@ -1,0 +1,97 @@
+{
+  "service_name": "Facebook/Instagram Ads",
+  "slug": "facebook-ads",
+  "category": "Ads",
+  "category_url": "/services/ads/",
+  "meta_title": "Facebook & Instagram Ads | Social Media Advertising | Brand Me Up",
+  "meta_description": "Expert Facebook and Instagram advertising services. Targeted campaigns that reach your audience and drive conversions.",
+  "meta_keywords": "Facebook ads, Instagram ads, social media advertising, Meta ads, Instagram marketing",
+  "hero_title": "Facebook & Instagram Ads Services",
+  "hero_subtitle": "Reach your audience on the world's largest social media platforms.",
+  "description": "Professional Facebook and Instagram advertising that drives results. We create targeted campaigns across Meta's platforms.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What are Facebook and Instagram Ads and Why Does Your Business Need Them?",
+      "subtitle": "",
+      "content": "Facebook and Instagram Ads are paid promotional content displayed across Meta's family of applications—including Facebook, Instagram, Messenger, and the Audience Network. With over 3 billion monthly active users across these platforms, Facebook/Instagram Ads offer unparalleled reach for businesses looking to connect with their target audience.\n\nUnlike search ads that reach users with intent, social media ads reach users based on interests, behaviors, and demographics. This makes them excellent for brand building, awareness campaigns, and reaching audiences who may not yet be actively searching for your products but might be interested.\n\nFacebook and Instagram advertising offers sophisticated targeting options. You can target users based on demographics, interests, behaviors, and even life events. You can create lookalike audiences based on your best customers, reach people who visited your website, or target custom audiences from your email list.\n\nThe combination of Facebook and Instagram—both owned by Meta—provides exceptional reach and diverse ad formats. Whether you want image ads, video ads, carousel ads, or stories ads, these platforms offer formats for every marketing objective.\n\nOur Facebook and Instagram advertising services create campaigns that deliver real business results. We handle everything from audience research to ad creation to ongoing optimization."
+    },
+    {
+      "section_type": "targeting",
+      "title": "Advanced Targeting Capabilities",
+      "subtitle": "",
+      "content": "Facebook and Instagram offer sophisticated targeting options:\n\n<h3>Demographic Targeting</h3>Reach users based on age, gender, location, language, and education.\n\n<h3>Interest Targeting</h3>Connect with users based on their interests, hobbies, and pages they follow.\n\n<h3>Behavioral Targeting</h3>Target users based on purchasing behaviors, device usage, and travel patterns.\n\n<h3>Lookalike Audiences</h3>Find new users who share characteristics with your existing customers.\n\n<h3>Custom Audiences</h3>Re-target website visitors, app users, or people from your email list.\n\n<h3>Retargeting</h3>Reach people who have interacted with your business but haven't converted yet.\n\n<h3>Broad Targeting</h3>Reach large audiences for brand awareness when specific targeting isn't necessary."
+    },
+    {
+      "section_type": "campaigns",
+      "title": "Types of Campaigns We Create",
+      "subtitle": "",
+      "content": "We create various campaign types for different objectives:\n\n<h3>Brand Awareness</h3>Reach large audiences and increase recognition for your brand.\n\n<h3>Traffic Campaigns</h3>Drive users to your website, app, or physical location.\n\n<h3>Engagement Campaigns</h3>Increase likes, comments, shares, and engagement on your content.\n\n<h3>Lead Generation</h3>Capture leads through optimized forms directly within Facebook/Instagram.\n\n<h3>Conversions</h3>Drive specific actions on your website—purchases, sign-ups, downloads.\n\n<h3>Video Campaigns</h3>Promote video content to build engagement and brand awareness.\n\n<h3>Catalog Sales</h3>Showcase products from your catalog to drive sales.\n\n<h3>Store Traffic</h3>Drive visits to physical retail locations."
+    },
+    {
+      "section_type": "creative",
+      "title": "Ad Creative and Design",
+      "subtitle": "",
+      "content": "We create compelling ad creative that captures attention:\n\n<h3>Image Ads</h3>Single images designed to stop scrolling and encourage action.\n\n<h3>Video Ads</h3>Engaging video content that tells your brand story.\n\n<h3>Carousel Ads</h3>Multiple images or videos in a single ad—perfect for showcasing products.\n\n<h3>Collection Ads</h3>Immersive experiences that showcase products and drive sales.\n\n<h3>Stories Ads</h3>Full-screen vertical ads that maximize impact on mobile.\n\n<h3>Slideshow Ads</h3>Lightweight video-like ads created from static images.\n\n<h3>Lead Form Ads</h3>Ads that capture leads without users leaving the platform."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Facebook/Instagram Ads?",
+      "subtitle": "",
+      "content": "Our Facebook/Instagram advertising clients typically see:\n\n<h3>Increased Reach</h3>Expand visibility beyond your follower base to relevant audiences.\n\n<h3>Lead Generation</h3>Capture leads at scale through optimized campaigns.\n\n<h3>Website Traffic</h3>Drive qualified visitors to your website.\n\n<h3>Brand Awareness</h3>Build recognition among precisely targeted audiences.\n\n<h3>Retargeting Success</h3>Convert warm audiences who have shown interest.\n\n<h3>Scalable Results</h3>Scale successful campaigns to increase revenue.\n\n<h3>Valuable Insights</h3>Gather data about your target audience for other marketing efforts."
+    }
+  ],
+  "pricing": {
+    "intro": "Facebook & Instagram Ads Pricing",
+    "description": "Flexible management plans for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$147/month",
+        "description": "For small budgets",
+        "features": [
+          "Campaign setup",
+          "Audience targeting",
+          "Ad creative design",
+          "$500 monthly ad spend",
+          "Monthly optimization",
+          "Basic reporting"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$297/month",
+        "description": "For growing businesses",
+        "features": [
+          "A/B testing",
+          "Retargeting campaigns",
+          "Video ad creation",
+          "$2,000 monthly ad spend",
+          "Bi-weekly optimization",
+          "Advanced reporting"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$497/month",
+        "description": "For established businesses",
+        "features": [
+          "Full creative suite",
+          "Custom audience development",
+          "Lead generation campaigns",
+          "Unlimited ad spend",
+          "Weekly optimization",
+          "Dedicated account manager"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "Which platforms do Facebook/Instagram ads appear on?", "answer": "Ads appear on Facebook, Instagram, Messenger, and the Audience Network—reaching billions of users across Meta's properties."},
+    {"question": "How much should I spend on Facebook/Instagram ads?", "answer": "Budget depends on your goals and audience size. We'll help you determine an effective budget during consultation."},
+    {"question": "Do you create ad creative?", "answer": "Yes! We handle all aspects of ad creation including copy, images, and video."},
+    {"question": "How long until I see results?", "answer": "Most campaigns see initial results within the first week. Significant optimization takes 2-4 weeks."},
+    {"question": "Can you target specific audiences?", "answer": "Absolutely. We can create custom audiences, lookalikes, and use detailed demographic targeting."}
+  ]
+}

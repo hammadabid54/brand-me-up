@@ -1,0 +1,75 @@
+{
+  "page_name": "portfolio",
+  "meta_title": "Portfolio & Case Studies | Brand Me Up",
+  "meta_description": "View our portfolio of successful marketing campaigns. See case studies for local SEO, social media, PPC, and comprehensive digital marketing results that speak for themselves.",
+  "meta_keywords": "portfolio, case studies, SEO results, social media case study, marketing success, client results",
+  "hero_title": "Our Work",
+  "hero_subtitle": "Case studies showcasing our marketing expertise and proven results.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "Results That Speak for Themselves",
+      "subtitle": "",
+      "content": "In digital marketing, results matter more than promises. We let our work speak for itself. Over the past 6+ years, we've helped 500+ businesses grow their online presence. We've generated 10,000+ dental leads and helped businesses across industries achieve their marketing goals.\n\nEvery business is unique, and every campaign requires customized strategies. But the common thread across all our work is a focus on measurable results. We don't just report on vanity metrics—we track the metrics that matter to your business: traffic that converts, leads that become customers, and revenue that grows.\n\nBelow are representative case studies showcasing the kind of results we deliver. While we've worked with businesses across industries, these examples demonstrate our expertise in key areas: local SEO for brick-and-mortar businesses, e-commerce SEO for online stores, and growth-focused SEO for SaaS companies."
+    },
+    {
+      "section_type": "dental_case",
+      "title": "Dental Practice: Dominating Local Search",
+      "subtitle": "",
+      "content": "Challenge: A dental practice in a competitive metropolitan area struggled to appear in local search results. Their competitor dominated the local pack, capturing the majority of search traffic. With limited marketing budget, they needed cost-effective solutions.\n\nOur Approach: We implemented a comprehensive local SEO strategy including Google Business Profile optimization, local citation building across 50+ directories, review generation strategies, and location-specific content creation. Every element was designed to signal relevance and prominence to Google's local algorithm.\n\nResults: Within 4 months, the practice appeared in the local pack for 15 primary keywords. Within 6 months, they saw 200% increase in local visibility and 150% more phone calls from organic search. The practice now receives consistent inquiries from patients searching for dental services in their area.\n\nKey Metrics: Local pack appearances increased from 3 to 15 keywords. Phone calls increased 150%. Website visits from local search increased 180%."
+    },
+    {
+      "section_type": "ecommerce_case",
+      "title": "E-commerce Store: Scaling Organic Traffic",
+      "subtitle": "",
+      "content": "Challenge: An online store selling fitness products faced increasing competition from larger retailers. Their product pages weren't ranking, and they relied heavily on paid advertising for traffic. They wanted to build sustainable organic traffic that didn't require continuous ad spend.\n\nOur Approach: We conducted a comprehensive technical audit and identified critical issues holding back rankings. We optimized 200+ product pages with unique descriptions, implemented proper schema markup, improved site speed, and created a content strategy targeting informational and commercial keywords.\n\nResults: Within 6 months, organic traffic increased 300%. Within 12 months, organic traffic accounted for 45% of total traffic, significantly reducing dependence on paid advertising. Sales from organic traffic increased 85%.\n\nKey Metrics: Organic traffic increased 300%. Product page rankings improved for 150+ keywords. Conversion rate from organic traffic improved 25%. Paid ad spend reduced by 40% while maintaining total sales."
+    },
+    {
+      "section_type": "saas_case",
+      "title": "SaaS Company: Building Trial Signups",
+      "subtitle": "",
+      "content": "Challenge: A B2B SaaS company needed to increase trial signups for their project management software. They faced stiff competition from established players with much larger marketing budgets. Their content wasn't ranking and wasn't converting visitors into trials.\n\nOur Approach: We developed a comprehensive content-led SEO strategy. This included creating comparison pages targeting users researching alternatives, building a resource center with tools and templates, developing in-depth guides for common use cases, and implementing proper schema markup for software applications.\n\nResults: Within 8 months, organic trial signups increased 250%. Cost per acquisition from organic traffic was 40% lower than paid channels. The company was able to reduce overall marketing spend while increasing trial volume.\n\nKey Metrics: Organic trial signups increased 250%. Content pages captured 60% of top-of-funnel traffic. Domain authority increased from 23 to 47. Backlinks increased from 200 to 1,500+."
+    },
+    {
+      "section_type": "approach",
+      "title": "Our Approach to Every Campaign",
+      "subtitle": "",
+      "content": "While every campaign is customized to the specific business and goals, our approach follows consistent principles:\n\nData-Driven Decisions: We make decisions based on data, not assumptions. Every optimization is backed by analysis and validated by results.\n\nLong-Term Focus: We build sustainable strategies that deliver lasting results, not quick wins that fade over time. Our approach compounds over time.\n\nTransparency: We report honestly on progress, including when things aren't working as expected. You'll always know exactly what's happening.\n\nContinuous Optimization: SEO requires ongoing attention. We monitor results and make adjustments as needed to improve performance.\n\nYour Success is Our Success: We measure our achievements by your growth. When your business succeeds, we succeed."
+    },
+    {
+      "section_type": "cta",
+      "title": "Ready to Achieve Similar Results?",
+      "subtitle": "",
+      "content": "These case studies represent the kind of results we deliver for businesses across industries. Whether you're a local business, e-commerce store, or SaaS company, we have the expertise to help you grow.\n\nSchedule a free consultation to discuss your specific goals. We'll analyze your current situation and outline a strategy to achieve results similar to these case studies.\n\nYour success story could be next. Let's write it together."
+    }
+  ],
+  "sample_cases": [
+    {
+      "client": "Dental Practice",
+      "category": "Local SEO",
+      "challenge": "Struggling to appear in local search results",
+      "solution": "Complete local SEO overhaul with GBP optimization",
+      "results": "200% increase in local visibility, 150% more phone calls"
+    },
+    {
+      "client": "E-commerce Store",
+      "category": "E-commerce SEO",
+      "challenge": "Low organic traffic to product pages",
+      "solution": "Product page optimization and content strategy",
+      "results": "300% increase in organic traffic, 85% more sales"
+    },
+    {
+      "client": "SaaS Company",
+      "category": "SaaS SEO",
+      "challenge": "Needed to increase trial signups",
+      "solution": "Content-led SEO strategy with comparison pages",
+      "results": "250% increase in organic trials, 40% lower CAC"
+    }
+  ],
+  "faqs": [
+    {"question": "Can I see more case studies?", "answer": "Contact us for detailed case studies relevant to your industry. We have examples across various sectors and service types."},
+    {"question": "How do you measure success?", "answer": "We track KPIs specific to your goals: traffic, rankings, leads, conversions, and revenue. Every client receives detailed reporting on metrics that matter to their business."},
+    {"question": "How long until I see results?", "answer": "Results vary by competition and current state. Most clients see initial improvements within 3-6 months, with significant results within 6-12 months."},
+    {"question": "Do you work with businesses in my industry?", "answer": "We've worked across many industries. Contact us to discuss your specific situation."}
+  ]
+}

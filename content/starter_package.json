@@ -1,0 +1,64 @@
+{
+  "service_name": "Starter Package",
+  "slug": "starter-package",
+  "category": "Packages",
+  "category_url": "/services/packages/",
+  "meta_title": "Starter Marketing Package | Essential Digital Marketing | Brand Me Up",
+  "meta_description": "Starter marketing package for new businesses. Essential SEO, social media, and content to establish your online presence and start growing.",
+  "meta_keywords": "starter marketing package, basic digital marketing, small business marketing, local SEO",
+  "hero_title": "Starter Marketing Package",
+  "hero_subtitle": "Essential marketing for new businesses ready to establish their online presence.",
+  "description": "The Starter Package provides essential marketing services for new businesses. Build your online presence with local SEO, social media, and automated content.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "Who is the Starter Package For?",
+      "subtitle": "",
+      "content": "The Starter Package is designed for new businesses just establishing their online presence. If you're a new business owner looking to get found online without a large marketing budget, this package provides the essential foundation for growth.\n\nMany new businesses struggle to compete with established companies in search results. The Starter Package gives you the tools to start building visibility—local SEO to dominate local search, social media to connect with customers, and ContentFlow to maintain consistent presence. This foundation enables future growth as your business expands.\n\nThe package is also ideal for businesses with limited marketing budgets who want professional marketing without the cost of comprehensive packages. You get real marketing expertise at an affordable price, with the option to upgrade as your business grows.\n\nIf you're just starting out and need to establish your presence, build awareness, and start generating leads, the Starter Package provides the essential services you need."
+    },
+    {
+      "section_type": "includes",
+      "title": "What's Included in the Starter Package",
+      "subtitle": "",
+      "content": "The Starter Package includes essential marketing services:\n\n<h3>Local SEO</h3>: We optimize your website for local search results. This includes Google Business Profile setup and optimization, local keyword research, on-page SEO, and local citation building. When customers search for your services locally, you'll appear prominently.\n\n<h3>Social Media (2 Platforms)</h3>: We manage your presence on 2 social media platforms of your choice. This includes content creation, posting, and basic engagement. Choose platforms where your audience spends time—Facebook, Instagram, LinkedIn, Twitter, or others.\n\n<h3>ContentFlow (Basic)</h3>: Our automated content service keeps your online presence active. We create and post 4 pieces of content monthly to your selected platforms. This consistent presence builds awareness without requiring your daily attention.\n\n<h3>Monthly Reports</h3>: You receive detailed monthly reports showing your marketing performance. Reports include traffic data, social metrics, and recommendations for improvement.\n\n<h3>Email Support</h3>: Our team is available via email to answer questions and provide guidance."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Benefits of the Starter Package",
+      "subtitle": "",
+      "content": "The Starter Package delivers significant value:\n\n<h3>Establish Online Presence</h3>: Get found by customers searching for your services locally.\n\n<h3>Professional Image</h3>: Consistent, quality marketing makes your business appear established and trustworthy.\n\n<h3>Local Dominance</h3>: Local SEO helps you dominate search results in your service area.\n\n<h3>Social Proof</h3>: Active social media profiles build credibility with potential customers.\n\n<h3>Consistent Content</h3>: Regular posts keep your business visible without requiring your time.\n\n<h3>Lead Generation</h3>: Start attracting leads while you focus on serving customers.\n\n<h3>Foundation for Growth</h3>: Build the foundation that can expand as your business grows."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect?",
+      "subtitle": "",
+      "content": "Starter Package clients typically see:\n\n<h3>Local Visibility</h3>: Appear prominently in local search results for your services.\n\n<h3>Social Following</h3>: Build initial following on selected social platforms.\n\n<h3>Website Traffic</h3>: Increased visitors from local search and social media.\n\n<h3>Online Credibility</h3>: Professional, consistent presence builds trust.\n\n<h3>Lead Generation</h3>: Begin attracting inquiries from potential customers.\n\n<h3>Marketing Foundation</h3>: Establish presence that can grow with your business."
+    }
+  ],
+  "pricing": {
+    "intro": "Starter Package Pricing",
+    "description": "Essential marketing for new businesses.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$397/month",
+        "description": "For new businesses",
+        "features": [
+          "Local SEO optimization",
+          "Social media (2 platforms)",
+          "ContentFlow (Basic - 4 posts/month)",
+          "Google Business Profile setup",
+          "Monthly performance reports",
+          "Email support"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "Can I choose which social platforms?", "answer": "Yes! You can choose any 2 platforms—Facebook, Instagram, LinkedIn, Twitter, Pinterest, or others."},
+    {"question": "How long until I see results?", "answer": "Most clients see initial results within 1-2 months. Local SEO results typically appear within 3-6 months."},
+    {"question": "Can I upgrade later?", "answer": "Absolutely! As your business grows, you can upgrade to Professional, Enterprise, or Full-Scale packages."},
+    {"question": "What's the commitment?", "answer": "All packages are month-to-month. No long-term contracts required."},
+    {"question": "Do you need my content?", "answer": "We create content from scratch. You can provide input if you wish, but it's not required."}
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "page_name": "ads",
+  "meta_title": "PPC Advertising Services | Google, Facebook, LinkedIn Ads | Brand Me Up",
+  "meta_description": "Expert PPC advertising services. Google Ads, Facebook/Instagram Ads, and LinkedIn Ads management. Drive immediate traffic and conversions with professional campaign management.",
+  "meta_keywords": "PPC advertising, Google Ads, Facebook Ads, LinkedIn Ads, paid advertising, search advertising, social media ads",
+  "hero_title": "PPC Advertising Services",
+  "hero_subtitle": "Drive immediate traffic and conversions with expert PPC advertising. Google, Facebook, and LinkedIn Ads.",
+  "description": "Professional PPC advertising services that deliver immediate results. We create and manage campaigns across all major platforms.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is PPC Advertising and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Pay-per-click (PPC) advertising is a model of internet marketing where advertisers pay a fee each time their ad is clicked. Essentially, it's a way of buying visits to your site rather than earning them organically. The most well-known PPC platform is Google Ads, but Facebook Ads, LinkedIn Ads, and other platforms also use this model.\n\nThe primary advantage of PPC is immediate visibility. While search engine optimization can take months to show results, PPC puts your business at the top of search results the moment your campaign goes live. This immediacy makes PPC invaluable for businesses that need to generate traffic and leads quickly.\n\nPPC also offers exceptional targeting capabilities. You can target users based on keywords they search for, demographics, interests, location, and even behavior. This precision ensures your ads reach people most likely to become customers, making PPC one of the most efficient marketing channels available.\n\nOur PPC advertising services create and manage campaigns that deliver real business results. We handle everything from keyword research and ad creation to ongoing optimization and reporting."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Why PPC Advertising is Essential for Business Growth",
+      "subtitle": "",
+      "content": "PPC provides unique advantages for businesses:\n\n<h3>Immediate Results</h3>Unlike SEO, PPC delivers traffic the moment campaigns launch. This is crucial for new product launches, seasonal promotions, or businesses needing quick results.\n\n<h3>Highly Targeted</h3>PPC platforms offer sophisticated targeting options. Reach exactly the audience you want based on keywords, demographics, location, and behavior.\n\n<h3>Budget Control</h3>You set your own budget and only pay when someone clicks. This makes PPC accessible for businesses of all sizes.\n\n<h3>Measurable ROI</h3>Every aspect of PPC is trackable. You know exactly how much you spend and what returns you generate.\n\n<h3>Competitive Advantage</h3>Outrank competitors in search results—even those with larger organic presence—with well-optimized ads.\n\n<h3>Flexible Scaling</h3>Increase or decrease spend based on performance and business needs. PPC scales with your budget.\n\n<h3>Data Insights</h3>PPC provides valuable data about keywords, audiences, and market trends that inform other marketing efforts."
+    },
+    {
+      "section_type": "services",
+      "title": "Our PPC Advertising Services",
+      "subtitle": "",
+      "content": "We offer comprehensive PPC services across all major platforms:\n\n<h3>Google Ads</h3>Search, display, shopping, and YouTube advertising on the world's largest advertising platform.\n\n<h3>Facebook/Instagram Ads</h3>Targeted social media advertising across Meta's family of apps.\n\n<h3>LinkedIn Ads</h3>B2B advertising for reaching professionals and decision-makers.\n\n<h3>Campaign Management</h3>Complete management from setup to ongoing optimization.\n\n<h3>Ad Creation</h3>Professional copywriting and design for compelling ads.\n\n<h3>Landing Pages</h3>High-converting landing pages designed to maximize conversions.\n\n<h3>Analytics and Reporting</h3>Detailed performance reports with actionable insights."
+    },
+    {
+      "section_type": "process",
+      "title": "Our PPC Management Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive approach to PPC management:\n\n<h3>Discovery</h3>We learn about your business, goals, target audience, and competitive landscape.\n\n<h3>Strategy Development</h3>We create a customized PPC strategy aligned with your business objectives.\n\n<h3>Campaign Setup</h3>We set up campaigns, ad groups, keywords, and ads with proper structure.\n\n<h3>Conversion Tracking</h3>We implement tracking to measure actual business results.\n\n<h3>Ongoing Optimization</h3>We continuously refine campaigns for better performance.\n\n<h3>Regular Reporting</h3>Detailed reports show exactly how your campaigns are performing."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from PPC Advertising?",
+      "subtitle": "",
+      "content": "Our PPC clients typically see significant improvements:\n\n<h3>Immediate Traffic</h3>Instantly appear at the top of search results for relevant keywords.\n\n<h3>Qualified Leads</h3>Targeted campaigns attract prospects likely to convert.\n\n<h3>Measurable ROI</h3>Clear tracking shows exactly what you get for your ad spend.\n\n<h3>Improved ROAS</h3>Optimization improves return on ad spend over time.\n\n<h3>Competitive Position</h3>Outrank competitors in search results.\n\n<h3>Scalable Growth</h3>Increase budget as results validate your campaigns."
+    }
+  ],
+  "pricing": {
+    "intro": "PPC Advertising Pricing",
+    "description": "Flexible management plans for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$147/month",
+        "description": "For small budgets",
+        "features": [
+          "1 platform management",
+          "Campaign setup",
+          "Keyword research",
+          "Ad copywriting",
+          "Monthly optimization",
+          "Basic reporting"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$297/month",
+        "description": "For growing businesses",
+        "features": [
+          "2 platform management",
+          "A/B testing",
+          "Conversion tracking setup",
+          "Bi-weekly optimization",
+          "Advanced reporting",
+          "Competitor analysis"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$497/month",
+        "description": "For aggressive growth",
+        "features": [
+          "All platforms management",
+          "Advanced targeting strategies",
+          "Retargeting campaigns",
+          "Weekly optimization",
+          "Dedicated account manager",
+          "Custom dashboards"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How much should I spend on ads?", "answer": "It depends on your goals, competition, and industry. We help determine an effective budget during consultation."},
+    {"question": "How long until I see results?", "answer": "Most campaigns see initial results within the first week. Significant optimization typically takes 2-4 weeks."},
+    {"question": "Do I need to sign a contract?", "answer": "No, our PPC management is month-to-month. You can scale or cancel anytime."},
+    {"question": "What platforms do you manage?", "answer": "We manage all major platforms including Google Ads, Facebook/Instagram, LinkedIn, and more."},
+    {"question": "Do you create ad creative?", "answer": "Yes, we handle all aspects of ad creation including copy and design."}
+  ]
+}

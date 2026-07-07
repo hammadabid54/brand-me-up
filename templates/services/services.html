@@ -1,0 +1,802 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_title %}Marketing Services - SEO, Social Media, Content & PPC | Brand Me Up{% endblock %}
+{% block meta_description %}Full-service digital marketing: SEO, social media management, content creation, Google Business Profile, paid advertising, and packages for every business size.{% endblock %}
+{% block meta_keywords %}digital marketing services, SEO, social media marketing, content creation, PPC advertising, Google Ads, GBP, marketing packages{% endblock %}
+
+{% block content %}
+<!-- ============================================================
+     Hero
+     ============================================================ -->
+<section class="services-hero">
+    <div class="hero-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-9">
+                <span class="section-badge">All Services · One Team</span>
+                <h1 class="display-4 fw-bold mb-3">
+                    Marketing That Actually <span class="hero-accent">Moves the Needle</span>
+                </h1>
+                <p class="lead mb-4 mx-auto" style="max-width: 720px;">
+                    From SEO to paid ads to content — explore every service we offer,
+                    all powered by AI and reviewed by humans.
+                </p>
+                <div class="d-flex justify-content-center flex-wrap gap-3">
+                    <a href="/contact/" class="btn btn-primary btn-lg">
+                        <i class="fas fa-rocket me-2"></i>Get Started
+                    </a>
+                    <a href="/services/packages/" class="btn btn-outline-dark btn-lg">
+                        <i class="fas fa-box me-2"></i>View Packages
+                    </a>
+                </div>
+                <div class="hero-stats mt-5">
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">7</div>
+                        <div class="hero-stat-label">Service Categories</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">30+</div>
+                        <div class="hero-stat-label">Specialized Services</div>
+                    </div>
+                    <div class="hero-stat-divider"></div>
+                    <div class="hero-stat-item">
+                        <div class="hero-stat-num">AI + Human</div>
+                        <div class="hero-stat-label">Powered Approach</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Category overview — 7 colorful tiles
+     ============================================================ -->
+<section class="py-5">
+    <div class="container py-4">
+        <div class="text-center mb-5">
+            <span class="section-badge">Browse by Category</span>
+            <h2 class="fw-bold mb-3">Pick a Category to Explore</h2>
+            <p class="text-muted mx-auto" style="max-width: 600px;">
+                Every category is led by specialists and reviewed end-to-end. Click any tile for details.
+            </p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-seo" class="cat-tile cat-tile-blue">
+                    <div class="cat-tile-icon"><i class="fas fa-search"></i></div>
+                    <h4 class="mb-1">SEO Services</h4>
+                    <p class="mb-2">Rank higher and drive organic traffic that converts.</p>
+                    <span class="cat-tile-count">5 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-social" class="cat-tile cat-tile-purple">
+                    <div class="cat-tile-icon"><i class="fas fa-share-nodes"></i></div>
+                    <h4 class="mb-1">Social Media</h4>
+                    <p class="mb-2">Management, ads, and community building across every platform.</p>
+                    <span class="cat-tile-count">3 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-content" class="cat-tile cat-tile-pink">
+                    <div class="cat-tile-icon"><i class="fas fa-pen"></i></div>
+                    <h4 class="mb-1">Content</h4>
+                    <p class="mb-2">Posts, blogs, videos, and copy that earn attention and rankings.</p>
+                    <span class="cat-tile-count">5 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-gbp" class="cat-tile cat-tile-green">
+                    <div class="cat-tile-icon"><i class="fab fa-google"></i></div>
+                    <h4 class="mb-1">Google Business</h4>
+                    <p class="mb-2">Get found in local search and the Google Maps pack.</p>
+                    <span class="cat-tile-count">3 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-ads" class="cat-tile cat-tile-orange">
+                    <div class="cat-tile-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h4 class="mb-1">PPC &amp; Ads</h4>
+                    <p class="mb-2">Google, Facebook, Instagram, and LinkedIn ad campaigns.</p>
+                    <span class="cat-tile-count">4 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-packages" class="cat-tile cat-tile-teal">
+                    <div class="cat-tile-icon"><i class="fas fa-box"></i></div>
+                    <h4 class="mb-1">Packages</h4>
+                    <p class="mb-2">Bundled services for any stage of business, all-in-one.</p>
+                    <span class="cat-tile-count">4 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="#category-other" class="cat-tile cat-tile-red">
+                    <div class="cat-tile-icon"><i class="fas fa-plus-circle"></i></div>
+                    <h4 class="mb-1">Specialized Services</h4>
+                    <p class="mb-2">Backlinking, PR, email marketing, web design, analytics.</p>
+                    <span class="cat-tile-count">5 sub-services</span>
+                    <span class="cat-tile-arrow">Explore <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SEO Category
+     ============================================================ -->
+<section id="category-seo" class="py-5 bg-light-section">
+    <div class="container py-4">
+        <div class="category-header cat-header-blue">
+            <div class="cat-header-icon"><i class="fas fa-search"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">SEO Services</h2>
+                <p class="text-muted mb-0">Rank higher, get found faster. Local, e-commerce, SaaS, technical, and enterprise SEO.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/seo/local-seo/" class="sub-tile">
+                    <div class="sub-tile-icon icon-blue"><i class="fas fa-map-marker-alt"></i></div>
+                    <h5 class="mb-2">Local SEO</h5>
+                    <p class="text-muted mb-3">For brick-and-mortar businesses targeting nearby customers.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/seo/ecommerce-seo/" class="sub-tile">
+                    <div class="sub-tile-icon icon-blue"><i class="fas fa-shopping-cart"></i></div>
+                    <h5 class="mb-2">E-commerce SEO</h5>
+                    <p class="text-muted mb-3">Drive organic traffic and sales for online stores at scale.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/seo/saas-seo/" class="sub-tile">
+                    <div class="sub-tile-icon icon-blue"><i class="fas fa-cloud"></i></div>
+                    <h5 class="mb-2">SaaS SEO</h5>
+                    <p class="text-muted mb-3">Attract trial users and build topical authority for software.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/seo/technical-seo/" class="sub-tile">
+                    <div class="sub-tile-icon icon-blue"><i class="fas fa-code"></i></div>
+                    <h5 class="mb-2">Technical SEO</h5>
+                    <p class="text-muted mb-3">Site speed, crawlability, indexation, Core Web Vitals.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/seo/enterprise-seo/" class="sub-tile">
+                    <div class="sub-tile-icon icon-blue"><i class="fas fa-building"></i></div>
+                    <h5 class="mb-2">Enterprise SEO</h5>
+                    <p class="text-muted mb-3">Large-scale SEO for complex, multi-region sites.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Social Media Category
+     ============================================================ -->
+<section id="category-social" class="py-5">
+    <div class="container py-4">
+        <div class="category-header cat-header-purple">
+            <div class="cat-header-icon"><i class="fas fa-share-nodes"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">Social Media</h2>
+                <p class="text-muted mb-0">Strategy, posting, ads, and community across every platform that matters.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/social-media/management/" class="sub-tile">
+                    <div class="sub-tile-icon icon-purple"><i class="fas fa-cogs"></i></div>
+                    <h5 class="mb-2">Management</h5>
+                    <p class="text-muted mb-3">Full social media management: planning, posting, replying.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/social-media/ads/" class="sub-tile">
+                    <div class="sub-tile-icon icon-purple"><i class="fas fa-bullhorn"></i></div>
+                    <h5 class="mb-2">Social Ads</h5>
+                    <p class="text-muted mb-3">Paid campaigns on Facebook, Instagram, LinkedIn & more.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/social-media/community/" class="sub-tile">
+                    <div class="sub-tile-icon icon-purple"><i class="fas fa-users"></i></div>
+                    <h5 class="mb-2">Community</h5>
+                    <p class="text-muted mb-3">Build and engage a real community around your brand.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Content Category
+     ============================================================ -->
+<section id="category-content" class="py-5 bg-light-section">
+    <div class="container py-4">
+        <div class="category-header cat-header-pink">
+            <div class="cat-header-icon"><i class="fas fa-pen"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">Content</h2>
+                <p class="text-muted mb-0">Words, posts, scripts, and video — content that earns attention and rankings.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/contentflow/" class="sub-tile">
+                    <div class="sub-tile-icon icon-pink"><i class="fas fa-bolt"></i></div>
+                    <h5 class="mb-2">ContentFlow</h5>
+                    <p class="text-muted mb-3">Post to all platforms from $50/mo. Done-for-you content.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/creation/" class="sub-tile">
+                    <div class="sub-tile-icon icon-pink"><i class="fas fa-file-alt"></i></div>
+                    <h5 class="mb-2">Content Creation</h5>
+                    <p class="text-muted mb-3">AI-assisted writing with human quality checks.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/blog-writing/" class="sub-tile">
+                    <div class="sub-tile-icon icon-pink"><i class="fas fa-blog"></i></div>
+                    <h5 class="mb-2">Blog Writing</h5>
+                    <p class="text-muted mb-3">SEO-optimized blog posts that rank and engage.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/video-production/" class="sub-tile">
+                    <div class="sub-tile-icon icon-pink"><i class="fas fa-video"></i></div>
+                    <h5 class="mb-2">Video Production</h5>
+                    <p class="text-muted mb-3">Video content creation for any channel.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/content/copywriting/" class="sub-tile">
+                    <div class="sub-tile-icon icon-pink"><i class="fas fa-copy"></i></div>
+                    <h5 class="mb-2">Copywriting</h5>
+                    <p class="text-muted mb-3">Marketing copy that turns readers into customers.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     GBP Category
+     ============================================================ -->
+<section id="category-gbp" class="py-5">
+    <div class="container py-4">
+        <div class="category-header cat-header-green">
+            <div class="cat-header-icon"><i class="fab fa-google"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">Google Business Profile</h2>
+                <p class="text-muted mb-0">Get found in local search and the Google Maps pack.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/gbp/setup/" class="sub-tile">
+                    <div class="sub-tile-icon icon-green"><i class="fas fa-map-marker-alt"></i></div>
+                    <h5 class="mb-2">GBP Setup</h5>
+                    <p class="text-muted mb-3">Complete GBP profile setup from scratch.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/gbp/management/" class="sub-tile">
+                    <div class="sub-tile-icon icon-green"><i class="fas fa-cogs"></i></div>
+                    <h5 class="mb-2">GBP Management</h5>
+                    <p class="text-muted mb-3">Ongoing GBP management and posts.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/gbp/optimization/" class="sub-tile">
+                    <div class="sub-tile-icon icon-green"><i class="fas fa-chart-line"></i></div>
+                    <h5 class="mb-2">GBP Optimization</h5>
+                    <p class="text-muted mb-3">Optimize for more visibility and conversions.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PPC/Ads Category
+     ============================================================ -->
+<section id="category-ads" class="py-5 bg-light-section">
+    <div class="container py-4">
+        <div class="category-header cat-header-orange">
+            <div class="cat-header-icon"><i class="fas fa-bullhorn"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">PPC &amp; Advertising</h2>
+                <p class="text-muted mb-0">AI-optimized paid campaigns for maximum ROI.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/ads/google-ads/" class="sub-tile">
+                    <div class="sub-tile-icon icon-orange"><i class="fab fa-google"></i></div>
+                    <h5 class="mb-2">Google Ads</h5>
+                    <p class="text-muted mb-3">Search and display advertising on Google.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/ads/facebook-ads/" class="sub-tile">
+                    <div class="sub-tile-icon icon-orange"><i class="fab fa-facebook"></i></div>
+                    <h5 class="mb-2">Facebook &amp; Instagram Ads</h5>
+                    <p class="text-muted mb-3">Paid social campaigns with tight targeting.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/ads/linkedin-ads/" class="sub-tile">
+                    <div class="sub-tile-icon icon-orange"><i class="fab fa-linkedin"></i></div>
+                    <h5 class="mb-2">LinkedIn Ads</h5>
+                    <p class="text-muted mb-3">B2B advertising to decision-makers.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/ads/management/" class="sub-tile">
+                    <div class="sub-tile-icon icon-orange"><i class="fas fa-tasks"></i></div>
+                    <h5 class="mb-2">PPC Management</h5>
+                    <p class="text-muted mb-3">Full PPC campaign management end-to-end.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Packages Category
+     ============================================================ -->
+<section id="category-packages" class="py-5">
+    <div class="container py-4">
+        <div class="category-header cat-header-teal">
+            <div class="cat-header-icon"><i class="fas fa-box"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">Marketing Packages</h2>
+                <p class="text-muted mb-0">Comprehensive bundles for any stage of business.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/packages/starter/" class="sub-tile">
+                    <div class="sub-tile-icon icon-teal"><i class="fas fa-rocket"></i></div>
+                    <h5 class="mb-2">Starter Package</h5>
+                    <p class="text-muted mb-3">For small businesses just getting started.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/packages/professional/" class="sub-tile">
+                    <div class="sub-tile-icon icon-teal"><i class="fas fa-bolt"></i></div>
+                    <h5 class="mb-2">Professional Package</h5>
+                    <p class="text-muted mb-3">For growing businesses ready to scale.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/packages/enterprise/" class="sub-tile">
+                    <div class="sub-tile-icon icon-teal"><i class="fas fa-crown"></i></div>
+                    <h5 class="mb-2">Enterprise Package</h5>
+                    <p class="text-muted mb-3">For large businesses dominating their market.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/packages/full-scale/" class="sub-tile">
+                    <div class="sub-tile-icon icon-teal"><i class="fas fa-fire"></i></div>
+                    <h5 class="mb-2">Full-Scale Package</h5>
+                    <p class="text-muted mb-3">Complete digital marketing for ambitious brands.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     Other Services Category
+     ============================================================ -->
+<section id="category-other" class="py-5 bg-light-section">
+    <div class="container py-4">
+        <div class="category-header cat-header-red">
+            <div class="cat-header-icon"><i class="fas fa-plus-circle"></i></div>
+            <div>
+                <span class="section-badge">Category</span>
+                <h2 class="fw-bold mb-1">Specialized Services</h2>
+                <p class="text-muted mb-0">Specialty offerings that round out a complete marketing strategy.</p>
+            </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/other/backlinking/" class="sub-tile">
+                    <div class="sub-tile-icon icon-red"><i class="fas fa-link"></i></div>
+                    <h5 class="mb-2">Backlinking</h5>
+                    <p class="text-muted mb-3">High-quality link building that earns authority.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/other/press-release/" class="sub-tile">
+                    <div class="sub-tile-icon icon-red"><i class="fas fa-bullhorn"></i></div>
+                    <h5 class="mb-2">Press Release</h5>
+                    <p class="text-muted mb-3">Press release distribution to media outlets.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/other/email-marketing/" class="sub-tile">
+                    <div class="sub-tile-icon icon-red"><i class="fas fa-envelope"></i></div>
+                    <h5 class="mb-2">Email Marketing</h5>
+                    <p class="text-muted mb-3">Email campaigns that nurture and convert.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/other/web-design/" class="sub-tile">
+                    <div class="sub-tile-icon icon-red"><i class="fas fa-globe"></i></div>
+                    <h5 class="mb-2">Web Design</h5>
+                    <p class="text-muted mb-3">Professional websites built to convert.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <a href="/services/other/analytics/" class="sub-tile">
+                    <div class="sub-tile-icon icon-red"><i class="fas fa-chart-bar"></i></div>
+                    <h5 class="mb-2">Analytics</h5>
+                    <p class="text-muted mb-3">Performance tracking and reporting dashboards.</p>
+                    <span class="sub-tile-arrow">Learn more <i class="fas fa-arrow-right"></i></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="py-5 cta-section">
+    <div class="container py-4 text-center">
+        <h2 class="fw-bold mb-3">Not Sure Where to Start?</h2>
+        <p class="mb-4 mx-auto" style="max-width: 560px; opacity: .92;">
+            Tell us about your business and goals. We'll recommend the right mix of services
+            and quote you a clear plan — no obligation.
+        </p>
+        <a href="/contact/" class="btn btn-light btn-lg px-4">
+            <i class="fas fa-comments me-2"></i>Book a Free Consultation
+        </a>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* ============================================================
+       Hero
+       ============================================================ */
+    .services-hero {
+        position: relative;
+        background:
+            radial-gradient(ellipse at top right, rgba(217, 37, 44, .10) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom left, rgba(124, 58, 237, .08) 0%, transparent 50%),
+            linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+        padding: clamp(4rem, 9vw, 7rem) 0 clamp(3rem, 7vw, 5rem);
+        overflow: hidden;
+    }
+    .services-hero .hero-shapes {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        pointer-events: none;
+    }
+    .services-hero .shape {
+        position: absolute;
+        border-radius: 50%;
+    }
+    .services-hero .shape-1 {
+        width: 400px; height: 400px;
+        background: linear-gradient(135deg, #f97316, #fbbf24);
+        top: -150px; right: -100px;
+        opacity: .12;
+        animation: floatShape 8s ease-in-out infinite;
+    }
+    .services-hero .shape-2 {
+        width: 320px; height: 320px;
+        background: linear-gradient(135deg, #2563eb, #06b6d4);
+        bottom: -120px; left: -80px;
+        opacity: .12;
+        animation: floatShape 10s ease-in-out infinite reverse;
+    }
+    .services-hero .shape-3 {
+        width: 200px; height: 200px;
+        background: #d9252c;
+        top: 30%; left: 15%;
+        opacity: .08;
+        animation: pulseShape 6s ease-in-out infinite;
+    }
+    @keyframes floatShape {
+        0%, 100% { transform: translateY(0) rotate(0deg); }
+        50% { transform: translateY(-25px) rotate(6deg); }
+    }
+    @keyframes pulseShape {
+        0%, 100% { transform: scale(1); opacity: .08; }
+        50% { transform: scale(1.1); opacity: .12; }
+    }
+    .services-hero .display-4 {
+        line-height: 1.1;
+        letter-spacing: -.02em;
+    }
+    .services-hero .hero-accent {
+        background: linear-gradient(135deg, #d9252c, #f97316);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .services-hero .lead {
+        color: var(--ink-soft);
+        font-size: 1.15rem;
+    }
+    .hero-stats {
+        display: inline-flex;
+        align-items: center;
+        gap: 1.5rem;
+        background: var(--white);
+        padding: 1.25rem 2rem;
+        border-radius: 60px;
+        box-shadow: 0 10px 30px rgba(15, 23, 42, .08);
+        border: 1px solid var(--line);
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .hero-stat-item {
+        text-align: center;
+    }
+    .hero-stat-num {
+        font-family: 'Outfit', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: var(--red);
+        line-height: 1;
+        margin-bottom: .25rem;
+    }
+    .hero-stat-label {
+        font-size: .8rem;
+        color: var(--muted);
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: .4px;
+    }
+    .hero-stat-divider {
+        width: 1px;
+        height: 36px;
+        background: var(--line);
+    }
+
+    /* ============================================================
+       Category overview tiles
+       ============================================================ */
+    .cat-tile {
+        display: block;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 1.75rem;
+        color: var(--ink-soft);
+        text-decoration: none;
+        height: 100%;
+        transition: all .25s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    .cat-tile::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 5px;
+    }
+    .cat-tile-blue::before   { background: linear-gradient(90deg, #2563eb, #3b82f6); }
+    .cat-tile-purple::before { background: linear-gradient(90deg, #7c3aed, #a855f7); }
+    .cat-tile-pink::before   { background: linear-gradient(90deg, #db2777, #f472b6); }
+    .cat-tile-green::before  { background: linear-gradient(90deg, #16a34a, #22c55e); }
+    .cat-tile-orange::before { background: linear-gradient(90deg, #d97706, #f59e0b); }
+    .cat-tile-teal::before   { background: linear-gradient(90deg, #0d9488, #14b8a6); }
+    .cat-tile-red::before    { background: linear-gradient(90deg, #d9252c, #f97316); }
+    .cat-tile:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 40px rgba(15, 23, 42, .12);
+        border-color: rgba(217, 37, 44, .25);
+    }
+    .cat-tile-icon {
+        width: 56px; height: 56px;
+        border-radius: 14px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--white);
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    .cat-tile-blue .cat-tile-icon   { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .cat-tile-purple .cat-tile-icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+    .cat-tile-pink .cat-tile-icon   { background: linear-gradient(135deg, #db2777, #f472b6); }
+    .cat-tile-green .cat-tile-icon  { background: linear-gradient(135deg, #16a34a, #22c55e); }
+    .cat-tile-orange .cat-tile-icon { background: linear-gradient(135deg, #d97706, #f59e0b); }
+    .cat-tile-teal .cat-tile-icon   { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+    .cat-tile-red .cat-tile-icon    { background: linear-gradient(135deg, #d9252c, #f97316); }
+    .cat-tile h4 { color: var(--ink); }
+    .cat-tile p {
+        color: var(--muted);
+        margin-bottom: .75rem;
+        font-size: .95rem;
+    }
+    .cat-tile-count {
+        display: inline-block;
+        background: var(--surface-2);
+        color: var(--muted);
+        padding: .25rem .6rem;
+        border-radius: 50px;
+        font-size: .75rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .cat-tile-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        color: var(--red);
+        font-weight: 600;
+        font-size: .9rem;
+        transition: gap .2s ease;
+    }
+    .cat-tile:hover .cat-tile-arrow { gap: .6rem; }
+
+    /* ============================================================
+       Category section header
+       ============================================================ */
+    .category-header {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.25rem;
+        padding-bottom: 1.25rem;
+        border-bottom: 1px solid var(--line);
+    }
+    .cat-header-icon {
+        width: 64px; height: 64px;
+        border-radius: 16px;
+        display: flex; align-items: center; justify-content: center;
+        color: var(--white);
+        font-size: 1.75rem;
+        flex-shrink: 0;
+    }
+    .cat-header-blue .cat-header-icon   { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+    .cat-header-purple .cat-header-icon { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+    .cat-header-pink .cat-header-icon   { background: linear-gradient(135deg, #db2777, #f472b6); }
+    .cat-header-green .cat-header-icon  { background: linear-gradient(135deg, #16a34a, #22c55e); }
+    .cat-header-orange .cat-header-icon { background: linear-gradient(135deg, #d97706, #f59e0b); }
+    .cat-header-teal .cat-header-icon   { background: linear-gradient(135deg, #0d9488, #14b8a6); }
+    .cat-header-red .cat-header-icon    { background: linear-gradient(135deg, #d9252c, #f97316); }
+
+    /* ============================================================
+       Sub-service tile
+       ============================================================ */
+    .sub-tile {
+        display: block;
+        background: var(--white);
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 1.5rem;
+        color: var(--ink-soft);
+        text-decoration: none;
+        height: 100%;
+        transition: all .25s ease;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, .04);
+    }
+    .sub-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 30px rgba(15, 23, 42, .1);
+        border-color: rgba(217, 37, 44, .3);
+    }
+    .sub-tile-icon {
+        width: 48px; height: 48px;
+        border-radius: 12px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    .icon-blue   { background: #dbeafe; color: #2563eb; }
+    .icon-purple { background: #ede9fe; color: #7c3aed; }
+    .icon-pink   { background: #fce7f3; color: #db2777; }
+    .icon-green  { background: #dcfce7; color: #16a34a; }
+    .icon-orange { background: #fef3c7; color: #d97706; }
+    .icon-teal   { background: #ccfbf1; color: #0d9488; }
+    .icon-red    { background: #fee2e2; color: #d9252c; }
+    .sub-tile h5 { color: var(--ink); }
+    .sub-tile p {
+        color: var(--muted);
+        margin-bottom: 1rem;
+        font-size: .9rem;
+    }
+    .sub-tile-arrow {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        color: var(--red);
+        font-weight: 600;
+        font-size: .85rem;
+        transition: gap .2s ease;
+    }
+    .sub-tile:hover .sub-tile-arrow { gap: .6rem; }
+
+    /* ============================================================
+       CTA
+       ============================================================ */
+    .cta-section {
+        background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 50%, #7c0a0e 100%);
+        color: var(--white);
+    }
+    .cta-section h2 { color: var(--white); }
+
+    /* ============================================================
+       Mobile tweaks
+       ============================================================ */
+    @media (max-width: 767.98px) {
+        .hero-stats {
+            gap: .75rem;
+            padding: 1rem 1.25rem;
+            border-radius: var(--radius-lg);
+        }
+        .hero-stat-num { font-size: 1.2rem; }
+        .hero-stat-label { font-size: .7rem; }
+        .hero-stat-divider { display: none; }
+        .category-header { flex-direction: column; }
+        .cat-header-icon { width: 52px; height: 52px; font-size: 1.4rem; }
+    }
+</style>
+{% endblock %}

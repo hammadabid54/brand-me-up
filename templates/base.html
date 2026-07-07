@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Meta Tags -->
+    <title>{% block meta_title %}Brand Me Up - Premier Digital Marketing Services{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}We provide AI-powered marketing solutions with human expertise to help your business grow. Our services include SEO, social media marketing, content creation, and more.{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}Brand Me Up, AI marketing agency, digital marketing, SEO services, social media marketing, content creation, PPC advertising, local SEO, e-commerce SEO{% endblock %}">
+    <meta name="author" content="Brand Me Up">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="{% block og_title %}Brand Me Up - Premier Digital Marketing Services{% endblock %}">
+    <meta property="og:description" content="{% block og_description %}AI-powered marketing solutions with human expertise. Get results-driven digital marketing at competitive prices.{% endblock %}">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ request.build_absolute_uri|default:'https://www.brandmeup.org' }}">
+    <meta property="og:image" content="{% block og_image %}{% endblock %}">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{% block twitter_title %}Brand Me Up - Premier Digital Marketing Services{% endblock %}">
+    <meta name="twitter:description" content="{% block twitter_description %}AI-powered marketing solutions with human expertise. Get results-driven digital marketing at competitive prices.{% endblock %}">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="{{ request.build_absolute_uri|default:'https://www.brandmeup.org' }}">
+
+    <!-- Favicon (use a generic icon for now) -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23d9252c'/%3E%3Ctext x='50' y='68' font-size='60' font-family='system-ui' font-weight='800' fill='white' text-anchor='middle'%3EB%3C/text%3E%3C/svg%3E">
+
+    <!-- Google Fonts: preconnect for faster load -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    {% block schema_markup %}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "MarketingAgency",
+        "name": "Brand Me Up",
+        "url": "https://www.brandmeup.org",
+        "logo": "https://www.brandmeup.org/static/images/BMU - Main Logo.png",
+        "description": "AI-powered marketing solutions with human expertise to help your business grow.",
+        "telephone": "+923324456974",
+        "email": "contact@brandmeup.org",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Lahore",
+            "addressRegion": "Punjab",
+            "addressCountry": "PK"
+        },
+        "priceRange": "$$",
+        "sameAs": [
+            "https://www.linkedin.com/company/brand-me-up-official",
+            "https://www.facebook.com/brandmeup.bmu/",
+            "https://www.instagram.com/brandmeup.official/"
+        ]
+    }
+    </script>
+    {% endblock %}
+
+    <style>
+        /* ============================================================
+           Brand Me Up — Light, modern, mobile-first design system
+           ============================================================ */
+        :root {
+            --red:        #d9252c;
+            --red-light:  #e8444f;
+            --red-dark:   #b01e24;
+            --ink:        #0f172a;       /* near-black for headings */
+            --ink-soft:   #1e293b;       /* for body copy */
+            --muted:      #64748b;       /* secondary text */
+            --line:       #e2e8f0;       /* borders / dividers */
+            --bg:         #ffffff;       /* page bg */
+            --surface:    #f8fafc;       /* alt section bg */
+            --surface-2:  #f1f5f9;
+            --white:      #ffffff;
+            --shadow:     0 4px 20px rgba(15, 23, 42, 0.08);
+            --shadow-lg:  0 12px 40px rgba(15, 23, 42, 0.12);
+            --radius:     12px;
+            --radius-lg:  18px;
+            --radius-md:  14px;
+            --radius-sm:  6px;
+
+            /* Legacy dark-theme aliases — used by older landing pages
+               (about, contact, services, etc.) so their inline styles
+               keep working. New code should prefer the variables above. */
+            --near-black:   #0f172a;
+            --dark-red:     #5e0a0f;
+            --black:        #000000;
+            --card-surface: #1e293b;
+            --light-section:#f5f5f5;
+            --text-light:   #ffffff;
+            --text-dark:    #1a1a1a;
+            --text-muted:   #94a3b8;
+            --border:       #3a3a3a;
+            --border-light: #e2e8f0;
+        }
+
+        * { box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+            color: var(--ink-soft);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Outfit', system-ui, sans-serif;
+            color: var(--ink);
+            font-weight: 700;
+            line-height: 1.25;
+        }
+
+        h1 { font-size: clamp(2rem, 5vw, 3.25rem); }
+        h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+        h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
+
+        a { color: var(--red); text-decoration: none; transition: color .2s ease; }
+        a:hover { color: var(--red-dark); }
+
+        /* ============================================================
+           Navbar
+           ============================================================ */
+        .navbar {
+            background: var(--white);
+            border-bottom: 1px solid var(--line);
+            padding: .75rem 0;
+            box-shadow: 0 1px 0 rgba(15,23,42,.02);
+        }
+        .navbar-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -.5px;
+            color: var(--ink) !important;
+            text-decoration: none;
+        }
+        .navbar-brand .accent { color: var(--red); }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--ink-soft) !important;
+            padding: .5rem .9rem !important;
+            border-radius: var(--radius);
+            transition: background .2s ease, color .2s ease;
+            position: relative;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--red) !important;
+            background: rgba(217, 37, 44, .06);
+        }
+
+        .navbar .btn-primary {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
+            font-weight: 600;
+            border-radius: var(--radius);
+            padding: .55rem 1.1rem;
+            transition: all .2s ease;
+        }
+        .navbar .btn-primary:hover {
+            background: var(--red-dark);
+            border-color: var(--red-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(217, 37, 44, .3);
+            color: var(--white);
+        }
+
+        .navbar .btn-outline-primary {
+            background: transparent;
+            border: 1.5px solid var(--line);
+            color: var(--ink);
+            font-weight: 600;
+            border-radius: var(--radius);
+            padding: .5rem 1rem;
+            transition: all .2s ease;
+        }
+        .navbar .btn-outline-primary:hover {
+            border-color: var(--red);
+            color: var(--red);
+            background: rgba(217, 37, 44, .04);
+        }
+
+        .navbar-toggler {
+            border: 1.5px solid var(--line);
+            padding: .4rem .6rem;
+            border-radius: var(--radius);
+        }
+        .navbar-toggler:focus { box-shadow: none; }
+        .navbar-toggler-icon {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='%230f172a' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2.5' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+        }
+
+        /* Mega menu: desktop */
+        @media (min-width: 992px) {
+            .mega-menu { position: static; }
+            .mega-menu > .dropdown-menu {
+                width: 100%;
+                left: 0; right: 0;
+                margin-top: .25rem;
+                border: 1px solid var(--line);
+                border-radius: var(--radius-lg);
+                box-shadow: var(--shadow-lg);
+                padding: 1.5rem;
+                background: var(--white);
+            }
+            .mega-menu-title {
+                font-family: 'Outfit', sans-serif;
+                font-weight: 700;
+                color: var(--red);
+                font-size: .8rem;
+                text-transform: uppercase;
+                letter-spacing: .6px;
+                margin-bottom: .75rem;
+                padding-bottom: .5rem;
+                border-bottom: 1px solid var(--line);
+            }
+            .mega-menu-link {
+                display: flex;
+                align-items: center;
+                gap: .5rem;
+                padding: .4rem 0;
+                color: var(--ink-soft);
+                font-size: .95rem;
+                text-decoration: none;
+                transition: color .15s ease, padding .15s ease;
+            }
+            .mega-menu-link:hover { color: var(--red); padding-left: .25rem; }
+            .mega-menu-link i { color: var(--muted); width: 1.1rem; }
+            .mega-menu-link:hover i { color: var(--red); }
+            .mega-menu-badge {
+                display: inline-block;
+                font-size: .65rem;
+                padding: .1rem .4rem;
+                border-radius: 1rem;
+                margin-left: .35rem;
+                font-weight: 600;
+            }
+            .badge-popular  { background: rgba(217,37,44,.1); color: var(--red); }
+            .badge-new      { background: rgba(139,92,246,.1); color: #7c3aed; }
+            .badge-affordable { background: rgba(245,158,11,.1); color: #d97706; }
+        }
+
+        /* Mobile menu: stack vertically, no absolute positioning */
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                margin-top: .75rem;
+                padding-top: .75rem;
+                border-top: 1px solid var(--line);
+            }
+            .navbar-nav .nav-link {
+                padding: .7rem .5rem !important;
+                border-bottom: 1px solid var(--line);
+            }
+            .navbar-nav .nav-item:last-child .nav-link { border-bottom: none; }
+            .navbar .btn { width: 100%; margin-top: .5rem; }
+            .dropdown-menu {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 .5rem !important;
+                background: var(--surface) !important;
+                border-radius: var(--radius) !important;
+                margin: 0 !important;
+            }
+            .mega-menu-title { padding-left: .5rem; }
+            .mega-menu-link { padding: .55rem .5rem !important; }
+        }
+
+        /* ============================================================
+           Buttons
+           ============================================================ */
+        .btn {
+            font-weight: 600;
+            border-radius: var(--radius);
+            padding: .65rem 1.25rem;
+            transition: all .2s ease;
+        }
+        .btn-primary {
+            background: var(--red);
+            border-color: var(--red);
+            color: var(--white);
+        }
+        .btn-primary:hover, .btn-primary:focus {
+            background: var(--red-dark);
+            border-color: var(--red-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(217, 37, 44, .3);
+            color: var(--white);
+        }
+        .btn-light {
+            background: var(--white);
+            border-color: var(--white);
+            color: var(--red);
+        }
+        .btn-light:hover {
+            background: var(--ink);
+            color: var(--white);
+            border-color: var(--ink);
+        }
+        .btn-outline-primary {
+            border: 1.5px solid var(--red);
+            color: var(--red);
+            background: transparent;
+        }
+        .btn-outline-primary:hover {
+            background: var(--red);
+            color: var(--white);
+            border-color: var(--red);
+        }
+        .btn-outline-dark {
+            border: 1.5px solid var(--ink);
+            color: var(--ink);
+        }
+        .btn-outline-dark:hover {
+            background: var(--ink);
+            color: var(--white);
+        }
+
+        /* ============================================================
+           Cards & sections
+           ============================================================ */
+        .section-badge {
+            display: inline-block;
+            background: rgba(217, 37, 44, .08);
+            color: var(--red);
+            padding: .35rem .9rem;
+            border-radius: 50px;
+            font-size: .8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .5px;
+            margin-bottom: .75rem;
+        }
+
+        .bg-light-section { background: var(--surface); color: var(--ink-soft); }
+        .bg-light-section h1, .bg-light-section h2, .bg-light-section h3,
+        .bg-light-section h4, .bg-light-section h5, .bg-light-section h6 { color: var(--ink); }
+
+        /* Apply dark text to ANY Bootstrap-style light section
+           (fixes the white-on-light visibility bug from the previous design) */
+        .bg-light, .bg-white {
+            color: var(--ink-soft) !important;
+        }
+        .bg-light h1, .bg-light h2, .bg-light h3,
+        .bg-light h4, .bg-light h5, .bg-light h6,
+        .bg-white h1, .bg-white h2, .bg-white h3,
+        .bg-white h4, .bg-white h5, .bg-white h6 {
+            color: var(--ink) !important;
+        }
+
+        /* Custom map of bootstrap text utility colors so they read on light bg */
+        .text-muted { color: var(--muted) !important; }
+        .text-red, .text-primary { color: var(--red) !important; }
+        .text-dark { color: var(--ink) !important; }
+
+        /* Cards */
+        .card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: rgba(217, 37, 44, .3);
+        }
+        .card-body { padding: 1.5rem; }
+        .card-title { color: var(--ink); }
+
+        /* ============================================================
+           Hero (used by inner pages)
+           ============================================================ */
+        .page-hero {
+            background: linear-gradient(135deg, var(--red) 0%, var(--red-dark) 50%, #7c0a0e 100%);
+            color: var(--white);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(255,255,255,.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        .page-hero h1 { color: var(--white); }
+        .page-hero p { color: rgba(255,255,255,.9); }
+
+        /* ============================================================
+           Footer
+           ============================================================ */
+        .footer {
+            background: var(--ink);
+            color: rgba(255,255,255,.7);
+            padding: 60px 0 30px;
+        }
+        .footer-brand {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: var(--white);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        .footer-brand .accent { color: var(--red); }
+        .footer-title {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            font-size: .8rem;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            padding-bottom: .5rem;
+            border-bottom: 1px solid rgba(255,255,255,.1);
+        }
+        .footer-links { list-style: none; padding: 0; margin: 0; }
+        .footer-links li { margin-bottom: .6rem; }
+        .footer-links a {
+            color: rgba(255,255,255,.7);
+            text-decoration: none;
+            transition: color .2s ease, padding .2s ease;
+            display: inline-block;
+        }
+        .footer-links a:hover { color: var(--red); padding-left: .25rem; }
+        .footer-links a i { color: var(--red); margin-right: .5rem; width: 1rem; }
+        .footer-social { display: flex; gap: .5rem; margin-top: 1rem; }
+        .footer-social a {
+            width: 38px; height: 38px;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,.08);
+            border-radius: 50%;
+            color: rgba(255,255,255,.8);
+            transition: all .2s ease;
+        }
+        .footer-social a:hover {
+            background: var(--red);
+            color: var(--white);
+            transform: translateY(-2px);
+        }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,.1);
+            padding-top: 1.5rem;
+            margin-top: 2.5rem;
+            color: rgba(255,255,255,.5);
+            font-size: .9rem;
+        }
+        .footer-bottom a { color: rgba(255,255,255,.7); }
+        .footer-bottom a:hover { color: var(--red); }
+
+        /* ============================================================
+           Responsive type scale
+           ============================================================ */
+        @media (max-width: 768px) {
+            .display-large { font-size: 2.25rem !important; }
+            section.py-5 { padding: 3rem 0 !important; }
+            .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+    <!-- ============================================================
+         Navigation
+         ============================================================ -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><span class="accent">Brand</span> Me Up</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+
+                    <li class="nav-item mega-menu dropdown">
+                        <a class="nav-link dropdown-toggle" href="/services/" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Services
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="servicesDropdown">
+                            <div class="row g-3">
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="mega-menu-title">SEO Services</div>
+                                    <a href="/services/seo/" class="mega-menu-link"><i class="fas fa-search"></i>SEO Overview</a>
+                                    <a href="/services/seo/local-seo/" class="mega-menu-link"><i class="fas fa-map-marker-alt"></i>Local SEO <span class="mega-menu-badge badge-popular">Popular</span></a>
+                                    <a href="/services/seo/ecommerce-seo/" class="mega-menu-link"><i class="fas fa-shopping-cart"></i>E-commerce SEO</a>
+                                    <a href="/services/seo/saas-seo/" class="mega-menu-link"><i class="fas fa-cloud"></i>SaaS SEO</a>
+                                    <a href="/services/seo/technical-seo/" class="mega-menu-link"><i class="fas fa-code"></i>Technical SEO</a>
+                                    <a href="/services/seo/enterprise-seo/" class="mega-menu-link"><i class="fas fa-building"></i>Enterprise SEO</a>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="mega-menu-title">Social Media</div>
+                                    <a href="/services/social-media/" class="mega-menu-link"><i class="fas fa-share-nodes"></i>Overview</a>
+                                    <a href="/services/social-media/management/" class="mega-menu-link"><i class="fas fa-cogs"></i>Management</a>
+                                    <a href="/services/social-media/ads/" class="mega-menu-link"><i class="fas fa-bullhorn"></i>Social Ads</a>
+                                    <a href="/services/social-media/community/" class="mega-menu-link"><i class="fas fa-users"></i>Community</a>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="mega-menu-title">Content</div>
+                                    <a href="/services/content/" class="mega-menu-link"><i class="fas fa-pen"></i>Content Overview</a>
+                                    <a href="/services/content/contentflow/" class="mega-menu-link"><i class="fas fa-bolt"></i>ContentFlow <span class="mega-menu-badge badge-affordable">From $50</span></a>
+                                    <a href="/services/content/creation/" class="mega-menu-link"><i class="fas fa-file-alt"></i>Content Creation</a>
+                                    <a href="/services/content/blog-writing/" class="mega-menu-link"><i class="fas fa-blog"></i>Blog Writing</a>
+                                    <a href="/services/content/video-production/" class="mega-menu-link"><i class="fas fa-video"></i>Video Production</a>
+                                    <a href="/services/content/copywriting/" class="mega-menu-link"><i class="fas fa-copy"></i>Copywriting</a>
+                                </div>
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="mega-menu-title">More Services</div>
+                                    <a href="/services/gbp/" class="mega-menu-link"><i class="fab fa-google"></i>Google Business</a>
+                                    <a href="/services/ads/" class="mega-menu-link"><i class="fas fa-ad"></i>PPC &amp; Ads</a>
+                                    <a href="/services/packages/" class="mega-menu-link"><i class="fas fa-box"></i>Marketing Packages</a>
+                                    <a href="/services/other/backlinking/" class="mega-menu-link"><i class="fas fa-link"></i>Backlinking</a>
+                                    <a href="/services/other/email-marketing/" class="mega-menu-link"><i class="fas fa-envelope"></i>Email Marketing</a>
+                                    <a href="/services/other/web-design/" class="mega-menu-link"><i class="fas fa-globe"></i>Web Design</a>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-link" href="/portfolio/">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/about/">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/blog/">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/contact/">Contact</a></li>
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+                        <a class="btn btn-primary" href="/contact/">
+                            <i class="fas fa-rocket me-1"></i>Get Started
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    {% block content %}{% endblock %}
+
+    <!-- ============================================================
+         Footer
+         ============================================================ -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-12">
+                    <a href="/" class="footer-brand"><span class="accent">Brand</span> Me Up</a>
+                    <p>We provide AI-powered marketing solutions with human expertise to help your business grow. Get results-driven digital marketing at competitive prices.</p>
+                    <div class="footer-social">
+                        <a href="https://www.linkedin.com/company/brand-me-up-official" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.facebook.com/brandmeup.bmu/" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/brandmeup.official/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">SEO Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="/services/seo/local-seo/"><i class="fas fa-chevron-right"></i>Local SEO</a></li>
+                        <li><a href="/services/seo/ecommerce-seo/"><i class="fas fa-chevron-right"></i>E-commerce SEO</a></li>
+                        <li><a href="/services/seo/saas-seo/"><i class="fas fa-chevron-right"></i>SaaS SEO</a></li>
+                        <li><a href="/services/seo/technical-seo/"><i class="fas fa-chevron-right"></i>Technical SEO</a></li>
+                        <li><a href="/services/seo/enterprise-seo/"><i class="fas fa-chevron-right"></i>Enterprise SEO</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Digital Marketing</h6>
+                    <ul class="footer-links">
+                        <li><a href="/services/social-media/"><i class="fas fa-chevron-right"></i>Social Media</a></li>
+                        <li><a href="/services/content/contentflow/"><i class="fas fa-chevron-right"></i>ContentFlow</a></li>
+                        <li><a href="/services/ads/"><i class="fas fa-chevron-right"></i>PPC Advertising</a></li>
+                        <li><a href="/services/gbp/"><i class="fas fa-chevron-right"></i>Google Business</a></li>
+                        <li><a href="/services/packages/"><i class="fas fa-chevron-right"></i>Marketing Packages</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">More Services</h6>
+                    <ul class="footer-links">
+                        <li><a href="/services/other/backlinking/"><i class="fas fa-chevron-right"></i>Backlinking</a></li>
+                        <li><a href="/services/other/press-release/"><i class="fas fa-chevron-right"></i>Press Release</a></li>
+                        <li><a href="/services/other/email-marketing/"><i class="fas fa-chevron-right"></i>Email Marketing</a></li>
+                        <li><a href="/services/other/web-design/"><i class="fas fa-chevron-right"></i>Web Design</a></li>
+                        <li><a href="/services/other/analytics/"><i class="fas fa-chevron-right"></i>Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h6 class="footer-title">Get In Touch</h6>
+                    <ul class="footer-links">
+                        <li><a href="tel:+923324456974"><i class="fas fa-phone"></i>+92 332 4456974</a></li>
+                        <li><a href="mailto:contact@brandmeup.org"><i class="fas fa-envelope"></i>contact@brandmeup.org</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="row align-items-center">
+                    <div class="col-md-6 text-center text-md-start mb-2 mb-md-0">
+                        &copy; {% now "Y" %} Brand Me Up. All rights reserved.
+                    </div>
+                    <div class="col-md-6 text-center text-md-end">
+                        <a href="#" class="me-3">Privacy Policy</a>
+                        <a href="#" class="me-3">Terms of Service</a>
+                        <a href="#">Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS (defer for perf) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    {% block extra_js %}{% endblock %}
+</body>
+</html>

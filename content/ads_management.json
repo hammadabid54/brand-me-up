@@ -1,0 +1,96 @@
+{
+  "service_name": "Ads Management",
+  "slug": "ads-management",
+  "category": "Ads",
+  "category_url": "/services/ads/",
+  "meta_title": "PPC Management Services | Full Ad Account Management | Brand Me Up",
+  "meta_description": "Complete PPC management services across all platforms. We optimize your campaigns for maximum ROI and deliver measurable business results.",
+  "meta_keywords": "PPC management, ad management, campaign optimization, paid search management",
+  "hero_title": "PPC Management Services",
+  "hero_subtitle": "Full-service PPC management across all advertising platforms.",
+  "description": "Professional PPC management that delivers results. We manage campaigns across Google, Facebook, LinkedIn, and more.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is PPC Management and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "PPC management is the ongoing process of creating, monitoring, and optimizing paid advertising campaigns. It involves everything from initial campaign setup to daily optimization to comprehensive reporting. Effective PPC management is the difference between throwing money away on advertising and generating measurable returns.\n\nManaging PPC campaigns properly requires significant expertise. Platforms like Google Ads and Facebook Ads are complex—with numerous settings, targeting options, and optimization levers. Without proper management, businesses often waste significant budget on underperforming campaigns.\n\nPPC management includes continuous activities: monitoring performance, adjusting bids, testing new ads, refining audiences, analyzing search terms, optimizing landing pages, and much more. This ongoing attention is what makes PPC campaigns successful.\n\nOur PPC management services provide this ongoing attention—ensuring your campaigns continuously improve and deliver the best possible results. We become your dedicated PPC team, working to maximize your return on advertising spend."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Why Professional PPC Management is Essential",
+      "subtitle": "",
+      "content": "Professional management delivers significant advantages:\n\n<h3>Expert Optimization</h3>Our team has experience managing millions in ad spend. We know what works.\n\n<h3>Time Savings</h3>Proper management requires significant daily attention. We handle this so you can focus on your business.\n\n<h3>Cost Efficiency</h3>Optimization reduces cost per result—getting more from your budget.\n\n<h3>Better Performance</h3>Continuous testing and refinement improve campaign performance over time.\n\n<h3>Access to Tools</h3>Professional management includes access to premium tools and technologies.\n\n<h3>Strategic Guidance</h3>We provide insights and recommendations beyond just campaign management.\n\n<h3>Scalable Growth</h3>As campaigns prove successful, we help scale effectively."
+    },
+    {
+      "section_type": "services",
+      "title": "What's Included in Our PPC Management",
+      "subtitle": "",
+      "content": "Our comprehensive management includes:\n\n<h3>Platform Management</h3>We manage campaigns across Google, Facebook, Instagram, LinkedIn, and more.\n\n<h3>Campaign Setup</h3>We create campaigns with proper structure for maximum effectiveness.\n\n<h3>Ad Creation</h3>Professional copywriting and design for compelling ads.\n\n<h3>Keyword Research</h3>Ongoing research to identify valuable keywords.\n\n<h3>Audience Targeting</h3>Refined targeting based on performance data.\n\n<h3>Bid Management</h3>Strategic bidding to maximize results within budget.\n\n<h3>A/B Testing</h3>Continuous testing to improve performance.\n\n<h3>Conversion Tracking</h3>Proper setup to measure actual business results.\n\n<h3>Landing Page Optimization</h3>Ensuring pages convert traffic effectively.\n\n<h3>Reporting</h3>Detailed reports showing performance and recommendations."
+    },
+    {
+      "section_type": "optimization",
+      "title": "Our Optimization Process",
+      "subtitle": "",
+      "content": "We continuously optimize your campaigns:\n\n<h3>Daily Monitoring</h3>We check performance daily to identify issues immediately.\n\n<h3>Weekly Analysis</h3>Detailed weekly reviews of all metrics and trends.\n\n<h3>Monthly Strategy</h3>Comprehensive monthly strategy sessions to plan improvements.\n\n<h3>Ongoing Testing</h3>Continuous A/B testing of ads, landing pages, and targeting.\n\n<h3>Bid Adjustments</h3>Regular bid adjustments based on performance data.\n\n<h3>Audience Refinement</h3>Removing underperforming audiences and adding new ones.\n\n<h3>Search Term Analysis</h3>Regular review of search terms to find new keywords.\n\n<h3>Competitive Analysis</h3>Monitoring competitor activity and adjusting strategies."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from PPC Management?",
+      "subtitle": "",
+      "content": "Our management clients typically see significant improvements:\n\n<h3>Improved ROI</h3>Better returns on advertising spend through optimization.\n\n<h3>Lower Costs</h3>Reduced cost per click and cost per acquisition.\n\n<h3>Better Targeting</h3>More precise audience targeting based on data.\n\n<h3>Increased Conversions</h3>More leads and sales from the same budget.\n\n<h3>Scalable Growth</h3>Ability to scale successful campaigns effectively.\n\n<h3>Actionable Insights</h3>Data-driven recommendations for your business.\n\n<h3>Time Savings</h3>You focus on business while we handle advertising."
+    }
+  ],
+  "pricing": {
+    "intro": "PPC Management Pricing",
+    "description": "Flexible management plans for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "$197/month",
+        "description": "For small budgets",
+        "features": [
+          "1 platform management",
+          "Monthly optimization",
+          "Basic reporting",
+          "Campaign setup",
+          "Keyword research"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$397/month",
+        "description": "For growing businesses",
+        "features": [
+          "2 platform management",
+          "Weekly optimization",
+          "A/B testing",
+          "Detailed reporting",
+          "Competitor analysis",
+          "Conversion tracking"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$697/month",
+        "description": "For established businesses",
+        "features": [
+          "All platforms management",
+          "Daily optimization",
+          "Custom dashboards",
+          "Dedicated account manager",
+          "Advanced analytics",
+          "Strategic planning calls"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "Which platforms do you manage?", "answer": "We manage all major platforms including Google Ads, Facebook/Instagram, LinkedIn, Twitter, and more."},
+    {"question": "How much should I spend on advertising?", "answer": "Budget depends on your goals and competition. We'll help determine an appropriate budget during consultation."},
+    {"question": "How often do you optimize campaigns?", "answer": "Optimization frequency depends on your plan—Basic includes monthly, Professional includes bi-weekly, Premium includes weekly optimization."},
+    {"question": "Do you create ad creative?", "answer": "Yes, we handle all aspects of ad creation including copy and design."},
+    {"question": "How do you report results?", "answer": "We provide detailed reports showing key metrics, trends, and recommendations. Plans include regular strategy calls to review performance."}
+  ]
+}

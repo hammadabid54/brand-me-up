@@ -1,0 +1,94 @@
+{
+  "service_name": "Blog Writing",
+  "slug": "blog-writing",
+  "category": "Content",
+  "category_url": "/services/content/",
+  "meta_title": "Blog Writing Services | SEO-Optimized Blog Posts | Brand Me Up",
+  "meta_description": "Professional blog writing services. SEO-optimized posts that rank well in search engines and engage your target audience. Drive traffic with expert blog writing.",
+  "meta_keywords": "blog writing, blog posts, article writing, SEO blog, content writing",
+  "hero_title": "Blog Writing Services",
+  "hero_subtitle": "SEO-optimized blog posts that drive traffic and engage your target audience.",
+  "description": "Professional blog writing services that deliver SEO results. We create compelling, well-researched blog posts optimized for search engines.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "What is Blog Writing and Why Does Your Business Need It?",
+      "subtitle": "",
+      "content": "Blog writing is the art and science of creating informative, engaging articles for your website's blog. More than just writing, effective blog writing requires understanding search engine optimization, audience psychology, and content marketing strategy. A well-written blog post can attract thousands of visitors from search engines, establish your authority, and convert readers into customers.\n\nThe business case for blog writing is compelling. Companies that blog receive 67% more leads than those that don't. Websites with blogs have 434% more indexed pages, leading to better search visibility. And blog content remains one of the most cost-effective marketing channels, with content marketing costing 62% less than traditional marketing while generating three times as many leads.\n\nHowever, not all blog content is equal. Poorly written, thin content can actually hurt your search rankings. Google and other search engines have become sophisticated at evaluating content quality. To succeed, your blog needs to provide genuine value—well-researched, comprehensive articles that answer questions and solve problems.\n\nOur blog writing services deliver exactly this type of content. Our writers combine expert writing skills with SEO knowledge to create blog posts that satisfy both search engines and human readers."
+    },
+    {
+      "section_type": "seo",
+      "title": "SEO-Optimized Blog Writing",
+      "subtitle": "",
+      "content": "Every blog post we create is optimized for search engines:\n\n<h3>Keyword Research</h3>\nWe research relevant keywords that your audience searches for. This includes primary keywords for main topics and supporting keywords for semantic relevance.\n\n<h3>Strategic Placement</h3>\nKeywords are naturally integrated throughout the post—in titles, headings, body text, and meta descriptions—to signal relevance to search engines.\n\n<h3>Content Structure</h3>\nWe structure posts for both readability and SEO. Clear headings, logical flow, and appropriate length signal quality to search algorithms.\n\n<h3>Internal Linking</h3>\nWe include strategic links to other relevant content on your site, helping search engines understand your site structure.\n\n<h3>Image Optimization</h3>\nImages are optimized with alt text and descriptive filenames, adding additional ranking opportunities.\n\n<h3>Meta Tags</h3>\nEvery post includes optimized title tags and meta descriptions that improve click-through rates from search results.\n\n<h3>Schema Markup</h3>\nWhen appropriate, we implement structured data that helps search engines understand your content better."
+    },
+    {
+      "section_type": "quality",
+      "title": "Quality That Stands Out",
+      "subtitle": "",
+      "content": "Our blog writing exceeds industry standards in quality:\n\n<h3>Thorough Research</h3>\nEvery topic requires research before writing. We ensure accuracy by consulting multiple sources and verifying facts.\n\n<h3>Expert Writers</h3>\nOur team includes writers with expertise in various industries. Technical topics receive attention from those who understand the subject matter.\n\n<h3>Original Content</h3>\nEvery blog post is 100% original. We never use templates or recycle content. Each piece is crafted specifically for your business.\n\n<h3>Comprehensive Coverage</h3>\nWe don't write thin content designed to hit word counts. Our posts thoroughly address topics, providing real value to readers.\n\n<h3>Engaging Style</h3>\nBeyond optimization, our content is genuinely engaging. We write in a conversational yet professional tone that resonates with readers.\n\n<h3>Brand Alignment</h3>\nAll content reflects your brand voice and company perspective. Readers should feel they're learning from your experts."
+    },
+    {
+      "section_type": "strategy",
+      "title": "Blog Writing Strategy",
+      "subtitle": "",
+      "content": "Effective blog writing requires strategic planning:\n\n<h3>Topic Selection</h3>\nWe identify topics that align with your business goals while addressing audience interests. This research ensures every post serves a purpose.\n\n<h3>Content Calendar</h3>\nWe help plan a publishing schedule that maintains consistency while allowing flexibility for timely topics.\n\n<h3>Funnel Coverage</h3>\nEffective blogs address readers at every stage of the buyer's journey—from awareness to decision.\n\n<h3>Competitive Analysis</h3>\nWe research competitor content to identify opportunities for differentiation and improvement.\n\n<h3>Performance Tracking</h3>\nWe monitor blog performance and use data to inform future content decisions. Continuous optimization improves results over time."
+    },
+    {
+      "section_type": "results",
+      "title": "What Results Can You Expect from Blog Writing?",
+      "subtitle": "",
+      "content": "Our blog writing clients typically see significant improvements:\n\n<h3>Increased Organic Traffic</h3>\nWell-optimized blog posts attract visitors from search engines actively looking for your products or services.\n\n<h3>Better Search Rankings</h3>\nQuality content signals to search engines that your site deserves visibility for relevant queries.\n\n<h3>Extended Time on Site</h3>\nEngaging content keeps readers on your site longer, improving engagement metrics that affect rankings.\n\n<h3>Lead Generation</h3>\nValuable content attracts prospects in research mode, filling your pipeline with qualified leads.\n\n<h3>Authority Building</h3>\nConsistent quality content establishes your brand as an industry thought leader.\n\n<h3>Social Sharing</h3>\nCompelling content gets shared on social media, extending your reach beyond organic search."
+    }
+  ],
+  "pricing": {
+    "intro": "Blog Writing Pricing",
+    "description": "Flexible pricing for businesses of all sizes.",
+    "plans": [
+      {
+        "name": "Basic",
+        "price": "$50/post",
+        "description": "For businesses starting out",
+        "features": [
+          "500-800 words",
+          "Basic SEO optimization",
+          "1 keyword focus",
+          "1 revision round"
+        ]
+      },
+      {
+        "name": "Standard",
+        "price": "$75/post",
+        "description": "For regular publishing",
+        "features": [
+          "800-1200 words",
+          "Advanced SEO optimization",
+          "Image research and inclusion",
+          "2 revision rounds",
+          "Meta tags included"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Premium",
+        "price": "$100/post",
+        "description": "For maximum impact",
+        "features": [
+          "1200+ words",
+          "Premium SEO optimization",
+          "Custom images or graphics",
+          "Unlimited revisions",
+          "Social media promotion",
+          "Performance tracking"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "How long does it take to write a blog post?", "answer": "Standard turnaround is 5-7 business days per post. Rush options are available for time-sensitive content."},
+    {"question": "What topics can you write about?", "answer": "Our team has expertise across virtually all industries. We research thoroughly to ensure accurate, relevant content."},
+    {"question": "Do you offer subscriptions or one-time orders?", "answer": "Both! We offer monthly packages for ongoing needs and one-time orders for specific projects."},
+    {"question": "How do you choose keywords?", "answer": "We research search volume, competition, and relevance to your business. We prioritize keywords with good search volume but manageable competition."},
+    {"question": "Can you write in a specific tone or style?", "answer": "Absolutely. We learn your brand voice during onboarding and ensure every post matches your preferred style."}
+  ]
+}

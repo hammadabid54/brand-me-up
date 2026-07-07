@@ -1,0 +1,12 @@
+Django==6.0.6
+python-dotenv==1.2.2
+
+# Image handling
+Pillow==12.2.0
+
+# PDF rendering (audit reports)
+# weasyprint==69.0
+
+# Production server (uncomment when deploying)
+# gunicorn==23.0.0
+# whitenoise==6.8.2

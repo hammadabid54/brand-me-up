@@ -1,0 +1,353 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block meta_title %}About Brand Me Up - AI-Powered Digital Marketing Agency{% endblock %}
+{% block meta_description %}Learn about Brand Me Up, an AI-powered digital marketing agency delivering results-driven SEO, social media, and content marketing services. 500+ businesses helped, global reach.{% endblock %}
+{% block meta_keywords %}about Brand Me Up, digital marketing agency, AI marketing, SEO company, marketing agency, brand strategy{% endblock %}
+
+{% block og_title %}About Brand Me Up - Digital Marketing Agency{% endblock %}
+{% block og_description %}Discover how Brand Me Up helps businesses grow through AI-powered marketing strategies and expert human oversight.{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section" style="background: linear-gradient(135deg, var(--dark-red) 0%, var(--near-black) 40%, var(--black) 100%); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at 30% 30%, rgba(217,37,44,0.12) 0%, transparent 50%), radial-gradient(ellipse at 70% 70%, rgba(217,37,44,0.08) 0%, transparent 40%); pointer-events: none;"></div>
+    <div class="container position-relative">
+        <div class="row align-items-center py-5">
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <span class="section-badge">About Us</span>
+                <h1 class="fw-bold mb-4" style="font-size: 3rem; color: white; line-height: 1.1;">Powering Business Growth with <span style="color: var(--red);">AI & Expertise</span></h1>
+                <p class="lead mb-4" style="font-size: 1.25rem; color: var(--text-muted);">AI-Powered Marketing Solutions with Human Expertise</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="/contact/" class="btn btn-primary btn-lg" style="padding: 0.875rem 2rem; font-weight: 600;">
+                        <i class="fas fa-rocket me-2"></i>Get Started
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="position-relative" style="height: 400px; display: flex; align-items: center; justify-content: center;">
+                    <!-- Animated Icon -->
+                    <div class="brand-icon-wrapper" style="position: relative; width: 300px; height: 300px;">
+                        <div style="position: absolute; inset: 0; background: linear-gradient(145deg, var(--card-surface), #252525); border-radius: 50%; border: 1px solid var(--border);"></div>
+                        <div style="position: absolute; inset: 20px; background: linear-gradient(145deg, rgba(217,37,44,0.2), rgba(94,10,15,0.3)); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: pulse-glow 3s ease-in-out infinite;">
+                            <i class="fas fa-brain" style="font-size: 6rem; color: var(--red);"></i>
+                        </div>
+                        <!-- Orbiting elements -->
+                        <div style="position: absolute; top: 10%; left: 50%; transform: translateX(-50%); width: 40px; height: 40px; background: linear-gradient(135deg, var(--red), var(--red-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: orbit 6s linear infinite;">
+                            <i class="fas fa-search text-white" style="font-size: 1rem;"></i>
+                        </div>
+                        <div style="position: absolute; bottom: 15%; right: 10%; width: 35px; height: 35px; background: linear-gradient(135deg, #7c3aed, #8b5cf6); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: orbit 8s linear infinite reverse;">
+                            <i class="fas fa-share-nodes text-white" style="font-size: 0.875rem;"></i>
+                        </div>
+                        <div style="position: absolute; top: 30%; left: 5%; width: 30px; height: 30px; background: linear-gradient(135deg, #059669, #10b981); border-radius: 50%; display: flex; align-items: center; justify-content: center; animation: orbit 7s linear infinite;">
+                            <i class="fas fa-chart-line text-white" style="font-size: 0.75rem;"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes pulse-glow {
+        0%, 100% { transform: scale(1); opacity: 0.8; }
+        50% { transform: scale(1.05); opacity: 1; }
+    }
+    @keyframes orbit {
+        0% { transform: translateX(-50%) rotate(0deg); }
+        25% { transform: translateX(-50%) translateY(-10px) rotate(90deg); }
+        50% { transform: translateX(-50%) rotate(180deg); }
+        75% { transform: translateX(-50%) translateY(-10px) rotate(270deg); }
+        100% { transform: translateX(-50%) rotate(360deg); }
+    }
+</style>
+
+<!-- Company Overview Section -->
+<section class="py-5" style="background: var(--near-black);">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <div class="pe-lg-5">
+                    <span class="section-badge">Who We Are</span>
+                    <h2 class="mb-4" style="color: white; font-weight: 700; font-size: 2.5rem;">Brand <span style="color: var(--red);">Me Up</span></h2>
+                    <p class="mb-4" style="color: var(--text-muted); line-height: 1.8;">Brand Me Up is a results-driven digital marketing agency that combines the power of AI technology with human expertise to deliver exceptional marketing results for businesses of all sizes.</p>
+                    <p class="mb-4" style="color: var(--text-muted); line-height: 1.8;">We've helped <strong style="color: white;">500+ businesses globally</strong> achieve their growth goals through tailored SEO strategies, social media marketing, and content solutions. Our approach is built on transparency, innovation, and measurable outcomes.</p>
+                    <p style="color: var(--text-muted); line-height: 1.8;">We believe in the power of AI to amplify marketing efforts while keeping human oversight to ensure quality, creativity, and strategic alignment with your business objectives.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="company-stats" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;">
+                    <div class="stat-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; transition: all 0.3s ease;">
+                        <div class="display-4 fw-bold mb-2" style="color: var(--red); font-family: 'Outfit', sans-serif;">6+</div>
+                        <div style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Years Experience</div>
+                    </div>
+                    <div class="stat-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; transition: all 0.3s ease;">
+                        <div class="display-4 fw-bold mb-2" style="color: var(--red); font-family: 'Outfit', sans-serif;">500+</div>
+                        <div style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Businesses Helped</div>
+                    </div>
+                    <div class="stat-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; transition: all 0.3s ease;">
+                        <div class="display-4 fw-bold mb-2" style="color: var(--red); font-family: 'Outfit', sans-serif;">10K+</div>
+                        <div style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Leads Generated</div>
+                    </div>
+                    <div class="stat-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; text-align: center; transition: all 0.3s ease;">
+                        <div class="display-4 fw-bold mb-2" style="color: var(--red); font-family: 'Outfit', sans-serif;">Global</div>
+                        <div style="color: var(--text-muted); font-size: 0.875rem; text-transform: uppercase; letter-spacing: 1px;">Client Reach</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission Section -->
+<section class="py-5" style="background: linear-gradient(180deg, var(--black) 0%, var(--near-black) 50%, var(--dark-red) 100%);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">Our Mission</span>
+            <h2 class="mt-3" style="color: white; font-weight: 700; font-size: 2.5rem;">What Drives <span style="color: var(--red);">Us Forward</span></h2>
+            <p class="mt-4 mx-auto" style="color: var(--text-muted); max-width: 700px; line-height: 1.8; font-size: 1.125rem;">To help businesses achieve top rankings, generate quality leads, and build lasting brand authority through expert SEO strategies tailored to their unique goals.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="mission-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; height: 100%; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--red), var(--red-dark));"></div>
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Our Vision</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">We envision a world where every business, regardless of size, can compete effectively in the digital marketplace through access to professional-grade marketing tools and expertise.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mission-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; height: 100%; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--red), var(--red-dark));"></div>
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-cogs"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Our Approach</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">We combine the efficiency of AI with the creativity and strategic thinking of human experts. This hybrid approach delivers better results at lower costs than traditional agencies.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="mission-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; height: 100%; transition: all 0.3s ease; position: relative; overflow: hidden;">
+                    <div style="position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--red), var(--red-dark));"></div>
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Our Promise</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">We're committed to delivering measurable results for every client. Our guaranteed results approach means we don't stop until you see the growth you're looking for.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Core Values Section -->
+<section class="py-5" style="background: var(--near-black);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">Core Values</span>
+            <h2 class="mt-3" style="color: white; font-weight: 700; font-size: 2.5rem;">What We <span style="color: var(--red);">Stand For</span></h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="value-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mx-auto mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 70px; height: 70px; font-size: 1.75rem;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Innovation</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">We continuously adopt new AI technologies to improve our services and deliver better results. Innovation is at the heart of everything we do.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mx-auto mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 70px; height: 70px; font-size: 1.75rem;">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Trust</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">We believe in transparency and honest communication with our clients at all times. Trust is the foundation of our client relationships.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="value-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; text-align: center; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mx-auto mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 70px; height: 70px; font-size: 1.75rem;">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Results</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">We're committed to delivering measurable results that impact your bottom line. Your success is our success.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Overview -->
+<section class="py-5" style="background: linear-gradient(180deg, var(--black) 0%, var(--near-black) 100%);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">What We Do</span>
+            <h2 class="mt-3" style="color: white; font-weight: 700; font-size: 2.5rem;">Our <span style="color: var(--red);">Services</span></h2>
+            <p class="mt-3" style="color: var(--text-muted);">Comprehensive digital marketing solutions tailored to your needs</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">SEO Services</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">Local, E-commerce, SaaS, Technical, and Enterprise SEO tailored to your industry and goals.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, #7c3aed, #8b5cf6); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-share-nodes"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Social Media</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">Strategic social media management and advertising to grow your audience and engagement.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, #059669, #10b981); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Content Marketing</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">AI-assisted content creation including blog posts, articles, copywriting, and video production.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, #2563eb, #3b82f6); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">PPC Advertising</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">Targeted pay-per-click campaigns on Google Ads and social media platforms.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, #dc2626, #ef4444); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">GBP Management</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">Google Business Profile setup and optimization for local visibility.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="service-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: 2rem; transition: all 0.3s ease; height: 100%;">
+                    <div class="feature-icon mb-4" style="background: linear-gradient(135deg, #ea580c, #f97316); width: 60px; height: 60px; font-size: 1.5rem;">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h4 class="mb-3" style="color: white; font-weight: 600;">Marketing Packages</h4>
+                    <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 0;">Flexible marketing packages starting from $50/month to fit any budget.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Choose Us -->
+<section class="py-5" style="background: var(--near-black);">
+    <div class="container">
+        <div class="text-center mb-5">
+            <span class="section-badge">Why Us</span>
+            <h2 class="mt-3" style="color: white; font-weight: 700; font-size: 2.5rem;">Why Businesses Trust <span style="color: var(--red);">Brand Me Up</span></h2>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="why-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1rem; transition: all 0.3s ease;">
+                    <div class="feature-icon flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                        <i class="fas fa-check"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-2" style="color: white; font-weight: 600;">Proven Results</h5>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">We've helped hundreds of businesses achieve their marketing goals with measurable results.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="why-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1rem; transition: all 0.3s ease;">
+                    <div class="feature-icon flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-2" style="color: white; font-weight: 600;">Transparent Reporting</h5>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Get detailed monthly reports on your campaign performance with actionable insights.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="why-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1rem; transition: all 0.3s ease;">
+                    <div class="feature-icon flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-2" style="color: white; font-weight: 600;">Dedicated Support</h5>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Your dedicated account manager is always available to answer questions and provide guidance.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="why-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1rem; transition: all 0.3s ease;">
+                    <div class="feature-icon flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                        <i class="fas fa-dollar-sign"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-2" style="color: white; font-weight: 600;">Flexible Pricing</h5>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Services starting from $50/month to fit any budget. No long-term contracts required.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="why-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1rem; transition: all 0.3s ease;">
+                    <div class="feature-icon flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-2" style="color: white; font-weight: 600;">AI-Powered</h5>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Leverage the latest AI technology for better results at lower costs.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="why-card" style="background: var(--card-surface); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1.5rem; display: flex; gap: 1rem; transition: all 0.3s ease;">
+                    <div class="feature-icon flex-shrink-0" style="background: linear-gradient(135deg, var(--red), var(--red-dark)); width: 50px; height: 50px; font-size: 1.25rem;">
+                        <i class="fas fa-user-check"></i>
+                    </div>
+                    <div>
+                        <h5 class="mb-2" style="color: white; font-weight: 600;">Human Review</h5>
+                        <p class="mb-0" style="color: var(--text-muted); font-size: 0.9375rem;">Every campaign reviewed by experienced marketing experts for quality assurance.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5" style="background: linear-gradient(135deg, var(--dark-red) 0%, var(--near-black) 50%, var(--black) 100%); position: relative; overflow: hidden;">
+    <div style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: radial-gradient(ellipse at center, rgba(217,37,44,0.15) 0%, transparent 70%); pointer-events: none;"></div>
+    <div class="container position-relative text-center">
+        <h2 class="mb-3" style="color: white; font-weight: 700; font-size: 2.5rem;">Ready to <span style="color: var(--red);">Work With Us?</span></h2>
+        <p class="mb-4" style="color: var(--text-muted); font-size: 1.125rem;">Let's discuss how we can help your business grow. Get a free consultation today!</p>
+        <a href="/contact/" class="btn btn-primary btn-lg" style="padding: 1rem 2.5rem; font-weight: 600;">
+            <i class="fas fa-paper-plane me-2"></i>Get in Touch
+        </a>
+    </div>
+</section>
+
+<style>
+    .stat-card:hover, .mission-card:hover, .value-card:hover, .why-card:hover, .service-card:hover {
+        transform: translateY(-5px);
+        border-color: var(--red);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+    }
+</style>
+{% endblock %}

@@ -1,0 +1,103 @@
+{
+  "page_name": "packages",
+  "meta_title": "Marketing Packages | Starter to Full-Scale Solutions | Brand Me Up",
+  "meta_description": "Comprehensive marketing packages from Starter to Full-Scale. Choose the package that fits your business needs and budget for maximum growth.",
+  "meta_keywords": "marketing packages, comprehensive marketing, SEO packages, digital marketing bundles, marketing solutions",
+  "hero_title": "Marketing Packages",
+  "hero_subtitle": "Comprehensive solutions for every stage of growth. Choose the package that fits your business.",
+  "description": "Complete marketing packages that combine multiple services for comprehensive growth. From Starter to Full-Scale, we have solutions for every budget.",
+  "sections": [
+    {
+      "section_type": "intro",
+      "title": "Why Choose a Marketing Package?",
+      "subtitle": "",
+      "content": "Marketing packages combine multiple services into comprehensive solutions that deliver better results than individual services alone. When all your marketing works together—SEO, social media, content, advertising—synergies emerge that amplify results. Packages also simplify budgeting and provide a single point of accountability for all your marketing.\n\nRather than piecing together different services from different providers, packages give you a complete strategy that works together. Our team ensures all components complement each other—SEO content feeds social media, social engagement builds links, advertising supports SEO efforts. This integrated approach delivers results that standalone services simply cannot match.\n\nPackages also offer significant value. When services are bundled, you pay less than you would for each service individually. This makes comprehensive marketing accessible to businesses that might not otherwise afford full-service marketing.\n\nOur packages are designed to grow with your business. Start with a package that fits your current needs and budget, then upgrade as your business grows. Every package delivers real results—more traffic, more leads, more customers."
+    },
+    {
+      "section_type": "benefits",
+      "title": "Benefits of Our Marketing Packages",
+      "subtitle": "",
+      "content": "Package-based marketing delivers significant advantages:\n\n<h3>Integrated Strategy</h3>: All components work together toward unified goals. No disconnected efforts or conflicting priorities.\n\n<h3>Simplified Management</h3>: One team handles everything. No need to coordinate multiple vendors or providers.\n\n<h3>Cost Savings</h3>: Packages cost less than equivalent individual services. You get more marketing for your budget.\n\n<h3>Scalable Growth</h3>: Packages can be upgraded as your business grows. No need to start over when you succeed.\n\n<h3>Consistent Execution</h3>: Regular, consistent execution across all channels. No gaps or inconsistencies.\n\n<h3>Comprehensive Reporting</h3>: Unified reports showing how all components contribute to results.\n\n<h3>Expert Coordination</h3>: Our team ensures all elements complement each other effectively."
+    },
+    {
+      "section_type": "packages",
+      "title": "Our Package Options",
+      "subtitle": "",
+      "content": "We offer four comprehensive packages designed for different business stages:\n\n<h3>Starter Package ($397/month)</h3>: Essential marketing for new businesses just getting started. Includes local SEO, basic socialFlow to establish your media, and Content online presence.\n\n<h3>Professional Package ($797/month)</h3>: Comprehensive marketing for growing businesses. Includes national SEO, expanded social media, content creation, and GBP management for significant growth.\n\n<h3>Enterprise Package ($1,497/month)</h3>: Full-service marketing for established businesses. Includes everything in Professional plus expanded content, advertising management, and priority support.\n\n<h3>Full-Scale Package ($2,497/month)</h3>: Maximum growth solution for aggressive expansion. Includes unlimited content, full PPC management, video production, and dedicated account management."
+    },
+    {
+      "section_type": "process",
+      "title": "Our Package Process",
+      "subtitle": "",
+      "content": "We follow a comprehensive approach for every package:\n\n<h3>Discovery</h3>: We learn about your business, goals, target audience, and competitive landscape.\n\n<h3>Strategy Development</h3>: We create a comprehensive marketing strategy that leverages all package components.\n\n<h3>Implementation</h3>: Our team executes the strategy across all channels—SEO, social, content, advertising.\n\n<h3>Optimization</h3>: Continuous optimization improves performance across all components.\n\n<h3>Reporting</h3>: Detailed reports show results across all marketing activities.\n\n<h3>Strategy Sessions</h3>: Regular strategy calls to review progress and plan improvements.\n\n<h3>Growth Planning</h3>: As your business grows, we help plan package upgrades and expanded strategies."
+    }
+  ],
+  "pricing": {
+    "intro": "Package Pricing",
+    "description": "Flexible packages for businesses at every stage.",
+    "plans": [
+      {
+        "name": "Starter",
+        "price": "$397/month",
+        "description": "For new businesses getting started",
+        "features": [
+          "Local SEO",
+          "Social media (2 platforms)",
+          "ContentFlow (Basic)",
+          "Monthly reports",
+          "Email support"
+        ]
+      },
+      {
+        "name": "Professional",
+        "price": "$797/month",
+        "description": "For growing businesses",
+        "features": [
+          "National SEO",
+          "Social media (4 platforms)",
+          "ContentFlow (Standard)",
+          "Content creation (4 blogs/month)",
+          "GBP management",
+          "Bi-weekly reports",
+          "Priority email support"
+        ],
+        "popular": true
+      },
+      {
+        "name": "Enterprise",
+        "price": "$1,497/month",
+        "description": "For established businesses",
+        "features": [
+          "Full SEO coverage",
+          "All social platforms",
+          "ContentFlow (Premium)",
+          "Content creation (8 blogs/month)",
+          "GBP + Ads management",
+          "Priority support",
+          "Weekly reports"
+        ]
+      },
+      {
+        "name": "Full-Scale",
+        "price": "$2,497/month",
+        "description": "For aggressive growth",
+        "features": [
+          "Everything in Enterprise",
+          "Unlimited content",
+          "Full PPC management",
+          "Video production",
+          "Dedicated account manager",
+          "Custom strategy",
+          "Daily monitoring"
+        ]
+      }
+    ]
+  },
+  "faqs": [
+    {"question": "Can I customize a package?", "answer": "Absolutely! We can create a custom package based on your specific needs and budget. Contact us to discuss your requirements."},
+    {"question": "What's included in reporting?", "answer": "All packages include detailed performance reports showing traffic, rankings, conversions, social engagement, and actionable insights."},
+    {"question": "Can I upgrade packages later?", "answer": "Yes! As your business grows, you can upgrade to a higher package. We make the transition seamless."},
+    {"question": "How long are contracts?", "answer": "All packages are month-to-month. No long-term contracts required."},
+    {"question": "Do packages include ad spend?", "answer": "Management fees are included. Ad spend is additional and depends on your budget and goals."}
+  ]
+}

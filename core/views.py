@@ -6,7 +6,6 @@ from django.utils import timezone
 from django.db.models import Count
 from django.conf import settings
 from core.content_loader import get_page_content
-import requests
 import json
 import re
 

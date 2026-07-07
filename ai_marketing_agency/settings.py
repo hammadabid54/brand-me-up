@@ -199,12 +199,16 @@ if not DEBUG:
     SESSION_COOKIE_SAMESITE = 'Lax'
     CSRF_COOKIE_SAMESITE = 'Lax'
 
-    # HTTPS / HSTS
-    SECURE_SSL_REDIRECT = True
+    # HTTPS / HSTS — only enforce when FORCE_HTTPS=1 (i.e. SSL cert is in place).
+    # Set FORCE_HTTPS=0 to serve over plain HTTP until your domain + cert are ready.
+    FORCE_HTTPS = os.environ.get('FORCE_HTTPS', '1') == '1'
+    SECURE_SSL_REDIRECT = FORCE_HTTPS
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     SECURE_HSTS_SECONDS = 60 * 60 * 24 * 30  # 30 days
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    SESSION_COOKIE_SECURE = FORCE_HTTPS
+    CSRF_COOKIE_SECURE = FORCE_HTTPS
 
     # Headers
     SECURE_CONTENT_TYPE_NOSNIFF = True

@@ -169,16 +169,33 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # Email Configuration
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+# Visible "From:" address — this is what recipients see and what they reply to.
+# Targeted to contact@brandmeup.org (the brand's public address).
+DEFAULT_FROM_EMAIL = os.environ.get(
+    'DEFAULT_FROM_EMAIL',
+    'Brand Me Up <contact@brandmeup.org>',
+)
+# Address Django error emails (broken links, 500s) come from
+SERVER_EMAIL = os.environ.get('SERVER_EMAIL', 'Brand Me Up <contact@brandmeup.org>')
+# Where contact-form reply-to lives (used by some mailers if you wire it later)
+SUPPORT_EMAIL = os.environ.get('SUPPORT_EMAIL', 'contact@brandmeup.org')
+
+# SMTP transport — Gmail by default. EMAIL_HOST_USER is the *auth account*;
+# Gmail won't let you authenticate as a non-Gmail address, so we keep this
+# as the Gmail account that actually performs the delivery. To make outgoing
+# mail truly display contact@brandmeup.org as the From address (not Gmail
+# rewriting it), set up Gmail "Send mail as" via Settings → Accounts →
+# "Send mail as" → Add contact@brandmeup.org. Until then, Django sets the
+# From header to contact@brandmeup.org but Gmail may rewrite it.
+EMAIL_BACKEND = os.environ.get(
+    'EMAIL_BACKEND',
+    'django.core.mail.backends.smtp.EmailBackend',
+)
 EMAIL_HOST = os.environ.get('EMAIL_HOST', 'smtp.gmail.com')
 EMAIL_PORT = int(os.environ.get('EMAIL_PORT', '587'))
 EMAIL_USE_TLS = os.environ.get('EMAIL_USE_TLS', 'True').lower() in ('true', '1', 'yes')
-EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', 'Digitalmomentumx@gmail.com')
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER', '')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', '')
-DEFAULT_FROM_EMAIL = os.environ.get(
-    'DEFAULT_FROM_EMAIL',
-    'Brand Me Up <Digitalmomentumx@gmail.com>',
-)
 
 # Session settings
 SESSION_COOKIE_AGE = 60 * 60 * 24 * 7  # 1 week

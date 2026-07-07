@@ -4,9 +4,8 @@ python-dotenv==1.2.2
 # Image handling
 Pillow==12.2.0
 
-# PDF rendering (audit reports)
-# weasyprint==69.0
+# PostgreSQL (production)
+psycopg2-binary==2.9.10
 
-# Production server (uncomment when deploying)
-# gunicorn==23.0.0
-# whitenoise==6.8.2
+# Production server
+gunicorn==23.0.0

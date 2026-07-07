@@ -94,19 +94,36 @@ WSGI_APPLICATION = 'ai_marketing_agency.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
+# Set DB_ENGINE=postgres in the environment to use PostgreSQL (production);
+# defaults to SQLite for local development.
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        # Reuse DB connections across requests for a small perf win.
-        'CONN_MAX_AGE': 600,
-        'OPTIONS': {
-            # SQLite benefits from WAL for concurrent reads during dev.
-            'init_command': 'PRAGMA journal_mode=WAL;',
-        },
+DB_ENGINE = os.environ.get('DB_ENGINE', 'sqlite3')
+
+if DB_ENGINE == 'postgres':
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME':     os.environ.get('DB_NAME', 'brandmeup'),
+            'USER':     os.environ.get('DB_USER', 'brandmeup'),
+            'PASSWORD': os.environ.get('DB_PASSWORD', ''),
+            'HOST':     os.environ.get('DB_HOST', 'localhost'),
+            'PORT':     os.environ.get('DB_PORT', '5432'),
+            'CONN_MAX_AGE': 600,
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+            # Reuse DB connections across requests for a small perf win.
+            'CONN_MAX_AGE': 600,
+            'OPTIONS': {
+                # SQLite benefits from WAL for concurrent reads during dev.
+                'init_command': 'PRAGMA journal_mode=WAL;',
+            },
+        }
+    }
 
 
 # Password validation

@@ -1601,7 +1601,7 @@
                     <h3>Send us a Message</h3>
                     <p class="form-subtitle">Tell us about your project and we'll create a custom strategy for you.</p>
 
-                    <form method="POST" action="/contact/" id="serviceContactForm">
+                    <form method="POST" action="/contact/submit/" id="serviceContactForm">
                         {% csrf_token %}
                         <input type="hidden" name="service" value="{{ service_name|default:page_name }}">
 

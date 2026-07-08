@@ -469,6 +469,57 @@
         .footer-bottom a:hover { color: var(--red); }
 
         /* ============================================================
+           Flash messages (Django messages framework)
+           ============================================================ */
+        .flash-container {
+            margin-top: 1rem;
+            margin-bottom: 0;
+        }
+        .flash-alert {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            border: none;
+            border-radius: var(--radius);
+            padding: 1rem 1.25rem;
+            box-shadow: var(--shadow);
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            animation: flashSlideIn 0.3s ease-out;
+        }
+        @keyframes flashSlideIn {
+            from { opacity: 0; transform: translateY(-8px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        .flash-icon {
+            flex-shrink: 0;
+            width: 32px; height: 32px;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            background: rgba(255,255,255,.3);
+            font-size: 1rem;
+        }
+        .flash-text { flex: 1; }
+        .flash-close {
+            margin-left: 0.5rem;
+            opacity: 0.7;
+        }
+        .flash-close:hover { opacity: 1; }
+
+        .alert-success.flash-alert {
+            background: linear-gradient(135deg, #16a34a, #22c55e);
+            color: white;
+        }
+        .alert-danger.flash-alert {
+            background: linear-gradient(135deg, #dc2626, #ef4444);
+            color: white;
+        }
+        .alert-info.flash-alert {
+            background: linear-gradient(135deg, #2563eb, #3b82f6);
+            color: white;
+        }
+
+        /* ============================================================
            Responsive type scale
            ============================================================ */
         @media (max-width: 768px) {
@@ -551,6 +602,26 @@
             </div>
         </div>
     </nav>
+
+    <!-- ============================================================
+         Flash messages (Django messages framework — site-wide)
+         ============================================================ -->
+    {% if messages %}
+    <div class="container flash-container">
+        {% for message in messages %}
+            <div class="alert alert-{% if message.tags == 'error' %}danger{% elif message.tags == 'info' %}info{% else %}{{ message.tags|default:'primary' }}{% endif %} alert-dismissible fade show flash-alert" role="alert">
+                <div class="flash-icon">
+                    {% if message.tags == 'success' %}<i class="fas fa-check-circle"></i>
+                    {% elif message.tags == 'error' %}<i class="fas fa-exclamation-circle"></i>
+                    {% elif message.tags == 'info' %}<i class="fas fa-info-circle"></i>
+                    {% else %}<i class="fas fa-bell"></i>{% endif %}
+                </div>
+                <div class="flash-text">{{ message }}</div>
+                <button type="button" class="btn-close flash-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    </div>
+    {% endif %}
 
     <!-- Main Content -->
     {% block content %}{% endblock %}

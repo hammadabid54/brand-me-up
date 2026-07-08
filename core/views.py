@@ -292,6 +292,11 @@ Message:
             )
             messages.success(request, 'Thank you for your message! We\'ll get back to you within 24 hours.')
         except Exception as e:
+            import logging
+            logging.getLogger('django').error(
+                'Contact form email failed: %s: %s', type(e).__name__, e,
+                exc_info=True,
+            )
             messages.error(request, 'There was an error sending your message. Please try again later.')
 
         return redirect('contact')

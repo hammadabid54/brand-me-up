@@ -104,15 +104,17 @@
         }
 
         .navbar-brand {
-            font-family: 'Outfit', sans-serif;
-            font-weight: 800;
-            font-size: 1.4rem;
-            color: var(--white) !important;
+            display: inline-flex;
+            align-items: center;
             text-decoration: none;
         }
 
-        .navbar-brand span {
-            color: var(--red);
+        .navbar-brand img {
+            display: block;
+            width: auto;
+            height: 48px;
+            max-width: min(42vw, 170px);
+            object-fit: contain;
         }
 
         .nav-link {
@@ -418,17 +420,15 @@
         }
 
         .footer-brand {
-            font-family: 'Outfit', sans-serif;
-            font-size: 1.4rem;
-            font-weight: 800;
-            color: white;
             margin-bottom: 1rem;
-            display: block;
+            display: inline-block;
             text-decoration: none;
         }
 
-        .footer-brand span {
-            color: var(--red);
+        .footer-brand img {
+            display: block;
+            width: min(100%, 250px);
+            height: auto;
         }
 
         .footer-title {
@@ -594,7 +594,9 @@
     <!-- Navigation with Mega Menu -->
     <nav class="navbar navbar-expand-lg sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="/"><span>BRAND</span>ME UP</a>
+            <a class="navbar-brand" href="/" aria-label="Brand Me Up home">
+                <img src="{% static 'images/bmu-logo.png' %}" alt="Brand Me Up — Transforming Businesses into Brands">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: var(--text-muted);">
                 <span class="navbar-toggler-icon" style="background: var(--text-muted);"></span>
             </button>
@@ -703,7 +705,9 @@
             <div class="row g-4">
                 <!-- Brand & Newsletter Column -->
                 <div class="col-lg-4">
-                    <a href="/" class="footer-brand"><span>BRAND</span>ME UP</a>
+                    <a href="/" class="footer-brand" aria-label="Brand Me Up home">
+                        <img src="{% static 'images/bmu-logo.png' %}" alt="Brand Me Up — Transforming Businesses into Brands" loading="lazy">
+                    </a>
                     <p class="mb-4" style="font-size: 0.9375rem; line-height: 1.7; color: var(--text-muted);">
                         We provide AI-powered marketing solutions with human expertise to help your business grow. Get results-driven digital marketing at competitive prices.
                     </p>

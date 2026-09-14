@@ -1,0 +1,52 @@
+name: Deploy Brand Me Up to VPS
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: production
+
+    steps:
+      - name: Deploy over SSH
+        uses: appleboy/ssh-action@v1.1.0
+        with:
+          host: ${{ secrets.VPS_HOST }}
+          username: brandmeup
+          key: ${{ secrets.VPS_SSH_KEY }}
+          command_timeout: 5m
+          script: |
+            set -euo pipefail
+            cd /var/www/brandmeup/src
+
+            echo "=== Sync with origin/main ==="
+            git fetch origin main
+            git reset --hard origin/main
+
+            echo "=== Install requirements ==="
+            /var/www/brandmeup/venv/bin/pip install -r requirements.txt --quiet
+
+            echo "=== Run migrations ==="
+            /var/www/brandmeup/venv/bin/python manage.py migrate --noinput
+
+            echo "=== Collect static ==="
+            /var/www/brandmeup/venv/bin/python manage.py collectstatic --noinput
+
+            echo "=== Restart gunicorn ==="
+            sudo /bin/systemctl restart gunicorn-brandmeup
+            sleep 2
+            if pgrep -f gunicorn-brandmeup > /dev/null; then
+              echo "DEPLOY_OK: gunicorn running"
+            else
+              echo "DEPLOY_FAIL: gunicorn not running, last 20 lines of error log:"
+              tail -20 /var/www/brandmeup/logs/gunicorn-error.log || true
+              exit 1
+            fi
